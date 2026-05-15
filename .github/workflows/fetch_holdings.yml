@@ -1,9 +1,9 @@
-name: RAPTOR ETF Monitor — Daily Fetch
+name: RAPTOR ETF Monitor — Weekly Fetch
 
 on:
   schedule:
-    # Ogni giorno alle 23:00 CET (22:00 UTC) — dopo chiusura mercati USA
-    - cron: '0 22 * * 1-5'
+    # Ogni lunedì alle 08:00 UTC (dopo apertura mercati EU)
+    - cron: '0 8 * * 1'
   workflow_dispatch:  # Esecuzione manuale
 
 jobs:
@@ -22,7 +22,10 @@ jobs:
           python-version: '3.11'
 
       - name: Install dependencies
-        run: pip install requests
+        run: |
+          pip install requests playwright
+          playwright install chromium
+          playwright install-deps chromium
 
       - name: Create data directories
         run: |
