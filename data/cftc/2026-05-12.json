@@ -1,6 +1,6 @@
 {
   "date": "2026-05-12",
-  "source": "https://www.cftc.gov/dea/newcot/FinFutWk.txt",
+  "source": "CFTC.gov current",
   "markets": {
     "EUR/USD": {
       "market": "EURO FX - CHICAGO MERCANTILE EXCHANGE",
