@@ -1,0 +1,78 @@
+{
+  "date": "2502-11-20",
+  "source": "CFTC 2022",
+  "markets": {
+    "EUR/USD": {
+      "market": "EURO FX - CHICAGO MERCANTILE EXCHANGE",
+      "report_date": "2502-11-20",
+      "lev_long": 103297,
+      "lev_short": 12461,
+      "lev_net": 90836,
+      "asset_long": 149088,
+      "asset_short": 28945
+    },
+    "S&P 500": {
+      "market": "E-MINI S&P 500 STOCK INDEX - CHICAGO MERCANTILE EXCHANGE",
+      "report_date": "2502-11-20",
+      "lev_long": 249724,
+      "lev_short": 36938,
+      "lev_net": 212786,
+      "asset_long": 435602,
+      "asset_short": 269815
+    },
+    "Nasdaq 100": {
+      "market": "NASDAQ-100 Consolidated - CHICAGO MERCANTILE EXCHANGE",
+      "report_date": "2502-11-20",
+      "lev_long": 10431,
+      "lev_short": 1179,
+      "lev_net": 9252,
+      "asset_long": 12071,
+      "asset_short": 941
+    },
+    "Treasury 2Y": {
+      "market": "2-YEAR U.S. TREASURY NOTES - CHICAGO BOARD OF TRADE",
+      "report_date": "2502-11-20",
+      "lev_long": 357436,
+      "lev_short": 124817,
+      "lev_net": 232619,
+      "asset_long": 674758,
+      "asset_short": 472608
+    },
+    "Treasury 10Y": {
+      "market": "10-YEAR U.S. TREASURY NOTES - CHICAGO BOARD OF TRADE",
+      "report_date": "2502-11-20",
+      "lev_long": 525994,
+      "lev_short": 92438,
+      "lev_net": 433556,
+      "asset_long": 1368485,
+      "asset_short": 810666
+    },
+    "Crude Oil": {
+      "market": "CRUDE OIL, LIGHT SWEET - NEW YORK MERCANTILE EXCHANGE",
+      "report_date": "2502-11-20",
+      "lev_long": 440135,
+      "lev_short": 107420,
+      "lev_net": 332715,
+      "asset_long": 0,
+      "asset_short": 0
+    },
+    "Copper": {
+      "market": "COPPER-GRADE #1 - COMMODITY EXCHANGE INC.",
+      "report_date": "2502-11-20",
+      "lev_long": 91417,
+      "lev_short": 52322,
+      "lev_net": 39095,
+      "asset_long": 0,
+      "asset_short": 0
+    },
+    "Gold": {
+      "market": "GOLD - COMMODITY EXCHANGE INC.",
+      "report_date": "2502-11-20",
+      "lev_long": 65627,
+      "lev_short": 95639,
+      "lev_net": -30012,
+      "asset_long": 0,
+      "asset_short": 0
+    }
+  }
+}

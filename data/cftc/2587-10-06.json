@@ -1,0 +1,78 @@
+{
+  "date": "2587-10-06",
+  "source": "CFTC 2025",
+  "markets": {
+    "EUR/USD": {
+      "market": "EURO FX - CHICAGO MERCANTILE EXCHANGE",
+      "report_date": "2587-10-06",
+      "lev_long": 71503,
+      "lev_short": 21577,
+      "lev_net": 49926,
+      "asset_long": 147114,
+      "asset_short": 33190
+    },
+    "S&P 500": {
+      "market": "E-MINI S&P 500 - CHICAGO MERCANTILE EXCHANGE",
+      "report_date": "2587-10-06",
+      "lev_long": 623198,
+      "lev_short": 66624,
+      "lev_net": 556574,
+      "asset_long": 215351,
+      "asset_short": 98882
+    },
+    "Nasdaq 100": {
+      "market": "NASDAQ-100 Consolidated - CHICAGO MERCANTILE EXCHANGE",
+      "report_date": "2587-10-06",
+      "lev_long": 81022,
+      "lev_short": 22204,
+      "lev_net": 58818,
+      "asset_long": 32881,
+      "asset_short": 3038
+    },
+    "Treasury 2Y": {
+      "market": "UST 2Y NOTE - CHICAGO BOARD OF TRADE",
+      "report_date": "2587-10-06",
+      "lev_long": 2593433,
+      "lev_short": 160563,
+      "lev_net": 2432870,
+      "asset_long": 528610,
+      "asset_short": 487588
+    },
+    "Treasury 10Y": {
+      "market": "UST 10Y NOTE - CHICAGO BOARD OF TRADE",
+      "report_date": "2587-10-06",
+      "lev_long": 2960717,
+      "lev_short": 118633,
+      "lev_net": 2842084,
+      "asset_long": 952438,
+      "asset_short": 634550
+    },
+    "Crude Oil": {
+      "market": "WTI-PHYSICAL - NEW YORK MERCANTILE EXCHANGE",
+      "report_date": "2587-10-06",
+      "lev_long": 380092,
+      "lev_short": 97561,
+      "lev_net": 282531,
+      "asset_long": 0,
+      "asset_short": 0
+    },
+    "Copper": {
+      "market": "COPPER- #1 - COMMODITY EXCHANGE INC.",
+      "report_date": "2587-10-06",
+      "lev_long": 103476,
+      "lev_short": 40068,
+      "lev_net": 63408,
+      "asset_long": 0,
+      "asset_short": 0
+    },
+    "Gold": {
+      "market": "GOLD - COMMODITY EXCHANGE INC.",
+      "report_date": "2587-10-06",
+      "lev_long": 58801,
+      "lev_short": 33860,
+      "lev_net": 24941,
+      "asset_long": 0,
+      "asset_short": 0
+    }
+  }
+}

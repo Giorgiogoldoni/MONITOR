@@ -1,6 +1,6 @@
 {
   "date": "2026-05-12",
-  "source": "CFTC.gov current",
+  "source": "CFTC current",
   "markets": {
     "EUR/USD": {
       "market": "EURO FX - CHICAGO MERCANTILE EXCHANGE",
@@ -46,6 +46,33 @@
       "lev_net": 1716725,
       "asset_long": 1039789,
       "asset_short": 659454
+    },
+    "Crude Oil": {
+      "market": "WTI-PHYSICAL - NEW YORK MERCANTILE EXCHANGE",
+      "report_date": "2026-05-12",
+      "lev_long": 386384,
+      "lev_short": 91319,
+      "lev_net": 295065,
+      "asset_long": 0,
+      "asset_short": 0
+    },
+    "Copper": {
+      "market": "COPPER- #1 - COMMODITY EXCHANGE INC.",
+      "report_date": "2026-05-12",
+      "lev_long": 139920,
+      "lev_short": 51984,
+      "lev_net": 87936,
+      "asset_long": 0,
+      "asset_short": 0
+    },
+    "Gold": {
+      "market": "GOLD - COMMODITY EXCHANGE INC.",
+      "report_date": "2026-05-12",
+      "lev_long": 31639,
+      "lev_short": 25671,
+      "lev_net": 5968,
+      "asset_long": 0,
+      "asset_short": 0
     }
   }
 }
