@@ -1,0 +1,57 @@
+name: RAPTOR ETF Monitor — Weekly Fetch
+
+on:
+  schedule:
+    - cron: '0 8 * * 1'
+  workflow_dispatch:
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install requests xlrd
+
+      - name: Create data directories
+        run: |
+          mkdir -p data/holdings/GMOM data/holdings/RPAR data/holdings/DBMF
+          mkdir -p data/holdings/AOA  data/holdings/AOR  data/holdings/MAGR
+          mkdir -p data/holdings/F701 data/holdings/F703
+          mkdir -p data/holdings/GAL  data/holdings/AOK  data/holdings/DWAW data/holdings/DWUS
+          mkdir -p data/cftc data/manual
+
+      - name: Fetch CFTC historical data (solo se meno di 50 file)
+        run: |
+          COUNT=$(find data/cftc -name "*.json" 2>/dev/null | wc -l)
+          echo "File CFTC esistenti: $COUNT"
+          if [ "$COUNT" -lt 50 ]; then
+            echo "Avvio fetch storico CFTC (2022-oggi)..."
+            python scripts/fetch_cftc_history.py
+          else
+            echo "Storico già presente ($COUNT file), skip."
+          fi
+
+      - name: Run holdings fetcher
+        run: python scripts/fetch_holdings.py
+
+      - name: Build holdings index
+        run: python scripts/build_index.py
+
+      - name: Commit & push data
+        run: |
+          git config user.name  "RAPTOR Bot"
+          git config user.email "raptor-bot@users.noreply.github.com"
+          git add data/
+          git diff --cached --quiet || git commit -m "data: update $(date -u +%Y-%m-%d)"
+          git push
