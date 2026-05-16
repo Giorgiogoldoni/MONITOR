@@ -1,9 +1,11 @@
-﻿Nome;Simbolo;% Peso;Rialzo;Prezzo;Var. %;Azioni
-iShares Core S&P 500 ETF;;45,10%;0;;-%;1.895.675
-iShares Core MSCI Intl Dev Mkts ETF;;22,55%;0;;-%;7.838.907
-iShares Core Universal USD Bond ETF;IUSB;16,50%;0;45,7;-0,59%;11.051.501
-iShares Core MSCI Emerging Markets ETF;;9,01%;0;;-%;3.414.745
-iShares Core International Aggt Bd ETF;;2,93%;0;;-%;1.808.562
-iShares Core S&P Mid-Cap ETF;IJH;2,53%;0;72,22;-1,66%;1.060.820
-iShares Core S&P Small-Cap ETF;IJR;1,21%;0;133,93;-1,62%;271.809
-E-mini S&P 500 Future June 26;;0,00%;0;;-%;13
+"Nome","Simbolo","% Peso","Rialzo","Prezzo","Var. %","Azioni"
+"iShares MSCI USA CTB Enhanced ESG UCITS ETF USD Inc","EEDS","18,66%","0,00","12,83","-1,00%","1.947.394"
+"iShares MSCI USA Screened UCITS ETF USD (Acc)","SGAG","18,61%","0,00","13,28","-0,60%","1.615.768"
+"iShares MSCI EM CTB Enhanced ESG UCITS ETF USD Acc","EDM2","12,58%","0,00","7,88","-2,96%","1.784.852"
+"iShares MSCI Europe CTB Enhanced ESG UCITS ETF EUR Inc","EMNU","12,29%","0,00","7,86","-1,87%","1.737.590"
+"iShares Edge MSCI USA Val Fctr UCITS ETF USD A","IUVL","8,86%","0,00","17,14","-2,61%","699.726"
+"iShares MSCI USA SRI UCITS ETF USD (Acc)","QDVR","8,11%","0,00","17,044","-1,23%","545.466"
+"iShares MSCI Japan CTB Enhanced ESG UCITS ETF USD Acc","EDMJ","4,45%","0,00","8,33","-1,19%","614.101"
+"iShares $ Treasury Bond 7-10yr UCITS ETF USD (Dist)","ISTB","3,92%","0,00","129,48","0,29%","29.354"
+"iShares JPM EM Local Govt Bond UCITS ETF USD D","SEML","2,95%","0,00","34,21","0,26%","83.899"
+"iShares Global Infrastructure UCITS ETF USD (Acc)","CBUX","2,01%","0,00","6,02","-0,50%","367.466"
