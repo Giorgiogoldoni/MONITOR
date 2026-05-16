@@ -1,0 +1,999 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RAPTOR ETF MONITOR</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg:        #ffffff;
+    --surface:   #f8f8f8;
+    --border:    #e2e2e2;
+    --text:      #1a1a1a;
+    --muted:     #6b6b6b;
+    --accent:    #0f172a;
+    --green:     #16a34a;
+    --red:       #dc2626;
+    --amber:     #d97706;
+    --blue:      #1d4ed8;
+    --font-mono: 'JetBrains Mono', 'Fira Code', 'Courier New', monospace;
+    --font-sans: 'DM Sans', 'Segoe UI', system-ui, sans-serif;
+    --radius:    4px;
+  }
+
+  html, body { height: 100%; background: var(--bg); color: var(--text); font-family: var(--font-sans); font-size: 13px; line-height: 1.5; }
+
+  #app { display: flex; flex-direction: column; min-height: 100vh; }
+
+  header {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 14px 24px;
+    border-bottom: 1.5px solid var(--accent);
+    background: var(--bg);
+    position: sticky; top: 0; z-index: 100;
+  }
+
+  .logo { font-family: var(--font-mono); font-size: 11px; font-weight: 700; letter-spacing: .15em; color: var(--accent); }
+  .logo span { color: var(--muted); font-weight: 400; }
+  .header-actions { display: flex; gap: 8px; align-items: center; }
+
+  .status-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--amber); display: inline-block; margin-right: 6px; }
+  .status-dot.ok  { background: var(--green); }
+  .status-dot.err { background: var(--red); }
+
+  #last-update { font-size: 11px; color: var(--muted); font-family: var(--font-mono); }
+
+  nav {
+    display: flex; gap: 0;
+    border-bottom: 1px solid var(--border);
+    background: var(--bg);
+    padding: 0 24px;
+    overflow-x: auto;
+  }
+
+  .tab {
+    padding: 10px 18px;
+    font-size: 12px; font-weight: 600; letter-spacing: .04em;
+    color: var(--muted);
+    border-bottom: 2px solid transparent;
+    cursor: pointer; white-space: nowrap;
+    transition: color .15s, border-color .15s;
+    background: none; border-top: none; border-left: none; border-right: none;
+  }
+  .tab:hover { color: var(--text); }
+  .tab.active { color: var(--accent); border-bottom-color: var(--accent); }
+
+  main { flex: 1; padding: 24px; max-width: 1400px; width: 100%; margin: 0 auto; }
+
+  .panel { display: none; }
+  .panel.active { display: block; }
+
+  .section-title {
+    font-family: var(--font-mono);
+    font-size: 10px; font-weight: 700; letter-spacing: .12em;
+    color: var(--muted); text-transform: uppercase;
+    margin-bottom: 14px; padding-bottom: 8px;
+    border-bottom: 1px solid var(--border);
+    display: flex; align-items: center; justify-content: space-between;
+  }
+
+  .etf-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 16px; margin-bottom: 28px; }
+
+  .etf-card { border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; }
+
+  .etf-card-header {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 10px 14px;
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .etf-ticker { font-family: var(--font-mono); font-size: 13px; font-weight: 700; color: var(--accent); }
+  .etf-meta   { font-size: 10px; color: var(--muted); }
+  .etf-badge  { font-size: 9px; font-weight: 700; letter-spacing: .06em; padding: 2px 7px; border-radius: 2px; background: var(--accent); color: #fff; }
+  .etf-badge.ucits { background: #1d4ed8; }
+  .etf-badge.usa   { background: #0f172a; }
+  .etf-card-body { padding: 12px 14px; }
+
+  .holdings-table { width: 100%; border-collapse: collapse; }
+  .holdings-table th { font-family: var(--font-mono); font-size: 9px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); text-align: right; padding: 4px 6px; }
+  .holdings-table th:first-child { text-align: left; }
+  .holdings-table td { padding: 5px 6px; border-top: 1px solid var(--border); font-size: 12px; text-align: right; }
+  .holdings-table td:first-child { text-align: left; max-width: 180px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .holdings-table tr:hover td { background: #f5f5f5; }
+
+  .weight-bar-wrap { display: flex; align-items: center; gap: 6px; justify-content: flex-end; }
+  .weight-bar { height: 6px; border-radius: 2px; background: var(--accent); min-width: 2px; max-width: 80px; }
+  .weight-val { font-family: var(--font-mono); font-size: 11px; min-width: 42px; text-align: right; }
+
+  .delta-pos { color: var(--green); font-family: var(--font-mono); font-size: 11px; }
+  .delta-neg { color: var(--red);   font-family: var(--font-mono); font-size: 11px; }
+  .delta-neu { color: var(--muted); font-family: var(--font-mono); font-size: 11px; }
+
+  .changes-table { width: 100%; border-collapse: collapse; }
+  .changes-table th { font-family: var(--font-mono); font-size: 9px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); text-align: left; padding: 6px 10px; border-bottom: 2px solid var(--border); }
+  .changes-table td { padding: 8px 10px; border-bottom: 1px solid var(--border); font-size: 12px; }
+  .changes-table tr:hover td { background: #f9f9f9; }
+  .change-up   { color: var(--green); font-weight: 700; font-family: var(--font-mono); }
+  .change-down { color: var(--red);   font-weight: 700; font-family: var(--font-mono); }
+
+  .etf-label { display: inline-block; font-family: var(--font-mono); font-size: 10px; font-weight: 700; padding: 1px 6px; border-radius: 2px; background: var(--accent); color: #fff; margin-right: 6px; }
+
+  .history-controls { display: flex; gap: 12px; align-items: center; margin-bottom: 20px; flex-wrap: wrap; }
+  .history-controls select { font-family: var(--font-mono); font-size: 12px; border: 1px solid var(--border); border-radius: var(--radius); padding: 6px 10px; background: var(--bg); color: var(--text); }
+
+  .history-table { width: 100%; border-collapse: collapse; font-family: var(--font-mono); font-size: 11px; }
+  .history-table th { font-size: 9px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); padding: 6px 10px; border-bottom: 2px solid var(--border); text-align: right; white-space: nowrap; }
+  .history-table th:first-child { text-align: left; }
+  .history-table td { padding: 7px 10px; border-bottom: 1px solid var(--border); text-align: right; }
+  .history-table td:first-child { text-align: left; }
+  .history-table tr:hover td { background: #f5f5f5; }
+
+  .cftc-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 14px; margin-bottom: 24px; }
+  .cftc-card { border: 1px solid var(--border); border-radius: var(--radius); padding: 14px 16px; }
+  .cftc-market { font-family: var(--font-mono); font-size: 11px; font-weight: 700; color: var(--accent); margin-bottom: 10px; }
+  .cftc-row { display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px; font-size: 11px; }
+  .cftc-label { color: var(--muted); }
+  .cftc-val { font-family: var(--font-mono); font-weight: 600; }
+  .cftc-net-pos { color: var(--green); }
+  .cftc-net-neg { color: var(--red); }
+  .cftc-net-bar-wrap { margin-top: 8px; height: 4px; background: var(--border); border-radius: 2px; overflow: hidden; }
+  .cftc-net-bar { height: 100%; border-radius: 2px; }
+
+  .btn {
+    display: inline-flex; align-items: center; gap: 6px;
+    padding: 7px 14px; border-radius: var(--radius);
+    font-size: 11px; font-weight: 700; letter-spacing: .04em;
+    cursor: pointer; border: 1.5px solid var(--accent);
+    background: var(--accent); color: #fff;
+    transition: opacity .15s;
+    font-family: var(--font-mono);
+  }
+  .btn:hover { opacity: .85; }
+  .btn.outline { background: var(--bg); color: var(--accent); }
+  .btn:disabled { opacity: .4; cursor: not-allowed; }
+
+  .interval-group { display: flex; gap: 0; border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; }
+  .interval-btn { padding: 5px 12px; font-size: 11px; font-weight: 600; font-family: var(--font-mono); cursor: pointer; background: var(--bg); color: var(--muted); border: none; transition: background .1s, color .1s; }
+  .interval-btn.active { background: var(--accent); color: #fff; }
+
+  .empty   { padding: 40px; text-align: center; color: var(--muted); font-size: 12px; font-family: var(--font-mono); }
+  .loading { padding: 20px; text-align: center; color: var(--muted); font-size: 11px; font-family: var(--font-mono); letter-spacing: .08em; }
+
+  /* ── Upload panel ── */
+  .upload-field-label { font-family: var(--font-mono); font-size: 9px; font-weight: 700; letter-spacing: .1em; color: var(--muted); text-transform: uppercase; margin-bottom: 5px; }
+
+  #drop-zone {
+    border: 2px dashed var(--border); border-radius: var(--radius);
+    padding: 44px; text-align: center; cursor: pointer;
+    transition: border-color .2s, background .2s;
+    margin-bottom: 20px;
+  }
+  #drop-zone.drag-over { border-color: var(--accent); background: #f5f5f5; }
+
+  .queue-item {
+    display: flex; align-items: center; gap: 12px;
+    padding: 10px 14px; border: 1px solid var(--border);
+    border-radius: var(--radius); margin-bottom: 8px;
+    background: var(--surface);
+  }
+  .queue-item .qi-status { font-size: 14px; flex-shrink: 0; }
+  .queue-item .qi-info   { flex: 1; min-width: 0; }
+  .queue-item .qi-name   { font-size: 11px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .queue-item .qi-meta   { font-size: 10px; color: var(--muted); font-family: var(--font-mono); }
+  .qi-remove { border: none; background: none; color: var(--muted); cursor: pointer; font-size: 16px; line-height: 1; padding: 0 4px; }
+  .qi-remove:hover { color: var(--red); }
+
+  select.ticker-sel { font-family: var(--font-mono); font-size: 11px; border: 1px solid var(--border); border-radius: var(--radius); padding: 3px 7px; background: var(--bg); color: var(--text); }
+
+  ::-webkit-scrollbar { width: 6px; height: 6px; }
+  ::-webkit-scrollbar-track { background: transparent; }
+  ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+
+  @media (max-width: 600px) {
+    header { padding: 10px 14px; }
+    main   { padding: 14px; }
+    nav    { padding: 0 14px; }
+    .etf-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+<div id="app">
+
+  <header>
+    <div class="logo">RAPTOR<span> / </span>ETF MONITOR<span> v1.0</span></div>
+    <div class="header-actions">
+      <span id="last-update"><span class="status-dot" id="status-dot"></span>—</span>
+      <button class="btn outline" onclick="exportExcel()">↓ EXCEL</button>
+      <button class="btn outline" onclick="refreshData()">↺ REFRESH</button>
+    </div>
+  </header>
+
+  <nav>
+    <button class="tab active" onclick="showTab('holdings',this)">HOLDINGS ATTUALI</button>
+    <button class="tab" onclick="showTab('strategic',this)">MOVIMENTI STRATEGICI</button>
+    <button class="tab" onclick="showTab('history',this)">STORIA PARTECIPAZIONI</button>
+    <button class="tab" onclick="showTab('cftc',this)">CFTC / COT</button>
+    <button class="tab" onclick="showTab('upload',this)">↑ CARICA CSV</button>
+  </nav>
+
+  <main>
+
+    <!-- ══ TAB 1: HOLDINGS ATTUALI ══ -->
+    <div id="panel-holdings" class="panel active">
+      <div class="section-title">
+        <span>Holdings per ETF — snapshot più recente</span>
+        <div class="interval-group">
+          <button class="interval-btn active" onclick="setDelta('1d',this)">1G</button>
+          <button class="interval-btn" onclick="setDelta('1w',this)">1S</button>
+          <button class="interval-btn" onclick="setDelta('1m',this)">1M</button>
+          <button class="interval-btn" onclick="setDelta('3m',this)">3M</button>
+        </div>
+      </div>
+      <div class="etf-grid" id="etf-grid">
+        <div class="loading">CARICAMENTO DATI...</div>
+      </div>
+    </div>
+
+    <!-- ══ TAB 2: MOVIMENTI STRATEGICI ══ -->
+    <div id="panel-strategic" class="panel">
+      <div class="section-title">
+        <span>Variazioni peso ≥ 1.5% — possibili decisioni strategiche</span>
+        <div class="interval-group">
+          <button class="interval-btn active" onclick="setStrategicInterval('1w',this)">1S</button>
+          <button class="interval-btn" onclick="setStrategicInterval('1m',this)">1M</button>
+          <button class="interval-btn" onclick="setStrategicInterval('3m',this)">3M</button>
+        </div>
+      </div>
+      <div id="strategic-container">
+        <div class="loading">CARICAMENTO...</div>
+      </div>
+    </div>
+
+    <!-- ══ TAB 3: STORIA PARTECIPAZIONI ══ -->
+    <div id="panel-history" class="panel">
+      <div class="section-title">STORIA PARTECIPAZIONI</div>
+      <div class="history-controls">
+        <select id="hist-etf" onchange="renderHistory()">
+          <option value="">— Seleziona ETF —</option>
+          <option>GMOM</option><option>RPAR</option><option>DBMF</option>
+          <option>AOA</option><option>AOR</option><option>MAGR</option>
+          <option>F701</option><option>F703</option>
+        </select>
+        <select id="hist-holding" onchange="renderHistory()">
+          <option value="">— Tutti i holding —</option>
+        </select>
+        <div class="interval-group">
+          <button class="interval-btn active" onclick="setHistInterval('1m',this)">1M</button>
+          <button class="interval-btn" onclick="setHistInterval('3m',this)">3M</button>
+          <button class="interval-btn" onclick="setHistInterval('6m',this)">6M</button>
+          <button class="interval-btn" onclick="setHistInterval('all',this)">TUTTO</button>
+        </div>
+      </div>
+      <div id="history-table-wrap">
+        <div class="empty">Seleziona un ETF per visualizzare la storia delle partecipazioni.</div>
+      </div>
+    </div>
+
+    <!-- ══ TAB 4: CFTC ══ -->
+    <div id="panel-cftc" class="panel">
+      <div class="section-title">
+        <span>CFTC Commitment of Traders — Leveraged Funds (CTA / Hedge Fund)</span>
+        <span style="font-size:10px;color:var(--muted);font-weight:400">Aggiornamento: automatico</span>
+      </div>
+      <div class="cftc-grid" id="cftc-grid">
+        <div class="loading">CARICAMENTO...</div>
+      </div>
+      <div class="section-title" style="margin-top:24px">STORICO POSIZIONI NET — LEVERAGED FUNDS</div>
+      <div id="cftc-history-wrap">
+        <div class="empty">Seleziona un mercato per visualizzare lo storico.</div>
+      </div>
+    </div>
+
+    <!-- ══ TAB 5: CARICA CSV ══ -->
+    <div id="panel-upload" class="panel">
+      <div class="section-title">
+        <span>Carica CSV holdings — investing.com / iShares</span>
+      </div>
+
+      <!-- GitHub config -->
+      <div style="display:flex;gap:12px;align-items:flex-end;margin-bottom:24px;flex-wrap:wrap">
+        <div style="flex:1;min-width:180px">
+          <div class="upload-field-label">GitHub Personal Access Token</div>
+          <input type="password" id="gh-token" placeholder="ghp_xxxxxxxxxxxx"
+            style="width:100%;font-family:var(--font-mono);font-size:12px;border:1px solid var(--border);border-radius:var(--radius);padding:6px 10px;background:var(--bg);color:var(--text)">
+        </div>
+        <div style="flex:0 0 auto">
+          <div class="upload-field-label">Repository</div>
+          <input type="text" id="gh-repo" value="Giorgiogoldoni/MONITOR"
+            style="font-family:var(--font-mono);font-size:12px;border:1px solid var(--border);border-radius:var(--radius);padding:6px 10px;background:var(--bg);color:var(--text);width:230px">
+        </div>
+        <button class="btn outline" onclick="saveToken()">💾 Salva token</button>
+      </div>
+
+      <!-- Istruzioni token -->
+      <div style="font-size:11px;color:var(--muted);font-family:var(--font-mono);margin-bottom:20px;padding:10px 14px;border:1px solid var(--border);border-radius:var(--radius);background:var(--surface)">
+        Token: <a href="https://github.com/settings/tokens/new?scopes=repo&description=RAPTOR-ETF" target="_blank" style="color:var(--blue)">github.com/settings/tokens</a>
+        → Generate new token (classic) → spunta <strong>repo</strong> → Generate → copia qui
+      </div>
+
+      <!-- Drop zone -->
+      <div id="drop-zone"
+        ondragover="event.preventDefault();this.classList.add('drag-over')"
+        ondragleave="this.classList.remove('drag-over')"
+        ondrop="handleDrop(event)"
+        onclick="document.getElementById('file-input').click()">
+        <div style="font-family:var(--font-mono);font-size:13px;color:var(--muted)">
+          ↓ Trascina i CSV qui oppure clicca per selezionarli
+        </div>
+        <div style="font-size:10px;color:var(--muted);margin-top:8px;font-family:var(--font-mono)">
+          Formato investing.com · iShares · qualsiasi CSV con colonne Nome / Simbolo / % Peso
+        </div>
+        <input type="file" id="file-input" multiple accept=".csv" style="display:none" onchange="handleFiles(this.files)">
+      </div>
+
+      <!-- Coda file -->
+      <div id="upload-queue" style="margin-bottom:20px"></div>
+
+      <!-- Azioni -->
+      <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap">
+        <button class="btn" id="btn-upload-all" onclick="uploadAll()" style="display:none">↑ Carica su GitHub</button>
+        <button class="btn outline" id="btn-workflow" onclick="triggerWorkflow()" style="display:none">▶ Avvia workflow</button>
+        <span id="upload-status" style="font-family:var(--font-mono);font-size:11px;color:var(--muted)"></span>
+      </div>
+    </div>
+
+  </main>
+</div>
+
+<script>
+// ══════════════════════════════════════════════════════
+//  CONFIG
+// ══════════════════════════════════════════════════════
+const BASE_URL = window.location.origin + window.location.pathname.replace(/\/[^/]*$/, '');
+const DATA_URL = BASE_URL + '/data';
+
+// ══════════════════════════════════════════════════════
+//  STATE
+// ══════════════════════════════════════════════════════
+let INDEX       = null;
+let ETF_DATA    = {};
+let CFTC_DATA   = {};
+let DELTA_MODE  = '1d';
+let STRAT_INTV  = '1w';
+let HIST_INTV   = '1m';
+
+const ETFS = ['GMOM','RPAR','DBMF','AOA','AOR','MAGR','F701','F703'];
+
+const ETF_INFO = {
+  GMOM: { name:'Cambria Global Momentum',          market:'USA',   freq:'Weekly'  },
+  RPAR: { name:'RPAR Risk Parity',                 market:'USA',   freq:'Weekly'  },
+  DBMF: { name:'iMGP DBi Managed Futures',         market:'USA',   freq:'Weekly'  },
+  AOA:  { name:'iShares Core Aggressive Alloc.',   market:'USA',   freq:'Weekly'  },
+  AOR:  { name:'iShares Core Moderate Alloc.',     market:'USA',   freq:'Weekly'  },
+  MAGR: { name:'iShares Growth Portfolio UCITS',   market:'UCITS', freq:'Weekly'  },
+  F701: { name:'Amundi Multi-Asset Portfolio',     market:'UCITS', freq:'Monthly' },
+  F703: { name:'Amundi Multi-Asset Portfolio AGG', market:'UCITS', freq:'Monthly' },
+};
+
+const COT_LABELS = {
+  'S&P 500':      { icon:'📈', color:'#1d4ed8' },
+  'Nasdaq 100':   { icon:'💻', color:'#7c3aed' },
+  'Treasury 10Y': { icon:'🏛️', color:'#065f46' },
+  'Treasury 2Y':  { icon:'🏦', color:'#064e3b' },
+  'Gold':         { icon:'🥇', color:'#b45309' },
+  'Crude Oil':    { icon:'🛢️', color:'#92400e' },
+  'EUR/USD':      { icon:'💶', color:'#1e40af' },
+  'Copper':       { icon:'🔶', color:'#c2410c' },
+};
+
+// ══════════════════════════════════════════════════════
+//  HELPERS
+// ══════════════════════════════════════════════════════
+const $ = id => document.getElementById(id);
+const fmt  = n => (n >= 0 ? '+' : '') + n.toFixed(2) + '%';
+const fmtW = n => n.toFixed(2) + '%';
+const fmtK = n => n >= 0 ? '+' + n.toLocaleString('it-IT') : n.toLocaleString('it-IT');
+
+function daysAgo(n) {
+  const d = new Date();
+  d.setDate(d.getDate() - n);
+  return d.toISOString().slice(0,10);
+}
+
+function intervalDays(intv) {
+  return {'1d':1,'1w':7,'1m':30,'3m':90,'6m':180,'all':9999}[intv] || 30;
+}
+
+function latestDate(etf) {
+  const dates = Object.keys(ETF_DATA[etf] || {}).sort();
+  return dates[dates.length-1] || null;
+}
+
+function dateAtInterval(etf, intv) {
+  const dates = Object.keys(ETF_DATA[etf] || {}).sort();
+  if (!dates.length) return null;
+  const cutoff = daysAgo(intervalDays(intv));
+  return dates.find(d => d >= cutoff) || dates[0];
+}
+
+function buildHoldingMap(snap) {
+  const map = {};
+  (snap?.holdings || []).forEach(h => { map[h.ticker || h.name] = h; });
+  return map;
+}
+
+// ══════════════════════════════════════════════════════
+//  DATA LOADING
+// ══════════════════════════════════════════════════════
+async function fetchJSON(url) {
+  try {
+    const r = await fetch(url + '?v=' + Date.now());
+    if (!r.ok) return null;
+    return await r.json();
+  } catch { return null; }
+}
+
+async function loadIndex() {
+  INDEX = await fetchJSON(DATA_URL + '/index.json');
+  return INDEX;
+}
+
+async function loadEtf(ticker, dates) {
+  ETF_DATA[ticker] = ETF_DATA[ticker] || {};
+  const toLoad = (dates || []).slice(-90);
+  await Promise.all(toLoad.map(async date => {
+    if (ETF_DATA[ticker][date]) return;
+    const data = await fetchJSON(`${DATA_URL}/holdings/${ticker}/${date}.json`);
+    if (data) ETF_DATA[ticker][date] = data;
+  }));
+}
+
+async function loadCftc(dates) {
+  const toLoad = (dates || []).slice(-52);
+  await Promise.all(toLoad.map(async date => {
+    if (CFTC_DATA[date]) return;
+    const data = await fetchJSON(`${DATA_URL}/cftc/${date}.json`);
+    if (data) CFTC_DATA[date] = data;
+  }));
+}
+
+async function refreshData() {
+  setStatus('loading');
+  const index = await loadIndex();
+  if (!index) { setStatus('error'); return; }
+  await Promise.all(ETFS.map(etf => loadEtf(etf, index.etfs[etf] || [])));
+  await loadCftc(index.cftc || []);
+  const lastDates = ETFS.map(e => latestDate(e)).filter(Boolean).sort();
+  const lastUpdate = lastDates[lastDates.length-1] || '—';
+  $('last-update').innerHTML = `<span class="status-dot ok" id="status-dot"></span>${lastUpdate}`;
+  renderAll();
+}
+
+function setStatus(s) {
+  const dot = $('status-dot');
+  if (!dot) return;
+  dot.className = 'status-dot' + (s==='ok' ? ' ok' : s==='error' ? ' err' : '');
+}
+
+// ══════════════════════════════════════════════════════
+//  RENDER: HOLDINGS
+// ══════════════════════════════════════════════════════
+function renderHoldings() {
+  const grid = $('etf-grid');
+  if (!grid) return;
+  grid.innerHTML = ETFS.map(etf => renderEtfCard(etf)).join('') || '<div class="empty">Nessun dato disponibile.</div>';
+}
+
+function renderEtfCard(etf) {
+  const info     = ETF_INFO[etf] || {};
+  const currDate = latestDate(etf);
+  const prevDate = dateAtInterval(etf, DELTA_MODE);
+  const curr     = currDate ? ETF_DATA[etf][currDate] : null;
+  const prev     = (prevDate && prevDate !== currDate) ? ETF_DATA[etf][prevDate] : null;
+  const prevMap  = buildHoldingMap(prev);
+
+  const holdings = (curr?.holdings || [])
+    .filter(h => h.weight > 0.01)
+    .sort((a,b) => b.weight - a.weight)
+    .slice(0,12);
+
+  const maxW = Math.max(...holdings.map(h => h.weight), 1);
+
+  const rows = holdings.map(h => {
+    const key   = h.ticker || h.name;
+    const prevH = prevMap[key];
+    const delta = prevH ? h.weight - prevH.weight : null;
+    const dHtml = delta === null ? '<span class="delta-neu">—</span>'
+      : delta > 0.1  ? `<span class="delta-pos">${fmt(delta)}</span>`
+      : delta < -0.1 ? `<span class="delta-neg">${fmt(delta)}</span>`
+      : `<span class="delta-neu">${fmt(delta)}</span>`;
+    const barW = Math.round((h.weight/maxW)*80);
+    return `<tr>
+      <td title="${h.name}">${h.name.length>22 ? h.name.slice(0,22)+'…' : h.name}</td>
+      <td><div class="weight-bar-wrap">
+        <div class="weight-bar" style="width:${barW}px"></div>
+        <span class="weight-val">${fmtW(h.weight)}</span>
+      </div></td>
+      <td>${dHtml}</td>
+    </tr>`;
+  }).join('');
+
+  return `<div class="etf-card">
+    <div class="etf-card-header">
+      <div>
+        <div class="etf-ticker">${etf}</div>
+        <div class="etf-meta">${info.name||''} · ${info.freq||''}</div>
+      </div>
+      <span class="etf-badge ${info.market==='UCITS'?'ucits':'usa'}">${info.market||''}</span>
+    </div>
+    <div class="etf-card-body">
+      ${!curr ? '<div class="empty">Nessun dato</div>' : `
+      <table class="holdings-table">
+        <thead><tr>
+          <th>Nome</th>
+          <th style="text-align:right">Peso</th>
+          <th style="text-align:right">Δ ${DELTA_MODE.toUpperCase()}</th>
+        </tr></thead>
+        <tbody>${rows}</tbody>
+      </table>
+      <div style="font-size:10px;color:var(--muted);margin-top:8px;font-family:var(--font-mono)">
+        Snapshot: ${currDate} · ${(curr.holdings||[]).length} posizioni
+      </div>`}
+    </div>
+  </div>`;
+}
+
+// ══════════════════════════════════════════════════════
+//  RENDER: MOVIMENTI STRATEGICI
+// ══════════════════════════════════════════════════════
+function renderStrategic() {
+  const container = $('strategic-container');
+  if (!container) return;
+  const rows = [];
+  const cutoff = daysAgo(intervalDays(STRAT_INTV));
+
+  ETFS.forEach(etf => {
+    const dates    = Object.keys(ETF_DATA[etf]||{}).sort();
+    const currDate = dates[dates.length-1];
+    if (!currDate) return;
+    const curr     = ETF_DATA[etf][currDate];
+    const prevDate = dates.filter(d => d>=cutoff && d<currDate)[0] || dates.find(d => d<currDate);
+    if (!prevDate) return;
+    const prev    = ETF_DATA[etf][prevDate];
+    const prevMap = buildHoldingMap(prev);
+    const currMap = buildHoldingMap(curr);
+    const allKeys = new Set([...Object.keys(prevMap),...Object.keys(currMap)]);
+    allKeys.forEach(key => {
+      const prevW = prevMap[key]?.weight || 0;
+      const currW = currMap[key]?.weight || 0;
+      const delta = currW - prevW;
+      const name  = currMap[key]?.name || prevMap[key]?.name || key;
+      if (Math.abs(delta) >= 1.5)
+        rows.push({etf, ticker:key, name, prevW, currW, delta, prevDate, currDate});
+    });
+  });
+
+  if (!rows.length) {
+    container.innerHTML = `<div class="empty">Nessun movimento strategico (≥1.5%) nel periodo ${STRAT_INTV.toUpperCase()}.</div>`;
+    return;
+  }
+  rows.sort((a,b) => Math.abs(b.delta)-Math.abs(a.delta));
+
+  container.innerHTML = `
+    <table class="changes-table">
+      <thead><tr>
+        <th>ETF</th><th>Ticker</th><th>Nome</th>
+        <th style="text-align:right">Peso Prec.</th>
+        <th style="text-align:right">Peso Att.</th>
+        <th style="text-align:right">Δ Peso</th>
+        <th>Periodo</th>
+      </tr></thead>
+      <tbody>${rows.map(r => `<tr>
+        <td><span class="etf-label">${r.etf}</span></td>
+        <td>${r.ticker}</td>
+        <td style="max-width:200px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${r.name}</td>
+        <td style="font-family:var(--font-mono);text-align:right">${fmtW(r.prevW)}</td>
+        <td style="font-family:var(--font-mono);text-align:right">${fmtW(r.currW)}</td>
+        <td class="${r.delta>0?'change-up':'change-down'}" style="text-align:right">${fmt(r.delta)}</td>
+        <td style="font-family:var(--font-mono);font-size:10px;color:var(--muted)">${r.prevDate} → ${r.currDate}</td>
+      </tr>`).join('')}</tbody>
+    </table>
+    <div style="font-size:10px;color:var(--muted);margin-top:10px;font-family:var(--font-mono)">
+      ${rows.length} movimenti · soglia ≥1.5% · intervallo ${STRAT_INTV.toUpperCase()}
+    </div>`;
+}
+
+// ══════════════════════════════════════════════════════
+//  RENDER: STORIA PARTECIPAZIONI
+// ══════════════════════════════════════════════════════
+function renderHistory() {
+  const etf    = $('hist-etf')?.value;
+  const filter = $('hist-holding')?.value;
+  const wrap   = $('history-table-wrap');
+  if (!wrap) return;
+  if (!etf) { wrap.innerHTML = '<div class="empty">Seleziona un ETF.</div>'; return; }
+
+  const cutoff = daysAgo(intervalDays(HIST_INTV));
+  const dates  = Object.keys(ETF_DATA[etf]||{}).filter(d => d>=cutoff || HIST_INTV==='all').sort();
+  if (!dates.length) { wrap.innerHTML = '<div class="empty">Nessun dato storico.</div>'; return; }
+
+  const latestD  = dates[dates.length-1];
+  const latestSn = ETF_DATA[etf][latestD];
+  const allH     = (latestSn?.holdings||[]).map(h => h.ticker||h.name);
+  const sel      = $('hist-holding');
+  if (sel) {
+    sel.innerHTML = '<option value="">— Tutti i holding —</option>' +
+      allH.map(h => `<option ${filter===h?'selected':''}>${h}</option>`).join('');
+  }
+
+  const holdings = filter ? [filter] : allH.slice(0,15);
+  const dateCols = dates.slice(-24);
+  const thDates  = dateCols.map(d => `<th>${d.slice(5)}</th>`).join('');
+
+  const tableRows = holdings.map(hKey => {
+    const cells = dateCols.map((date,i) => {
+      const snap  = ETF_DATA[etf][date];
+      const h     = (snap?.holdings||[]).find(x => (x.ticker||x.name)===hKey);
+      const w     = h?.weight ?? null;
+      const prevD = dateCols[i-1];
+      const prevS = prevD ? ETF_DATA[etf][prevD] : null;
+      const prevH = prevS ? (prevS.holdings||[]).find(x => (x.ticker||x.name)===hKey) : null;
+      const prevW = prevH?.weight ?? null;
+      if (w===null) return '<td style="color:var(--muted)">—</td>';
+      if (prevW===null) return `<td>${fmtW(w)}</td>`;
+      const d = w-prevW;
+      const cls = Math.abs(d)<0.1?'':d>0?'delta-pos':'delta-neg';
+      return `<td><span class="${cls}">${fmtW(w)}</span></td>`;
+    }).join('');
+    return `<tr><td>${hKey}</td>${cells}</tr>`;
+  }).join('');
+
+  wrap.innerHTML = `
+    <div style="overflow-x:auto">
+      <table class="history-table">
+        <thead><tr><th>Holding</th>${thDates}</tr></thead>
+        <tbody>${tableRows}</tbody>
+      </table>
+    </div>
+    <div style="font-size:10px;color:var(--muted);margin-top:10px;font-family:var(--font-mono)">
+      ${dates.length} snapshot · ${holdings.length} holding · verde=aumento · rosso=riduzione
+    </div>`;
+}
+
+// ══════════════════════════════════════════════════════
+//  RENDER: CFTC
+// ══════════════════════════════════════════════════════
+function renderCftc() {
+  const grid = $('cftc-grid');
+  if (!grid) return;
+  const dates  = Object.keys(CFTC_DATA).sort();
+  const latest = dates[dates.length-1];
+  if (!latest) {
+    grid.innerHTML = '<div class="empty">Nessun dato CFTC disponibile.</div>';
+    return;
+  }
+  const markets = CFTC_DATA[latest]?.markets || {};
+  const cards   = Object.entries(markets).map(([label,d]) => {
+    const info   = COT_LABELS[label] || {icon:'📊'};
+    const net    = d.lev_net;
+    const netCls = net>0 ? 'cftc-net-pos' : 'cftc-net-neg';
+    const maxAbs = Math.max(Math.abs(d.lev_long), Math.abs(d.lev_short));
+    const barW   = maxAbs>0 ? Math.round((Math.abs(net)/maxAbs)*100) : 0;
+    const barCol = net>0 ? '#16a34a' : '#dc2626';
+    return `<div class="cftc-card">
+      <div class="cftc-market">${info.icon} ${label}</div>
+      <div class="cftc-row"><span class="cftc-label">Long</span><span class="cftc-val" style="color:var(--green)">${d.lev_long.toLocaleString('it-IT')}</span></div>
+      <div class="cftc-row"><span class="cftc-label">Short</span><span class="cftc-val" style="color:var(--red)">${d.lev_short.toLocaleString('it-IT')}</span></div>
+      <div class="cftc-row" style="border-top:1px solid var(--border);margin-top:6px;padding-top:6px">
+        <span class="cftc-label">Net Lev. Funds</span>
+        <span class="cftc-val ${netCls}">${fmtK(net)}</span>
+      </div>
+      <div class="cftc-net-bar-wrap"><div class="cftc-net-bar" style="width:${barW}%;background:${barCol}"></div></div>
+      <div style="font-size:9px;color:var(--muted);margin-top:6px;font-family:var(--font-mono)">
+        Asset Mgr Long: ${d.asset_long.toLocaleString('it-IT')} · Short: ${d.asset_short.toLocaleString('it-IT')}
+      </div>
+    </div>`;
+  }).join('');
+  grid.innerHTML = cards + `<div style="grid-column:1/-1;font-size:10px;color:var(--muted);font-family:var(--font-mono);padding:4px 0">
+    Dati al: ${latest} · Fonte: CFTC.gov TFF Report · Leveraged Funds = CTA + Hedge Fund
+  </div>`;
+}
+
+// ══════════════════════════════════════════════════════
+//  EXPORT EXCEL
+// ══════════════════════════════════════════════════════
+function exportExcel() {
+  const wb = XLSX.utils.book_new();
+  ETFS.forEach(etf => {
+    const dates = Object.keys(ETF_DATA[etf]||{}).sort();
+    if (!dates.length) return;
+    const rows = [['Data','Ticker','Nome','Peso (%)','Δ vs Precedente (%)']];
+    dates.forEach((date,di) => {
+      const snap    = ETF_DATA[etf][date];
+      const prevSnap = di>0 ? ETF_DATA[etf][dates[di-1]] : null;
+      const prevMap = buildHoldingMap(prevSnap);
+      (snap?.holdings||[]).forEach(h => {
+        const key   = h.ticker||h.name;
+        const prev  = prevMap[key]?.weight ?? null;
+        const delta = prev!==null ? +(h.weight-prev).toFixed(4) : '';
+        rows.push([date, h.ticker||'', h.name, +h.weight.toFixed(4), delta]);
+      });
+    });
+    const ws = XLSX.utils.aoa_to_sheet(rows);
+    ws['!cols'] = [{wch:12},{wch:10},{wch:40},{wch:10},{wch:18}];
+    XLSX.utils.book_append_sheet(wb, ws, etf);
+  });
+  const cftcDates = Object.keys(CFTC_DATA).sort();
+  if (cftcDates.length) {
+    const rows = [['Data','Mercato','Lev. Long','Lev. Short','Lev. Net','Asset Mgr Long','Asset Mgr Short']];
+    cftcDates.forEach(date => {
+      Object.entries(CFTC_DATA[date]?.markets||{}).forEach(([label,d]) => {
+        rows.push([date,label,d.lev_long,d.lev_short,d.lev_net,d.asset_long,d.asset_short]);
+      });
+    });
+    const ws = XLSX.utils.aoa_to_sheet(rows);
+    ws['!cols'] = [{wch:12},{wch:16},{wch:12},{wch:12},{wch:12},{wch:16},{wch:16}];
+    XLSX.utils.book_append_sheet(wb, ws, 'CFTC-COT');
+  }
+  const stratRows = [['ETF','Ticker','Nome','Peso Prec. (%)','Peso Att. (%)','Δ (%)','Data Prec.','Data Att.']];
+  ETFS.forEach(etf => {
+    const dates = Object.keys(ETF_DATA[etf]||{}).sort();
+    for (let i=1;i<dates.length;i++) {
+      const curr    = ETF_DATA[etf][dates[i]];
+      const prev    = ETF_DATA[etf][dates[i-1]];
+      const prevMap = buildHoldingMap(prev);
+      const currMap = buildHoldingMap(curr);
+      const allKeys = new Set([...Object.keys(prevMap),...Object.keys(currMap)]);
+      allKeys.forEach(key => {
+        const prevW = prevMap[key]?.weight||0;
+        const currW = currMap[key]?.weight||0;
+        const delta = currW-prevW;
+        if (Math.abs(delta)>=1.5) {
+          const name = currMap[key]?.name||prevMap[key]?.name||key;
+          stratRows.push([etf,key,name,+prevW.toFixed(4),+currW.toFixed(4),+delta.toFixed(4),dates[i-1],dates[i]]);
+        }
+      });
+    }
+  });
+  const wsS = XLSX.utils.aoa_to_sheet(stratRows);
+  wsS['!cols'] = [{wch:8},{wch:10},{wch:40},{wch:14},{wch:14},{wch:10},{wch:12},{wch:12}];
+  XLSX.utils.book_append_sheet(wb, wsS, 'MOVIMENTI-STRATEGICI');
+  XLSX.writeFile(wb, `RAPTOR_ETF_Monitor_${new Date().toISOString().slice(0,10)}.xlsx`);
+}
+
+// ══════════════════════════════════════════════════════
+//  TAB / INTERVAL SWITCHING
+// ══════════════════════════════════════════════════════
+function showTab(name, btn) {
+  document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.tab').forEach(b => b.classList.remove('active'));
+  $('panel-'+name)?.classList.add('active');
+  btn?.classList.add('active');
+  if (name==='history') renderHistory();
+  if (name==='cftc')    renderCftc();
+}
+function setDelta(mode,btn) {
+  DELTA_MODE=mode;
+  document.querySelectorAll('#panel-holdings .interval-btn').forEach(b=>b.classList.remove('active'));
+  btn?.classList.add('active'); renderHoldings();
+}
+function setStrategicInterval(intv,btn) {
+  STRAT_INTV=intv;
+  document.querySelectorAll('#panel-strategic .interval-btn').forEach(b=>b.classList.remove('active'));
+  btn?.classList.add('active'); renderStrategic();
+}
+function setHistInterval(intv,btn) {
+  HIST_INTV=intv;
+  document.querySelectorAll('#panel-history .interval-btn').forEach(b=>b.classList.remove('active'));
+  btn?.classList.add('active'); renderHistory();
+}
+function renderAll() { renderHoldings(); renderStrategic(); }
+
+// ══════════════════════════════════════════════════════
+//  UPLOAD PANEL
+// ══════════════════════════════════════════════════════
+
+// Riconoscimento ETF dal contenuto CSV
+const ETF_SIGNATURES = {
+  GMOM: ['cambria','global momentum','gmom'],
+  RPAR: ['rpar','risk parity','evoke'],
+  DBMF: ['dbmf','dbi managed','imgp'],
+  AOA:  ['aggressive alloc','aoa','80/20'],
+  AOR:  ['moderate alloc','aor','60/40'],
+  MAGR: ['magr','growth portfolio ucits','ishares growth portfolio'],
+  F701: ['f701','comstage vermogen','vermogensstrategie'],
+  F703: ['f703','offensive ucits','amundi multi-asset portfolio offensive'],
+};
+
+function detectTicker(filename, content) {
+  const lower = (filename + ' ' + content.slice(0,600)).toLowerCase();
+  for (const [ticker, sigs] of Object.entries(ETF_SIGNATURES)) {
+    if (sigs.some(s => lower.includes(s.toLowerCase()))) return ticker;
+  }
+  return null;
+}
+
+function parseCSVHoldings(text) {
+  text = text.replace(/^\uFEFF/,'');
+  const lines = text.trim().split('\n');
+  if (lines.length < 2) return [];
+  const header = lines[0].split(',').map(h => h.replace(/"/g,'').trim().toLowerCase());
+  const nameIdx   = header.findIndex(h => h==='nome'||h==='name');
+  const symIdx    = header.findIndex(h => h==='simbolo'||h==='symbol');
+  const weightIdx = header.findIndex(h => h.includes('peso')||h.includes('weight'));
+  if (nameIdx<0||weightIdx<0) return [];
+  const holdings = [];
+  for (let i=1;i<lines.length;i++) {
+    const cols   = lines[i].match(/(".*?"|[^,]+)(?=,|$)/g)||[];
+    const clean  = c => (c||'').replace(/"/g,'').trim();
+    const name   = clean(cols[nameIdx]);
+    const ticker = symIdx>=0 ? clean(cols[symIdx]) : '';
+    const weight = parseFloat((clean(cols[weightIdx])||'0').replace('%','').replace(',','.')) || 0;
+    if (name && weight>0) holdings.push({name, ticker, weight});
+  }
+  return holdings;
+}
+
+// Queue state
+let fileQueue = [];
+
+function handleDrop(e) {
+  e.preventDefault();
+  $('drop-zone').classList.remove('drag-over');
+  handleFiles(e.dataTransfer.files);
+}
+
+function handleFiles(files) {
+  for (const file of files) {
+    if (!file.name.toLowerCase().endsWith('.csv')) continue;
+    const reader = new FileReader();
+    reader.onload = ev => {
+      const content  = ev.target.result;
+      const ticker   = detectTicker(file.name, content);
+      const holdings = parseCSVHoldings(content);
+      fileQueue.push({file, content, ticker, holdings, status:'pending', id: Date.now()+Math.random()});
+      renderQueue();
+    };
+    reader.readAsText(file, 'utf-8');
+  }
+  // reset input so stesso file può essere ricaricato
+  $('file-input').value = '';
+}
+
+function renderQueue() {
+  const wrap = $('upload-queue');
+  if (!fileQueue.length) { wrap.innerHTML=''; updateUploadBtns(); return; }
+
+  wrap.innerHTML = fileQueue.map((item,i) => {
+    const statusIcon  = {pending:'⏳',uploading:'⏫',done:'✓',error:'✗'}[item.status]||'⏳';
+    const statusColor = {done:'var(--green)',error:'var(--red)'}[item.status]||'var(--muted)';
+    const tickerHtml  = item.ticker
+      ? `<span style="font-family:var(--font-mono);font-size:11px;font-weight:700;padding:2px 8px;border-radius:2px;background:var(--accent);color:#fff">${item.ticker}</span>`
+      : `<select class="ticker-sel" onchange="fileQueue[${i}].ticker=this.value">
+           <option value="">— ETF —</option>
+           ${ETFS.map(t=>`<option value="${t}">${t}</option>`).join('')}
+         </select>`;
+    return `<div class="queue-item">
+      <span class="qi-status" style="color:${statusColor}">${statusIcon}</span>
+      <div class="qi-info">
+        <div class="qi-name" title="${item.file.name}">${item.file.name}</div>
+        <div class="qi-meta">${item.holdings.length} holdings${item.error?' · ✗ '+item.error:''}</div>
+      </div>
+      ${tickerHtml}
+      <button class="qi-remove" onclick="fileQueue.splice(${i},1);renderQueue()">✕</button>
+    </div>`;
+  }).join('');
+
+  updateUploadBtns();
+}
+
+function updateUploadBtns() {
+  $('btn-upload-all').style.display = fileQueue.some(f=>f.status==='pending') ? '' : 'none';
+  $('btn-workflow').style.display   = fileQueue.some(f=>f.status==='done')    ? '' : 'none';
+}
+
+function saveToken() {
+  const tok = $('gh-token').value.trim();
+  if (tok) { localStorage.setItem('gh_token',tok); setUploadStatus('✓ Token salvato','var(--green)'); }
+}
+function getToken() { return $('gh-token').value.trim() || localStorage.getItem('gh_token') || ''; }
+function getRepo()  { return $('gh-repo').value.trim() || 'Giorgiogoldoni/MONITOR'; }
+function setUploadStatus(msg,color) {
+  const el = $('upload-status');
+  el.textContent = msg;
+  el.style.color = color||'var(--muted)';
+}
+
+async function uploadFile(item) {
+  const token = getToken();
+  if (!token) { setUploadStatus('⚠ Token GitHub mancante','var(--red)'); return false; }
+  if (!item.ticker) { setUploadStatus('⚠ Seleziona il ticker per tutti i file','var(--amber)'); return false; }
+
+  const repo   = getRepo();
+  const path   = `data/manual/${item.ticker}.csv`;
+  const b64    = btoa(unescape(encodeURIComponent(item.content)));
+  const apiUrl = `https://api.github.com/repos/${repo}/contents/${path}`;
+
+  item.status = 'uploading'; renderQueue();
+
+  try {
+    // Controlla se esiste già (per sha)
+    let sha = null;
+    const check = await fetch(apiUrl, {
+      headers: { Authorization:`token ${token}`, Accept:'application/vnd.github+json' }
+    });
+    if (check.ok) { const ex = await check.json(); sha = ex.sha; }
+
+    const res = await fetch(apiUrl, {
+      method: 'PUT',
+      headers: { Authorization:`token ${token}`, Accept:'application/vnd.github+json', 'Content-Type':'application/json' },
+      body: JSON.stringify({
+        message: `data: upload ${item.ticker}.csv ${new Date().toISOString().slice(0,10)}`,
+        content: b64,
+        ...(sha ? {sha} : {})
+      }),
+    });
+
+    if (res.ok) { item.status='done'; renderQueue(); return true; }
+    const err = await res.json();
+    item.status='error'; item.error=err.message; renderQueue();
+    setUploadStatus(`✗ ${item.ticker}: ${err.message}`,'var(--red)');
+    return false;
+  } catch(e) {
+    item.status='error'; item.error=e.message; renderQueue();
+    setUploadStatus(`✗ Errore rete: ${e.message}`,'var(--red)');
+    return false;
+  }
+}
+
+async function uploadAll() {
+  if (!getToken()) { setUploadStatus('⚠ Inserisci il GitHub Token','var(--red)'); return; }
+  const pending = fileQueue.filter(f=>f.status==='pending');
+  setUploadStatus(`Caricamento ${pending.length} file...`);
+  let ok=0;
+  for (const item of pending) { if (await uploadFile(item)) ok++; }
+  setUploadStatus(
+    `✓ ${ok}/${pending.length} file caricati su GitHub`,
+    ok===pending.length ? 'var(--green)' : 'var(--amber)'
+  );
+}
+
+async function triggerWorkflow() {
+  if (!getToken()) { setUploadStatus('⚠ Token mancante','var(--red)'); return; }
+  setUploadStatus('Avvio workflow...');
+  try {
+    const res = await fetch(
+      `https://api.github.com/repos/${getRepo()}/actions/workflows/fetch_holdings.yml/dispatches`,
+      {
+        method:'POST',
+        headers:{ Authorization:`token ${getToken()}`, Accept:'application/vnd.github+json', 'Content-Type':'application/json' },
+        body: JSON.stringify({ref:'main'}),
+      }
+    );
+    if (res.status===204)
+      setUploadStatus('✓ Workflow avviato — controlla Actions su GitHub','var(--green)');
+    else {
+      const err = await res.json();
+      setUploadStatus(`✗ ${err.message}`,'var(--red)');
+    }
+  } catch(e) { setUploadStatus(`✗ ${e.message}`,'var(--red)'); }
+}
+
+// Carica token salvato
+(function() {
+  const saved = localStorage.getItem('gh_token');
+  if (saved) $('gh-token').value = saved;
+})();
+
+// ══════════════════════════════════════════════════════
+//  INIT
+// ══════════════════════════════════════════════════════
+(async () => { await refreshData(); })();
+</script>
+</body>
+</html>
