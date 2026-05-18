@@ -1,0 +1,22 @@
+{
+  "date": "2026-05-18",
+  "source": "manual/investing.com",
+  "holdings": [
+    {
+      "name": "iShares MSCI USA Momentum Factor ETF",
+      "ticker": "",
+      "weight": 50.35
+    },
+    {
+      "name": "iShares MSCI USA Quality Factor ETF",
+      "ticker": "",
+      "weight": 49.05
+    },
+    {
+      "name": "Blackrock Treasury Trust Instl 62",
+      "ticker": "",
+      "weight": 0.6
+    }
+  ],
+  "strategic_changes": []
+}

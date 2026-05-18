@@ -1,0 +1,57 @@
+{
+  "date": "2026-05-18",
+  "source": "manual/investing.com",
+  "holdings": [
+    {
+      "name": "State Street® SPDR® S&P 500® ETF",
+      "ticker": "",
+      "weight": 27.51
+    },
+    {
+      "name": "State Street® SPDR® Port Aggt Bd ETF",
+      "ticker": "",
+      "weight": 13.15
+    },
+    {
+      "name": "State Street® SPDR® Ptf Dev Wld exUS ETF",
+      "ticker": "",
+      "weight": 13.04
+    },
+    {
+      "name": "State Street® SPDR® Portfolio EM ETF",
+      "ticker": "",
+      "weight": 9.25
+    },
+    {
+      "name": "State StreetSPDRBbgEnhRlYldCmdStrNoK1ETF",
+      "ticker": "",
+      "weight": 6.05
+    },
+    {
+      "name": "State Street® SPDR® Blmbg 1-10 YrTIPSETF",
+      "ticker": "",
+      "weight": 3.8
+    },
+    {
+      "name": "State Street® SPDR® S&P® Intl Sm Cp ETF",
+      "ticker": "",
+      "weight": 3.05
+    },
+    {
+      "name": "State Street SPDR Portfolio L/T Trs ETF",
+      "ticker": "",
+      "weight": 2.85
+    },
+    {
+      "name": "State Street® SPDR® Blmbg EM USD Bd ETF",
+      "ticker": "",
+      "weight": 2.85
+    },
+    {
+      "name": "State Street® SPDR® Bloomberg International Corporate Bond ETF",
+      "ticker": "IBND",
+      "weight": 2.82
+    }
+  ],
+  "strategic_changes": []
+}
