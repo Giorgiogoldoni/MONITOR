@@ -1,0 +1,114 @@
+{
+  "date": "2026-05-25",
+  "source": "manual/investing.com",
+  "holdings": [
+    {
+      "name": "United States Treasury Bills 0%",
+      "ticker": "",
+      "weight": 17.93
+    },
+    {
+      "name": "United States Treasury Bills 0%",
+      "ticker": "",
+      "weight": 13.44
+    },
+    {
+      "name": "United States Treasury Bills 0%",
+      "ticker": "",
+      "weight": 12.01
+    },
+    {
+      "name": "NYL MINI MSCI 0625",
+      "ticker": "",
+      "weight": 9.85
+    },
+    {
+      "name": "United States Treasury Bills 0%",
+      "ticker": "",
+      "weight": 9.8
+    },
+    {
+      "name": "United States Treasury Bills 0%",
+      "ticker": "",
+      "weight": 9.79
+    },
+    {
+      "name": "NYL MINI MSCI 0625",
+      "ticker": "",
+      "weight": 9.61
+    },
+    {
+      "name": "United States Treasury Bills 0%",
+      "ticker": "",
+      "weight": 7.46
+    },
+    {
+      "name": "United States Treasury Bills 0%",
+      "ticker": "",
+      "weight": 7.18
+    },
+    {
+      "name": "United States Treasury Bills 0%",
+      "ticker": "",
+      "weight": 4.04
+    }
+  ],
+  "strategic_changes": [
+    {
+      "ticker": "",
+      "name": "United States Treasury Bills 0%",
+      "prev_weight": 4.04,
+      "curr_weight": 17.93,
+      "delta": 13.89,
+      "direction": "▲ AUMENTO"
+    },
+    {
+      "ticker": "",
+      "name": "United States Treasury Bills 0%",
+      "prev_weight": 4.04,
+      "curr_weight": 13.44,
+      "delta": 9.4,
+      "direction": "▲ AUMENTO"
+    },
+    {
+      "ticker": "",
+      "name": "United States Treasury Bills 0%",
+      "prev_weight": 4.04,
+      "curr_weight": 12.01,
+      "delta": 7.97,
+      "direction": "▲ AUMENTO"
+    },
+    {
+      "ticker": "",
+      "name": "United States Treasury Bills 0%",
+      "prev_weight": 4.04,
+      "curr_weight": 9.8,
+      "delta": 5.76,
+      "direction": "▲ AUMENTO"
+    },
+    {
+      "ticker": "",
+      "name": "United States Treasury Bills 0%",
+      "prev_weight": 4.04,
+      "curr_weight": 9.79,
+      "delta": 5.75,
+      "direction": "▲ AUMENTO"
+    },
+    {
+      "ticker": "",
+      "name": "United States Treasury Bills 0%",
+      "prev_weight": 4.04,
+      "curr_weight": 7.46,
+      "delta": 3.42,
+      "direction": "▲ AUMENTO"
+    },
+    {
+      "ticker": "",
+      "name": "United States Treasury Bills 0%",
+      "prev_weight": 4.04,
+      "curr_weight": 7.18,
+      "delta": 3.14,
+      "direction": "▲ AUMENTO"
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "date": "2026-05-25",
+  "source": "manual/investing.com",
+  "holdings": [
+    {
+      "name": "iShares MSCI USA Value Factor ETF",
+      "ticker": "",
+      "weight": 22.18
+    },
+    {
+      "name": "iShares MSCI Emerging Markets Asia ETF",
+      "ticker": "EEMA",
+      "weight": 21.04
+    },
+    {
+      "name": "iShares MSCI USA Quality Factor ETF",
+      "ticker": "",
+      "weight": 19.14
+    },
+    {
+      "name": "iShares MSCI Intl Momentum Factor ETF",
+      "ticker": "",
+      "weight": 18.76
+    },
+    {
+      "name": "iShares Edge MSCI Intl Value Factor ETF",
+      "ticker": "",
+      "weight": 18.35
+    },
+    {
+      "name": "Blackrock Treasury Trust Instl 62",
+      "ticker": "",
+      "weight": 0.53
+    }
+  ],
+  "strategic_changes": []
+}
