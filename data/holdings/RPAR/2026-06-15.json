@@ -1,0 +1,57 @@
+{
+  "date": "2026-06-15",
+  "source": "manual/investing.com",
+  "holdings": [
+    {
+      "name": "10 Year Treasury Note Future June 26",
+      "ticker": "",
+      "weight": 16.87
+    },
+    {
+      "name": "Ultra US Treasury Bond Future June 26",
+      "ticker": "",
+      "weight": 15.74
+    },
+    {
+      "name": "Vanguard Total Stock Market Index Fund ETF Shares",
+      "ticker": "VTI",
+      "weight": 13.92
+    },
+    {
+      "name": "United States Treasury Bills 0%",
+      "ticker": "",
+      "weight": 11.52
+    },
+    {
+      "name": "SPDR® Gold MiniShares",
+      "ticker": "",
+      "weight": 10.45
+    },
+    {
+      "name": "Vanguard FTSE Emerging Markets ETF",
+      "ticker": "",
+      "weight": 7.85
+    },
+    {
+      "name": "Vanguard FTSE Developed Markets Index Fund ETF Shares",
+      "ticker": "VEA",
+      "weight": 5.22
+    },
+    {
+      "name": "United States Treasury Bonds 1.38%",
+      "ticker": "",
+      "weight": 3.5
+    },
+    {
+      "name": "United States Treasury Bonds 1%",
+      "ticker": "",
+      "weight": 3.09
+    },
+    {
+      "name": "United States Treasury Bonds 0.75%",
+      "ticker": "",
+      "weight": 2.97
+    }
+  ],
+  "strategic_changes": []
+}

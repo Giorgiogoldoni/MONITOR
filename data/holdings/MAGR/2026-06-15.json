@@ -1,0 +1,57 @@
+{
+  "date": "2026-06-15",
+  "source": "manual/investing.com",
+  "holdings": [
+    {
+      "name": "iShares MSCI USA CTB Enhanced ESG UCITS ETF USD Inc",
+      "ticker": "EEDS",
+      "weight": 18.66
+    },
+    {
+      "name": "iShares MSCI USA Screened UCITS ETF USD (Acc)",
+      "ticker": "SGAG",
+      "weight": 18.61
+    },
+    {
+      "name": "iShares MSCI EM CTB Enhanced ESG UCITS ETF USD Acc",
+      "ticker": "EDM2",
+      "weight": 12.58
+    },
+    {
+      "name": "iShares MSCI Europe CTB Enhanced ESG UCITS ETF EUR Inc",
+      "ticker": "EMNU",
+      "weight": 12.29
+    },
+    {
+      "name": "iShares Edge MSCI USA Val Fctr UCITS ETF USD A",
+      "ticker": "IUVL",
+      "weight": 8.86
+    },
+    {
+      "name": "iShares MSCI USA SRI UCITS ETF USD (Acc)",
+      "ticker": "QDVR",
+      "weight": 8.11
+    },
+    {
+      "name": "iShares MSCI Japan CTB Enhanced ESG UCITS ETF USD Acc",
+      "ticker": "EDMJ",
+      "weight": 4.45
+    },
+    {
+      "name": "iShares $ Treasury Bond 7-10yr UCITS ETF USD (Dist)",
+      "ticker": "ISTB",
+      "weight": 3.92
+    },
+    {
+      "name": "iShares JPM EM Local Govt Bond UCITS ETF USD D",
+      "ticker": "SEML",
+      "weight": 2.95
+    },
+    {
+      "name": "iShares Global Infrastructure UCITS ETF USD (Acc)",
+      "ticker": "CBUX",
+      "weight": 2.01
+    }
+  ],
+  "strategic_changes": []
+}
