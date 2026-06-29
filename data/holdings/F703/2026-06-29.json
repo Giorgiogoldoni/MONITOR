@@ -1,0 +1,57 @@
+{
+  "date": "2026-06-29",
+  "source": "manual/investing.com",
+  "holdings": [
+    {
+      "name": "Amundi Core Stoxx Europe 600 UCITS ETF Acc",
+      "ticker": "MEUD",
+      "weight": 14.39
+    },
+    {
+      "name": "Amundi Core MSCI Emerging Markets Swap UCITS ETF Dist",
+      "ticker": "AE5A",
+      "weight": 13.83
+    },
+    {
+      "name": "Amundi MSCI Pacific ESG Broad Transition UCITS ETF Dist",
+      "ticker": "CBMPUS",
+      "weight": 11.82
+    },
+    {
+      "name": "Amundi Core Nasdaq-100 Swap UCITS ETF Dist",
+      "ticker": "NADQ",
+      "weight": 10.59
+    },
+    {
+      "name": "Amundi Bloomberg Equal-weight Commodity ex-Agriculture UCITS ETF Acc",
+      "ticker": "LYTR",
+      "weight": 10.12
+    },
+    {
+      "name": "Amundi Core S&P 500 Swap UCITS ETF USD Dist",
+      "ticker": "LSPU",
+      "weight": 10.02
+    },
+    {
+      "name": "Amundi Core EUR High Yield Bond UCITS ETF Acc",
+      "ticker": "AEHY",
+      "weight": 9.41
+    },
+    {
+      "name": "Amundi MDAX ESG II UCITS ETF",
+      "ticker": "E907",
+      "weight": 6.05
+    },
+    {
+      "name": "Amundi Index Solutions - Amundi SDAX UCITS ETF EUR Distributing",
+      "ticker": "C005",
+      "weight": 6.02
+    },
+    {
+      "name": "Amundi TecDAX UCITS ETF Dist",
+      "ticker": "E908",
+      "weight": 3.91
+    }
+  ],
+  "strategic_changes": []
+}
