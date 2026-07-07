@@ -1234,7 +1234,12 @@ async function triggerWorkflow() {
     const el = document.getElementById('gh-token');
     if (el) { el.placeholder = '✓ Token salvato (' + saved.slice(0,8) + '...)'; }
   }
-  if (saved) $('gh-token').value = saved;
+  if (saved) {
+    const el2 = document.getElementById('gh-token');
+    if (el2) { el2.placeholder = '✅ Token salvato — ' + saved.slice(0,8) + '...'; el2.value = ''; }
+    const btn2 = document.querySelector('button[onclick="saveToken()"]');
+    if (btn2) { btn2.textContent = '✅ Token attivo'; btn2.style.color = '#2f9e44'; }
+  }
 })();
 
 // ══════════════════════════════════════════════════════
