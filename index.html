@@ -356,7 +356,7 @@
       <div style="display:flex;gap:12px;align-items:flex-end;margin-bottom:16px;flex-wrap:wrap">
         <div style="flex:1;min-width:180px">
           <div class="upload-field-label">GitHub Personal Access Token</div>
-          <input type="password" id="gh-token" placeholder="ghp_xxxxxxxxxxxx"
+          <input type="password" id="gh-token" placeholder="ghp_xxxxxxxxxxxx" onchange="saveToken()" oninput="saveToken()"
             style="width:100%;font-family:var(--font-mono);font-size:12px;border:1px solid var(--border);border-radius:var(--radius);padding:6px 10px;background:var(--bg);color:var(--text)">
         </div>
         <div style="flex:0 0 auto">
@@ -1230,6 +1230,10 @@ async function triggerWorkflow() {
 // Carica token salvato
 (function() {
   const saved = localStorage.getItem('gh_token');
+  if (saved) {
+    const el = document.getElementById('gh-token');
+    if (el) { el.placeholder = '✓ Token salvato (' + saved.slice(0,8) + '...)'; }
+  }
   if (saved) $('gh-token').value = saved;
 })();
 
