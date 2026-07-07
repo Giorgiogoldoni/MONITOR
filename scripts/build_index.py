@@ -25,6 +25,12 @@ for etf_folder in sorted(ETF_DIR.iterdir()):
 cftc_files = sorted(CFTC_DIR.glob("*.json"))
 index["cftc"] = [f.stem for f in cftc_files]
 
+import os
+# Inietta GH_TOKEN dal secret GitHub Actions (mai visibile nel codice)
+gh_token = os.environ.get("GH_TOKEN", "")
+if gh_token:
+    index["_gh_token"] = gh_token
+
 out = DATA / "index.json"
 with open(out, "w") as f:
     json.dump(index, f, indent=2)
