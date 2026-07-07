@@ -1144,7 +1144,7 @@ function saveToken() {
   const tok = $('gh-token').value.trim();
   if (tok) { localStorage.setItem('gh_token',tok); setUploadStatus('✓ Token salvato','var(--green)'); }
 }
-function getToken() { return $('gh-token').value.trim() || localStorage.getItem('gh_token') || ''; }
+function getToken() { return $('gh-token').value.trim() || localStorage.getItem('gh_token') || window._ghToken || ''; }
 function getRepo()  { return $('gh-repo').value.trim() || 'Giorgiogoldoni/MONITOR'; }
 function setUploadStatus(msg,color) {
   const el = $('upload-status');
