@@ -48,6 +48,11 @@ jobs:
       - name: Build holdings index
         run: python scripts/build_index.py
 
+      - name: Build index.json
+        env:
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+        run: python scripts/build_index.py
+
       - name: Commit & push data
         run: |
           git config user.name  "RAPTOR Bot"
