@@ -1,0 +1,31 @@
+{
+  "date": "2026-07-13",
+  "source": "manual/investing.com",
+  "holdings": [
+    {
+      "name": "iShares MSCI USA Momentum Factor ETF",
+      "ticker": "",
+      "weight": 49.88
+    },
+    {
+      "name": "Invesco NASDAQ 100 ETF",
+      "ticker": "QQQM",
+      "weight": 49.8
+    },
+    {
+      "name": "Blackrock Treasury Trust Instl 62",
+      "ticker": "",
+      "weight": 0.32
+    }
+  ],
+  "strategic_changes": [
+    {
+      "ticker": "QQQM",
+      "name": "Invesco NASDAQ 100 ETF",
+      "prev_weight": 0.0,
+      "curr_weight": 49.8,
+      "delta": 49.8,
+      "direction": "▲ AUMENTO"
+    }
+  ]
+}

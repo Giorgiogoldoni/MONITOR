@@ -1,0 +1,130 @@
+{
+  "date": "2026-07-13",
+  "source": "manual/investing.com",
+  "holdings": [
+    {
+      "name": "10 Year Treasury Note Future Sept 26",
+      "ticker": "",
+      "weight": 13.56
+    },
+    {
+      "name": "Ultra US Treasury Bond Future Sept 26",
+      "ticker": "",
+      "weight": 13.3
+    },
+    {
+      "name": "Vanguard Total Stock Market Index Fund ETF Shares",
+      "ticker": "VTI",
+      "weight": 9.62
+    },
+    {
+      "name": "United States Treasury Bills",
+      "ticker": "",
+      "weight": 8.93
+    },
+    {
+      "name": "SPDR Gold MiniShares Trust",
+      "ticker": "GLDM",
+      "weight": 7.26
+    },
+    {
+      "name": "Vanguard FTSE Emerging Markets ETF",
+      "ticker": "",
+      "weight": 5.74
+    },
+    {
+      "name": "Vanguard FTSE Developed Markets Index Fund ETF Shares",
+      "ticker": "VEA",
+      "weight": 3.84
+    },
+    {
+      "name": "United States Treasury Bonds",
+      "ticker": "",
+      "weight": 2.89
+    },
+    {
+      "name": "United States Treasury Bonds",
+      "ticker": "",
+      "weight": 2.45
+    },
+    {
+      "name": "United States Treasury Bonds",
+      "ticker": "",
+      "weight": 2.36
+    }
+  ],
+  "strategic_changes": [
+    {
+      "ticker": "",
+      "name": "10 Year Treasury Note Future Sept 26",
+      "prev_weight": 0.0,
+      "curr_weight": 13.56,
+      "delta": 13.56,
+      "direction": "▲ AUMENTO"
+    },
+    {
+      "ticker": "",
+      "name": "Ultra US Treasury Bond Future Sept 26",
+      "prev_weight": 0.0,
+      "curr_weight": 13.3,
+      "delta": 13.3,
+      "direction": "▲ AUMENTO"
+    },
+    {
+      "ticker": "",
+      "name": "United States Treasury Bills",
+      "prev_weight": 0.0,
+      "curr_weight": 8.93,
+      "delta": 8.93,
+      "direction": "▲ AUMENTO"
+    },
+    {
+      "ticker": "GLDM",
+      "name": "SPDR Gold MiniShares Trust",
+      "prev_weight": 0.0,
+      "curr_weight": 7.26,
+      "delta": 7.26,
+      "direction": "▲ AUMENTO"
+    },
+    {
+      "ticker": "VTI",
+      "name": "Vanguard Total Stock Market Index Fund ETF Shares",
+      "prev_weight": 13.92,
+      "curr_weight": 9.62,
+      "delta": -4.3,
+      "direction": "▼ RIDUZIONE"
+    },
+    {
+      "ticker": "",
+      "name": "United States Treasury Bonds",
+      "prev_weight": 0.0,
+      "curr_weight": 2.89,
+      "delta": 2.89,
+      "direction": "▲ AUMENTO"
+    },
+    {
+      "ticker": "",
+      "name": "United States Treasury Bonds",
+      "prev_weight": 0.0,
+      "curr_weight": 2.45,
+      "delta": 2.45,
+      "direction": "▲ AUMENTO"
+    },
+    {
+      "ticker": "",
+      "name": "United States Treasury Bonds",
+      "prev_weight": 0.0,
+      "curr_weight": 2.36,
+      "delta": 2.36,
+      "direction": "▲ AUMENTO"
+    },
+    {
+      "ticker": "",
+      "name": "Vanguard FTSE Emerging Markets ETF",
+      "prev_weight": 7.85,
+      "curr_weight": 5.74,
+      "delta": -2.11,
+      "direction": "▼ RIDUZIONE"
+    }
+  ]
+}
