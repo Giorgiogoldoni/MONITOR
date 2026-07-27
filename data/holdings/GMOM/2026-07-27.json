@@ -1,0 +1,57 @@
+{
+  "date": "2026-07-27",
+  "source": "manual/investing.com",
+  "holdings": [
+    {
+      "name": "Cambria Global Value ETF",
+      "ticker": "",
+      "weight": 12.61
+    },
+    {
+      "name": "Cambria Foreign Shareholder Yield ETF",
+      "ticker": "",
+      "weight": 12.26
+    },
+    {
+      "name": "Cambria Emerging Shareholder Yield ETF",
+      "ticker": "",
+      "weight": 11.83
+    },
+    {
+      "name": "Cambria Micro and Smcp Shld Yld ETF",
+      "ticker": "",
+      "weight": 6.68
+    },
+    {
+      "name": "iShares Global Industrials ETF",
+      "ticker": "",
+      "weight": 6.36
+    },
+    {
+      "name": "Vanguard FTSE All-Wld ex-US SmCp ETF",
+      "ticker": "",
+      "weight": 6.12
+    },
+    {
+      "name": "Grizzle Growth ETF",
+      "ticker": "",
+      "weight": 5.94
+    },
+    {
+      "name": "Invesco DB Base Metals Fund",
+      "ticker": "DBB",
+      "weight": 5.9
+    },
+    {
+      "name": "iShares Global Tech ETF",
+      "ticker": "",
+      "weight": 5.7
+    },
+    {
+      "name": "iShares Global Energy ETF",
+      "ticker": "",
+      "weight": 5.67
+    }
+  ],
+  "strategic_changes": []
+}
