@@ -1,0 +1,57 @@
+{
+  "date": "2026-08-03",
+  "source": "manual/investing.com",
+  "holdings": [
+    {
+      "name": "State Street® SPDR® S&P 500® ETF",
+      "ticker": "",
+      "weight": 29.15
+    },
+    {
+      "name": "State Street® SPDR® Ptf Dev Wld exUS ETF",
+      "ticker": "",
+      "weight": 10.98
+    },
+    {
+      "name": "State Street® SPDR® Portfolio EM ETF",
+      "ticker": "",
+      "weight": 9.92
+    },
+    {
+      "name": "State Street® SPDR® Port Aggt Bd ETF",
+      "ticker": "",
+      "weight": 7.46
+    },
+    {
+      "name": "State Street® SPDR® Bloomberg High Yield Bond ETF",
+      "ticker": "JNK",
+      "weight": 6.02
+    },
+    {
+      "name": "State StreetSPDRBbgEnhRlYldCmdStrNoK1ETF",
+      "ticker": "",
+      "weight": 5.59
+    },
+    {
+      "name": "State Street SPDR Portfolio L/T Trs ETF",
+      "ticker": "",
+      "weight": 4.06
+    },
+    {
+      "name": "State Street® SPDR® Blmbg 1-10 YrTIPSETF",
+      "ticker": "",
+      "weight": 3.94
+    },
+    {
+      "name": "State Street SPDR Port S&P 600 Sm CpETF",
+      "ticker": "",
+      "weight": 3.2
+    },
+    {
+      "name": "State Street SPDR Port L/T Corp Bd ETF",
+      "ticker": "",
+      "weight": 3.03
+    }
+  ],
+  "strategic_changes": []
+}
