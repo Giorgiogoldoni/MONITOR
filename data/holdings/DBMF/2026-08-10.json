@@ -1,0 +1,47 @@
+{
+  "date": "2026-08-10",
+  "source": "manual/investing.com",
+  "holdings": [
+    {
+      "name": "United States Treasury Bills 0.01%",
+      "ticker": "",
+      "weight": 30.21
+    },
+    {
+      "name": "2 Year Treasury Note Future Mar 26",
+      "ticker": "",
+      "weight": 22.95
+    },
+    {
+      "name": "10 Year Treasury Note Future Mar 26",
+      "ticker": "",
+      "weight": 9.83
+    },
+    {
+      "name": "Msci Eafe Mar26 Ifus 20260320",
+      "ticker": "",
+      "weight": 7.51
+    },
+    {
+      "name": "Im Dbi Cayman Managed Futures Y7ay",
+      "ticker": "",
+      "weight": 5.73
+    },
+    {
+      "name": "Future on E-mini S&P 500 Futures",
+      "ticker": "",
+      "weight": 4.86
+    },
+    {
+      "name": "Msci Emgmkt Mar26 Ifus 20260320",
+      "ticker": "",
+      "weight": 3.57
+    },
+    {
+      "name": "Us Long Bond(Cbt) Mar26 Xcbt 20260320",
+      "ticker": "",
+      "weight": 0.72
+    }
+  ],
+  "strategic_changes": []
+}
