@@ -1,0 +1,42 @@
+{
+  "date": "2026-08-17",
+  "source": "manual/investing.com",
+  "holdings": [
+    {
+      "name": "iShares Core Universal USD Bond ETF",
+      "ticker": "IUSB",
+      "weight": 58.47
+    },
+    {
+      "name": "iShares Core S&P 500 ETF",
+      "ticker": "",
+      "weight": 17.5
+    },
+    {
+      "name": "iShares Core International Aggt Bd ETF",
+      "ticker": "",
+      "weight": 10.44
+    },
+    {
+      "name": "iShares Core MSCI Intl Dev Mkts ETF",
+      "ticker": "",
+      "weight": 8.66
+    },
+    {
+      "name": "iShares Core MSCI Emerging Markets ETF",
+      "ticker": "",
+      "weight": 3.36
+    },
+    {
+      "name": "iShares Core S&P Mid-Cap ETF",
+      "ticker": "IJH",
+      "weight": 1.0
+    },
+    {
+      "name": "iShares Core S&P Small-Cap ETF",
+      "ticker": "IJR",
+      "weight": 0.49
+    }
+  ],
+  "strategic_changes": []
+}
