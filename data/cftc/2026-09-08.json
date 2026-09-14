@@ -1,0 +1,66 @@
+{
+  "date": "2026-09-08",
+  "source": "https://www.cftc.gov/dea/newcot/FinFutWk.txt",
+  "markets": {
+    "EUR/USD": {
+      "market": "EURO FX - CHICAGO MERCANTILE EXCHANGE",
+      "report_date": "2026-09-08",
+      "lev_long": 128093,
+      "lev_short": 61107,
+      "lev_net": 66986,
+      "asset_long": 233765,
+      "asset_short": 45564,
+      "lev_long_com": 127716,
+      "lev_short_com": 121459,
+      "lev_net_com": 6257
+    },
+    "Treasury 2Y": {
+      "market": "UST 2Y NOTE - CHICAGO BOARD OF TRADE",
+      "report_date": "2026-09-08",
+      "lev_long": 1876190,
+      "lev_short": 233489,
+      "lev_net": 1642701,
+      "asset_long": 628123,
+      "asset_short": 600071,
+      "lev_long_com": 1862753,
+      "lev_short_com": 364133,
+      "lev_net_com": 1498620
+    },
+    "Nasdaq 100": {
+      "market": "NASDAQ-100 Consolidated - CHICAGO MERCANTILE EXCHANGE",
+      "report_date": "2026-09-08",
+      "lev_long": 78925,
+      "lev_short": 17259,
+      "lev_net": 61666,
+      "asset_long": 35548,
+      "asset_short": 4078,
+      "lev_long_com": 76790,
+      "lev_short_com": 39616,
+      "lev_net_com": 37174
+    },
+    "S&P 500": {
+      "market": "E-MINI S&P 500 - CHICAGO MERCANTILE EXCHANGE",
+      "report_date": "2026-09-08",
+      "lev_long": 496621,
+      "lev_short": 44056,
+      "lev_net": 452565,
+      "asset_long": 240944,
+      "asset_short": 85028,
+      "lev_long_com": 480814,
+      "lev_short_com": 737210,
+      "lev_net_com": -256396
+    },
+    "Treasury 10Y": {
+      "market": "UST 10Y NOTE - CHICAGO BOARD OF TRADE",
+      "report_date": "2026-09-08",
+      "lev_long": 2330590,
+      "lev_short": 155946,
+      "lev_net": 2174644,
+      "asset_long": 696723,
+      "asset_short": 657352,
+      "lev_long_com": 2303687,
+      "lev_short_com": 768538,
+      "lev_net_com": 1535149
+    }
+  }
+}
