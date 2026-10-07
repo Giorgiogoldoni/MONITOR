@@ -1,0 +1,90 @@
+{
+  "date": "2026-10-07",
+  "source": "manual/investing.com",
+  "holdings": [
+    {
+      "name": "iShares MSCI USA Screened UCITS ETF USD Accumulation",
+      "ticker": "SGAG",
+      "weight": 19.37
+    },
+    {
+      "name": "iShares MSCI USA CTB Enhanced ESG UCITS ETF USD Inc",
+      "ticker": "EEDS",
+      "weight": 19.03
+    },
+    {
+      "name": "iShares MSCI USA SRI UCITS ETF USD (Acc)",
+      "ticker": "QDVR",
+      "weight": 17.57
+    },
+    {
+      "name": "iShares MSCI EM CTB Enhanced ESG UCITS ETF USD Acc",
+      "ticker": "EDM2",
+      "weight": 12.05
+    },
+    {
+      "name": "iShares MSCI Europe CTB Enhanced ESG UCITS ETF EUR Inc",
+      "ticker": "EMNU",
+      "weight": 10.14
+    },
+    {
+      "name": "iShares $ Treasury Bond 7-10yr UCITS ETF USD (Dist)",
+      "ticker": "ISTB",
+      "weight": 5.53
+    },
+    {
+      "name": "iShares MSCI Japan CTB Enhanced ESG UCITS ETF USD Acc",
+      "ticker": "EDMJ",
+      "weight": 3.7
+    },
+    {
+      "name": "iShares JPM EM Local Govt Bond UCITS ETF USD D",
+      "ticker": "SEML",
+      "weight": 2.92
+    },
+    {
+      "name": "iShares Global Infrastructure UCITS ETF USD (Acc)",
+      "ticker": "CBUX",
+      "weight": 1.99
+    },
+    {
+      "name": "iShares Physical Gold ETC",
+      "ticker": "IGLN",
+      "weight": 1.93
+    }
+  ],
+  "strategic_changes": [
+    {
+      "ticker": "QDVR",
+      "name": "iShares MSCI USA SRI UCITS ETF USD (Acc)",
+      "prev_weight": 8.11,
+      "curr_weight": 17.57,
+      "delta": 9.46,
+      "direction": "▲ AUMENTO"
+    },
+    {
+      "ticker": "EMNU",
+      "name": "iShares MSCI Europe CTB Enhanced ESG UCITS ETF EUR Inc",
+      "prev_weight": 12.29,
+      "curr_weight": 10.14,
+      "delta": -2.15,
+      "direction": "▼ RIDUZIONE"
+    },
+    {
+      "ticker": "IGLN",
+      "name": "iShares Physical Gold ETC",
+      "prev_weight": 0.0,
+      "curr_weight": 1.93,
+      "delta": 1.93,
+      "direction": "▲ AUMENTO"
+    },
+    {
+      "ticker": "ISTB",
+      "name": "iShares $ Treasury Bond 7-10yr UCITS ETF USD (Dist)",
+      "prev_weight": 3.92,
+      "curr_weight": 5.53,
+      "delta": 1.61,
+      "direction": "▲ AUMENTO"
+    }
+  ]
+}

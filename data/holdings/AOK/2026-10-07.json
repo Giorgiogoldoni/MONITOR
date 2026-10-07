@@ -1,0 +1,59 @@
+{
+  "date": "2026-10-07",
+  "source": "manual/investing.com",
+  "holdings": [
+    {
+      "name": "iShares Core Universal USD Bond ETF",
+      "ticker": "IUSB",
+      "weight": 57.15
+    },
+    {
+      "name": "iShares Core S&P 500 ETF",
+      "ticker": "",
+      "weight": 18.48
+    },
+    {
+      "name": "iShares Core International Aggregate Bond ETF",
+      "ticker": "IAGG",
+      "weight": 10.42
+    },
+    {
+      "name": "iShares Core MSCI International Developed Markets ETF",
+      "ticker": "IDEV",
+      "weight": 8.85
+    },
+    {
+      "name": "iShares Core MSCI Emerging Markets ETF",
+      "ticker": "",
+      "weight": 3.55
+    },
+    {
+      "name": "iShares Core S&P Mid-Cap ETF",
+      "ticker": "IJH",
+      "weight": 0.98
+    },
+    {
+      "name": "iShares Core S&P Small-Cap ETF",
+      "ticker": "IJR",
+      "weight": 0.48
+    }
+  ],
+  "strategic_changes": [
+    {
+      "ticker": "IAGG",
+      "name": "iShares Core International Aggregate Bond ETF",
+      "prev_weight": 0.0,
+      "curr_weight": 10.42,
+      "delta": 10.42,
+      "direction": "▲ AUMENTO"
+    },
+    {
+      "ticker": "IDEV",
+      "name": "iShares Core MSCI International Developed Markets ETF",
+      "prev_weight": 0.0,
+      "curr_weight": 8.85,
+      "delta": 8.85,
+      "direction": "▲ AUMENTO"
+    }
+  ]
+}

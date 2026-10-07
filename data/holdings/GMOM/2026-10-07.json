@@ -1,0 +1,98 @@
+{
+  "date": "2026-10-07",
+  "source": "manual/investing.com",
+  "holdings": [
+    {
+      "name": "Cambria Global Value ETF",
+      "ticker": "",
+      "weight": 12.33
+    },
+    {
+      "name": "Cambria Foreign Shareholder Yield ETF",
+      "ticker": "FYLD",
+      "weight": 12.21
+    },
+    {
+      "name": "Cambria Emerging Shareholder Yield ETF",
+      "ticker": "EYLD",
+      "weight": 11.57
+    },
+    {
+      "name": "Cambria Micro And Smallcap Shareholder Yield ETF",
+      "ticker": "MYLD",
+      "weight": 10.45
+    },
+    {
+      "name": "Invesco DB Energy Fund",
+      "ticker": "DBE",
+      "weight": 6.77
+    },
+    {
+      "name": "iShares Global Energy ETF",
+      "ticker": "",
+      "weight": 6.18
+    },
+    {
+      "name": "Invesco Optimum Yield Diversified Commodity Strategy No K-1 ETF",
+      "ticker": "PDBC",
+      "weight": 6.12
+    },
+    {
+      "name": "iShares Global Tech ETF",
+      "ticker": "",
+      "weight": 5.88
+    },
+    {
+      "name": "Grizzle Growth ETF",
+      "ticker": "",
+      "weight": 5.76
+    },
+    {
+      "name": "Invesco DB Base Metals Fund",
+      "ticker": "DBB",
+      "weight": 5.69
+    }
+  ],
+  "strategic_changes": [
+    {
+      "ticker": "FYLD",
+      "name": "Cambria Foreign Shareholder Yield ETF",
+      "prev_weight": 0.0,
+      "curr_weight": 12.21,
+      "delta": 12.21,
+      "direction": "▲ AUMENTO"
+    },
+    {
+      "ticker": "EYLD",
+      "name": "Cambria Emerging Shareholder Yield ETF",
+      "prev_weight": 0.0,
+      "curr_weight": 11.57,
+      "delta": 11.57,
+      "direction": "▲ AUMENTO"
+    },
+    {
+      "ticker": "MYLD",
+      "name": "Cambria Micro And Smallcap Shareholder Yield ETF",
+      "prev_weight": 0.0,
+      "curr_weight": 10.45,
+      "delta": 10.45,
+      "direction": "▲ AUMENTO"
+    },
+    {
+      "ticker": "DBE",
+      "name": "Invesco DB Energy Fund",
+      "prev_weight": 0.0,
+      "curr_weight": 6.77,
+      "delta": 6.77,
+      "direction": "▲ AUMENTO"
+    },
+    {
+      "ticker": "PDBC",
+      "name": "Invesco Optimum Yield Diversified Commodity Strategy No K-1 ETF",
+      "prev_weight": 0.0,
+      "curr_weight": 6.12,
+      "delta": 6.12,
+      "direction": "▲ AUMENTO"
+    }
+  ]
+}

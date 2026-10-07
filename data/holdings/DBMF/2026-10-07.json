@@ -1,0 +1,138 @@
+{
+  "date": "2026-10-07",
+  "source": "manual/investing.com",
+  "holdings": [
+    {
+      "name": "United States Treasury Bills 0%",
+      "ticker": "",
+      "weight": 17.93
+    },
+    {
+      "name": "United States Treasury Bills 0%",
+      "ticker": "",
+      "weight": 13.44
+    },
+    {
+      "name": "United States Treasury Bills 0%",
+      "ticker": "",
+      "weight": 12.01
+    },
+    {
+      "name": "NYL MINI MSCI 0625",
+      "ticker": "",
+      "weight": 9.85
+    },
+    {
+      "name": "United States Treasury Bills 0%",
+      "ticker": "",
+      "weight": 9.8
+    },
+    {
+      "name": "United States Treasury Bills 0%",
+      "ticker": "",
+      "weight": 9.79
+    },
+    {
+      "name": "NYL MINI MSCI 0625",
+      "ticker": "",
+      "weight": 9.61
+    },
+    {
+      "name": "United States Treasury Bills 0%",
+      "ticker": "",
+      "weight": 7.46
+    },
+    {
+      "name": "United States Treasury Bills 0%",
+      "ticker": "",
+      "weight": 7.18
+    },
+    {
+      "name": "United States Treasury Bills 0%",
+      "ticker": "",
+      "weight": 4.04
+    }
+  ],
+  "strategic_changes": [
+    {
+      "ticker": "",
+      "name": "United States Treasury Bills 0%",
+      "prev_weight": 0.0,
+      "curr_weight": 17.93,
+      "delta": 17.93,
+      "direction": "▲ AUMENTO"
+    },
+    {
+      "ticker": "",
+      "name": "United States Treasury Bills 0%",
+      "prev_weight": 0.0,
+      "curr_weight": 13.44,
+      "delta": 13.44,
+      "direction": "▲ AUMENTO"
+    },
+    {
+      "ticker": "",
+      "name": "United States Treasury Bills 0%",
+      "prev_weight": 0.0,
+      "curr_weight": 12.01,
+      "delta": 12.01,
+      "direction": "▲ AUMENTO"
+    },
+    {
+      "ticker": "",
+      "name": "NYL MINI MSCI 0625",
+      "prev_weight": 0.0,
+      "curr_weight": 9.85,
+      "delta": 9.85,
+      "direction": "▲ AUMENTO"
+    },
+    {
+      "ticker": "",
+      "name": "United States Treasury Bills 0%",
+      "prev_weight": 0.0,
+      "curr_weight": 9.8,
+      "delta": 9.8,
+      "direction": "▲ AUMENTO"
+    },
+    {
+      "ticker": "",
+      "name": "United States Treasury Bills 0%",
+      "prev_weight": 0.0,
+      "curr_weight": 9.79,
+      "delta": 9.79,
+      "direction": "▲ AUMENTO"
+    },
+    {
+      "ticker": "",
+      "name": "NYL MINI MSCI 0625",
+      "prev_weight": 0.0,
+      "curr_weight": 9.61,
+      "delta": 9.61,
+      "direction": "▲ AUMENTO"
+    },
+    {
+      "ticker": "",
+      "name": "United States Treasury Bills 0%",
+      "prev_weight": 0.0,
+      "curr_weight": 7.46,
+      "delta": 7.46,
+      "direction": "▲ AUMENTO"
+    },
+    {
+      "ticker": "",
+      "name": "United States Treasury Bills 0%",
+      "prev_weight": 0.0,
+      "curr_weight": 7.18,
+      "delta": 7.18,
+      "direction": "▲ AUMENTO"
+    },
+    {
+      "ticker": "",
+      "name": "United States Treasury Bills 0%",
+      "prev_weight": 0.0,
+      "curr_weight": 4.04,
+      "delta": 4.04,
+      "direction": "▲ AUMENTO"
+    }
+  ]
+}

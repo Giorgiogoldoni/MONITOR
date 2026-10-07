@@ -1,0 +1,47 @@
+{
+  "date": "2026-10-07",
+  "source": "manual/investing.com",
+  "holdings": [
+    {
+      "name": "iShares 0–1 Year Treasury Bond ETF",
+      "ticker": "SHV",
+      "weight": 49.21
+    },
+    {
+      "name": "iShares MSCI USA Quality Factor ETF",
+      "ticker": "",
+      "weight": 25.26
+    },
+    {
+      "name": "State Street® SPDR® Portfolio S&P 500® ETF",
+      "ticker": "SPYM",
+      "weight": 25.21
+    }
+  ],
+  "strategic_changes": [
+    {
+      "ticker": "SHV",
+      "name": "iShares 0–1 Year Treasury Bond ETF",
+      "prev_weight": 0.0,
+      "curr_weight": 49.21,
+      "delta": 49.21,
+      "direction": "▲ AUMENTO"
+    },
+    {
+      "ticker": "",
+      "name": "iShares MSCI USA Quality Factor ETF",
+      "prev_weight": 0.0,
+      "curr_weight": 25.26,
+      "delta": 25.26,
+      "direction": "▲ AUMENTO"
+    },
+    {
+      "ticker": "SPYM",
+      "name": "State Street® SPDR® Portfolio S&P 500® ETF",
+      "prev_weight": 0.0,
+      "curr_weight": 25.21,
+      "delta": 25.21,
+      "direction": "▲ AUMENTO"
+    }
+  ]
+}
