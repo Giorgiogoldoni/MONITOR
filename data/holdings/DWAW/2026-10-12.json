@@ -1,0 +1,12 @@
+{
+  "date": "2026-10-12",
+  "source": "manual/investing.com",
+  "holdings": [
+    {
+      "name": "iShares 0–1 Year Treasury Bond ETF",
+      "ticker": "SHV",
+      "weight": 99.43
+    }
+  ],
+  "strategic_changes": []
+}
