@@ -1,0 +1,57 @@
+{
+  "date": "2026-10-26",
+  "source": "manual/investing.com",
+  "holdings": [
+    {
+      "name": "10 Year Treasury Note Future Dec 26",
+      "ticker": "",
+      "weight": 16.96
+    },
+    {
+      "name": "Ultra US Treasury Bond Future Dec 26",
+      "ticker": "",
+      "weight": 16.9
+    },
+    {
+      "name": "Vanguard MStar Total Stk Mkt ETF",
+      "ticker": "",
+      "weight": 12.87
+    },
+    {
+      "name": "United States Treasury Bills 0%",
+      "ticker": "",
+      "weight": 12.07
+    },
+    {
+      "name": "SPDR Gold MiniShares Trust",
+      "ticker": "GLDM",
+      "weight": 9.92
+    },
+    {
+      "name": "Vanguard FTSE Emerging Markets ETF",
+      "ticker": "",
+      "weight": 7.66
+    },
+    {
+      "name": "Vanguard FTSE Developed Markets Index Fund ETF Shares",
+      "ticker": "VEA",
+      "weight": 5.05
+    },
+    {
+      "name": "United States Treasury Bonds 1.38%",
+      "ticker": "",
+      "weight": 3.59
+    },
+    {
+      "name": "United States Treasury Bonds 0.63%",
+      "ticker": "",
+      "weight": 3.15
+    },
+    {
+      "name": "United States Treasury Bonds 0.75%",
+      "ticker": "",
+      "weight": 3.05
+    }
+  ],
+  "strategic_changes": []
+}
