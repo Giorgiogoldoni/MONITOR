@@ -1,6 +1,6 @@
 # RAPTOR ETF MONITOR
 
-Dashboard di monitoraggio holdings per 8 ETF multi-asset + CFTC COT data.
+Dashboard di monitoraggio holdings per 13 ETF multi-asset + CFTC COT data.
 
 ## Struttura
 
@@ -84,3 +84,6 @@ Categoria principale: **Leveraged Funds** (= CTA + Hedge Fund sistematici).
 - Il fetch di F701/F703 usa justETF API — verificare periodicamente la disponibilità.
 - MAGR usa l'endpoint iShares UK — può richiedere aggiustamento User-Agent.
 - In caso di CORS issues su GitHub Pages, i dati vengono serviti dallo stesso repo (no fetch cross-origin).
+
+
+* ACTEQ: inserito nel monitor. L'acquisizione automatica delle holdings Fineco deve essere validata separatamente; fino ad allora è supportato il caricamento CSV manuale. La frequenza mensile è una classificazione provvisoria, non una garanzia sulla frequenza di pubblicazione dell'emittente.
