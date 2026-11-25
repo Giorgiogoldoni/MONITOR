@@ -193,7 +193,11 @@
   ::-webkit-scrollbar-track { background: transparent; }
   ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
 
-  @media (max-width: 600px) {\n    .monitor-metrics { grid-template-columns:repeat(2,minmax(0,1fr)); }\n    .metric { padding:10px; }\n    .metric b { font-size:16px; }\n    .holdings-search { max-width:none; }
+  @media (max-width: 600px) {
+    .monitor-metrics { grid-template-columns:repeat(2,minmax(0,1fr)); }
+    .metric { padding:10px; }
+    .metric b { font-size:16px; }
+    .holdings-search { max-width:none; }
     header { padding: 10px 14px; }
     main   { padding: 14px; }
     nav    { padding: 0 14px; }
@@ -206,7 +210,8 @@
   .metric span { display:block; color:var(--muted); font-size:11px; margin-top:3px; }
   .holdings-search { width:100%; max-width:520px; padding:10px 12px; border:1px solid var(--border); border-radius:6px; background:var(--bg); color:var(--text); font:inherit; }
   .holdings-search:focus { outline:2px solid var(--blue); outline-offset:1px; }
-\n</style>
+
+</style>
 </head>
 <body>
 <div id="app">
@@ -1115,7 +1120,8 @@ function detectTicker(filename, content) {
 
 function parseCSVHoldings(text) {
   text = text.replace(/^\uFEFF/,'');
-  const lines = text.trim().split('\n');
+  const lines = text.trim().split('
+');
   if (lines.length < 2) return [];
   const header = lines[0].split(',').map(h => h.replace(/"/g,'').trim().toLowerCase());
   const nameIdx   = header.findIndex(h => h==='nome'||h==='name');
