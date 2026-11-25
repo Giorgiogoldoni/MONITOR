@@ -413,7 +413,7 @@ let DELTA_MODE  = '1d';
 let STRAT_INTV  = '1w';
 let HIST_INTV   = '1m';
 
-const ETFS = ['GMOM','RPAR','DBMF','AOA','AOR','MAGR','F701','F703','GAL','AOK','DWAW','DWUS'];
+const ETFS = ['GMOM','RPAR','DBMF','AOA','AOR','MAGR','F701','F703','GAL','AOK','DWAW','DWUS','ACTEQ'];
 
 const ETF_INFO = {
   GMOM: { name:'Cambria Global Momentum',          market:'USA',   freq:'Weekly'  },
@@ -1051,6 +1051,7 @@ const ETF_SIGNATURES = {
   AOK:  ['aok','conservative alloc','ishares core conservative'],
   DWAW: ['dwaw','dorsey wright fsm all cap','advisorshares dorsey wright fsm all'],
   DWUS: ['dwus','dorsey wright fsm us core','advisorshares dorsey wright fsm us'],
+  ACTEQ:['acteq','ie000cb2bst9','fineco am active portfolios 100% equity'],
 };
 
 function detectTicker(filename, content) {
