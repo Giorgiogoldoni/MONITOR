@@ -302,6 +302,15 @@
           "ter": 0.4,
           "status": "research",
           "classification": "sector multi-asset"
+        },
+        {
+          "ticker": "FX",
+          "isin": null,
+          "name": "First Trust FactorFX UCITS ETF",
+          "ter": null,
+          "status": "research",
+          "classification": "currency carry strategy; adjacent liquid alternative",
+          "holdings_page": "https://www.firsttrustglobal.com"
         }
       ]
     },
@@ -349,13 +358,13 @@
       "source_status": "new managed-futures UCITS ETF identified via official KID; ticker and full holdings source not yet validated",
       "candidates": [
         {
-          "ticker": null,
+          "ticker": "FOLOW / EEAU",
           "isin": "LU3307218399",
           "name": "BNP Paribas Easy Managed Futures UCITS ETF Acc",
-          "ter": null,
+          "ter": 0.6,
           "status": "research",
-          "classification": "managed futures / alternative diversifier",
-          "holdings_page": "https://www.bnpparibas-am.com"
+          "classification": "managed futures / trend diversification",
+          "holdings_page": "https://www.bnpparibas-am.com/en-gb/portfolio-perspectives/innovating-with-liquid-alternative-and-buffer-etfs/"
         }
       ]
     },
@@ -373,6 +382,58 @@
           "holdings_page": "https://hanetf.com/it/fund/infrastructure-capital-preferred-income-ucits-etf-dist/"
         }
       ]
+    },
+    "Mandatum": {
+      "source_status": "new listing confirmed 25 Nov 2026 by issuer and Deutsche Börse; no ETF-wrapper track record yet",
+      "candidates": [
+        {
+          "ticker": "MAAF",
+          "isin": "IE000N4P5QK5",
+          "name": "Mandatum Managed Futures UCITS ETF USD Acc",
+          "ter": 1.7,
+          "status": "research",
+          "classification": "multi-strategy managed futures",
+          "strategy": "trend-following, mean-reversion, carry and seasonal; daily dynamic allocation",
+          "holdings_page": "https://www.mandatum.fi/en/corporation-news/2026/mandatum-brings-its-multi-strategy-managed-futures-approach-to-an-etf/"
+        }
+      ]
+    },
+    "iM Global Partner / DBi": {
+      "source_status": "official issuer pages and ETF share classes confirmed; holdings feed not integrated",
+      "candidates": [
+        {
+          "ticker": "DBMF",
+          "isin": "LU2951555585",
+          "name": "iMGP DBi Managed Futures Fund R USD UCITS ETF",
+          "ter": 0.75,
+          "status": "research",
+          "classification": "managed futures replication basket",
+          "holdings_page": "https://www.imgp.com/imgp-dbi-managed-futures-fund/"
+        },
+        {
+          "ticker": "DBMF / MFA8",
+          "isin": "LU3024069877",
+          "name": "iMGP DBi Managed Futures ex-Commodities Fund R USD UCITS ETF",
+          "ter": 0.75,
+          "status": "research",
+          "classification": "managed futures excluding commodities",
+          "holdings_page": "https://www.imgp.com/en/fund/LU3024069877-imgp-dbi-managed-futures-ex-commodities-fund-r-usd-ucits-etf/"
+        }
+      ]
+    },
+    "BNP Paribas Liquid Alternatives": {
+      "source_status": "issuer confirms strategy range; identifiers, fees and listing still require confirmation",
+      "candidates": [
+        {
+          "ticker": null,
+          "isin": null,
+          "name": "BNP Paribas Easy Global Equity Long Short UCITS ETF",
+          "ter": null,
+          "status": "research",
+          "classification": "equity long-short alternative; identifiers and costs not yet confirmed",
+          "holdings_page": "https://www.bnpparibas-am.com/en-gb/portfolio-perspectives/innovating-with-liquid-alternative-and-buffer-etfs/"
+        }
+      ]
     }
   },
   "integration_gate": [
@@ -384,5 +445,5 @@
     "no stale snapshot appended",
     "comparison with previous snapshot tested"
   ],
-  "scope_note": "Universe is intentionally broader than traditional strategic allocation: core multi-asset allocation ETFs are separated from tactical trend-following/managed-futures and specialist income diversifiers. Research-only; no product is an active MONITOR holdings feed until official source, file, date and parser are tested."
+  "scope_note": "Expanded research universe distinguishes strategic multi-asset allocation, efficient-core (leveraged equity + bonds), trend/managed futures, equity long-short, currency carry, sector-specific income. Candidate identifiers and TERs must be validated per exchange/share class before active monitoring. Research-only."
 }
