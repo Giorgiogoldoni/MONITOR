@@ -96,3 +96,62 @@ No numeric product scores are assigned yet: data and comparable live/strategy hi
 - comparison with previous snapshot tested
 
 Manual upload fallback remains until automated source is reliable.
+
+
+## Phase 1B — qualitative triage of all 50 candidates
+
+This pass is a **qualitative prioritization only**. It does not assign performance, Sharpe, volatility, drawdown or correlation scores: a comparable monthly total-return dataset has not yet been assembled. Labels do not mean the product has passed the issuer/KID verification gate.
+
+### Priority due diligence (10)
+- BNP Managed Futures FOLOW/EEAU
+- iMGP DBi Managed Futures DBMF
+- iMGP DBi Managed Futures ex-Commodities
+- BNP Global Equity Long/Short SLEEK
+- ODDO BHF Global Balanced Allocation C (OBBA)
+- ODDO BHF Global Balanced Allocation AAA (OBAA)
+- Fineco Active Portfolios 60% (ACT60)
+- WisdomTree Global Efficient Core (GEC)
+- WisdomTree US Efficient Core (UEC)
+- WisdomTree Eurozone Efficient Core (ZEC)
+
+**Why:** strategy differentiation, diversifier potential, or transparent leverage-efficient exposure. The selection is for research—not endorsement or buy signals.
+
+### Benchmark controls (5)
+- VanEck Multi-Asset Balanced (NTM)
+- JPM Strategic Allocation Moderate (JMAM)
+- Vanguard LifeStrategy 60 (VLS60)
+- Xtrackers Diversified Portfolio 60 (XEQ6)
+- iShares Growth Portfolio (MAGR)
+
+Use these as conventional multi-asset comparison controls. They help determine whether a more complex strategy actually improves on a simple balanced portfolio.
+
+### Specialized watchlist (9)
+- Mandatum MAAF — high TER / short history and model complexity
+- UBS UEQC/UEQV — 2.5x commodity carry leverage
+- UBS BCFS/UBPW — put-write premium exposure, equity downside remains
+- BNP Buffer June — period-specific buffer, upside cap and outcome mechanics
+- IncomeShares MLTY/MLAY and GRWY/MSTY — options income ETP structure; distributions are not total return
+- HANetf PFFI — specialist preferred-income exposure
+
+### Hold / identity or relevance gate (5)
+- First Trust FactorFX — missing ISIN and TER in registry
+- SPDR MAGI — infrastructure allocation; not directly comparable to diversified multi-asset
+- iShares Conservative and Moderate — missing exchange ticker in registry; ISIN still primary key
+- Goshawk — require current factsheet, liquidity/AUM and strategy review before priority
+
+The other 21 candidates remain standard due diligence; they are neither rejected nor shortlisted.
+
+### Scorecard for the next phase (weights)
+| Factor | Weight |
+|---|---:|
+| Diversification benefit / correlation | 25% |
+| Regime robustness | 20% |
+| Risk-adjusted return and drawdown | 20% |
+| Transparency / reproducibility | 15% |
+| Costs | 10% |
+| Liquidity, AUM and spread | 10% |
+
+Do not calculate final scores until data is comparable and sources are documented. Live track records and simulated/strategy histories must be kept separate.
+
+### Phase 2 data requirements
+For every shortlisted fund: monthly total returns, inception date, NAV vs market price, AUM, bid-ask spread if available, benchmark, holdings/strategy disclosure, fee and share-class KID; then calculate rolling 12/36-month volatility, max drawdown, Sharpe/Sortino (with stated assumptions), correlations against global equity, aggregate bonds and conventional 60/40, and stress windows. Where history is short, report N/A rather than extrapolate.
