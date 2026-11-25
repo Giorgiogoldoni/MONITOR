@@ -16,8 +16,8 @@ index = {"etfs": {}, "cftc": []}
 
 def valid_snapshot_date(stem):
     try:
-        datetime.datetime.strptime(stem, "%Y-%m-%d")
-        return True
+        parsed = datetime.datetime.strptime(stem, "%Y-%m-%d").date()
+        return parsed.year <= datetime.date.today().year and parsed <= datetime.date.today()
     except ValueError:
         return False
 
