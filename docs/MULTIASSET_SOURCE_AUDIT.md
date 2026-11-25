@@ -29,6 +29,9 @@ The registry now tags each candidate into a screening category:
 - options_income
 - defined_outcome_buffer
 - options_income_etp
+- specialist_income
+- currency_carry
+- sector_multi_asset
 - other_alternative
 
 These tags are screening labels, not risk ratings.
