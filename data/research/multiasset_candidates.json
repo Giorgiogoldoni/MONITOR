@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "purpose": "research-only candidates for multi-asset holdings integration; not active MONITOR holdings until source download and parser tests pass",
+  "last_audit": "2026-11-25",
+  "providers": {
+    "VanEck": {
+      "source_status": "official full holdings pages exist; download endpoint not yet programmatically validated",
+      "candidates": [
+        {"ticker":"DTM","isin":"NL0009272764","name":"Multi-Asset Conservative Allocation UCITS ETF","allocation":{"government_bonds":35,"corporate_bonds":35,"equities":25,"listed_real_estate":5},"ter":0.28,"holdings_page":"https://www.vaneck.com/FI/en/investments/conservative-multi-asset-etf/index/","status":"research"},
+        {"ticker":"NTM","isin":"NL0009272772","name":"Multi-Asset Balanced Allocation UCITS ETF","allocation":{"government_bonds":25,"corporate_bonds":25,"equities":40,"listed_real_estate":10},"ter":0.30,"holdings_page":"https://www.vaneck.com/it/it/theme/multi-asset-investing/","status":"research"},
+        {"ticker":"TOF","isin":"NL0009272780","name":"Multi-Asset Growth Allocation UCITS ETF","allocation":{"government_bonds":15,"corporate_bonds":15,"equities":60,"listed_real_estate":10},"ter":0.32,"holdings_page":"https://www.vaneck.com/it/it/theme/multi-asset-investing/","status":"research"}
+      ]
+    },
+    "JPMorgan": {
+      "source_status": "official product pages/holdings counts confirmed; full downloadable holdings feed not validated",
+      "candidates": [
+        {"ticker":"JMAC","isin":"IE000FASRFS4","name":"Strategic Allocation Conservative Active UCITS ETF","benchmark_mix":{"equities":20,"bonds":70,"cash":10},"ter":0.35,"status":"research"},
+        {"ticker":"JMAM","isin":"IE000TWAN2K7","name":"Strategic Allocation Moderate Active UCITS ETF","benchmark_mix":{"equities":60,"bonds":40},"ter":0.35,"status":"research"},
+        {"ticker":"JMAG","isin":"IE000MVWFDH1","name":"Strategic Allocation Growth Active UCITS ETF","benchmark_mix":{"equities":80,"bonds":20},"ter":0.35,"status":"research"}
+      ],
+      "official_portal":"https://am.jpmorgan.com/it/en/asset-management/institutional/products/fund-explorer/etf"
+    }
+  },
+  "integration_gate": ["official source endpoint verified","download file tested in CI/runtime","source date parsed (not file mtime)","identifiers and weights normalized","weight total validated with tolerance","no stale snapshot appended","comparison with previous snapshot tested"]
+}
