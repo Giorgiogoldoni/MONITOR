@@ -18,7 +18,10 @@
           },
           "ter": 0.28,
           "holdings_page": "https://www.vaneck.com/FI/en/investments/conservative-multi-asset-etf/index/",
-          "status": "research"
+          "status": "research",
+          "audit_category": "strategic_multi_asset",
+          "audit_stage": "primary_source_partial",
+          "audit_note": "Issuer source reviewed; share class/holdings endpoint or full feed still requires verification"
         },
         {
           "ticker": "NTM",
@@ -32,7 +35,10 @@
           },
           "ter": 0.3,
           "holdings_page": "https://www.vaneck.com/it/it/theme/multi-asset-investing/",
-          "status": "research"
+          "status": "research",
+          "audit_category": "strategic_multi_asset",
+          "audit_stage": "primary_source_partial",
+          "audit_note": "Issuer source reviewed; share class/holdings endpoint or full feed still requires verification"
         },
         {
           "ticker": "TOF",
@@ -46,7 +52,10 @@
           },
           "ter": 0.32,
           "holdings_page": "https://www.vaneck.com/it/it/theme/multi-asset-investing/",
-          "status": "research"
+          "status": "research",
+          "audit_category": "strategic_multi_asset",
+          "audit_stage": "primary_source_partial",
+          "audit_note": "Issuer source reviewed; share class/holdings endpoint or full feed still requires verification"
         }
       ]
     },
@@ -63,7 +72,10 @@
             "cash": 10
           },
           "ter": 0.35,
-          "status": "research"
+          "status": "research",
+          "audit_category": "strategic_multi_asset",
+          "audit_stage": "candidate_screen",
+          "audit_note": "Not yet independently verified against primary issuer documentation in this audit"
         },
         {
           "ticker": "JMAM",
@@ -74,7 +86,10 @@
             "bonds": 40
           },
           "ter": 0.35,
-          "status": "research"
+          "status": "research",
+          "audit_category": "strategic_multi_asset",
+          "audit_stage": "candidate_screen",
+          "audit_note": "Not yet independently verified against primary issuer documentation in this audit"
         },
         {
           "ticker": "JMAG",
@@ -85,7 +100,10 @@
             "bonds": 20
           },
           "ter": 0.35,
-          "status": "research"
+          "status": "research",
+          "audit_category": "strategic_multi_asset",
+          "audit_stage": "candidate_screen",
+          "audit_note": "Not yet independently verified against primary issuer documentation in this audit"
         }
       ],
       "official_portal": "https://am.jpmorgan.com/it/en/asset-management/institutional/products/fund-explorer/etf"
@@ -99,7 +117,10 @@
           "name": "LifeStrategy 20% Equity UCITS ETF Acc",
           "equity_allocation": 20,
           "ter": 0.25,
-          "status": "research"
+          "status": "research",
+          "audit_category": "strategic_multi_asset",
+          "audit_stage": "candidate_screen",
+          "audit_note": "Not yet independently verified against primary issuer documentation in this audit"
         },
         {
           "ticker": "VLS40",
@@ -107,7 +128,10 @@
           "name": "LifeStrategy 40% Equity UCITS ETF Acc",
           "equity_allocation": 40,
           "ter": 0.25,
-          "status": "research"
+          "status": "research",
+          "audit_category": "strategic_multi_asset",
+          "audit_stage": "candidate_screen",
+          "audit_note": "Not yet independently verified against primary issuer documentation in this audit"
         },
         {
           "ticker": "VLS60",
@@ -115,7 +139,10 @@
           "name": "LifeStrategy 60% Equity UCITS ETF Acc",
           "equity_allocation": 60,
           "ter": 0.25,
-          "status": "research"
+          "status": "research",
+          "audit_category": "strategic_multi_asset",
+          "audit_stage": "candidate_screen",
+          "audit_note": "Not yet independently verified against primary issuer documentation in this audit"
         },
         {
           "ticker": "VLS80",
@@ -123,7 +150,10 @@
           "name": "LifeStrategy 80% Equity UCITS ETF Acc",
           "equity_allocation": 80,
           "ter": 0.25,
-          "status": "research"
+          "status": "research",
+          "audit_category": "strategic_multi_asset",
+          "audit_stage": "candidate_screen",
+          "audit_note": "Not yet independently verified against primary issuer documentation in this audit"
         }
       ]
     },
@@ -135,14 +165,20 @@
           "isin": "LU0397221945",
           "name": "Portfolio UCITS ETF 1C",
           "ter": 0.7,
-          "status": "research"
+          "status": "research",
+          "audit_category": "strategic_multi_asset",
+          "audit_stage": "candidate_screen",
+          "audit_note": "Not yet independently verified against primary issuer documentation in this audit"
         },
         {
           "ticker": "XS7W",
           "isin": "IE00B3Y8D011",
           "name": "Portfolio Income UCITS ETF 1D",
           "ter": 0.65,
-          "status": "research"
+          "status": "research",
+          "audit_category": "strategic_multi_asset",
+          "audit_stage": "candidate_screen",
+          "audit_note": "Not yet independently verified against primary issuer documentation in this audit"
         },
         {
           "ticker": "XEQ2",
@@ -150,7 +186,10 @@
           "name": "Diversified Portfolio 20% Equity UCITS ETF 1C",
           "equity_allocation": 20,
           "ter": 0.24,
-          "status": "research"
+          "status": "research",
+          "audit_category": "strategic_multi_asset",
+          "audit_stage": "candidate_screen",
+          "audit_note": "Not yet independently verified against primary issuer documentation in this audit"
         },
         {
           "ticker": "XEQ4",
@@ -158,7 +197,10 @@
           "name": "Diversified Portfolio 40% Equity UCITS ETF 1C",
           "equity_allocation": 40,
           "ter": 0.24,
-          "status": "research"
+          "status": "research",
+          "audit_category": "strategic_multi_asset",
+          "audit_stage": "candidate_screen",
+          "audit_note": "Not yet independently verified against primary issuer documentation in this audit"
         },
         {
           "ticker": "XEQ6",
@@ -166,7 +208,10 @@
           "name": "Diversified Portfolio 60% Equity UCITS ETF 1C",
           "equity_allocation": 60,
           "ter": 0.24,
-          "status": "research"
+          "status": "research",
+          "audit_category": "strategic_multi_asset",
+          "audit_stage": "candidate_screen",
+          "audit_note": "Not yet independently verified against primary issuer documentation in this audit"
         },
         {
           "ticker": "XEQ8",
@@ -174,7 +219,10 @@
           "name": "Diversified Portfolio 80% Equity UCITS ETF 1C",
           "equity_allocation": 80,
           "ter": 0.24,
-          "status": "research"
+          "status": "research",
+          "audit_category": "strategic_multi_asset",
+          "audit_stage": "candidate_screen",
+          "audit_note": "Not yet independently verified against primary issuer documentation in this audit"
         }
       ]
     },
@@ -186,21 +234,30 @@
           "isin": "IE00BLP53M98",
           "name": "iShares Conservative Portfolio UCITS ETF EUR Acc",
           "ter": 0.25,
-          "status": "research"
+          "status": "research",
+          "audit_category": "strategic_multi_asset",
+          "audit_stage": "candidate_screen",
+          "audit_note": "Not yet independently verified against primary issuer documentation in this audit"
         },
         {
           "ticker": null,
           "isin": "IE00BLLZQS08",
           "name": "iShares Moderate Portfolio UCITS ETF EUR Acc",
           "ter": 0.25,
-          "status": "research"
+          "status": "research",
+          "audit_category": "strategic_multi_asset",
+          "audit_stage": "candidate_screen",
+          "audit_note": "Not yet independently verified against primary issuer documentation in this audit"
         },
         {
           "ticker": "MAGR",
           "isin": "IE00BLLZQ805",
           "name": "iShares Growth Portfolio UCITS ETF EUR Acc",
           "ter": 0.25,
-          "status": "research"
+          "status": "research",
+          "audit_category": "strategic_multi_asset",
+          "audit_stage": "candidate_screen",
+          "audit_note": "Not yet independently verified against primary issuer documentation in this audit"
         }
       ]
     },
@@ -212,21 +269,30 @@
           "isin": "DE000ETF7011",
           "name": "Multi-Asset Portfolio UCITS ETF EUR Dist",
           "ter": 0.41,
-          "status": "research"
+          "status": "research",
+          "audit_category": "strategic_multi_asset",
+          "audit_stage": "candidate_screen",
+          "audit_note": "Not yet independently verified against primary issuer documentation in this audit"
         },
         {
           "ticker": "F702",
           "isin": "DE000ETF7029",
           "name": "Multi-Asset Portfolio Defensive UCITS ETF EUR Dist",
           "ter": 0.38,
-          "status": "research"
+          "status": "research",
+          "audit_category": "strategic_multi_asset",
+          "audit_stage": "candidate_screen",
+          "audit_note": "Not yet independently verified against primary issuer documentation in this audit"
         },
         {
           "ticker": "F703",
           "isin": "DE000ETF7037",
           "name": "Multi-Asset Portfolio Offensive UCITS ETF EUR Dist",
           "ter": 0.49,
-          "status": "research"
+          "status": "research",
+          "audit_category": "strategic_multi_asset",
+          "audit_stage": "candidate_screen",
+          "audit_note": "Not yet independently verified against primary issuer documentation in this audit"
         }
       ]
     },
@@ -238,14 +304,20 @@
           "isin": "IE000CB2BST9",
           "name": "Active Portfolios 100% Equity UCITS ETF",
           "ter": 0.7,
-          "status": "research"
+          "status": "research",
+          "audit_category": "strategic_multi_asset",
+          "audit_stage": "candidate_screen",
+          "audit_note": "Not yet independently verified against primary issuer documentation in this audit"
         },
         {
           "ticker": "ACT60",
           "isin": "IE0009RW4WA0",
           "name": "Active Portfolios 60% Equity UCITS ETF",
           "ter": 0.68,
-          "status": "research"
+          "status": "research",
+          "audit_category": "strategic_multi_asset",
+          "audit_stage": "candidate_screen",
+          "audit_note": "Not yet independently verified against primary issuer documentation in this audit"
         }
       ]
     },
@@ -258,7 +330,10 @@
           "name": "Global Efficient Core UCITS ETF USD Unhedged Acc",
           "ter": 0.25,
           "status": "research",
-          "classification": "efficient-core"
+          "classification": "efficient-core",
+          "audit_category": "efficient_core",
+          "audit_stage": "candidate_screen",
+          "audit_note": "Not yet independently verified against primary issuer documentation in this audit"
         },
         {
           "ticker": "UEC",
@@ -266,7 +341,10 @@
           "name": "US Efficient Core UCITS ETF USD Unhedged Acc",
           "ter": 0.2,
           "status": "research",
-          "classification": "efficient-core"
+          "classification": "efficient-core",
+          "audit_category": "efficient_core",
+          "audit_stage": "candidate_screen",
+          "audit_note": "Not yet independently verified against primary issuer documentation in this audit"
         },
         {
           "ticker": "ZEC",
@@ -274,7 +352,10 @@
           "name": "Eurozone Efficient Core UCITS ETF EUR Unhedged Acc",
           "ter": 0.2,
           "status": "research",
-          "classification": "efficient-core"
+          "classification": "efficient-core",
+          "audit_category": "efficient_core",
+          "audit_stage": "candidate_screen",
+          "audit_note": "Not yet independently verified against primary issuer documentation in this audit"
         }
       ]
     },
@@ -286,14 +367,20 @@
           "isin": "IE00BL643144",
           "name": "Goshawk Global Balanced Fund UCITS ETF Acc",
           "ter": 0.69,
-          "status": "research"
+          "status": "research",
+          "audit_category": "strategic_multi_asset",
+          "audit_stage": "candidate_screen",
+          "audit_note": "Not yet independently verified against primary issuer documentation in this audit"
         },
         {
           "ticker": "INVB",
           "isin": "IE000PPEL1I4",
           "name": "Investlinx Balanced Income UCITS ETF A EUR Cap",
           "ter": 0.85,
-          "status": "research"
+          "status": "research",
+          "audit_category": "strategic_multi_asset",
+          "audit_stage": "candidate_screen",
+          "audit_note": "Not yet independently verified against primary issuer documentation in this audit"
         },
         {
           "ticker": "MAGI",
@@ -301,7 +388,10 @@
           "name": "SPDR Morningstar Multi-Asset Global Infrastructure UCITS ETF",
           "ter": 0.4,
           "status": "research",
-          "classification": "sector multi-asset"
+          "classification": "sector multi-asset",
+          "audit_category": "strategic_multi_asset",
+          "audit_stage": "candidate_screen",
+          "audit_note": "Not yet independently verified against primary issuer documentation in this audit"
         },
         {
           "ticker": "FX",
@@ -310,7 +400,10 @@
           "ter": null,
           "status": "research",
           "classification": "currency carry strategy; adjacent liquid alternative",
-          "holdings_page": "https://www.firsttrustglobal.com"
+          "holdings_page": "https://www.firsttrustglobal.com",
+          "audit_category": "strategic_multi_asset",
+          "audit_stage": "candidate_screen",
+          "audit_note": "Not yet independently verified against primary issuer documentation in this audit"
         }
       ]
     },
@@ -325,7 +418,10 @@
           "allocation_description": "Dynamic allocation across equities, fixed income and commodities; equity/bond ranges 25-75%, commodities max 10%",
           "status": "research",
           "classification": "dynamic multi-asset",
-          "holdings_page": "https://hanetf.com/it/fund/oddo-bhf-global-balanced-allocation-active-ucits-etf/"
+          "holdings_page": "https://hanetf.com/it/fund/oddo-bhf-global-balanced-allocation-active-ucits-etf/",
+          "audit_category": "strategic_multi_asset",
+          "audit_stage": "candidate_screen",
+          "audit_note": "Not yet independently verified against primary issuer documentation in this audit"
         },
         {
           "ticker": "OBAA",
@@ -335,7 +431,10 @@
           "allocation_description": "Same broad multi-asset strategy; different share class and fee structure",
           "status": "research",
           "classification": "dynamic multi-asset",
-          "holdings_page": "https://hanetf.com/it/fund/oddo-bhf-global-balanced-allocation-active-ucits-etf/"
+          "holdings_page": "https://hanetf.com/it/fund/oddo-bhf-global-balanced-allocation-active-ucits-etf/",
+          "audit_category": "strategic_multi_asset",
+          "audit_stage": "candidate_screen",
+          "audit_note": "Not yet independently verified against primary issuer documentation in this audit"
         }
       ]
     },
@@ -350,7 +449,10 @@
           "allocation_description": "Global developed-market equities plus trend-following overlay across equity, fixed income, commodity and currency futures; targets additional exposure approx. 100% NAV",
           "status": "research",
           "classification": "trend-following multi-asset / diversifier",
-          "holdings_page": "https://www.man.com"
+          "holdings_page": "https://www.man.com",
+          "audit_category": "managed_futures_trend",
+          "audit_stage": "candidate_screen",
+          "audit_note": "Not yet independently verified against primary issuer documentation in this audit"
         }
       ]
     },
@@ -364,7 +466,10 @@
           "ter": 0.6,
           "status": "research",
           "classification": "managed futures / trend diversification",
-          "holdings_page": "https://www.bnpparibas-am.com/en-gb/portfolio-perspectives/innovating-with-liquid-alternative-and-buffer-etfs/"
+          "holdings_page": "https://www.bnpparibas-am.com/en-gb/portfolio-perspectives/innovating-with-liquid-alternative-and-buffer-etfs/",
+          "audit_category": "other_alternative",
+          "audit_stage": "candidate_screen",
+          "audit_note": "Not yet independently verified against primary issuer documentation in this audit"
         }
       ]
     },
@@ -379,7 +484,10 @@
           "allocation_description": "Actively managed preferred shares, hybrid securities and income instruments; monthly distributions; concentrated exposure to financials",
           "status": "research",
           "classification": "income diversifier / specialist",
-          "holdings_page": "https://hanetf.com/it/fund/infrastructure-capital-preferred-income-ucits-etf-dist/"
+          "holdings_page": "https://hanetf.com/it/fund/infrastructure-capital-preferred-income-ucits-etf-dist/",
+          "audit_category": "strategic_multi_asset",
+          "audit_stage": "candidate_screen",
+          "audit_note": "Not yet independently verified against primary issuer documentation in this audit"
         }
       ]
     },
@@ -394,7 +502,10 @@
           "status": "research",
           "classification": "multi-strategy managed futures",
           "strategy": "trend-following, mean-reversion, carry and seasonal; daily dynamic allocation",
-          "holdings_page": "https://www.mandatum.fi/en/corporation-news/2026/mandatum-brings-its-multi-strategy-managed-futures-approach-to-an-etf/"
+          "holdings_page": "https://www.mandatum.fi/en/corporation-news/2026/mandatum-brings-its-multi-strategy-managed-futures-approach-to-an-etf/",
+          "audit_category": "managed_futures_trend",
+          "audit_stage": "candidate_screen",
+          "audit_note": "Not yet independently verified against primary issuer documentation in this audit"
         }
       ]
     },
@@ -408,7 +519,10 @@
           "ter": 0.75,
           "status": "research",
           "classification": "managed futures replication basket",
-          "holdings_page": "https://www.imgp.com/imgp-dbi-managed-futures-fund/"
+          "holdings_page": "https://www.imgp.com/imgp-dbi-managed-futures-fund/",
+          "audit_category": "managed_futures_trend",
+          "audit_stage": "primary_source_partial",
+          "audit_note": "Issuer source reviewed; share class/holdings endpoint or full feed still requires verification"
         },
         {
           "ticker": "DBMF / MFA8",
@@ -417,7 +531,10 @@
           "ter": 0.75,
           "status": "research",
           "classification": "managed futures excluding commodities",
-          "holdings_page": "https://www.imgp.com/en/fund/LU3024069877-imgp-dbi-managed-futures-ex-commodities-fund-r-usd-ucits-etf/"
+          "holdings_page": "https://www.imgp.com/en/fund/LU3024069877-imgp-dbi-managed-futures-ex-commodities-fund-r-usd-ucits-etf/",
+          "audit_category": "managed_futures_trend",
+          "audit_stage": "primary_source_partial",
+          "audit_note": "Issuer source reviewed; share class/holdings endpoint or full feed still requires verification"
         }
       ]
     },
@@ -431,7 +548,10 @@
           "ter": null,
           "status": "research",
           "classification": "equity long-short alternative; identifiers and costs not yet confirmed",
-          "holdings_page": "https://www.bnpparibas-am.com/en-gb/portfolio-perspectives/innovating-with-liquid-alternative-and-buffer-etfs/"
+          "holdings_page": "https://www.bnpparibas-am.com/en-gb/portfolio-perspectives/innovating-with-liquid-alternative-and-buffer-etfs/",
+          "audit_category": "equity_long_short",
+          "audit_stage": "candidate_screen",
+          "audit_note": "Not yet independently verified against primary issuer documentation in this audit"
         }
       ]
     },
@@ -446,7 +566,10 @@
           "status": "research",
           "classification": "leveraged commodity carry; 2.5x index exposure",
           "strategy": "Synthetic swap replication of 2.5 leveraged commodity carry index excluding precious metals",
-          "holdings_page": "https://www.ubs.com"
+          "holdings_page": "https://www.ubs.com",
+          "audit_category": "equity_long_short",
+          "audit_stage": "candidate_screen",
+          "audit_note": "Not yet independently verified against primary issuer documentation in this audit"
         },
         {
           "ticker": "UEQV",
@@ -455,7 +578,10 @@
           "ter": 0.34,
           "status": "research",
           "classification": "leveraged commodity carry; 2.5x index exposure; EUR hedged",
-          "strategy": "Synthetic swap replication of 2.5 leveraged commodity carry index excluding precious metals"
+          "strategy": "Synthetic swap replication of 2.5 leveraged commodity carry index excluding precious metals",
+          "audit_category": "equity_long_short",
+          "audit_stage": "candidate_screen",
+          "audit_note": "Not yet independently verified against primary issuer documentation in this audit"
         },
         {
           "ticker": "BCFS",
@@ -464,7 +590,10 @@
           "ter": 0.24,
           "status": "research",
           "classification": "equity options income / put-write; EUR hedged",
-          "strategy": "Synthetic put-writing strategy on S&P 500 puts with T-bill cash component; not downside-protected equity"
+          "strategy": "Synthetic put-writing strategy on S&P 500 puts with T-bill cash component; not downside-protected equity",
+          "audit_category": "equity_long_short",
+          "audit_stage": "candidate_screen",
+          "audit_note": "Not yet independently verified against primary issuer documentation in this audit"
         },
         {
           "ticker": "UBPW",
@@ -473,7 +602,10 @@
           "ter": 0.24,
           "status": "research",
           "classification": "equity options income / put-write",
-          "strategy": "Synthetic put-writing strategy on US equity; option-selling risk; USD share class"
+          "strategy": "Synthetic put-writing strategy on US equity; option-selling risk; USD share class",
+          "audit_category": "equity_long_short",
+          "audit_stage": "candidate_screen",
+          "audit_note": "Not yet independently verified against primary issuer documentation in this audit"
         }
       ]
     },
@@ -488,7 +620,10 @@
           "status": "research",
           "classification": "defined-outcome / equity buffer; capped upside",
           "strategy": "EURO STOXX 50 exposure with stated 15% downside buffer for annual outcome period; upside capped",
-          "holdings_page": "https://www.bnpparibas-am.com/it-it/fundsheet/equity/bnp-paribas-easy-european-equity-buffer-june-ucits-etf-c-lu3307215619"
+          "holdings_page": "https://www.bnpparibas-am.com/it-it/fundsheet/equity/bnp-paribas-easy-european-equity-buffer-june-ucits-etf-c-lu3307215619",
+          "audit_category": "defined_outcome_buffer",
+          "audit_stage": "candidate_screen",
+          "audit_note": "Not yet independently verified against primary issuer documentation in this audit"
         }
       ]
     },
@@ -502,7 +637,10 @@
           "ter": 0.75,
           "status": "research",
           "classification": "managed futures replication basket; EUR class",
-          "strategy": "CTA hedge-fund basket replication; futures/forwards across multiple asset classes"
+          "strategy": "CTA hedge-fund basket replication; futures/forwards across multiple asset classes",
+          "audit_category": "managed_futures_trend",
+          "audit_stage": "primary_source_partial",
+          "audit_note": "Issuer source reviewed; share class/holdings endpoint or full feed still requires verification"
         },
         {
           "ticker": "MFEH",
@@ -511,7 +649,10 @@
           "ter": 0.75,
           "status": "research",
           "classification": "managed futures replication basket; EUR hedged",
-          "strategy": "CTA hedge-fund basket replication; EUR-hedged share class"
+          "strategy": "CTA hedge-fund basket replication; EUR-hedged share class",
+          "audit_category": "managed_futures_trend",
+          "audit_stage": "primary_source_partial",
+          "audit_note": "Issuer source reviewed; share class/holdings endpoint or full feed still requires verification"
         }
       ]
     },
@@ -526,7 +667,10 @@
           "status": "research",
           "classification": "systematic global equity multifactor long/short",
           "strategy": "Daily systematic multifactor strategy (quality, value, momentum, low volatility), long higher-scoring and short lower-scoring global equities; structurally moderate net long",
-          "holdings_page": "https://www.bnpparibas-am.com/it-it/fundsheet/equity/bnp-paribas-easy-global-equity-long-short-ucits-etf-c-lu3307220965/"
+          "holdings_page": "https://www.bnpparibas-am.com/it-it/fundsheet/equity/bnp-paribas-easy-global-equity-long-short-ucits-etf-c-lu3307220965/",
+          "audit_category": "equity_long_short",
+          "audit_stage": "candidate_screen",
+          "audit_note": "Not yet independently verified against primary issuer documentation in this audit"
         }
       ]
     },
@@ -540,7 +684,10 @@
           "ter": 0.45,
           "status": "research",
           "classification": "multi-asset options-income ETP; 60% equity/30% fixed income/5% gold/5% silver",
-          "strategy": "Monthly distributions from option premium strategy on underlying basket; semiannual rebalance; wrapper is ETP, not conventional ETF"
+          "strategy": "Monthly distributions from option premium strategy on underlying basket; semiannual rebalance; wrapper is ETP, not conventional ETF",
+          "audit_category": "options_income_etp",
+          "audit_stage": "candidate_screen",
+          "audit_note": "Not yet independently verified against primary issuer documentation in this audit"
         },
         {
           "ticker": "GRWY / MSTY",
@@ -549,7 +696,10 @@
           "ter": 0.45,
           "status": "research",
           "classification": "multi-asset options-income ETP; 75% equity/10% fixed income/15% alternatives",
-          "strategy": "Monthly distribution options-income basket; semiannual rebalance; holdings include other option-income ETPs; ETP wrapper risk"
+          "strategy": "Monthly distribution options-income basket; semiannual rebalance; holdings include other option-income ETPs; ETP wrapper risk",
+          "audit_category": "options_income_etp",
+          "audit_stage": "candidate_screen",
+          "audit_note": "Not yet independently verified against primary issuer documentation in this audit"
         }
       ]
     }
@@ -563,5 +713,17 @@
     "no stale snapshot appended",
     "comparison with previous snapshot tested"
   ],
-  "scope_note": "Expanded research universe distinguishes strategic multi-asset allocation, efficient-core (leveraged equity + bonds), trend/managed futures, equity long-short, currency carry, sector-specific income. Candidate identifiers and TERs must be validated per exchange/share class before active monitoring. Research-only."
+  "scope_note": "Expanded research universe distinguishes strategic multi-asset allocation, efficient-core (leveraged equity + bonds), trend/managed futures, equity long-short, currency carry, sector-specific income. Candidate identifiers and TERs must be validated per exchange/share class before active monitoring. Research-only.",
+  "audit_summary": {
+    "candidate_records": 50,
+    "provider_groups": 21,
+    "duplicate_isins": 0,
+    "missing_identity_or_cost_fields": 5,
+    "verified_primary_source_groups": [
+      "VanEck",
+      "iM Global Partner / DBi",
+      "iMGP DBi EUR Share Classes"
+    ],
+    "audit_status": "phase_1_screening; not an investment recommendation"
+  }
 }
