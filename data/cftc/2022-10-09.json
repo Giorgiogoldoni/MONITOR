@@ -1,0 +1,51 @@
+{
+  "date": "2022-10-09",
+  "source": "CFTC 2022",
+  "markets": {
+    "EUR/USD": {
+      "market": "EURO FX - CHICAGO MERCANTILE EXCHANGE",
+      "report_date": "2022-10-09",
+      "lev_long": 91273,
+      "lev_short": 17854,
+      "lev_net": 73419,
+      "asset_long": 169586,
+      "asset_short": 33636
+    },
+    "S&P 500": {
+      "market": "E-MINI S&P 500 - CHICAGO MERCANTILE EXCHANGE",
+      "report_date": "2022-10-09",
+      "lev_long": 377709,
+      "lev_short": 53406,
+      "lev_net": 324303,
+      "asset_long": 688062,
+      "asset_short": 300190
+    },
+    "Nasdaq 100": {
+      "market": "NASDAQ-100 Consolidated - CHICAGO MERCANTILE EXCHANGE",
+      "report_date": "2022-10-09",
+      "lev_long": 13270,
+      "lev_short": 880,
+      "lev_net": 12390,
+      "asset_long": 12910,
+      "asset_short": 1066
+    },
+    "Treasury 2Y": {
+      "market": "UST 2Y NOTE - CHICAGO BOARD OF TRADE",
+      "report_date": "2022-10-09",
+      "lev_long": 539855,
+      "lev_short": 270961,
+      "lev_net": 268894,
+      "asset_long": 416030,
+      "asset_short": 417237
+    },
+    "Treasury 10Y": {
+      "market": "UST 10Y NOTE - CHICAGO BOARD OF TRADE",
+      "report_date": "2022-10-09",
+      "lev_long": 388011,
+      "lev_short": 182538,
+      "lev_net": 205473,
+      "asset_long": 1033946,
+      "asset_short": 752953
+    }
+  }
+}

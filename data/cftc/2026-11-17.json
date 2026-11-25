@@ -1,6 +1,6 @@
 {
   "date": "2026-11-17",
-  "source": "https://www.cftc.gov/dea/newcot/FinFutWk.txt",
+  "source": "CFTC current",
   "markets": {
     "S&P 500": {
       "market": "E-MINI S&P 500 - CHICAGO MERCANTILE EXCHANGE",
@@ -61,6 +61,33 @@
       "lev_long_com": 2994023,
       "lev_short_com": 1045039,
       "lev_net_com": 1948984
+    },
+    "Crude Oil": {
+      "market": "WTI-PHYSICAL - NEW YORK MERCANTILE EXCHANGE",
+      "report_date": "2026-11-17",
+      "lev_long": 264767,
+      "lev_short": 132722,
+      "lev_net": 132045,
+      "asset_long": 0,
+      "asset_short": 0
+    },
+    "Copper": {
+      "market": "COPPER- #1 - COMMODITY EXCHANGE INC.",
+      "report_date": "2026-11-17",
+      "lev_long": 111484,
+      "lev_short": 52565,
+      "lev_net": 58919,
+      "asset_long": 0,
+      "asset_short": 0
+    },
+    "Gold": {
+      "market": "GOLD - COMMODITY EXCHANGE INC.",
+      "report_date": "2026-11-17",
+      "lev_long": 24843,
+      "lev_short": 21549,
+      "lev_net": 3294,
+      "asset_long": 0,
+      "asset_short": 0
     }
   }
 }

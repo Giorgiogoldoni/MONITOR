@@ -1,0 +1,51 @@
+{
+  "date": "2024-05-23",
+  "source": "CFTC 2024",
+  "markets": {
+    "EUR/USD": {
+      "market": "EURO FX - CHICAGO MERCANTILE EXCHANGE",
+      "report_date": "2024-05-23",
+      "lev_long": 64329,
+      "lev_short": 9007,
+      "lev_net": 55322,
+      "asset_long": 95296,
+      "asset_short": 25441
+    },
+    "S&P 500": {
+      "market": "E-MINI S&P 500 - CHICAGO MERCANTILE EXCHANGE",
+      "report_date": "2024-05-23",
+      "lev_long": 470186,
+      "lev_short": 52676,
+      "lev_net": 417510,
+      "asset_long": 266029,
+      "asset_short": 162927
+    },
+    "Nasdaq 100": {
+      "market": "NASDAQ-100 Consolidated - CHICAGO MERCANTILE EXCHANGE",
+      "report_date": "2024-05-23",
+      "lev_long": 84084,
+      "lev_short": 11445,
+      "lev_net": 72639,
+      "asset_long": 26088,
+      "asset_short": 4296
+    },
+    "Treasury 2Y": {
+      "market": "UST 2Y NOTE - CHICAGO BOARD OF TRADE",
+      "report_date": "2024-05-23",
+      "lev_long": 2250500,
+      "lev_short": 75586,
+      "lev_net": 2174914,
+      "asset_long": 440534,
+      "asset_short": 320564
+    },
+    "Treasury 10Y": {
+      "market": "UST 10Y NOTE - CHICAGO BOARD OF TRADE",
+      "report_date": "2024-05-23",
+      "lev_long": 1846769,
+      "lev_short": 89661,
+      "lev_net": 1757108,
+      "asset_long": 1109593,
+      "asset_short": 678932
+    }
+  }
+}
