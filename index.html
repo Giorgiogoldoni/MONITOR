@@ -219,6 +219,7 @@
     <button class="tab" onclick="showTab('history',this)">STORIA PARTECIPAZIONI</button>
     <button class="tab" onclick="showTab('cftc',this)">CFTC / COT</button>
     <button class="tab" onclick="showTab('upload',this)">↑ CARICA CSV</button>
+    <button class="tab" onclick="showTab('multiasset',this)">MULTI-ASSET RESEARCH</button>
   </nav>
 
   <main>
@@ -393,6 +394,12 @@
       </div>
     </div>
 
+
+    <div id="panel-multiasset" class="panel">
+      <div class="section-title"><span>Multi-asset ETF · candidati in audit</span><span>NON OPERATIVI — fonti da validare</span></div>
+      <div id="multiasset-grid" class="etf-grid"><div class="loading">Caricamento registro candidati…</div></div>
+      <div class="empty" style="text-align:left;padding:16px;border:1px solid var(--border)">Candidati separati dal monitor holdings attivo. Allocazioni strategiche ≠ portafoglio effettivo. Feed automatici saranno attivati solo dopo test download ufficiale e validazione.</div>
+    </div>
   </main>
 </div>
 
@@ -1015,6 +1022,7 @@ function showTab(name, btn) {
   btn?.classList.add('active');
   if (name==='history') renderHistory();
   if (name==='cftc')    renderCftc();
+  if (name==='multiasset') renderMultiassetResearch();
 }
 function setDelta(mode,btn) {
   DELTA_MODE=mode;
@@ -1031,6 +1039,7 @@ function setHistInterval(intv,btn) {
   document.querySelectorAll('#panel-history .interval-btn').forEach(b=>b.classList.remove('active'));
   btn?.classList.add('active'); renderHistory();
 }
+async function renderMultiassetResearch(){const wrap=$('multiasset-grid');if(!wrap)return;try{const res=await fetch(BASE_URL+'/data/research/multiasset_candidates.json');if(!res.ok)throw new Error('HTTP '+res.status);const reg=await res.json();let cards=[];for(const provider of Object.values(reg.providers||{})){for(const p of (provider.candidates||[])){const mix=p.allocation||p.benchmark_mix||{};const mixText=Object.entries(mix).map(([k,v])=>k.replaceAll('_',' ')+' '+v+'%').join(' · ');cards.push('<article class="etf-card"><div class="etf-card-header"><div><div class="etf-ticker">'+p.ticker+'</div><div class="etf-meta">'+p.isin+'</div></div><span class="etf-badge ucits">RESEARCH</span></div><div class="etf-card-body"><strong>'+p.name+'</strong><p style="margin:10px 0;color:var(--muted)">'+mixText+'</p><p>TER: '+p.ter+'% · Stato: '+(p.status||'research')+'</p>'+(p.holdings_page?'<p style="margin-top:10px"><a href="'+p.holdings_page+'" target="_blank" rel="noopener">Fonte ufficiale ↗</a></p>':'')+'</div></article>');}}wrap.innerHTML=cards.join('');}catch(e){wrap.innerHTML='<div class="empty">Registro candidati non disponibile: '+e.message+'</div>';}}
 function renderAll() { renderHoldings(); renderStrategic(); }
 
 // ══════════════════════════════════════════════════════
