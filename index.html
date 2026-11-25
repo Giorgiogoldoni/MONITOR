@@ -599,8 +599,11 @@ function renderEtfCard(etf) {
         <tbody>${rows}</tbody>
       </table>
       <div style="font-size:10px;color:var(--muted);margin-top:8px;font-family:var(--font-mono)">
-        Snapshot: ${currDate} · ${(curr.holdings||[]).length} posizioni
-      </div>`}
+        Snapshot: ${currDate} · ${(curr.holdings||[]).length} posizioni · Peso totale: ${fmtW((curr.holdings||[]).reduce((s,h)=>s+(Number(h.weight)||0),0))}
+      </div>
+      ${(curr.source||'').toLowerCase().includes('partial') || (curr.source||'').toLowerCase().includes('top 10 only') ? '<div style="font-size:10px;color:#b7791f;margin-top:5px;font-weight:600">⚠ DATASET PARZIALE — holdings non complete</div>' : ''}
+      ${(curr.holdings||[]).some(h=>!h.ticker) ? '<div style="font-size:10px;color:#b7791f;margin-top:5px;font-weight:600">⚠ Ticker mancanti su alcune posizioni</div>' : ''}
+    `}
     </div>
   </div>`;
 }
