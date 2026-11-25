@@ -577,7 +577,7 @@ function renderEtfCard(etf) {
     <div class="etf-card-header">
       <div>
         <div class="etf-ticker">${etf}</div>
-        <div class="etf-meta">${info.name||''} · ${info.freq||''}</div>
+        <div class="etf-meta">${info.name||''} · ${info.freq||''}${info.isin ? ' · '+info.isin : ''}</div>
       </div>
       <span class="etf-badge ${info.market==='UCITS'?'ucits':'usa'}">${info.market||''}</span>
     </div>
