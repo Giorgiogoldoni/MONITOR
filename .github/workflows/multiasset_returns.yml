@@ -1,0 +1,24 @@
+name: Multi-asset returns research
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '30 9 2 * *'
+permissions:
+  contents: write
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Fetch monthly adjusted price history and calculate diagnostics
+        run: python scripts/fetch_multiasset_returns.py
+      - name: Commit results
+        run: |
+          git config user.name "MONITOR Research Bot"
+          git config user.email "monitor-research-bot@users.noreply.github.com"
+          git add data/research/returns/
+          git diff --cached --quiet || git commit -m "research: refresh multi-asset monthly returns"
+          git push
