@@ -555,15 +555,9 @@ function renderHoldings() {
   const grid = $('etf-grid');
   if (!grid) return;
   const q = (($('holdings-search') || {}).value || '').trim().toLowerCase();
-  const available = ETFS.filter(etf => {
-    const data = (typeof DATA !== 'undefined' && DATA[etf.id]) ? DATA[etf.id] : null;
-    return data && Object.keys(data).length;
-  });
+  const available = ETFS.filter(etf => latestDate(etf));
   const missing = ETFS.length - available.length;
-  const dates = available.flatMap(etf => {
-    const data = DATA[etf.id] || {};
-    return Object.keys(data).filter(k => /^\\d{4}-\\d{2}-\\d{2}$/.test(k));
-  }).sort();
+  const dates = available.map(etf => latestDate(etf)).filter(Boolean).sort();
   const latest = dates.length ? dates[dates.length-1] : '—';
   const metrics = $('monitor-metrics');
   if (metrics) metrics.innerHTML =
@@ -573,7 +567,8 @@ function renderHoldings() {
     '<div class="metric"><b>' + latest + '</b><span>ultimo snapshot</span></div>';
   const filtered = ETFS.filter(etf => {
     if (!q) return true;
-    return [etf.id, etf.name, etf.isin, etf.ticker].filter(Boolean).join(' ').toLowerCase().includes(q);
+    const info = ETF_INFO[etf] || {};
+    return [etf, info.name, info.isin, info.ticker].filter(Boolean).join(' ').toLowerCase().includes(q);
   });
   grid.innerHTML = filtered.map(etf => renderEtfCard(etf)).join('') || '<div class="empty">Nessun ETF corrispondente alla ricerca.</div>';
 }
