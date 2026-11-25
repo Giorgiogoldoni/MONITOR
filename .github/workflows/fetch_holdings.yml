@@ -28,7 +28,7 @@ jobs:
           mkdir -p data/holdings/GMOM data/holdings/RPAR data/holdings/DBMF
           mkdir -p data/holdings/AOA  data/holdings/AOR  data/holdings/MAGR
           mkdir -p data/holdings/F701 data/holdings/F703
-          mkdir -p data/holdings/GAL  data/holdings/AOK  data/holdings/DWAW data/holdings/DWUS
+          mkdir -p data/holdings/GAL  data/holdings/AOK  data/holdings/DWAW data/holdings/DWUS data/holdings/ACTEQ
           mkdir -p data/cftc data/manual
 
       - name: Fetch CFTC historical data (solo se meno di 50 file)
