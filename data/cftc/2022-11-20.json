@@ -46,6 +46,33 @@
       "lev_net": 433556,
       "asset_long": 1368485,
       "asset_short": 810666
+    },
+    "Crude Oil": {
+      "market": "CRUDE OIL, LIGHT SWEET - NEW YORK MERCANTILE EXCHANGE",
+      "report_date": "2022-11-20",
+      "lev_long": 440135,
+      "lev_short": 107420,
+      "lev_net": 332715,
+      "asset_long": 0,
+      "asset_short": 0
+    },
+    "Copper": {
+      "market": "COPPER-GRADE #1 - COMMODITY EXCHANGE INC.",
+      "report_date": "2022-11-20",
+      "lev_long": 91417,
+      "lev_short": 52322,
+      "lev_net": 39095,
+      "asset_long": 0,
+      "asset_short": 0
+    },
+    "Gold": {
+      "market": "GOLD - COMMODITY EXCHANGE INC.",
+      "report_date": "2022-11-20",
+      "lev_long": 65627,
+      "lev_short": 95639,
+      "lev_net": -30012,
+      "asset_long": 0,
+      "asset_short": 0
     }
   }
 }

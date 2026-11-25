@@ -46,6 +46,33 @@
       "lev_net": 1976378,
       "asset_long": 722478,
       "asset_short": 646166
+    },
+    "Crude Oil": {
+      "market": "WTI-PHYSICAL - NEW YORK MERCANTILE EXCHANGE",
+      "report_date": "2024-02-13",
+      "lev_long": 359245,
+      "lev_short": 42715,
+      "lev_net": 316530,
+      "asset_long": 0,
+      "asset_short": 0
+    },
+    "Copper": {
+      "market": "COPPER- #1 - COMMODITY EXCHANGE INC.",
+      "report_date": "2024-02-13",
+      "lev_long": 83700,
+      "lev_short": 40597,
+      "lev_net": 43103,
+      "asset_long": 0,
+      "asset_short": 0
+    },
+    "Gold": {
+      "market": "GOLD - COMMODITY EXCHANGE INC.",
+      "report_date": "2024-02-13",
+      "lev_long": 82429,
+      "lev_short": 39763,
+      "lev_net": 42666,
+      "asset_long": 0,
+      "asset_short": 0
     }
   }
 }
