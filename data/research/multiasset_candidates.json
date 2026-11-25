@@ -514,6 +514,44 @@
           "strategy": "CTA hedge-fund basket replication; EUR-hedged share class"
         }
       ]
+    },
+    "BNP Paribas Global Equity Long Short": {
+      "source_status": "issuer factsheet verified; new strategy launched 2 Jun 2026, identifiers and estimated ongoing costs confirmed",
+      "candidates": [
+        {
+          "ticker": "SLEEK",
+          "isin": "LU3307220965",
+          "name": "BNP Paribas Easy Global Equity Long/Short UCITS ETF C",
+          "ter": 0.5,
+          "status": "research",
+          "classification": "systematic global equity multifactor long/short",
+          "strategy": "Daily systematic multifactor strategy (quality, value, momentum, low volatility), long higher-scoring and short lower-scoring global equities; structurally moderate net long",
+          "holdings_page": "https://www.bnpparibas-am.com/it-it/fundsheet/equity/bnp-paribas-easy-global-equity-long-short-ucits-etf-c-lu3307220965/"
+        }
+      ]
+    },
+    "IncomeShares Multi-Asset Options Income ETPs": {
+      "source_status": "issuer product pages verified; separate ETP wrapper, option-premium distribution strategy, small funds and short operating history",
+      "candidates": [
+        {
+          "ticker": "MLTY / MLAY",
+          "isin": "XS3299469679",
+          "name": "IncomeShares 60/30/10 Multi-Asset Balanced ETP",
+          "ter": 0.45,
+          "status": "research",
+          "classification": "multi-asset options-income ETP; 60% equity/30% fixed income/5% gold/5% silver",
+          "strategy": "Monthly distributions from option premium strategy on underlying basket; semiannual rebalance; wrapper is ETP, not conventional ETF"
+        },
+        {
+          "ticker": "GRWY / MSTY",
+          "isin": "XS3337374774",
+          "name": "IncomeShares 75/10/15 Multi-Asset Growth ETP",
+          "ter": 0.45,
+          "status": "research",
+          "classification": "multi-asset options-income ETP; 75% equity/10% fixed income/15% alternatives",
+          "strategy": "Monthly distribution options-income basket; semiannual rebalance; holdings include other option-income ETPs; ETP wrapper risk"
+        }
+      ]
     }
   },
   "integration_gate": [
