@@ -51,7 +51,8 @@ def code_matches(code, target, aliases):
 def parse_date(raw, expected_year=None):
     raw = str(raw).strip()
     if len(raw) == 6 and raw.isdigit():
-        return f"20{raw[:2]}-{raw[2:4]}-{raw[4:6]}"
+        year = expected_year if expected_year else int("20" + raw[:2])
+        return f"{year}-{raw[2:4]}-{raw[4:6]}"
     if len(raw) == 10 and "-" in raw:
         date = raw
         if expected_year and int(raw[:4]) > expected_year + 1:
@@ -62,7 +63,8 @@ def parse_date(raw, expected_year=None):
         f = float(raw)
         if f > 1000:
             d = xlrd.xldate_as_datetime(f, 0)
-            return d.strftime("%Y-%m-%d")
+            year = expected_year if expected_year and d.year > expected_year + 1 else d.year
+            return f"{year}-{d.month:02d}-{d.day:02d}"
     except:
         pass
     return None
