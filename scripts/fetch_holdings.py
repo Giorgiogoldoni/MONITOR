@@ -39,7 +39,7 @@ for d in [ETF_DIR, CFTC_DIR, MANUAL]:
 TODAY   = datetime.date.today().isoformat()
 WEEKDAY = datetime.date.today().weekday()
 
-ETFS = ["GMOM", "RPAR", "DBMF", "AOA", "AOR", "MAGR", "F701", "F703", "GAL", "AOK", "DWAW", "DWUS"]
+ETFS = ["GMOM", "RPAR", "DBMF", "AOA", "AOR", "MAGR", "F701", "F703", "GAL", "AOK", "DWAW", "DWUS", "ACTEQ"]
 
 # ── HTTP ───────────────────────────────────────────────────────────────────────
 
