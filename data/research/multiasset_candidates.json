@@ -6,20 +6,350 @@
     "VanEck": {
       "source_status": "official full holdings pages exist; download endpoint not yet programmatically validated",
       "candidates": [
-        {"ticker":"DTM","isin":"NL0009272764","name":"Multi-Asset Conservative Allocation UCITS ETF","allocation":{"government_bonds":35,"corporate_bonds":35,"equities":25,"listed_real_estate":5},"ter":0.28,"holdings_page":"https://www.vaneck.com/FI/en/investments/conservative-multi-asset-etf/index/","status":"research"},
-        {"ticker":"NTM","isin":"NL0009272772","name":"Multi-Asset Balanced Allocation UCITS ETF","allocation":{"government_bonds":25,"corporate_bonds":25,"equities":40,"listed_real_estate":10},"ter":0.30,"holdings_page":"https://www.vaneck.com/it/it/theme/multi-asset-investing/","status":"research"},
-        {"ticker":"TOF","isin":"NL0009272780","name":"Multi-Asset Growth Allocation UCITS ETF","allocation":{"government_bonds":15,"corporate_bonds":15,"equities":60,"listed_real_estate":10},"ter":0.32,"holdings_page":"https://www.vaneck.com/it/it/theme/multi-asset-investing/","status":"research"}
+        {
+          "ticker": "DTM",
+          "isin": "NL0009272764",
+          "name": "Multi-Asset Conservative Allocation UCITS ETF",
+          "allocation": {
+            "government_bonds": 35,
+            "corporate_bonds": 35,
+            "equities": 25,
+            "listed_real_estate": 5
+          },
+          "ter": 0.28,
+          "holdings_page": "https://www.vaneck.com/FI/en/investments/conservative-multi-asset-etf/index/",
+          "status": "research"
+        },
+        {
+          "ticker": "NTM",
+          "isin": "NL0009272772",
+          "name": "Multi-Asset Balanced Allocation UCITS ETF",
+          "allocation": {
+            "government_bonds": 25,
+            "corporate_bonds": 25,
+            "equities": 40,
+            "listed_real_estate": 10
+          },
+          "ter": 0.3,
+          "holdings_page": "https://www.vaneck.com/it/it/theme/multi-asset-investing/",
+          "status": "research"
+        },
+        {
+          "ticker": "TOF",
+          "isin": "NL0009272780",
+          "name": "Multi-Asset Growth Allocation UCITS ETF",
+          "allocation": {
+            "government_bonds": 15,
+            "corporate_bonds": 15,
+            "equities": 60,
+            "listed_real_estate": 10
+          },
+          "ter": 0.32,
+          "holdings_page": "https://www.vaneck.com/it/it/theme/multi-asset-investing/",
+          "status": "research"
+        }
       ]
     },
     "JPMorgan": {
       "source_status": "official product pages/holdings counts confirmed; full downloadable holdings feed not validated",
       "candidates": [
-        {"ticker":"JMAC","isin":"IE000FASRFS4","name":"Strategic Allocation Conservative Active UCITS ETF","benchmark_mix":{"equities":20,"bonds":70,"cash":10},"ter":0.35,"status":"research"},
-        {"ticker":"JMAM","isin":"IE000TWAN2K7","name":"Strategic Allocation Moderate Active UCITS ETF","benchmark_mix":{"equities":60,"bonds":40},"ter":0.35,"status":"research"},
-        {"ticker":"JMAG","isin":"IE000MVWFDH1","name":"Strategic Allocation Growth Active UCITS ETF","benchmark_mix":{"equities":80,"bonds":20},"ter":0.35,"status":"research"}
+        {
+          "ticker": "JMAC",
+          "isin": "IE000FASRFS4",
+          "name": "Strategic Allocation Conservative Active UCITS ETF",
+          "benchmark_mix": {
+            "equities": 20,
+            "bonds": 70,
+            "cash": 10
+          },
+          "ter": 0.35,
+          "status": "research"
+        },
+        {
+          "ticker": "JMAM",
+          "isin": "IE000TWAN2K7",
+          "name": "Strategic Allocation Moderate Active UCITS ETF",
+          "benchmark_mix": {
+            "equities": 60,
+            "bonds": 40
+          },
+          "ter": 0.35,
+          "status": "research"
+        },
+        {
+          "ticker": "JMAG",
+          "isin": "IE000MVWFDH1",
+          "name": "Strategic Allocation Growth Active UCITS ETF",
+          "benchmark_mix": {
+            "equities": 80,
+            "bonds": 20
+          },
+          "ter": 0.35,
+          "status": "research"
+        }
       ],
-      "official_portal":"https://am.jpmorgan.com/it/en/asset-management/institutional/products/fund-explorer/etf"
+      "official_portal": "https://am.jpmorgan.com/it/en/asset-management/institutional/products/fund-explorer/etf"
+    },
+    "Vanguard": {
+      "source_status": "candidate universe identified; official holdings feed/parser validation pending",
+      "candidates": [
+        {
+          "ticker": "VLS20",
+          "isin": "IE00BMVB5K07",
+          "name": "LifeStrategy 20% Equity UCITS ETF Acc",
+          "equity_allocation": 20,
+          "ter": 0.25,
+          "status": "research"
+        },
+        {
+          "ticker": "VLS40",
+          "isin": "IE00BMVB5M21",
+          "name": "LifeStrategy 40% Equity UCITS ETF Acc",
+          "equity_allocation": 40,
+          "ter": 0.25,
+          "status": "research"
+        },
+        {
+          "ticker": "VLS60",
+          "isin": "IE00BMVB5P51",
+          "name": "LifeStrategy 60% Equity UCITS ETF Acc",
+          "equity_allocation": 60,
+          "ter": 0.25,
+          "status": "research"
+        },
+        {
+          "ticker": "VLS80",
+          "isin": "IE00BMVB5R75",
+          "name": "LifeStrategy 80% Equity UCITS ETF Acc",
+          "equity_allocation": 80,
+          "ter": 0.25,
+          "status": "research"
+        }
+      ]
+    },
+    "Xtrackers": {
+      "source_status": "candidate products identified; official source endpoints and holdings parsing not validated",
+      "candidates": [
+        {
+          "ticker": "XQUI",
+          "isin": "LU0397221945",
+          "name": "Portfolio UCITS ETF 1C",
+          "ter": 0.7,
+          "status": "research"
+        },
+        {
+          "ticker": "XS7W",
+          "isin": "IE00B3Y8D01",
+          "name": "Portfolio Income UCITS ETF 1D",
+          "ter": 0.65,
+          "status": "research"
+        },
+        {
+          "ticker": "XD20",
+          "isin": "LU3116008429",
+          "name": "Diversified Portfolio 20% Equity UCITS ETF 1C",
+          "equity_allocation": 20,
+          "ter": 0.24,
+          "status": "research"
+        },
+        {
+          "ticker": "XD40",
+          "isin": "LU3116008429",
+          "name": "Diversified Portfolio 40% Equity UCITS ETF 1C",
+          "equity_allocation": 40,
+          "ter": 0.24,
+          "status": "research"
+        },
+        {
+          "ticker": "XD60",
+          "isin": "LU3116008692",
+          "name": "Diversified Portfolio 60% Equity UCITS ETF 1C",
+          "equity_allocation": 60,
+          "ter": 0.24,
+          "status": "research"
+        },
+        {
+          "ticker": "XD80",
+          "isin": "LU3116008775",
+          "name": "Diversified Portfolio 80% Equity UCITS ETF 1C",
+          "equity_allocation": 80,
+          "ter": 0.24,
+          "status": "research"
+        }
+      ]
+    },
+    "iShares/BlackRock": {
+      "source_status": "products identified; verify official details and source files before integration",
+      "candidates": [
+        {
+          "ticker": "ICPG",
+          "isin": "IE00BLP53M98",
+          "name": "Conservative Portfolio UCITS ETF EUR Acc",
+          "ter": 0.25,
+          "status": "research"
+        },
+        {
+          "ticker": "IMPG",
+          "isin": "IE00BLLZQS08",
+          "name": "Moderate Portfolio UCITS ETF EUR Acc",
+          "ter": 0.25,
+          "status": "research"
+        },
+        {
+          "ticker": "IGPG",
+          "isin": "IE00BLLZQ805",
+          "name": "Growth Portfolio UCITS ETF EUR Acc",
+          "ter": 0.25,
+          "status": "research"
+        },
+        {
+          "ticker": "MAGR",
+          "isin": "IE00B?",
+          "name": "ESG Multi-Asset Growth Portfolio UCITS ETF",
+          "ter": 0.25,
+          "status": "research",
+          "note": "ISIN and current ticker mapping require confirmation"
+        },
+        {
+          "ticker": "MODR",
+          "isin": "IE00B?",
+          "name": "ESG Multi-Asset Moderate Portfolio UCITS ETF",
+          "ter": 0.25,
+          "status": "research",
+          "note": "ISIN and current ticker mapping require confirmation"
+        }
+      ]
+    },
+    "Amundi": {
+      "source_status": "products identified; direct holdings feeds pending verification",
+      "candidates": [
+        {
+          "ticker": "F701",
+          "isin": "DE000ETF7011",
+          "name": "Multi-Asset Portfolio UCITS ETF EUR Dist",
+          "ter": 0.41,
+          "status": "research"
+        },
+        {
+          "ticker": "F702",
+          "isin": "DE000ETF7029",
+          "name": "Multi-Asset Portfolio Defensive UCITS ETF EUR Dist",
+          "ter": 0.38,
+          "status": "research"
+        },
+        {
+          "ticker": "F703",
+          "isin": "DE000ETF7037",
+          "name": "Multi-Asset Portfolio Offensive UCITS ETF EUR Dist",
+          "ter": 0.49,
+          "status": "research"
+        }
+      ]
+    },
+    "Fineco AM": {
+      "source_status": "identified; holdings source and feed validation pending",
+      "candidates": [
+        {
+          "ticker": "ACTEQ",
+          "isin": "IE000CB2BST9",
+          "name": "Active Portfolios 100% Equity UCITS ETF",
+          "ter": 0.7,
+          "status": "research"
+        },
+        {
+          "ticker": "ACT60",
+          "isin": "IE0009RW4WA0",
+          "name": "Active Portfolios 60% Equity UCITS ETF",
+          "ter": 0.68,
+          "status": "research"
+        }
+      ]
+    },
+    "WisdomTree": {
+      "source_status": "efficient-core products identified; allocation is leveraged equity plus bonds and requires distinct risk classification",
+      "candidates": [
+        {
+          "ticker": "GEC",
+          "isin": "IE00077IIPQ8",
+          "name": "Global Efficient Core UCITS ETF USD Unhedged Acc",
+          "ter": 0.25,
+          "status": "research",
+          "classification": "efficient-core"
+        },
+        {
+          "ticker": "UEC",
+          "isin": "IE000KF370H3",
+          "name": "US Efficient Core UCITS ETF USD Unhedged Acc",
+          "ter": 0.2,
+          "status": "research",
+          "classification": "efficient-core"
+        },
+        {
+          "ticker": "ZEC",
+          "isin": "IE000OV4XWA3",
+          "name": "Eurozone Efficient Core UCITS ETF EUR Unhedged Acc",
+          "ter": 0.2,
+          "status": "research",
+          "classification": "efficient-core"
+        }
+      ]
+    },
+    "Other": {
+      "source_status": "additional candidates discovered; validate product structure, identifiers and official holdings sources",
+      "candidates": [
+        {
+          "ticker": "GOSH",
+          "isin": "IE00BL643144",
+          "name": "Goshawk Global Balanced Fund UCITS ETF Acc",
+          "ter": 0.69,
+          "status": "research"
+        },
+        {
+          "ticker": "INVB",
+          "isin": "IE000PPEL1I4",
+          "name": "Investlinx Balanced Income UCITS ETF A EUR Cap",
+          "ter": 0.85,
+          "status": "research"
+        },
+        {
+          "ticker": "MAGR-INFRA",
+          "isin": "IE00BQWJFQ70",
+          "name": "SPDR Morningstar Multi-Asset Global Infrastructure UCITS ETF",
+          "ter": 0.4,
+          "status": "research",
+          "classification": "sector multi-asset"
+        },
+        {
+          "ticker": "JPM",
+          "isin": "IE000FASRFS4",
+          "name": "JPM Strategic Allocation Conservative Active",
+          "ter": 0.35,
+          "status": "research"
+        },
+        {
+          "ticker": "JPM",
+          "isin": "IE000TWAN2K7",
+          "name": "JPM Strategic Allocation Moderate Active",
+          "ter": 0.35,
+          "status": "research"
+        },
+        {
+          "ticker": "JPM",
+          "isin": "IE000MVWFDH1",
+          "name": "JPM Strategic Allocation Growth Active",
+          "ter": 0.35,
+          "status": "research"
+        }
+      ]
     }
   },
-  "integration_gate": ["official source endpoint verified","download file tested in CI/runtime","source date parsed (not file mtime)","identifiers and weights normalized","weight total validated with tolerance","no stale snapshot appended","comparison with previous snapshot tested"]
+  "integration_gate": [
+    "official source endpoint verified",
+    "download file tested in CI/runtime",
+    "source date parsed (not file mtime)",
+    "identifiers and weights normalized",
+    "weight total validated with tolerance",
+    "no stale snapshot appended",
+    "comparison with previous snapshot tested"
+  ]
 }
