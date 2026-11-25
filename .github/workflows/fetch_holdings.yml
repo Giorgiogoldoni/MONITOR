@@ -33,7 +33,7 @@ jobs:
 
       - name: Fetch CFTC historical data (solo se meno di 50 file)
         run: |
-          COUNT=$(find data/cftc -name "*.json" 2>/dev/null | wc -l)
+          COUNT=$(find data/cftc -maxdepth 1 -name "20??-??-??.json" 2>/dev/null | wc -l)
           echo "File CFTC esistenti: $COUNT"
           if [ "$COUNT" -lt 50 ]; then
             echo "Avvio fetch storico CFTC (2022-oggi)..."
