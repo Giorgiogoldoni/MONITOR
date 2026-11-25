@@ -2,13 +2,52 @@
   "schema_version": 1,
   "purpose": "Phase 2 starter historical-return research; mappings are explicitly exchange/share-class proxies, not final candidate coverage.",
   "last_reviewed": "2026-11-25",
-  "benchmark_ids": ["VT", "AOR"],
+  "benchmark_ids": [
+    "VT",
+    "AOR_US"
+  ],
   "instruments": [
-    {"id":"DBMF_US","yahoo_symbol":"DBMF","name":"iMGP DBi Managed Futures ETF (US listed proxy)","role":"managed_futures_proxy","share_class_note":"US-listed ETF; not the European UCITS share class in registry"},
-    {"id":"RPAR_US","yahoo_symbol":"RPAR","name":"RPAR Risk Parity ETF","role":"risk_parity_comparator","share_class_note":"US-listed; comparator only"},
-    {"id":"AOA_US","yahoo_symbol":"AOA","name":"iShares Core Aggressive Allocation ETF","role":"multi_asset_benchmark","share_class_note":"US-listed"},
-    {"id":"AOR_US","yahoo_symbol":"AOR","name":"iShares Core Growth Allocation ETF","role":"multi_asset_benchmark","share_class_note":"US-listed"},
-    {"id":"VT","yahoo_symbol":"VT","name":"Vanguard Total World Stock ETF","role":"equity_benchmark","share_class_note":"US-listed global equity benchmark"},
-    {"id":"BND","yahoo_symbol":"BND","name":"Vanguard Total Bond Market ETF","role":"bond_benchmark","share_class_note":"US-listed bond benchmark"}
+    {
+      "id": "DBMF_US",
+      "yahoo_symbol": "DBMF",
+      "name": "iMGP DBi Managed Futures ETF (US listed proxy)",
+      "role": "managed_futures_proxy",
+      "share_class_note": "US-listed ETF; not the European UCITS share class in registry"
+    },
+    {
+      "id": "RPAR_US",
+      "yahoo_symbol": "RPAR",
+      "name": "RPAR Risk Parity ETF",
+      "role": "risk_parity_comparator",
+      "share_class_note": "US-listed; comparator only"
+    },
+    {
+      "id": "AOA_US",
+      "yahoo_symbol": "AOA",
+      "name": "iShares Core Aggressive Allocation ETF",
+      "role": "multi_asset_benchmark",
+      "share_class_note": "US-listed"
+    },
+    {
+      "id": "AOR_US",
+      "yahoo_symbol": "AOR",
+      "name": "iShares Core Growth Allocation ETF",
+      "role": "multi_asset_benchmark",
+      "share_class_note": "US-listed"
+    },
+    {
+      "id": "VT",
+      "yahoo_symbol": "VT",
+      "name": "Vanguard Total World Stock ETF",
+      "role": "equity_benchmark",
+      "share_class_note": "US-listed global equity benchmark"
+    },
+    {
+      "id": "BND",
+      "yahoo_symbol": "BND",
+      "name": "Vanguard Total Bond Market ETF",
+      "role": "bond_benchmark",
+      "share_class_note": "US-listed bond benchmark"
+    }
   ]
 }
