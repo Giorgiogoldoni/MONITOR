@@ -155,3 +155,11 @@ Do not calculate final scores until data is comparable and sources are documente
 
 ### Phase 2 data requirements
 For every shortlisted fund: monthly total returns, inception date, NAV vs market price, AUM, bid-ask spread if available, benchmark, holdings/strategy disclosure, fee and share-class KID; then calculate rolling 12/36-month volatility, max drawdown, Sharpe/Sortino (with stated assumptions), correlations against global equity, aggregate bonds and conventional 60/40, and stress windows. Where history is short, report N/A rather than extrapolate.
+
+
+### Source refresh: VanEck issuer page (checked 25 Nov 2026)
+The issuer page currently shows AUM as of **6 Nov 2026**: DTM €21.2m, NTM €42.0m, TOF €34.3m. The page confirms allocations and TER: DTM 25% global equities / 35% government bonds / 35% corporate bonds / 5% listed real estate, 0.28%; NTM 40/25/25/10, 0.30%; TOF 60/15/15/10, 0.32%. The registry values were refreshed to these figures. AUM should not be compared without a common date. Issuer page also describes annual rebalancing.
+Source: VanEck official page, https://www.vaneck.com/it/it/theme/multi-asset-investing/ (accessed 25 Nov 2026).
+
+### Data availability constraint identified
+Current MONITOR holdings history is composition snapshots (manual CSV / holdings JSON), not a normalized monthly total-return time series. It cannot support performance, Sharpe, drawdown, rolling correlation or quantitative score ranking by itself. Phase 2 must acquire price/NAV history separately, account for distributions and currencies, and record source and missingness; no fabricated metrics will be produced.
