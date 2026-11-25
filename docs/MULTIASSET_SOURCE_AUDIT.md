@@ -75,3 +75,26 @@ The candidate registry has been broadened beyond strategic allocation products. 
 2. iMGP DBMF and ex-commodities: transparent strategy description and UCITS ETF share classes; compare replication basket methodology and commodity exposure.
 3. Mandatum MAAF: interesting multi-strategy differentiator, but 1.70% fee and brand-new ETF listing make it watch-only pending data and trading history.
 4. Keep these separate from core strategic allocation products; no automatic inclusion in portfolios.
+
+
+## Additional liquid alternative candidates — 25 Nov 2026
+
+### UBS commodity carry
+- UEQC — IE00BKFB6L02 — USD accumulating — TER 0.34%; UEQV — IE00BMC5DV85 — EUR hedged — TER 0.34%. Both are synthetic swap-based exposure to a **2.5x leveraged** commodity carry index excluding precious metals. Do not classify as low-risk diversifier; leverage, commodity roll/carry and synthetic counterparty risks apply. Sources: https://www.justetf.com/en-lu/etf-profile.html?isin=IE00BKFB6L02 and https://live.deutsche-boerse.com/en/etf/ubs-cmci-commodity-carry-sf-ucits-etf-heur-acc?mic=XETR.
+
+### UBS Defensive Put Write
+- BCFS — IE000V73IL86 — EUR hedged — TER 0.24%; USD share class IE00BLDGHF56 — TER 0.24%. Synthetic strategy selling S&P 500 puts with Treasury/cash component. It can earn option premium but remains exposed to equity downside and gap risk; not a true capital-protection ETF. Sources: https://www.justetf.com/en-it/etf-profile.html?isin=IE000V73IL86 and UBS factsheet https://www.swissfunddata.ch/sfdpub/docs/fsm-8514_25_01-20260131-fr.pdf.
+
+### BNP European Equity Buffer June
+- LU3307215619 — TER 0.55%, launched 21 May 2026. Defined-outcome strategy on EURO STOXX 50 with stated 15% buffer over outcome period and capped upside. Buffer is period-specific, not a guarantee; full cap, observation dates and payoff details must be checked before use. Sources: https://www.bnpparibas-am.com/it-it/fundsheet/equity/bnp-paribas-easy-european-equity-buffer-june-ucits-etf-c-lu3307215619 and https://www.justetf.com/en-lu/etf-profile.html?isin=LU3307215619.
+
+### iMGP DBi EUR share classes
+- DBMFE — LU2951555403 — EUR share class, TER 0.75% (Borsa Italiana listing confirmed).
+- MFEH — LU3359622902 — EUR hedged share class, TER 0.75% (Borsa Italiana listing confirmed).
+- Keep these as separate share-class records from the USD DBMF record. Sources: https://www.borsaitaliana.it/borsa/etf/scheda/LU2951555403-XPAR.html and https://www.borsaitaliana.it/borsa/etf/scheda/LU3359622902-XPAR.html.
+
+## Risk taxonomy additions
+- **Managed futures / CTA:** potential crisis and trend diversification; can suffer whipsaw and prolonged flat periods.
+- **Put-write:** option-premium income with equity crash/gap exposure; no guaranteed floor.
+- **Buffer / defined outcome:** conditional downside buffer paired with capped upside, reset/outcome-period dependency.
+- **Leveraged commodity carry:** 2.5x exposure and synthetic implementation; treat as high-risk satellite, not strategic multiasset substitute.
