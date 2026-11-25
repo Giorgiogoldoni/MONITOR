@@ -204,7 +204,7 @@
     .etf-grid { grid-template-columns: 1fr; }
   }
   .monitor-toolbar { display:flex; flex-direction:column; gap:12px; margin:0 0 16px; }
-  .monitor-metrics { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:8px; }
+  .monitor-metrics { display:grid; grid-template-columns:repeat(5,minmax(0,1fr)); gap:8px; }
   .metric { border:1px solid var(--border); background:var(--surface); padding:12px 14px; border-radius:6px; min-width:0; }
   .metric b { display:block; font-family:var(--font-mono); font-size:18px; line-height:1.3; overflow-wrap:anywhere; }
   .metric span { display:block; color:var(--muted); font-size:11px; margin-top:3px; }
@@ -576,11 +576,19 @@ function renderHoldings() {
   const missing = ETFS.length - available.length;
   const dates = available.map(etf => latestDate(etf)).filter(Boolean).sort();
   const latest = dates.length ? dates[dates.length-1] : '—';
+  const review = available.filter(etf => {
+    const d = latestDate(etf);
+    const data = ETF_DATA[etf][d] || {};
+    const age = d ? Math.floor((Date.now() - new Date(d + 'T00:00:00Z').getTime()) / 86400000) : 999;
+    const src = (data.source || '').toLowerCase();
+    return age > 10 || src.includes('partial') || src.includes('top 10 only');
+  }).length;
   const metrics = $('monitor-metrics');
   if (metrics) metrics.innerHTML =
     '<div class="metric"><b>' + ETFS.length + '</b><span>ETF monitorati</span></div>' +
     '<div class="metric"><b>' + available.length + '</b><span>con dati</span></div>' +
     '<div class="metric"><b>' + missing + '</b><span>senza snapshot</span></div>' +
+    '<div class="metric"><b>' + review + '</b><span>da verificare</span></div>' +
     '<div class="metric"><b>' + latest + '</b><span>ultimo snapshot</span></div>';
   const filtered = ETFS.filter(etf => {
     if (!q) return true;
@@ -646,6 +654,7 @@ function renderEtfCard(etf) {
         Snapshot: ${currDate} · ${(curr.holdings||[]).length} posizioni · Peso totale: ${fmtW((curr.holdings||[]).reduce((s,h)=>s+(Number(h.weight)||0),0))}
       </div>
       ${(curr.source||'').toLowerCase().includes('partial') || (curr.source||'').toLowerCase().includes('top 10 only') ? '<div style="font-size:10px;color:#b7791f;margin-top:5px;font-weight:600">⚠ DATASET PARZIALE — holdings non complete</div>' : ''}
+      ${currDate && Math.floor((Date.now() - new Date(currDate + 'T00:00:00Z').getTime()) / 86400000) > 10 ? '<div style="font-size:10px;color:#b7791f;margin-top:5px;font-weight:600">⚠ SNAPSHOT DATATO — oltre 10 giorni</div>' : ''}
       ${(curr.holdings||[]).some(h=>!h.ticker) ? '<div style="font-size:10px;color:#b7791f;margin-top:5px;font-weight:600">⚠ Ticker mancanti su alcune posizioni</div>' : ''}
     `}
     </div>
