@@ -4,6 +4,12 @@ on:
   schedule:
     - cron: '0 8 * * 1'
   workflow_dispatch:
+  push:
+    paths:
+      - 'scripts/fetch_cftc_history.py'
+      - 'scripts/fetch_holdings.py'
+      - 'scripts/build_index.py'
+      - '.github/workflows/fetch_holdings.yml'
 
 jobs:
   fetch:
