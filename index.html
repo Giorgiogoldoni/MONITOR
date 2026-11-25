@@ -513,14 +513,17 @@ async function loadIndex() {
 
 async function loadEtf(ticker, dates) {
   ETF_DATA[ticker] = ETF_DATA[ticker] || {};
-  const toLoad = (dates || []).slice(-90);
-  await Promise.all(toLoad.map(async date => {
-    if (ETF_DATA[ticker][date]) return;
-    const data = await fetchJSON(`${DATA_URL}/holdings/${ticker}/${date}.json`);
-    if (data) ETF_DATA[ticker][date] = data;
-  }));
+  // Caricamento iniziale leggero: ultimi 12 snapshot per ETF, in piccoli batch.
+  const toLoad = (dates || []).slice(-12);
+  for (let i = 0; i < toLoad.length; i += 4) {
+    const batch = toLoad.slice(i, i + 4);
+    await Promise.all(batch.map(async date => {
+      if (ETF_DATA[ticker][date]) return;
+      const data = await fetchJSON(DATA_URL + '/holdings/' + ticker + '/' + date + '.json');
+      if (data) ETF_DATA[ticker][date] = data;
+    }));
+  }
 }
-
 async function loadCftc(dates) {
   const toLoad = (dates || []).slice(-52);
   await Promise.all(toLoad.map(async date => {
