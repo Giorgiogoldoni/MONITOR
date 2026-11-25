@@ -139,21 +139,21 @@
         },
         {
           "ticker": "XS7W",
-          "isin": "IE00B3Y8D01",
+          "isin": "IE00B3Y8D011",
           "name": "Portfolio Income UCITS ETF 1D",
           "ter": 0.65,
           "status": "research"
         },
         {
-          "ticker": "XD20",
-          "isin": "LU3116008429",
+          "ticker": "XEQ2",
+          "isin": "LU3116008346",
           "name": "Diversified Portfolio 20% Equity UCITS ETF 1C",
           "equity_allocation": 20,
           "ter": 0.24,
           "status": "research"
         },
         {
-          "ticker": "XD40",
+          "ticker": "XEQ4",
           "isin": "LU3116008429",
           "name": "Diversified Portfolio 40% Equity UCITS ETF 1C",
           "equity_allocation": 40,
@@ -161,7 +161,7 @@
           "status": "research"
         },
         {
-          "ticker": "XD60",
+          "ticker": "XEQ6",
           "isin": "LU3116008692",
           "name": "Diversified Portfolio 60% Equity UCITS ETF 1C",
           "equity_allocation": 60,
@@ -169,7 +169,7 @@
           "status": "research"
         },
         {
-          "ticker": "XD80",
+          "ticker": "XEQ8",
           "isin": "LU3116008775",
           "name": "Diversified Portfolio 80% Equity UCITS ETF 1C",
           "equity_allocation": 80,
@@ -179,44 +179,28 @@
       ]
     },
     "iShares/BlackRock": {
-      "source_status": "products identified; verify official details and source files before integration",
+      "source_status": "ISINs and TERs identified; ticker for Conservative/Moderate and official holdings files require verification",
       "candidates": [
         {
-          "ticker": "ICPG",
+          "ticker": null,
           "isin": "IE00BLP53M98",
-          "name": "Conservative Portfolio UCITS ETF EUR Acc",
+          "name": "iShares Conservative Portfolio UCITS ETF EUR Acc",
           "ter": 0.25,
           "status": "research"
         },
         {
-          "ticker": "IMPG",
+          "ticker": null,
           "isin": "IE00BLLZQS08",
-          "name": "Moderate Portfolio UCITS ETF EUR Acc",
-          "ter": 0.25,
-          "status": "research"
-        },
-        {
-          "ticker": "IGPG",
-          "isin": "IE00BLLZQ805",
-          "name": "Growth Portfolio UCITS ETF EUR Acc",
+          "name": "iShares Moderate Portfolio UCITS ETF EUR Acc",
           "ter": 0.25,
           "status": "research"
         },
         {
           "ticker": "MAGR",
-          "isin": "IE00B?",
-          "name": "ESG Multi-Asset Growth Portfolio UCITS ETF",
+          "isin": "IE00BLLZQ805",
+          "name": "iShares Growth Portfolio UCITS ETF EUR Acc",
           "ter": 0.25,
-          "status": "research",
-          "note": "ISIN and current ticker mapping require confirmation"
-        },
-        {
-          "ticker": "MODR",
-          "isin": "IE00B?",
-          "name": "ESG Multi-Asset Moderate Portfolio UCITS ETF",
-          "ter": 0.25,
-          "status": "research",
-          "note": "ISIN and current ticker mapping require confirmation"
+          "status": "research"
         }
       ]
     },
@@ -312,33 +296,12 @@
           "status": "research"
         },
         {
-          "ticker": "MAGR-INFRA",
+          "ticker": "MAGI",
           "isin": "IE00BQWJFQ70",
           "name": "SPDR Morningstar Multi-Asset Global Infrastructure UCITS ETF",
           "ter": 0.4,
           "status": "research",
           "classification": "sector multi-asset"
-        },
-        {
-          "ticker": "JPM",
-          "isin": "IE000FASRFS4",
-          "name": "JPM Strategic Allocation Conservative Active",
-          "ter": 0.35,
-          "status": "research"
-        },
-        {
-          "ticker": "JPM",
-          "isin": "IE000TWAN2K7",
-          "name": "JPM Strategic Allocation Moderate Active",
-          "ter": 0.35,
-          "status": "research"
-        },
-        {
-          "ticker": "JPM",
-          "isin": "IE000MVWFDH1",
-          "name": "JPM Strategic Allocation Growth Active",
-          "ter": 0.35,
-          "status": "research"
         }
       ]
     }
