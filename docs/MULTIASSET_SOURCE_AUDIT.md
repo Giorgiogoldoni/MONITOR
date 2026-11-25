@@ -50,3 +50,28 @@ The candidate registry has been broadened beyond strategic allocation products. 
 - Where share classes have materially different fees, preserve separate records.
 - Do not compare specialist income or managed-futures strategies directly with traditional 20/40/60/80 allocation ETFs without distinct risk labels.
 - Dashboard counts should be interpreted as research records, not a validated count of all market products.
+
+
+## New managed-futures and liquid alternatives — verified 25 Nov 2026
+
+### BNP Paribas Easy Managed Futures
+- FOLOW (Euronext/SIX) / EEAU (Xetra), ISIN LU3307218399, TER 0.60%, launched 29 May 2026. Active model-based trend strategy using futures/forwards across equities, fixed income, currencies and commodities; volatility target described as 10–15%. The strategy is synthetically implemented. Verify exchange-specific ticker before trade.
+- Source: BNP Paribas issuer strategy overview https://www.bnpparibas-am.com/en-gb/portfolio-perspectives/innovating-with-liquid-alternative-and-buffer-etfs/; ETF profile https://www.justetf.com/en-fr/etf-profile.html?isin=LU3307218399.
+
+### Mandatum Managed Futures
+- MAAF — IE000N4P5QK5 — TER 1.70%, listed Xetra 25 Nov 2026. Daily dynamically allocated strategy combining trend-following, mean-reversion, carry and seasonal drivers across global equity, rates, bonds and currency markets. New ETF wrapper: no ETF-specific live track record yet. Official issuer: https://www.mandatum.fi/en/corporation-news/2026/mandatum-brings-its-multi-strategy-managed-futures-approach-to-an-etf/.
+
+### iMGP DBi Managed Futures ETF family
+- DBMF — LU2951555585 — 0.75%, actively replicates pre-fee performance of a representative basket of leading CTA/managed-futures funds.
+- DBMF / MFA8 (exchange-dependent ticker) — LU3024069877 — 0.75%, managed futures ex-commodities. Distinct exposure design; confirm exchange symbol on broker.
+- Official issuer pages: https://www.imgp.com/imgp-dbi-managed-futures-fund/ and https://www.imgp.com/en/fund/LU3024069877-imgp-dbi-managed-futures-ex-commodities-fund-r-usd-ucits-etf/.
+
+### Adjacent strategy candidates
+- BNP Paribas Easy Global Equity Long Short UCITS ETF: issuer confirms as part of its liquid alternatives ETF range, but identifier, listing and TER not yet verified; kept as an incomplete research record.
+- First Trust FactorFX UCITS ETF: currency carry strategy, adjacent diversifier rather than conventional multi-asset allocation; identity/fees to verify.
+
+## Research priority judgement
+1. BNP FOLOW: lower fee than Mandatum and already has a short live record; inspect risk-targeting, exposure report and AUM/liquidity.
+2. iMGP DBMF and ex-commodities: transparent strategy description and UCITS ETF share classes; compare replication basket methodology and commodity exposure.
+3. Mandatum MAAF: interesting multi-strategy differentiator, but 1.70% fee and brand-new ETF listing make it watch-only pending data and trading history.
+4. Keep these separate from core strategic allocation products; no automatic inclusion in portfolios.
