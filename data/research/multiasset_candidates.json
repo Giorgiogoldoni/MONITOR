@@ -304,6 +304,75 @@
           "classification": "sector multi-asset"
         }
       ]
+    },
+    "ODDO BHF": {
+      "source_status": "official issuer material confirms multi-asset active ETFs; holdings data and share-class feed still require verification",
+      "candidates": [
+        {
+          "ticker": "OBBA",
+          "isin": "IE000V0Q8BV4",
+          "name": "Global Balanced Allocation Active UCITS ETF C",
+          "ter": 0.3,
+          "allocation_description": "Dynamic allocation across equities, fixed income and commodities; equity/bond ranges 25-75%, commodities max 10%",
+          "status": "research",
+          "classification": "dynamic multi-asset",
+          "holdings_page": "https://hanetf.com/it/fund/oddo-bhf-global-balanced-allocation-active-ucits-etf/"
+        },
+        {
+          "ticker": "OBAA",
+          "isin": "IE000UXI85C0",
+          "name": "Global Balanced Allocation Active UCITS ETF AAA Acc",
+          "ter": 1.1,
+          "allocation_description": "Same broad multi-asset strategy; different share class and fee structure",
+          "status": "research",
+          "classification": "dynamic multi-asset",
+          "holdings_page": "https://hanetf.com/it/fund/oddo-bhf-global-balanced-allocation-active-ucits-etf/"
+        }
+      ]
+    },
+    "Man": {
+      "source_status": "new active multi-asset UCITS ETF identified; holdings/source integration not tested",
+      "candidates": [
+        {
+          "ticker": "MATE",
+          "isin": "IE000BS31R00",
+          "name": "Active Trend Enhanced UCITS ETF I H EUR",
+          "ter": 0.95,
+          "allocation_description": "Global developed-market equities plus trend-following overlay across equity, fixed income, commodity and currency futures; targets additional exposure approx. 100% NAV",
+          "status": "research",
+          "classification": "trend-following multi-asset / diversifier",
+          "holdings_page": "https://www.man.com"
+        }
+      ]
+    },
+    "BNP Paribas": {
+      "source_status": "new managed-futures UCITS ETF identified via official KID; ticker and full holdings source not yet validated",
+      "candidates": [
+        {
+          "ticker": null,
+          "isin": "LU3307218399",
+          "name": "BNP Paribas Easy Managed Futures UCITS ETF Acc",
+          "ter": null,
+          "status": "research",
+          "classification": "managed futures / alternative diversifier",
+          "holdings_page": "https://www.bnpparibas-am.com"
+        }
+      ]
+    },
+    "HANetf Income Diversifiers": {
+      "source_status": "specialist income ETF, not a core strategic multi-asset allocation product; included as adjacent research",
+      "candidates": [
+        {
+          "ticker": "PFFI",
+          "isin": "IE0008LRGGP4",
+          "name": "Infrastructure Capital Preferred Income UCITS ETF Dist",
+          "ter": 0.8,
+          "allocation_description": "Actively managed preferred shares, hybrid securities and income instruments; monthly distributions; concentrated exposure to financials",
+          "status": "research",
+          "classification": "income diversifier / specialist",
+          "holdings_page": "https://hanetf.com/it/fund/infrastructure-capital-preferred-income-ucits-etf-dist/"
+        }
+      ]
     }
   },
   "integration_gate": [
@@ -314,5 +383,6 @@
     "weight total validated with tolerance",
     "no stale snapshot appended",
     "comparison with previous snapshot tested"
-  ]
+  ],
+  "scope_note": "Universe is intentionally broader than traditional strategic allocation: core multi-asset allocation ETFs are separated from tactical trend-following/managed-futures and specialist income diversifiers. Research-only; no product is an active MONITOR holdings feed until official source, file, date and parser are tested."
 }
