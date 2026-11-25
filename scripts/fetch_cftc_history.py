@@ -133,7 +133,7 @@ def parse_disagg_xls(xls_bytes, expected_year=None):
                 continue
             market_name = str(row[0]).strip().strip('"')
             cftc_code   = str(row[3]).strip().strip('"')
-            report_date = parse_date(str(row[1]).strip())
+            report_date = parse_date(str(row[1]).strip(), expected_year)
             if not report_date:
                 continue
             for label, code in DISAGG_MARKETS.items():
@@ -197,7 +197,7 @@ def parse_disagg_csv(text, expected_year=None):
             continue
         market_name = cols[0].strip().strip('"')
         cftc_code   = cols[3].strip().strip('"')
-        report_date = parse_date(cols[1].strip())
+        report_date = parse_date(cols[1].strip(), expected_year)
         if not report_date:
             continue
         for label, code in DISAGG_MARKETS.items():
