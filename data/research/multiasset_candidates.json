@@ -21,7 +21,9 @@
           "status": "research",
           "audit_category": "strategic_multi_asset",
           "audit_stage": "primary_source_partial",
-          "audit_note": "Issuer source reviewed; share class/holdings endpoint or full feed still requires verification"
+          "audit_note": "Issuer source reviewed; share class/holdings endpoint or full feed still requires verification",
+          "screening_status": "standard_due_diligence",
+          "screening_reason": "Requires issuer-document validation before ranking"
         },
         {
           "ticker": "NTM",
@@ -38,7 +40,9 @@
           "status": "research",
           "audit_category": "strategic_multi_asset",
           "audit_stage": "primary_source_partial",
-          "audit_note": "Issuer source reviewed; share class/holdings endpoint or full feed still requires verification"
+          "audit_note": "Issuer source reviewed; share class/holdings endpoint or full feed still requires verification",
+          "screening_status": "benchmark_control",
+          "screening_reason": "Use as a passive/strategic allocation benchmark to compare active or alternative products"
         },
         {
           "ticker": "TOF",
@@ -55,7 +59,9 @@
           "status": "research",
           "audit_category": "strategic_multi_asset",
           "audit_stage": "primary_source_partial",
-          "audit_note": "Issuer source reviewed; share class/holdings endpoint or full feed still requires verification"
+          "audit_note": "Issuer source reviewed; share class/holdings endpoint or full feed still requires verification",
+          "screening_status": "standard_due_diligence",
+          "screening_reason": "Requires issuer-document validation before ranking"
         }
       ]
     },
@@ -75,7 +81,9 @@
           "status": "research",
           "audit_category": "strategic_multi_asset",
           "audit_stage": "candidate_screen",
-          "audit_note": "Not yet independently verified against primary issuer documentation in this audit"
+          "audit_note": "Not yet independently verified against primary issuer documentation in this audit",
+          "screening_status": "standard_due_diligence",
+          "screening_reason": "Requires issuer-document validation before ranking"
         },
         {
           "ticker": "JMAM",
@@ -89,7 +97,9 @@
           "status": "research",
           "audit_category": "strategic_multi_asset",
           "audit_stage": "candidate_screen",
-          "audit_note": "Not yet independently verified against primary issuer documentation in this audit"
+          "audit_note": "Not yet independently verified against primary issuer documentation in this audit",
+          "screening_status": "benchmark_control",
+          "screening_reason": "Use as a passive/strategic allocation benchmark to compare active or alternative products"
         },
         {
           "ticker": "JMAG",
@@ -103,7 +113,9 @@
           "status": "research",
           "audit_category": "strategic_multi_asset",
           "audit_stage": "candidate_screen",
-          "audit_note": "Not yet independently verified against primary issuer documentation in this audit"
+          "audit_note": "Not yet independently verified against primary issuer documentation in this audit",
+          "screening_status": "standard_due_diligence",
+          "screening_reason": "Requires issuer-document validation before ranking"
         }
       ],
       "official_portal": "https://am.jpmorgan.com/it/en/asset-management/institutional/products/fund-explorer/etf"
@@ -120,7 +132,9 @@
           "status": "research",
           "audit_category": "strategic_multi_asset",
           "audit_stage": "candidate_screen",
-          "audit_note": "Not yet independently verified against primary issuer documentation in this audit"
+          "audit_note": "Not yet independently verified against primary issuer documentation in this audit",
+          "screening_status": "standard_due_diligence",
+          "screening_reason": "Requires issuer-document validation before ranking"
         },
         {
           "ticker": "VLS40",
@@ -131,7 +145,9 @@
           "status": "research",
           "audit_category": "strategic_multi_asset",
           "audit_stage": "candidate_screen",
-          "audit_note": "Not yet independently verified against primary issuer documentation in this audit"
+          "audit_note": "Not yet independently verified against primary issuer documentation in this audit",
+          "screening_status": "standard_due_diligence",
+          "screening_reason": "Requires issuer-document validation before ranking"
         },
         {
           "ticker": "VLS60",
@@ -142,7 +158,9 @@
           "status": "research",
           "audit_category": "strategic_multi_asset",
           "audit_stage": "candidate_screen",
-          "audit_note": "Not yet independently verified against primary issuer documentation in this audit"
+          "audit_note": "Not yet independently verified against primary issuer documentation in this audit",
+          "screening_status": "benchmark_control",
+          "screening_reason": "Use as a passive/strategic allocation benchmark to compare active or alternative products"
         },
         {
           "ticker": "VLS80",
@@ -153,7 +171,9 @@
           "status": "research",
           "audit_category": "strategic_multi_asset",
           "audit_stage": "candidate_screen",
-          "audit_note": "Not yet independently verified against primary issuer documentation in this audit"
+          "audit_note": "Not yet independently verified against primary issuer documentation in this audit",
+          "screening_status": "standard_due_diligence",
+          "screening_reason": "Requires issuer-document validation before ranking"
         }
       ]
     },
@@ -168,7 +188,9 @@
           "status": "research",
           "audit_category": "strategic_multi_asset",
           "audit_stage": "candidate_screen",
-          "audit_note": "Not yet independently verified against primary issuer documentation in this audit"
+          "audit_note": "Not yet independently verified against primary issuer documentation in this audit",
+          "screening_status": "standard_due_diligence",
+          "screening_reason": "Requires issuer-document validation before ranking"
         },
         {
           "ticker": "XS7W",
@@ -178,7 +200,9 @@
           "status": "research",
           "audit_category": "strategic_multi_asset",
           "audit_stage": "candidate_screen",
-          "audit_note": "Not yet independently verified against primary issuer documentation in this audit"
+          "audit_note": "Not yet independently verified against primary issuer documentation in this audit",
+          "screening_status": "standard_due_diligence",
+          "screening_reason": "Requires issuer-document validation before ranking"
         },
         {
           "ticker": "XEQ2",
@@ -189,7 +213,9 @@
           "status": "research",
           "audit_category": "strategic_multi_asset",
           "audit_stage": "candidate_screen",
-          "audit_note": "Not yet independently verified against primary issuer documentation in this audit"
+          "audit_note": "Not yet independently verified against primary issuer documentation in this audit",
+          "screening_status": "standard_due_diligence",
+          "screening_reason": "Requires issuer-document validation before ranking"
         },
         {
           "ticker": "XEQ4",
@@ -200,7 +226,9 @@
           "status": "research",
           "audit_category": "strategic_multi_asset",
           "audit_stage": "candidate_screen",
-          "audit_note": "Not yet independently verified against primary issuer documentation in this audit"
+          "audit_note": "Not yet independently verified against primary issuer documentation in this audit",
+          "screening_status": "standard_due_diligence",
+          "screening_reason": "Requires issuer-document validation before ranking"
         },
         {
           "ticker": "XEQ6",
@@ -211,7 +239,9 @@
           "status": "research",
           "audit_category": "strategic_multi_asset",
           "audit_stage": "candidate_screen",
-          "audit_note": "Not yet independently verified against primary issuer documentation in this audit"
+          "audit_note": "Not yet independently verified against primary issuer documentation in this audit",
+          "screening_status": "benchmark_control",
+          "screening_reason": "Use as a passive/strategic allocation benchmark to compare active or alternative products"
         },
         {
           "ticker": "XEQ8",
@@ -222,7 +252,9 @@
           "status": "research",
           "audit_category": "strategic_multi_asset",
           "audit_stage": "candidate_screen",
-          "audit_note": "Not yet independently verified against primary issuer documentation in this audit"
+          "audit_note": "Not yet independently verified against primary issuer documentation in this audit",
+          "screening_status": "standard_due_diligence",
+          "screening_reason": "Requires issuer-document validation before ranking"
         }
       ]
     },
@@ -237,7 +269,9 @@
           "status": "research",
           "audit_category": "strategic_multi_asset",
           "audit_stage": "candidate_screen",
-          "audit_note": "Not yet independently verified against primary issuer documentation in this audit"
+          "audit_note": "Not yet independently verified against primary issuer documentation in this audit",
+          "screening_status": "hold_pending_identity_or_relevance",
+          "screening_reason": "Insufficient identity/relevance or not a priority for this radar; do not promote without evidence"
         },
         {
           "ticker": null,
@@ -247,7 +281,9 @@
           "status": "research",
           "audit_category": "strategic_multi_asset",
           "audit_stage": "candidate_screen",
-          "audit_note": "Not yet independently verified against primary issuer documentation in this audit"
+          "audit_note": "Not yet independently verified against primary issuer documentation in this audit",
+          "screening_status": "hold_pending_identity_or_relevance",
+          "screening_reason": "Insufficient identity/relevance or not a priority for this radar; do not promote without evidence"
         },
         {
           "ticker": "MAGR",
@@ -257,7 +293,9 @@
           "status": "research",
           "audit_category": "strategic_multi_asset",
           "audit_stage": "candidate_screen",
-          "audit_note": "Not yet independently verified against primary issuer documentation in this audit"
+          "audit_note": "Not yet independently verified against primary issuer documentation in this audit",
+          "screening_status": "benchmark_control",
+          "screening_reason": "Use as a passive/strategic allocation benchmark to compare active or alternative products"
         }
       ]
     },
@@ -272,7 +310,9 @@
           "status": "research",
           "audit_category": "strategic_multi_asset",
           "audit_stage": "candidate_screen",
-          "audit_note": "Not yet independently verified against primary issuer documentation in this audit"
+          "audit_note": "Not yet independently verified against primary issuer documentation in this audit",
+          "screening_status": "standard_due_diligence",
+          "screening_reason": "Requires issuer-document validation before ranking"
         },
         {
           "ticker": "F702",
@@ -282,7 +322,9 @@
           "status": "research",
           "audit_category": "strategic_multi_asset",
           "audit_stage": "candidate_screen",
-          "audit_note": "Not yet independently verified against primary issuer documentation in this audit"
+          "audit_note": "Not yet independently verified against primary issuer documentation in this audit",
+          "screening_status": "standard_due_diligence",
+          "screening_reason": "Requires issuer-document validation before ranking"
         },
         {
           "ticker": "F703",
@@ -292,7 +334,9 @@
           "status": "research",
           "audit_category": "strategic_multi_asset",
           "audit_stage": "candidate_screen",
-          "audit_note": "Not yet independently verified against primary issuer documentation in this audit"
+          "audit_note": "Not yet independently verified against primary issuer documentation in this audit",
+          "screening_status": "standard_due_diligence",
+          "screening_reason": "Requires issuer-document validation before ranking"
         }
       ]
     },
@@ -307,7 +351,9 @@
           "status": "research",
           "audit_category": "strategic_multi_asset",
           "audit_stage": "candidate_screen",
-          "audit_note": "Not yet independently verified against primary issuer documentation in this audit"
+          "audit_note": "Not yet independently verified against primary issuer documentation in this audit",
+          "screening_status": "standard_due_diligence",
+          "screening_reason": "Requires issuer-document validation before ranking"
         },
         {
           "ticker": "ACT60",
@@ -317,7 +363,9 @@
           "status": "research",
           "audit_category": "strategic_multi_asset",
           "audit_stage": "candidate_screen",
-          "audit_note": "Not yet independently verified against primary issuer documentation in this audit"
+          "audit_note": "Not yet independently verified against primary issuer documentation in this audit",
+          "screening_status": "priority_due_diligence",
+          "screening_reason": "Promising strategy/structure for deeper comparative review; no performance score assigned yet"
         }
       ]
     },
@@ -333,7 +381,9 @@
           "classification": "efficient-core",
           "audit_category": "efficient_core",
           "audit_stage": "candidate_screen",
-          "audit_note": "Not yet independently verified against primary issuer documentation in this audit"
+          "audit_note": "Not yet independently verified against primary issuer documentation in this audit",
+          "screening_status": "priority_due_diligence",
+          "screening_reason": "Promising strategy/structure for deeper comparative review; no performance score assigned yet"
         },
         {
           "ticker": "UEC",
@@ -344,7 +394,9 @@
           "classification": "efficient-core",
           "audit_category": "efficient_core",
           "audit_stage": "candidate_screen",
-          "audit_note": "Not yet independently verified against primary issuer documentation in this audit"
+          "audit_note": "Not yet independently verified against primary issuer documentation in this audit",
+          "screening_status": "priority_due_diligence",
+          "screening_reason": "Promising strategy/structure for deeper comparative review; no performance score assigned yet"
         },
         {
           "ticker": "ZEC",
@@ -355,7 +407,9 @@
           "classification": "efficient-core",
           "audit_category": "efficient_core",
           "audit_stage": "candidate_screen",
-          "audit_note": "Not yet independently verified against primary issuer documentation in this audit"
+          "audit_note": "Not yet independently verified against primary issuer documentation in this audit",
+          "screening_status": "priority_due_diligence",
+          "screening_reason": "Promising strategy/structure for deeper comparative review; no performance score assigned yet"
         }
       ]
     },
@@ -370,7 +424,9 @@
           "status": "research",
           "audit_category": "strategic_multi_asset",
           "audit_stage": "candidate_screen",
-          "audit_note": "Not yet independently verified against primary issuer documentation in this audit"
+          "audit_note": "Not yet independently verified against primary issuer documentation in this audit",
+          "screening_status": "hold_pending_identity_or_relevance",
+          "screening_reason": "Insufficient identity/relevance or not a priority for this radar; do not promote without evidence"
         },
         {
           "ticker": "INVB",
@@ -380,7 +436,9 @@
           "status": "research",
           "audit_category": "strategic_multi_asset",
           "audit_stage": "candidate_screen",
-          "audit_note": "Not yet independently verified against primary issuer documentation in this audit"
+          "audit_note": "Not yet independently verified against primary issuer documentation in this audit",
+          "screening_status": "standard_due_diligence",
+          "screening_reason": "Requires issuer-document validation before ranking"
         },
         {
           "ticker": "MAGI",
@@ -391,7 +449,9 @@
           "classification": "sector multi-asset",
           "audit_category": "sector_multi_asset",
           "audit_stage": "candidate_screen",
-          "audit_note": "Not yet independently verified against primary issuer documentation in this audit"
+          "audit_note": "Not yet independently verified against primary issuer documentation in this audit",
+          "screening_status": "hold_pending_identity_or_relevance",
+          "screening_reason": "Insufficient identity/relevance or not a priority for this radar; do not promote without evidence"
         },
         {
           "ticker": "FX",
@@ -403,7 +463,9 @@
           "holdings_page": "https://www.firsttrustglobal.com",
           "audit_category": "currency_carry",
           "audit_stage": "candidate_screen",
-          "audit_note": "Not yet independently verified against primary issuer documentation in this audit"
+          "audit_note": "Not yet independently verified against primary issuer documentation in this audit",
+          "screening_status": "hold_pending_identity_or_relevance",
+          "screening_reason": "Insufficient identity/relevance or not a priority for this radar; do not promote without evidence"
         }
       ]
     },
@@ -421,7 +483,9 @@
           "holdings_page": "https://hanetf.com/it/fund/oddo-bhf-global-balanced-allocation-active-ucits-etf/",
           "audit_category": "strategic_multi_asset",
           "audit_stage": "candidate_screen",
-          "audit_note": "Not yet independently verified against primary issuer documentation in this audit"
+          "audit_note": "Not yet independently verified against primary issuer documentation in this audit",
+          "screening_status": "priority_due_diligence",
+          "screening_reason": "Promising strategy/structure for deeper comparative review; no performance score assigned yet"
         },
         {
           "ticker": "OBAA",
@@ -434,7 +498,9 @@
           "holdings_page": "https://hanetf.com/it/fund/oddo-bhf-global-balanced-allocation-active-ucits-etf/",
           "audit_category": "strategic_multi_asset",
           "audit_stage": "candidate_screen",
-          "audit_note": "Not yet independently verified against primary issuer documentation in this audit"
+          "audit_note": "Not yet independently verified against primary issuer documentation in this audit",
+          "screening_status": "priority_due_diligence",
+          "screening_reason": "Promising strategy/structure for deeper comparative review; no performance score assigned yet"
         }
       ]
     },
@@ -452,7 +518,9 @@
           "holdings_page": "https://www.man.com",
           "audit_category": "managed_futures_trend",
           "audit_stage": "candidate_screen",
-          "audit_note": "Not yet independently verified against primary issuer documentation in this audit"
+          "audit_note": "Not yet independently verified against primary issuer documentation in this audit",
+          "screening_status": "standard_due_diligence",
+          "screening_reason": "Requires issuer-document validation before ranking"
         }
       ]
     },
@@ -469,7 +537,9 @@
           "holdings_page": "https://www.bnpparibas-am.com/en-gb/portfolio-perspectives/innovating-with-liquid-alternative-and-buffer-etfs/",
           "audit_category": "other_alternative",
           "audit_stage": "candidate_screen",
-          "audit_note": "Not yet independently verified against primary issuer documentation in this audit"
+          "audit_note": "Not yet independently verified against primary issuer documentation in this audit",
+          "screening_status": "priority_due_diligence",
+          "screening_reason": "Promising strategy/structure for deeper comparative review; no performance score assigned yet"
         }
       ]
     },
@@ -487,7 +557,9 @@
           "holdings_page": "https://hanetf.com/it/fund/infrastructure-capital-preferred-income-ucits-etf-dist/",
           "audit_category": "specialist_income",
           "audit_stage": "candidate_screen",
-          "audit_note": "Not yet independently verified against primary issuer documentation in this audit"
+          "audit_note": "Not yet independently verified against primary issuer documentation in this audit",
+          "screening_status": "watch_special_risk",
+          "screening_reason": "Specialized structure, limited record, leverage, option or other non-core risk; examine only after primary-source verification"
         }
       ]
     },
@@ -505,7 +577,9 @@
           "holdings_page": "https://www.mandatum.fi/en/corporation-news/2026/mandatum-brings-its-multi-strategy-managed-futures-approach-to-an-etf/",
           "audit_category": "managed_futures_trend",
           "audit_stage": "candidate_screen",
-          "audit_note": "Not yet independently verified against primary issuer documentation in this audit"
+          "audit_note": "Not yet independently verified against primary issuer documentation in this audit",
+          "screening_status": "watch_special_risk",
+          "screening_reason": "Specialized structure, limited record, leverage, option or other non-core risk; examine only after primary-source verification"
         }
       ]
     },
@@ -522,7 +596,9 @@
           "holdings_page": "https://www.imgp.com/imgp-dbi-managed-futures-fund/",
           "audit_category": "managed_futures_trend",
           "audit_stage": "primary_source_partial",
-          "audit_note": "Issuer source reviewed; share class/holdings endpoint or full feed still requires verification"
+          "audit_note": "Issuer source reviewed; share class/holdings endpoint or full feed still requires verification",
+          "screening_status": "priority_due_diligence",
+          "screening_reason": "Promising strategy/structure for deeper comparative review; no performance score assigned yet"
         },
         {
           "ticker": "DBMF / MFA8",
@@ -534,7 +610,9 @@
           "holdings_page": "https://www.imgp.com/en/fund/LU3024069877-imgp-dbi-managed-futures-ex-commodities-fund-r-usd-ucits-etf/",
           "audit_category": "managed_futures_trend",
           "audit_stage": "primary_source_partial",
-          "audit_note": "Issuer source reviewed; share class/holdings endpoint or full feed still requires verification"
+          "audit_note": "Issuer source reviewed; share class/holdings endpoint or full feed still requires verification",
+          "screening_status": "priority_due_diligence",
+          "screening_reason": "Promising strategy/structure for deeper comparative review; no performance score assigned yet"
         }
       ]
     },
@@ -551,7 +629,9 @@
           "holdings_page": "https://www.bnpparibas-am.com/en-gb/portfolio-perspectives/innovating-with-liquid-alternative-and-buffer-etfs/",
           "audit_category": "equity_long_short",
           "audit_stage": "candidate_screen",
-          "audit_note": "Not yet independently verified against primary issuer documentation in this audit"
+          "audit_note": "Not yet independently verified against primary issuer documentation in this audit",
+          "screening_status": "standard_due_diligence",
+          "screening_reason": "Requires issuer-document validation before ranking"
         }
       ]
     },
@@ -569,7 +649,9 @@
           "holdings_page": "https://www.ubs.com",
           "audit_category": "equity_long_short",
           "audit_stage": "candidate_screen",
-          "audit_note": "Not yet independently verified against primary issuer documentation in this audit"
+          "audit_note": "Not yet independently verified against primary issuer documentation in this audit",
+          "screening_status": "watch_special_risk",
+          "screening_reason": "Specialized structure, limited record, leverage, option or other non-core risk; examine only after primary-source verification"
         },
         {
           "ticker": "UEQV",
@@ -581,7 +663,9 @@
           "strategy": "Synthetic swap replication of 2.5 leveraged commodity carry index excluding precious metals",
           "audit_category": "equity_long_short",
           "audit_stage": "candidate_screen",
-          "audit_note": "Not yet independently verified against primary issuer documentation in this audit"
+          "audit_note": "Not yet independently verified against primary issuer documentation in this audit",
+          "screening_status": "watch_special_risk",
+          "screening_reason": "Specialized structure, limited record, leverage, option or other non-core risk; examine only after primary-source verification"
         },
         {
           "ticker": "BCFS",
@@ -593,7 +677,9 @@
           "strategy": "Synthetic put-writing strategy on S&P 500 puts with T-bill cash component; not downside-protected equity",
           "audit_category": "equity_long_short",
           "audit_stage": "candidate_screen",
-          "audit_note": "Not yet independently verified against primary issuer documentation in this audit"
+          "audit_note": "Not yet independently verified against primary issuer documentation in this audit",
+          "screening_status": "watch_special_risk",
+          "screening_reason": "Specialized structure, limited record, leverage, option or other non-core risk; examine only after primary-source verification"
         },
         {
           "ticker": "UBPW",
@@ -605,7 +691,9 @@
           "strategy": "Synthetic put-writing strategy on US equity; option-selling risk; USD share class",
           "audit_category": "equity_long_short",
           "audit_stage": "candidate_screen",
-          "audit_note": "Not yet independently verified against primary issuer documentation in this audit"
+          "audit_note": "Not yet independently verified against primary issuer documentation in this audit",
+          "screening_status": "watch_special_risk",
+          "screening_reason": "Specialized structure, limited record, leverage, option or other non-core risk; examine only after primary-source verification"
         }
       ]
     },
@@ -623,7 +711,9 @@
           "holdings_page": "https://www.bnpparibas-am.com/it-it/fundsheet/equity/bnp-paribas-easy-european-equity-buffer-june-ucits-etf-c-lu3307215619",
           "audit_category": "defined_outcome_buffer",
           "audit_stage": "candidate_screen",
-          "audit_note": "Not yet independently verified against primary issuer documentation in this audit"
+          "audit_note": "Not yet independently verified against primary issuer documentation in this audit",
+          "screening_status": "watch_special_risk",
+          "screening_reason": "Specialized structure, limited record, leverage, option or other non-core risk; examine only after primary-source verification"
         }
       ]
     },
@@ -640,7 +730,9 @@
           "strategy": "CTA hedge-fund basket replication; futures/forwards across multiple asset classes",
           "audit_category": "managed_futures_trend",
           "audit_stage": "primary_source_partial",
-          "audit_note": "Issuer source reviewed; share class/holdings endpoint or full feed still requires verification"
+          "audit_note": "Issuer source reviewed; share class/holdings endpoint or full feed still requires verification",
+          "screening_status": "standard_due_diligence",
+          "screening_reason": "Requires issuer-document validation before ranking"
         },
         {
           "ticker": "MFEH",
@@ -652,7 +744,9 @@
           "strategy": "CTA hedge-fund basket replication; EUR-hedged share class",
           "audit_category": "managed_futures_trend",
           "audit_stage": "primary_source_partial",
-          "audit_note": "Issuer source reviewed; share class/holdings endpoint or full feed still requires verification"
+          "audit_note": "Issuer source reviewed; share class/holdings endpoint or full feed still requires verification",
+          "screening_status": "standard_due_diligence",
+          "screening_reason": "Requires issuer-document validation before ranking"
         }
       ]
     },
@@ -670,7 +764,9 @@
           "holdings_page": "https://www.bnpparibas-am.com/it-it/fundsheet/equity/bnp-paribas-easy-global-equity-long-short-ucits-etf-c-lu3307220965/",
           "audit_category": "equity_long_short",
           "audit_stage": "candidate_screen",
-          "audit_note": "Not yet independently verified against primary issuer documentation in this audit"
+          "audit_note": "Not yet independently verified against primary issuer documentation in this audit",
+          "screening_status": "priority_due_diligence",
+          "screening_reason": "Promising strategy/structure for deeper comparative review; no performance score assigned yet"
         }
       ]
     },
@@ -687,7 +783,9 @@
           "strategy": "Monthly distributions from option premium strategy on underlying basket; semiannual rebalance; wrapper is ETP, not conventional ETF",
           "audit_category": "options_income_etp",
           "audit_stage": "candidate_screen",
-          "audit_note": "Not yet independently verified against primary issuer documentation in this audit"
+          "audit_note": "Not yet independently verified against primary issuer documentation in this audit",
+          "screening_status": "watch_special_risk",
+          "screening_reason": "Specialized structure, limited record, leverage, option or other non-core risk; examine only after primary-source verification"
         },
         {
           "ticker": "GRWY / MSTY",
@@ -699,7 +797,9 @@
           "strategy": "Monthly distribution options-income basket; semiannual rebalance; holdings include other option-income ETPs; ETP wrapper risk",
           "audit_category": "options_income_etp",
           "audit_stage": "candidate_screen",
-          "audit_note": "Not yet independently verified against primary issuer documentation in this audit"
+          "audit_note": "Not yet independently verified against primary issuer documentation in this audit",
+          "screening_status": "watch_special_risk",
+          "screening_reason": "Specialized structure, limited record, leverage, option or other non-core risk; examine only after primary-source verification"
         }
       ]
     }
@@ -725,5 +825,14 @@
       "iMGP DBi EUR Share Classes"
     ],
     "audit_status": "phase_1_screening; not an investment recommendation"
-  }
+  },
+  "screening_stage": "qualitative_triage_1",
+  "screening_counts": {
+    "priority_due_diligence": 10,
+    "benchmark_control": 5,
+    "watch_special_risk": 9,
+    "hold_pending_identity_or_relevance": 5,
+    "standard_due_diligence": 21
+  },
+  "quantitative_score_status": "not_scored_no_comparable_monthly_total_return_dataset"
 }
