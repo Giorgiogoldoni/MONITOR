@@ -11,10 +11,10 @@
           "isin": "NL0009272764",
           "name": "Multi-Asset Conservative Allocation UCITS ETF",
           "allocation": {
-            "government_bonds": 35,
-            "corporate_bonds": 35,
-            "equities": 25,
-            "listed_real_estate": 5
+            "government_bonds_pct": 35,
+            "corporate_bonds_pct": 35,
+            "global_equities_pct": 25,
+            "listed_real_estate_pct": 5
           },
           "ter": 0.28,
           "holdings_page": "https://www.vaneck.com/FI/en/investments/conservative-multi-asset-etf/index/",
@@ -23,17 +23,22 @@
           "audit_stage": "primary_source_partial",
           "audit_note": "Issuer source reviewed; share class/holdings endpoint or full feed still requires verification",
           "screening_status": "standard_due_diligence",
-          "screening_reason": "Requires issuer-document validation before ranking"
+          "screening_reason": "Requires issuer-document validation before ranking",
+          "aum_eur_m": 21.2,
+          "aum_date": "2026-11-06",
+          "primary_source_checked": "https://www.vaneck.com/it/it/theme/multi-asset-investing/",
+          "primary_source_check_date": "2026-11-25",
+          "primary_source_status": "issuer page checked; factsheet/KID and ticker/exchange liquidity validation still pending"
         },
         {
           "ticker": "NTM",
           "isin": "NL0009272772",
           "name": "Multi-Asset Balanced Allocation UCITS ETF",
           "allocation": {
-            "government_bonds": 25,
-            "corporate_bonds": 25,
-            "equities": 40,
-            "listed_real_estate": 10
+            "government_bonds_pct": 25,
+            "corporate_bonds_pct": 25,
+            "global_equities_pct": 40,
+            "listed_real_estate_pct": 10
           },
           "ter": 0.3,
           "holdings_page": "https://www.vaneck.com/it/it/theme/multi-asset-investing/",
@@ -42,17 +47,22 @@
           "audit_stage": "primary_source_partial",
           "audit_note": "Issuer source reviewed; share class/holdings endpoint or full feed still requires verification",
           "screening_status": "benchmark_control",
-          "screening_reason": "Use as a passive/strategic allocation benchmark to compare active or alternative products"
+          "screening_reason": "Use as a passive/strategic allocation benchmark to compare active or alternative products",
+          "aum_eur_m": 42,
+          "aum_date": "2026-11-06",
+          "primary_source_checked": "https://www.vaneck.com/it/it/theme/multi-asset-investing/",
+          "primary_source_check_date": "2026-11-25",
+          "primary_source_status": "issuer page checked; factsheet/KID and ticker/exchange liquidity validation still pending"
         },
         {
           "ticker": "TOF",
           "isin": "NL0009272780",
           "name": "Multi-Asset Growth Allocation UCITS ETF",
           "allocation": {
-            "government_bonds": 15,
-            "corporate_bonds": 15,
-            "equities": 60,
-            "listed_real_estate": 10
+            "government_bonds_pct": 15,
+            "corporate_bonds_pct": 15,
+            "global_equities_pct": 60,
+            "listed_real_estate_pct": 10
           },
           "ter": 0.32,
           "holdings_page": "https://www.vaneck.com/it/it/theme/multi-asset-investing/",
@@ -61,7 +71,12 @@
           "audit_stage": "primary_source_partial",
           "audit_note": "Issuer source reviewed; share class/holdings endpoint or full feed still requires verification",
           "screening_status": "standard_due_diligence",
-          "screening_reason": "Requires issuer-document validation before ranking"
+          "screening_reason": "Requires issuer-document validation before ranking",
+          "aum_eur_m": 34.3,
+          "aum_date": "2026-11-06",
+          "primary_source_checked": "https://www.vaneck.com/it/it/theme/multi-asset-investing/",
+          "primary_source_check_date": "2026-11-25",
+          "primary_source_status": "issuer page checked; factsheet/KID and ticker/exchange liquidity validation still pending"
         }
       ]
     },
