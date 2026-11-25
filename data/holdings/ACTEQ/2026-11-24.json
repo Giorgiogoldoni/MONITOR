@@ -1,0 +1,57 @@
+{
+  "date": "2026-11-24",
+  "source": "Investing.com ACTEQ holdings page, top 10 only (partial: fund lists 43 holdings)",
+  "holdings": [
+    {
+      "ticker": "LYP7",
+      "name": "Amundi Core S&P 500 Swap UCITS ETF Acc",
+      "weight": 13.12
+    },
+    {
+      "ticker": "XDPU",
+      "name": "Xtrackers S&P 500 UCITS ETF 4C - USD",
+      "weight": 12.43
+    },
+    {
+      "ticker": "XDWD",
+      "name": "Xtrackers MSCI World UCITS ETF 1C",
+      "weight": 12.36
+    },
+    {
+      "ticker": "MWRD",
+      "name": "Amundi Core MSCI World UCITS ETF Acc",
+      "weight": 12.35
+    },
+    {
+      "ticker": "EIMI",
+      "name": "iShares Core MSCI EM IMI UCITS ETF USD Acc",
+      "weight": 12.01
+    },
+    {
+      "ticker": "CSPX",
+      "name": "iShares Core S&P 500 UCITS ETF USD Acc",
+      "weight": 9.44
+    },
+    {
+      "ticker": "SPXS",
+      "name": "Invesco S&P 500 UCITS ETF",
+      "weight": 8.75
+    },
+    {
+      "ticker": "IWDA",
+      "name": "iShares Core MSCI World UCITS ETF USD Acc",
+      "weight": 6.18
+    },
+    {
+      "ticker": "MEUD",
+      "name": "Amundi Core Stoxx Europe 600 UCITS ETF Acc",
+      "weight": 4.44
+    },
+    {
+      "ticker": "EUNK",
+      "name": "iShares Core MSCI Europe UCITS ETF EUR Acc",
+      "weight": 4.44
+    }
+  ],
+  "strategic_changes": []
+}
