@@ -98,3 +98,14 @@ The candidate registry has been broadened beyond strategic allocation products. 
 - **Put-write:** option-premium income with equity crash/gap exposure; no guaranteed floor.
 - **Buffer / defined outcome:** conditional downside buffer paired with capped upside, reset/outcome-period dependency.
 - **Leveraged commodity carry:** 2.5x exposure and synthetic implementation; treat as high-risk satellite, not strategic multiasset substitute.
+
+
+## Further candidates — 25 Nov 2026
+
+### BNP Paribas Easy Global Equity Long/Short
+- SLEEK — LU3307220965 — estimated ongoing charges 0.50%, launched 2 Jun 2026. Systematic global equity multifactor long/short (quality, value, momentum, low volatility), with structurally moderate net-long exposure. Synthetic TRS implementation; issuer reports SRRI 3/7. This is an equity alternative, not a broad multiasset ETF. Official factsheet: https://www.bnpparibas-am.com/it-it/fundsheet/equity/bnp-paribas-easy-global-equity-long-short-ucits-etf-c-lu3307220965/.
+
+### IncomeShares Multi-Asset options-income ETPs
+- MLTY / MLAY — XS3299469679 — 60/30/10 Balanced; TER 0.45%, 60% equity / 30% fixed income / 5% gold / 5% silver, monthly distributions, semiannual rebalance. Option-premium income strategy, not bond coupon income; holdings largely other options-income ETPs.
+- GRWY / MSTY — XS3337374774 — 75/10/15 Growth; TER 0.45%, 75% equity / 10% fixed income / 15% alternatives, monthly distributions, semiannual rebalance. Portfolio includes option-income ETPs on equities, treasuries and commodities.
+- These are ETPs, not conventional diversified ETF building blocks; small AUM, short record, options and underlying ETP structure risks. Issuer pages: https://incomeshares.com/it/etps/incomeshares-60-30-10-multi-asset-balanced-etp and https://incomeshares.com/it/etps/incomeshares-75-10-15-multi-asset-growth-etp.
