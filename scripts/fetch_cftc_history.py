@@ -48,12 +48,15 @@ DISAGG_ALIASES = {"067651": ["067651", "067652"]}
 def code_matches(code, target, aliases):
     return any(a in code for a in aliases.get(target, [target]))
 
-def parse_date(raw):
+def parse_date(raw, expected_year=None):
     raw = str(raw).strip()
     if len(raw) == 6 and raw.isdigit():
         return f"20{raw[:2]}-{raw[2:4]}-{raw[4:6]}"
     if len(raw) == 10 and "-" in raw:
-        return raw
+        date = raw
+        if expected_year and int(raw[:4]) > expected_year + 1:
+            date = str(expected_year) + raw[4:]
+        return date
     # Formato Excel numerico (giorni dal 1900)
     try:
         f = float(raw)
@@ -71,7 +74,7 @@ def to_int(v):
         return 0
 
 # ── Parser XLS TFF ─────────────────────────────────────────────────────────────
-def parse_tff_xls(xls_bytes):
+def parse_tff_xls(xls_bytes, expected_year=None):
     """
     Legge FinFutYY.xls — stesse colonne del CSV:
     col 0 = market name, col 1 = date, col 3 = CFTC code
@@ -88,7 +91,7 @@ def parse_tff_xls(xls_bytes):
                 continue
             market_name = str(row[0]).strip().strip('"')
             cftc_code   = str(row[3]).strip().strip('"')
-            report_date = parse_date(str(row[1]).strip())
+            report_date = parse_date(str(row[1]).strip(), expected_year)
             if not report_date:
                 continue
             for label, code in TFF_MARKETS.items():
@@ -112,7 +115,7 @@ def parse_tff_xls(xls_bytes):
     return snapshots
 
 # ── Parser XLS Disaggregated ───────────────────────────────────────────────────
-def parse_disagg_xls(xls_bytes):
+def parse_disagg_xls(xls_bytes, expected_year=None):
     """
     Legge f_year.xls — Managed Money:
     col 0 = market, col 1 = date, col 3 = code
@@ -152,7 +155,7 @@ def parse_disagg_xls(xls_bytes):
     return snapshots
 
 # ── Parser CSV TFF (file corrente) ─────────────────────────────────────────────
-def parse_tff_csv(text):
+def parse_tff_csv(text, expected_year=None):
     text = text.lstrip("\ufeff")
     reader = csv.reader(io.StringIO(text))
     snapshots = {}
@@ -161,7 +164,7 @@ def parse_tff_csv(text):
             continue
         market_name = cols[0].strip().strip('"')
         cftc_code   = cols[3].strip().strip('"')
-        report_date = parse_date(cols[1].strip())
+        report_date = parse_date(cols[1].strip(), expected_year)
         if not report_date:
             continue
         for label, code in TFF_MARKETS.items():
@@ -183,7 +186,7 @@ def parse_tff_csv(text):
     return snapshots
 
 # ── Parser CSV Disaggregated (file corrente) ───────────────────────────────────
-def parse_disagg_csv(text):
+def parse_disagg_csv(text, expected_year=None):
     text = text.lstrip("\ufeff")
     reader = csv.reader(io.StringIO(text))
     snapshots = {}
@@ -295,7 +298,7 @@ def main():
             f"https://www.cftc.gov/files/dea/history/fut_fin_xls_{year}.zip",
             "FinFutYY.xls"
         )
-        tff_snaps = parse_tff_xls(tff_bytes) if tff_bytes else {}
+        tff_snaps = parse_tff_xls(tff_bytes, year) if tff_bytes else {}
         print(f"    TFF: {len(tff_snaps)} settimane")
 
         # Disaggregated XLS
@@ -303,7 +306,7 @@ def main():
             f"https://www.cftc.gov/files/dea/history/fut_disagg_xls_{year}.zip",
             "f_year.xls"
         )
-        disagg_snaps = parse_disagg_xls(disagg_bytes) if disagg_bytes else {}
+        disagg_snaps = parse_disagg_xls(disagg_bytes, year) if disagg_bytes else {}
         print(f"    Disagg: {len(disagg_snaps)} settimane")
 
         if tff_snaps or disagg_snaps:
@@ -316,7 +319,7 @@ def main():
     print(f"\n── Anno corrente ({current_year}) ──")
 
     tff_text = fetch_text("https://www.cftc.gov/dea/newcot/FinFutWk.txt")
-    tff_snaps = parse_tff_csv(tff_text) if tff_text else {}
+    tff_snaps = parse_tff_csv(tff_text, current_year) if tff_text else {}
 
     # Disaggregated corrente — prova URL alternative
     disagg_snaps = {}
@@ -327,7 +330,7 @@ def main():
     ]:
         text = fetch_text(url)
         if text and len(text) > 500:
-            disagg_snaps = parse_disagg_csv(text)
+            disagg_snaps = parse_disagg_csv(text, current_year)
             if disagg_snaps:
                 break
 
