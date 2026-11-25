@@ -41,10 +41,10 @@ jobs:
 
       - name: Fetch CFTC historical data (solo se meno di 50 file)
         run: |
-          COUNT=$(find data/cftc -maxdepth 1 -name "20??-??-??.json" 2>/dev/null | wc -l)
-          echo "File CFTC esistenti: $COUNT"
-          if [ "$COUNT" -lt 50 ]; then
-            echo "Avvio fetch storico CFTC (2022-oggi)..."
+          COMMODITY_COUNT=$(grep -lE '"(Gold|Crude Oil|Copper)"' data/cftc/20??-??-??.json 2>/dev/null | wc -l)
+          echo "Snapshot CFTC con almeno un mercato commodity: $COMMODITY_COUNT"
+          if [ "$COMMODITY_COUNT" -lt 150 ]; then
+            echo "Avvio fetch storico CFTC: copertura commodity incompleta..."
             python scripts/fetch_cftc_history.py
           else
             echo "Storico già presente ($COUNT file), skip."
