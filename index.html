@@ -525,19 +525,28 @@ async function loadEtf(ticker, dates) {
   }
 }
 async function loadCftc(dates) {
-  const toLoad = (dates || []).slice(-52);
-  await Promise.all(toLoad.map(async date => {
-    if (CFTC_DATA[date]) return;
-    const data = await fetchJSON(`${DATA_URL}/cftc/${date}.json`);
-    if (data) CFTC_DATA[date] = data;
-  }));
+  // Limita la concorrenza: i file CFTC vengono caricati in batch per evitare
+  // blocchi/rate limit su GitHub Pages, soprattutto da mobile.
+  const validDates = (dates || []).filter(d => /^\\d{4}-\\d{2}-\\d{2}$/.test(d));
+  const toLoad = validDates.slice(-52);
+  for (let i = 0; i < toLoad.length; i += 8) {
+    const batch = toLoad.slice(i, i + 8);
+    await Promise.all(batch.map(async date => {
+      if (CFTC_DATA[date]) return;
+      const data = await fetchJSON(`${DATA_URL}/cftc/${date}.json`);
+      if (data) CFTC_DATA[date] = data;
+    }));
+  }
 }
 
 async function refreshData() {
   setStatus('loading');
   const index = await loadIndex();
   if (!index) { setStatus('error'); return; }
-  await Promise.all(ETFS.map(etf => loadEtf(etf, index.etfs[etf] || [])));
+  // Carica al massimo 3 ETF per volta; ogni ETF usa batch di 4 snapshot.
+  for (let i = 0; i < ETFS.length; i += 3) {
+    await Promise.all(ETFS.slice(i, i + 3).map(etf => loadEtf(etf, index.etfs[etf] || [])));
+  }
   await loadCftc(index.cftc || []);
   const lastDates = ETFS.map(e => latestDate(e)).filter(Boolean).sort();
   const lastUpdate = lastDates[lastDates.length-1] || '—';
