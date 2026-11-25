@@ -434,6 +434,86 @@
           "holdings_page": "https://www.bnpparibas-am.com/en-gb/portfolio-perspectives/innovating-with-liquid-alternative-and-buffer-etfs/"
         }
       ]
+    },
+    "UBS Liquid Alternatives": {
+      "source_status": "Product identifiers and fees verified from ETF profiles/issuer factsheets; strategy risk classification required",
+      "candidates": [
+        {
+          "ticker": "UEQC",
+          "isin": "IE00BKFB6L02",
+          "name": "UBS CMCI Commodity Carry SF UCITS ETF USD Acc",
+          "ter": 0.34,
+          "status": "research",
+          "classification": "leveraged commodity carry; 2.5x index exposure",
+          "strategy": "Synthetic swap replication of 2.5 leveraged commodity carry index excluding precious metals",
+          "holdings_page": "https://www.ubs.com"
+        },
+        {
+          "ticker": "UEQV",
+          "isin": "IE00BMC5DV85",
+          "name": "UBS CMCI Commodity Carry SF UCITS ETF hEUR Acc",
+          "ter": 0.34,
+          "status": "research",
+          "classification": "leveraged commodity carry; 2.5x index exposure; EUR hedged",
+          "strategy": "Synthetic swap replication of 2.5 leveraged commodity carry index excluding precious metals"
+        },
+        {
+          "ticker": "BCFS",
+          "isin": "IE000V73IL86",
+          "name": "UBS US Equity Defensive Put Write SF UCITS ETF hEUR Acc",
+          "ter": 0.24,
+          "status": "research",
+          "classification": "equity options income / put-write; EUR hedged",
+          "strategy": "Synthetic put-writing strategy on S&P 500 puts with T-bill cash component; not downside-protected equity"
+        },
+        {
+          "ticker": "UBPW",
+          "isin": "IE00BLDGHF56",
+          "name": "UBS US Equity Defensive Put Write SF UCITS ETF USD Acc",
+          "ter": 0.24,
+          "status": "research",
+          "classification": "equity options income / put-write",
+          "strategy": "Synthetic put-writing strategy on US equity; option-selling risk; USD share class"
+        }
+      ]
+    },
+    "BNP Paribas Buffer ETF": {
+      "source_status": "product ISIN, TER, launch date verified; cap/buffer reset terms and outcome-period details require full KID review",
+      "candidates": [
+        {
+          "ticker": "",
+          "isin": "LU3307215619",
+          "name": "BNP Paribas Easy European Equity Buffer June UCITS ETF C",
+          "ter": 0.55,
+          "status": "research",
+          "classification": "defined-outcome / equity buffer; capped upside",
+          "strategy": "EURO STOXX 50 exposure with stated 15% downside buffer for annual outcome period; upside capped",
+          "holdings_page": "https://www.bnpparibas-am.com/it-it/fundsheet/equity/bnp-paribas-easy-european-equity-buffer-june-ucits-etf-c-lu3307215619"
+        }
+      ]
+    },
+    "iMGP DBi EUR Share Classes": {
+      "source_status": "Borsa Italiana listings and TER confirmed; currency/share class should be distinguished from USD record",
+      "candidates": [
+        {
+          "ticker": "DBMFE",
+          "isin": "LU2951555403",
+          "name": "iMGP DBi Managed Futures Fund R EUR UCITS ETF",
+          "ter": 0.75,
+          "status": "research",
+          "classification": "managed futures replication basket; EUR class",
+          "strategy": "CTA hedge-fund basket replication; futures/forwards across multiple asset classes"
+        },
+        {
+          "ticker": "MFEH",
+          "isin": "LU3359622902",
+          "name": "iMGP DBi Managed Futures Fund R EUR HP UCITS ETF",
+          "ter": 0.75,
+          "status": "research",
+          "classification": "managed futures replication basket; EUR hedged",
+          "strategy": "CTA hedge-fund basket replication; EUR-hedged share class"
+        }
+      ]
     }
   },
   "integration_gate": [
