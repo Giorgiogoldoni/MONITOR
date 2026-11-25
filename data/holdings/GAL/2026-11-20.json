@@ -1,0 +1,77 @@
+{
+  "date": "2026-11-20",
+  "source": "State Street daily holdings file via ETFIQ; cross-check Schwab; full holdings",
+  "holdings": [
+    {
+      "ticker": "SPAB",
+      "name": "State Street SPDR Portfolio Aggregate Bond ETF",
+      "weight": 23.62
+    },
+    {
+      "ticker": "SPDW",
+      "name": "State Street SPDR Portfolio Developed World ex-US ETF",
+      "weight": 18.5
+    },
+    {
+      "ticker": "SPY",
+      "name": "State Street SPDR S&P 500 ETF",
+      "weight": 18.15
+    },
+    {
+      "ticker": "SPEM",
+      "name": "State Street SPDR Portfolio Emerging Markets ETF",
+      "weight": 8.72
+    },
+    {
+      "ticker": "CERY",
+      "name": "State Street SPDR Bloomberg Enhanced Roll Yield Commodity Strategy No K-1 ETF",
+      "weight": 4.89
+    },
+    {
+      "ticker": "TIPX",
+      "name": "State Street SPDR Bloomberg 1-10 Year TIPS ETF",
+      "weight": 4.16
+    },
+    {
+      "ticker": "SPTL",
+      "name": "State Street SPDR Portfolio Long Term Treasury ETF",
+      "weight": 4.14
+    },
+    {
+      "ticker": "SPLB",
+      "name": "State Street SPDR Portfolio Long Term Corporate Bond ETF",
+      "weight": 3.09
+    },
+    {
+      "ticker": "EMHC",
+      "name": "State Street SPDR Bloomberg Emerging Markets USD Bond ETF",
+      "weight": 3.06
+    },
+    {
+      "ticker": "IBND",
+      "name": "State Street SPDR Bloomberg International Corporate Bond ETF",
+      "weight": 3.05
+    },
+    {
+      "ticker": "GWX",
+      "name": "State Street SPDR S&P International Small Cap ETF",
+      "weight": 2.93
+    },
+    {
+      "ticker": "MDY",
+      "name": "SPDR S&P MidCap 400 ETF Trust",
+      "weight": 2
+    },
+    {
+      "ticker": "VPL",
+      "name": "Vanguard FTSE Pacific ETF",
+      "weight": 1.96
+    },
+    {
+      "ticker": "EBND",
+      "name": "State Street SPDR Bloomberg Emerging Markets Local Bond ETF",
+      "weight": 1.53
+    }
+  ],
+  "strategic_changes": []
+}
