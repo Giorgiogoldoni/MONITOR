@@ -22,6 +22,7 @@ import sys
 import datetime
 import csv
 import io
+import subprocess
 from pathlib import Path
 
 import requests
@@ -128,7 +129,13 @@ def fetch_manual(ticker):
         return None
 
     # Data snapshot = data ultima modifica del file CSV
-    mtime = datetime.date.fromtimestamp(csv_path.stat().st_mtime).isoformat()
+    # Git checkout resets mtimes; use the upload commit date instead.
+    rel_path = csv_path.relative_to(BASE).as_posix()
+    try:
+        git_date = subprocess.run(["git", "log", "-1", "--format=%cs", "--", rel_path], cwd=BASE, capture_output=True, text=True, check=True).stdout.strip()
+        mtime = git_date or datetime.date.fromtimestamp(csv_path.stat().st_mtime).isoformat()
+    except Exception:
+        mtime = datetime.date.fromtimestamp(csv_path.stat().st_mtime).isoformat()
 
     text = csv_path.read_text(encoding="utf-8-sig")  # utf-8-sig gestisce BOM
     holdings = parse_investing_csv(text)
