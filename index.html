@@ -193,13 +193,20 @@
   ::-webkit-scrollbar-track { background: transparent; }
   ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
 
-  @media (max-width: 600px) {
+  @media (max-width: 600px) {\n    .monitor-metrics { grid-template-columns:repeat(2,minmax(0,1fr)); }\n    .metric { padding:10px; }\n    .metric b { font-size:16px; }\n    .holdings-search { max-width:none; }
     header { padding: 10px 14px; }
     main   { padding: 14px; }
     nav    { padding: 0 14px; }
     .etf-grid { grid-template-columns: 1fr; }
   }
-</style>
+  .monitor-toolbar { display:flex; flex-direction:column; gap:12px; margin:0 0 16px; }
+  .monitor-metrics { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:8px; }
+  .metric { border:1px solid var(--border); background:var(--surface); padding:12px 14px; border-radius:6px; min-width:0; }
+  .metric b { display:block; font-family:var(--font-mono); font-size:18px; line-height:1.3; overflow-wrap:anywhere; }
+  .metric span { display:block; color:var(--muted); font-size:11px; margin-top:3px; }
+  .holdings-search { width:100%; max-width:520px; padding:10px 12px; border:1px solid var(--border); border-radius:6px; background:var(--bg); color:var(--text); font:inherit; }
+  .holdings-search:focus { outline:2px solid var(--blue); outline-offset:1px; }
+\n</style>
 </head>
 <body>
 <div id="app">
@@ -235,7 +242,11 @@
           <button class="interval-btn" onclick="setDelta('3m',this)">3M</button>
         </div>
       </div>
-      <div class="etf-grid" id="etf-grid">
+      <div class="monitor-toolbar">
+  <div class="monitor-metrics" id="monitor-metrics"></div>
+  <input id="holdings-search" class="holdings-search" type="search" placeholder="Cerca ETF, ticker, nome o ISIN…" oninput="renderHoldings()">
+</div>
+<div class="etf-grid" id="etf-grid">
         <div class="loading">CARICAMENTO DATI...</div>
       </div>
     </div>
@@ -543,7 +554,28 @@ function setStatus(s) {
 function renderHoldings() {
   const grid = $('etf-grid');
   if (!grid) return;
-  grid.innerHTML = ETFS.map(etf => renderEtfCard(etf)).join('') || '<div class="empty">Nessun dato disponibile.</div>';
+  const q = (($('holdings-search') || {}).value || '').trim().toLowerCase();
+  const available = ETFS.filter(etf => {
+    const data = (typeof DATA !== 'undefined' && DATA[etf.id]) ? DATA[etf.id] : null;
+    return data && Object.keys(data).length;
+  });
+  const missing = ETFS.length - available.length;
+  const dates = available.flatMap(etf => {
+    const data = DATA[etf.id] || {};
+    return Object.keys(data).filter(k => /^\\d{4}-\\d{2}-\\d{2}$/.test(k));
+  }).sort();
+  const latest = dates.length ? dates[dates.length-1] : '—';
+  const metrics = $('monitor-metrics');
+  if (metrics) metrics.innerHTML =
+    '<div class="metric"><b>' + ETFS.length + '</b><span>ETF monitorati</span></div>' +
+    '<div class="metric"><b>' + available.length + '</b><span>con dati</span></div>' +
+    '<div class="metric"><b>' + missing + '</b><span>senza snapshot</span></div>' +
+    '<div class="metric"><b>' + latest + '</b><span>ultimo snapshot</span></div>';
+  const filtered = ETFS.filter(etf => {
+    if (!q) return true;
+    return [etf.id, etf.name, etf.isin, etf.ticker].filter(Boolean).join(' ').toLowerCase().includes(q);
+  });
+  grid.innerHTML = filtered.map(etf => renderEtfCard(etf)).join('') || '<div class="empty">Nessun ETF corrispondente alla ricerca.</div>';
 }
 
 function renderEtfCard(etf) {
