@@ -581,7 +581,8 @@ function renderHoldings() {
     const data = ETF_DATA[etf][d] || {};
     const age = d ? Math.floor((Date.now() - new Date(d + 'T00:00:00Z').getTime()) / 86400000) : 999;
     const src = (data.source || '').toLowerCase();
-    return age > 10 || src.includes('partial') || src.includes('top 10 only');
+    const coverage = (data.holdings || []).reduce((sum, h) => sum + (Number(h.weight) || 0), 0);
+    return age > 10 || coverage < 95 || src.includes('partial') || src.includes('top 10 only');
   }).length;
   const metrics = $('monitor-metrics');
   if (metrics) metrics.innerHTML =
@@ -654,6 +655,7 @@ function renderEtfCard(etf) {
         Snapshot: ${currDate} · ${(curr.holdings||[]).length} posizioni · Peso totale: ${fmtW((curr.holdings||[]).reduce((s,h)=>s+(Number(h.weight)||0),0))}
       </div>
       ${(curr.source||'').toLowerCase().includes('partial') || (curr.source||'').toLowerCase().includes('top 10 only') ? '<div style="font-size:10px;color:#b7791f;margin-top:5px;font-weight:600">⚠ DATASET PARZIALE — holdings non complete</div>' : ''}
+      ${(curr.holdings||[]).reduce((sum,h)=>sum+(Number(h.weight)||0),0) < 95 && !((curr.source||'').toLowerCase().includes('partial') || (curr.source||'').toLowerCase().includes('top 10 only')) ? '<div style="font-size:10px;color:#b7791f;margin-top:5px;font-weight:600">⚠ COPERTURA PESI &lt;95% — possibile dataset incompleto</div>' : ''}
       ${currDate && Math.floor((Date.now() - new Date(currDate + 'T00:00:00Z').getTime()) / 86400000) > 10 ? '<div style="font-size:10px;color:#b7791f;margin-top:5px;font-weight:600">⚠ SNAPSHOT DATATO — oltre 10 giorni</div>' : ''}
       ${(curr.holdings||[]).some(h=>!h.ticker) ? '<div style="font-size:10px;color:#b7791f;margin-top:5px;font-weight:600">⚠ Ticker mancanti su alcune posizioni</div>' : ''}
     `}
