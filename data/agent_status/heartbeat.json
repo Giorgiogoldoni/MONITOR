@@ -1,0 +1,8 @@
+{
+  "checked_at_utc": null,
+  "state": "WAITING_FIRST_SCHEDULED_CHECK",
+  "alert": false,
+  "reason": "Heartbeat workflow configurato; attende il primo run schedulato. Il controllo monitora GitHub Actions, non un agente AI continuo.",
+  "last_work_run": null,
+  "recent_runs": []
+}
