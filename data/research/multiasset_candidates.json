@@ -376,37 +376,37 @@
       }
     },
     "iShares/BlackRock": {
-      "source_status": "official product pages include Holdings section and downloadable latest holdings CSV; direct CSV URL/parser validation pending",
+      "source_status": "official issuer pages verified for MACV, MODR and MAGR; CSV download endpoint visible on product page; URL/parser automation pending",
       "candidates": [
         {
-          "ticker": null,
+          "ticker": "MACV",
           "isin": "IE00BLP53M98",
           "name": "iShares Conservative Portfolio UCITS ETF EUR Acc",
           "ter": 0.25,
           "status": "research",
           "audit_category": "strategic_multi_asset",
-          "audit_stage": "official_holdings_csv_available_endpoint_validation_pending",
-          "audit_note": "Official iShares page exposes detailed holdings and CSV download; URL capture and parser validation pending.",
-          "screening_status": "hold_pending_identity_or_relevance",
-          "screening_reason": "Insufficient identity/relevance or not a priority for this radar; do not promote without evidence",
+          "audit_stage": "official_csv_control_confirmed_endpoint_parser_pending",
+          "audit_note": "CSV download latest fund holdings visible on issuer product page; ISIN confirmed; moderate-to-conservative allocation. Latest assets EUR 16.53M share class / 20.20M fund.",
+          "screening_status": "standard_due_diligence",
+          "screening_reason": "Verified strategic conservative portfolio; analyze composition and holdings before ranking",
           "primary_source_check_date": "2026-11-26",
-          "primary_source_status": "official holdings CSV download control confirmed; automated feed not yet validated",
-          "holdings_source_page": "https://www.ishares.com/"
+          "primary_source_status": "official issuer page verified: ISIN IE00BLP53M98, TER 0.25%, holdings CSV download control; endpoint and parser pending",
+          "holdings_source_page": "https://www.ishares.com/uk/individual/en/products/313196/ishares-conservative-portfolio-ucits-etf-macv"
         },
         {
-          "ticker": null,
+          "ticker": "MODR",
           "isin": "IE00BLLZQS08",
           "name": "iShares Moderate Portfolio UCITS ETF EUR Acc",
           "ter": 0.25,
           "status": "research",
           "audit_category": "strategic_multi_asset",
-          "audit_stage": "official_holdings_csv_available_endpoint_validation_pending",
-          "audit_note": "Official iShares page exposes detailed holdings and CSV download; URL capture and parser validation pending.",
-          "screening_status": "hold_pending_identity_or_relevance",
-          "screening_reason": "Insufficient identity/relevance or not a priority for this radar; do not promote without evidence",
+          "audit_stage": "official_csv_control_confirmed_endpoint_parser_pending",
+          "audit_note": "CSV download latest fund holdings visible on issuer product page; ISIN confirmed; moderate allocation. Latest assets reported around EUR 47.68M share class.",
+          "screening_status": "standard_due_diligence",
+          "screening_reason": "Verified strategic moderate portfolio; analyze composition and holdings before ranking",
           "primary_source_check_date": "2026-11-26",
-          "primary_source_status": "official holdings CSV download control confirmed; automated feed not yet validated",
-          "holdings_source_page": "https://www.ishares.com/"
+          "primary_source_status": "official issuer page verified: ISIN IE00BLLZQS08, TER 0.25%, holdings CSV download control; endpoint and parser pending",
+          "holdings_source_page": "https://www.ishares.com/uk/individual/en/products/313193/ishares-moderate-portfolio-ucits-etf-modr"
         },
         {
           "ticker": "MAGR",
@@ -415,22 +415,23 @@
           "ter": 0.25,
           "status": "research",
           "audit_category": "strategic_multi_asset",
-          "audit_stage": "official_holdings_csv_available_endpoint_validation_pending",
-          "audit_note": "Official iShares page exposes detailed holdings and CSV download; URL capture and parser validation pending.",
+          "audit_stage": "identity_confirmed_holdings_endpoint_unverified",
+          "audit_note": "Listed in current research catalogue; exact issuer page and downloadable holdings endpoint need separate verification.",
           "screening_status": "benchmark_control",
           "screening_reason": "Use as a passive/strategic allocation benchmark to compare active or alternative products",
           "primary_source_check_date": "2026-11-26",
-          "primary_source_status": "official holdings CSV download control confirmed; automated feed not yet validated",
+          "primary_source_status": "Issuer data needs revalidation in dedicated page audit; existing product listed in research catalog",
           "holdings_source_page": "https://www.ishares.com/"
         }
       ],
       "sprint_1_audit": {
-        "status": "official_holdings_csv_available_endpoint_validation_pending",
+        "status": "official_pages_and_csv_download_control_confirmed_endpoint_parser_pending",
         "check_date": "2026-11-26",
-        "note": "Official iShares MACV and MODR pages show Holdings tabs and CSV download for detailed holdings. Candidate portfolio holdings are 19–21 entries at Sep/Oct 2026 snapshots. Need capture the CSV endpoint, inspect format, validate mapping and automation.",
+        "note": "Official BlackRock pages confirm product identity, ISIN, TER 0.25%, EUR accumulating, Ireland UCITS Article 8; MACV/MODR CSV holdings download control is exposed. Candidate portfolios have 20-21 holdings at Nov 2026 snapshots. Direct endpoint capture, parser and full weights reconciliation still pending.",
         "candidates": [
           "MACV",
-          "MODR"
+          "MODR",
+          "MAGR"
         ]
       }
     },
