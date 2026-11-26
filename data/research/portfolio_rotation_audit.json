@@ -680,5 +680,55 @@
       },
       "note": "Allocazione strategica 60/40: composizione sottostante invariata tra 16 e 23 novembre. IUSB e IVV restano le due maggiori posizioni; nessuna rotazione tattica dimostrata."
     }
-  ]
+  ],
+  "performance_comparison": {
+    "as_of": "2026-09-30",
+    "methodology": "Total returns in USD, NAV basis, dividends/distributions reinvested, before investor taxes. Same date and periods for all four ETFs. CAGR figures are historical and include fund-level expenses in NAV performance. $10,000 terminal values are compounded from the rounded published CAGRs.",
+    "source_urls": {
+      "GMOM": "https://www.cambriafunds.com/assets/docs/gmom-factsheet.pdf",
+      "AOA": "https://www.ishares.com/us/products/239729/ishares-core-aggressive-allocation-etf",
+      "AOR": "https://www.blackrock.com/us/individual/products/239756/ishares-core-60/40-balanced-allocation-etf-aor",
+      "AOK": "https://www.aaii.com/etf/ticker/AOK"
+    },
+    "returns_annualized_pct": {
+      "5_year": {
+        "GMOM": 8.28,
+        "AOA": 9.26,
+        "AOR": 6.92,
+        "AOK": 3.4
+      },
+      "10_year": {
+        "GMOM": 7.44,
+        "AOA": 10.1,
+        "AOR": 7.96,
+        "AOK": 4.7
+      }
+    },
+    "hypothetical_10000_usd": {
+      "5_year": {
+        "GMOM": 14885,
+        "AOA": 15571,
+        "AOR": 13973,
+        "AOK": 11820
+      },
+      "10_year": {
+        "GMOM": 20496,
+        "AOA": 26174,
+        "AOR": 21509,
+        "AOK": 15829
+      }
+    },
+    "expense_ratio_pct": {
+      "GMOM": 0.95,
+      "AOA": 0.15,
+      "AOR": 0.15,
+      "AOK": 0.15
+    },
+    "interpretation": {
+      "conclusion": "GMOM is not consistently superior to strategic buy-and-hold allocation ETFs. It beats AOR and AOK over 5 years, but trails AOA; over 10 years it trails AOA and AOR, and beats AOK.",
+      "risk_comparability": "AOA is an 80/20 aggressive allocation, AOR 60/40 balanced, AOK 30/70 conservative. These are not risk-matched alternatives. Higher returns may reflect higher equity risk, especially AOA.",
+      "caveats": "GMOM 5-year return is close to AOA but lower by 0.98 percentage points annualized; GMOM has materially higher expense ratio. This return-only comparison does not establish risk-adjusted superiority. Compare volatility, max drawdown, recovery time, and rolling 3/5-year outcomes before concluding strategy superiority."
+    },
+    "notes": "Published source values rounded to two decimals where available. GMOM NAV total return from Cambria Q3 2026 fact sheet; iShares values from BlackRock/AAII as of 2026-09-30."
+  }
 }
