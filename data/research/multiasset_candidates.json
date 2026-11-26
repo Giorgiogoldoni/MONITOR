@@ -4,7 +4,7 @@
   "last_audit": "2026-11-26",
   "providers": {
     "VanEck": {
-      "source_status": "official full holdings pages exist; download endpoint not yet programmatically validated",
+      "source_status": "official issuer holdings tables and Download All Holdings control confirmed on product pages; exact downloadable URL/parser still pending",
       "candidates": [
         {
           "ticker": "DTM",
@@ -20,15 +20,16 @@
           "holdings_page": "https://www.vaneck.com/FI/en/investments/conservative-multi-asset-etf/index/",
           "status": "research",
           "audit_category": "strategic_multi_asset",
-          "audit_stage": "primary_source_partial",
-          "audit_note": "Issuer source reviewed; share class/holdings endpoint or full feed still requires verification",
+          "audit_stage": "official_holdings_page_confirmed_download_endpoint_pending",
+          "audit_note": "Issuer product page provides holdings table/Download All Holdings control; direct download URL and parser validation are pending.",
           "screening_status": "standard_due_diligence",
           "screening_reason": "Requires issuer-document validation before ranking",
           "aum_eur_m": 21.2,
           "aum_date": "2026-11-06",
           "primary_source_checked": "https://www.vaneck.com/it/it/theme/multi-asset-investing/",
-          "primary_source_check_date": "2026-11-25",
-          "primary_source_status": "issuer page checked; factsheet/KID and ticker/exchange liquidity validation still pending"
+          "primary_source_check_date": "2026-11-26",
+          "primary_source_status": "official issuer holdings table confirmed; downloadable endpoint and automated parsing not yet validated",
+          "holdings_source_page": "https://www.vaneck.com/FI/en/investments/conservative-multi-asset-etf/index/"
         },
         {
           "ticker": "NTM",
@@ -44,15 +45,16 @@
           "holdings_page": "https://www.vaneck.com/it/it/theme/multi-asset-investing/",
           "status": "research",
           "audit_category": "strategic_multi_asset",
-          "audit_stage": "primary_source_partial",
-          "audit_note": "Issuer source reviewed; share class/holdings endpoint or full feed still requires verification",
+          "audit_stage": "official_holdings_page_confirmed_download_endpoint_pending",
+          "audit_note": "Issuer product page provides holdings table/Download All Holdings control; direct download URL and parser validation are pending.",
           "screening_status": "benchmark_control",
           "screening_reason": "Use as a passive/strategic allocation benchmark to compare active or alternative products",
           "aum_eur_m": 42,
           "aum_date": "2026-11-06",
           "primary_source_checked": "https://www.vaneck.com/it/it/theme/multi-asset-investing/",
-          "primary_source_check_date": "2026-11-25",
-          "primary_source_status": "issuer page checked; factsheet/KID and ticker/exchange liquidity validation still pending"
+          "primary_source_check_date": "2026-11-26",
+          "primary_source_status": "official issuer holdings table confirmed; downloadable endpoint and automated parsing not yet validated",
+          "holdings_source_page": "https://www.vaneck.com/it/it/theme/multi-asset-investing/"
         },
         {
           "ticker": "TOF",
@@ -68,20 +70,27 @@
           "holdings_page": "https://www.vaneck.com/it/it/theme/multi-asset-investing/",
           "status": "research",
           "audit_category": "strategic_multi_asset",
-          "audit_stage": "primary_source_partial",
-          "audit_note": "Issuer source reviewed; share class/holdings endpoint or full feed still requires verification",
+          "audit_stage": "official_holdings_page_confirmed_download_endpoint_pending",
+          "audit_note": "Issuer product page provides holdings table/Download All Holdings control; direct download URL and parser validation are pending.",
           "screening_status": "standard_due_diligence",
           "screening_reason": "Requires issuer-document validation before ranking",
           "aum_eur_m": 34.3,
           "aum_date": "2026-11-06",
           "primary_source_checked": "https://www.vaneck.com/it/it/theme/multi-asset-investing/",
-          "primary_source_check_date": "2026-11-25",
-          "primary_source_status": "issuer page checked; factsheet/KID and ticker/exchange liquidity validation still pending"
+          "primary_source_check_date": "2026-11-26",
+          "primary_source_status": "official issuer holdings table confirmed; downloadable endpoint and automated parsing not yet validated",
+          "holdings_source_page": "https://www.vaneck.com/it/it/theme/multi-asset-investing/"
         }
       ],
       "sprint_1_audit": {
-        "status": "issuer_source_reviewed_partial",
-        "note": "Official issuer factsheets for NTM and related DTM/TOF products reviewed; factsheet top holdings are partial, official full-holdings endpoint/download still untested."
+        "status": "official_holdings_tables_confirmed_download_endpoint_pending",
+        "check_date": "2026-11-26",
+        "note": "Official VanEck pages expose holdings tables with total positions and dated data; a Download All Holdings control is present. Search evidence confirms DTM 237 positions (06 Nov 2026), NTM holdings page/top-10 factsheet, TOF page. Need capture direct download URL and validate file format/automated ingestion before promotion.",
+        "candidates": [
+          "DTM",
+          "NTM",
+          "TOF"
+        ]
       }
     },
     "JPMorgan": {
