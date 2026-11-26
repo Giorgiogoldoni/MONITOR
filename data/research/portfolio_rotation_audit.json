@@ -79,9 +79,36 @@
     },
     {
       "ticker": "DWUS",
-      "status": "unverified_manual_series",
-      "note": "The archived manual snapshots show changing ETF names, but lack a consistent issuer-origin complete series and share quantities.",
-      "confidence": "low"
+      "status": "official_quarterly_snapshot_stable",
+      "note": "The SEC Form N-PORT as of 2026-09-30 confirms SHV 49.4%, QUAL and SPYM together 50.4%; the MONITOR 2026-11-23 snapshot shows the same three instruments. Earlier weekly manual variations and third-party partial snapshots are not sufficient to claim repeated rotations.",
+      "confidence": "high_for_official_quarterly_snapshot_medium_for_period_stability",
+      "comparison": {
+        "date": "2026-09-30",
+        "source": "SEC Form N-PORT, primary filing",
+        "positions": [
+          {
+            "ticker": "SHV",
+            "shares": 539781,
+            "value_usd": 59548640,
+            "asset_class": "Treasury ultrashort"
+          },
+          {
+            "ticker": "QUAL",
+            "shares": 137265,
+            "value_usd": 30505773,
+            "asset_class": "US equity quality"
+          },
+          {
+            "ticker": "SPYM",
+            "shares": 337575,
+            "value_usd": 30300732,
+            "asset_class": "US equity S&P 500"
+          }
+        ],
+        "total_etf_weight_pct": 99.8,
+        "note": "The official SEC schedule confirms the SHV/QUAL/SPYM structure. The archived 2026-11-23 manual snapshot matches the same three instruments and similar weights. This supports structural stability across the disclosed period; it does not prove there were no intra-quarter trades.",
+        "confidence": "high_for_2026-09-30_holdings_medium_for_stability_since"
+      }
     },
     {
       "ticker": "GAL",
