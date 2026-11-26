@@ -94,7 +94,7 @@
       }
     },
     "JPMorgan": {
-      "source_status": "official product pages/holdings counts confirmed; full downloadable holdings feed not validated",
+      "source_status": "official issuer product pages, ISINs, TERs, SFDR and benchmark allocation verified; current holdings counts verified from issuer pages; download endpoint/parser pending",
       "candidates": [
         {
           "ticker": "JMAC",
@@ -108,10 +108,13 @@
           "ter": 0.35,
           "status": "research",
           "audit_category": "strategic_multi_asset",
-          "audit_stage": "candidate_screen",
-          "audit_note": "Not yet independently verified against primary issuer documentation in this audit",
+          "audit_stage": "issuer_identity_allocation_ter_verified_holdings_feed_pending",
+          "audit_note": "Actual fund composition may deviate from benchmark allocation due to active management. Holdings count is dated and changes.",
           "screening_status": "standard_due_diligence",
-          "screening_reason": "Requires issuer-document validation before ranking"
+          "screening_reason": "Requires issuer-document validation before ranking",
+          "primary_source_check_date": "2026-11-26",
+          "holdings_source_page": "https://am.jpmorgan.com/it/it/asset-management/adv/products/jpm-strategic-allocation-conservative-active-ucits-etf-eur-acc-ie000fasrfs4",
+          "primary_source_status": "Official JPM page confirms ISIN, Article 8, EUR accumulating, 0.35% ongoing charge and portfolio/benchmark mix; holdings data source/automated download not validated."
         },
         {
           "ticker": "JMAM",
@@ -124,10 +127,13 @@
           "ter": 0.35,
           "status": "research",
           "audit_category": "strategic_multi_asset",
-          "audit_stage": "candidate_screen",
-          "audit_note": "Not yet independently verified against primary issuer documentation in this audit",
+          "audit_stage": "issuer_identity_allocation_ter_verified_holdings_feed_pending",
+          "audit_note": "Actual fund composition may deviate from benchmark allocation due to active management. Holdings count is dated and changes.",
           "screening_status": "benchmark_control",
-          "screening_reason": "Use as a passive/strategic allocation benchmark to compare active or alternative products"
+          "screening_reason": "Use as a passive/strategic allocation benchmark to compare active or alternative products",
+          "primary_source_check_date": "2026-11-26",
+          "holdings_source_page": "https://am.jpmorgan.com/it/it/asset-management/adv/products/jpm-strategic-allocation-moderate-active-ucits-etf-eur-acc-ie000twan2k7",
+          "primary_source_status": "Official JPM page confirms ISIN, Article 8, EUR accumulating, 0.35% ongoing charge and portfolio/benchmark mix; holdings data source/automated download not validated."
         },
         {
           "ticker": "JMAG",
@@ -140,16 +146,25 @@
           "ter": 0.35,
           "status": "research",
           "audit_category": "strategic_multi_asset",
-          "audit_stage": "candidate_screen",
-          "audit_note": "Not yet independently verified against primary issuer documentation in this audit",
+          "audit_stage": "issuer_identity_allocation_ter_verified_holdings_feed_pending",
+          "audit_note": "Actual fund composition may deviate from benchmark allocation due to active management. Holdings count is dated and changes.",
           "screening_status": "standard_due_diligence",
-          "screening_reason": "Requires issuer-document validation before ranking"
+          "screening_reason": "Requires issuer-document validation before ranking",
+          "primary_source_check_date": "2026-11-26",
+          "holdings_source_page": "https://am.jpmorgan.com/it/en/asset-management/institutional/products/jpm-strategic-allocation-growth-active-ucits-etf-eur-acc-ie000mvwfdh1",
+          "primary_source_status": "Official JPM page confirms ISIN, Article 8, EUR accumulating, 0.35% ongoing charge and portfolio/benchmark mix; holdings data source/automated download not validated."
         }
       ],
       "official_portal": "https://am.jpmorgan.com/it/en/asset-management/institutional/products/fund-explorer/etf",
       "sprint_1_audit": {
-        "status": "issuer_identity_and_benchmark_confirmed",
-        "note": "Official JPM ETF product list confirms JMAC/JMAM/JMAG, ISINs, benchmark allocation and TER; JMAM holdings data also surfaced on a secondary provider, but official full holdings feed not validated."
+        "status": "issuer_primary_sources_verified_holdings_download_pending",
+        "check_date": "2026-11-26",
+        "note": "JMAC/JMAM/JMAG official JPM product pages confirm ISINs, EUR accumulating, Article 8, 0.35% ongoing charge and portfolio allocation benchmark. Holdings count on official pages 12–16 depending fund/date; downloadable portfolio endpoint not yet validated.",
+        "candidates": [
+          "JMAC",
+          "JMAM",
+          "JMAG"
+        ]
       }
     },
     "Vanguard": {
