@@ -14,6 +14,7 @@
       "status": "first_observed_rotation_candidate",
       "source": "Charles Schwab all-holdings pages",
       "source_urls": [
+        "https://www.schwab.wallst.com/schwab/Prospect/research/etfs/schwabETF/index.asp?symbol=GMOM&type=holdings",
         "https://www.schwab.wallst.com/schwab/Prospect/research/etfs/schwabETF/index.asp?symbol=GMOM&type=holdings"
       ],
       "from_date": "2026-11-20",
@@ -22,9 +23,10 @@
         "turn246837search7",
         "turn246837search4",
         "turn246837search5",
-        "turn246837search0"
+        "turn246837search0",
+        "turn386939search1"
       ],
-      "note": "Le rilevazioni Schwab del 20 e 23 novembre mostrano una variazione persistente della lista: EYLD, DBE, DBB e GUNR escono; OILK, SDMF, SYLD, IXG e IXJ entrano. Le quote dei principali titoli continuativi calano quasi uniformemente di circa 2,5%, mentre la liquidità scende dal 7,73% al 2,63% (-5,10 punti). La nuova composizione e le stesse quantità del 23/24/25 novembre confermano persistenza della lista; non consentono però di calcolare flussi netti certi senza NAV completo e quote GMOM in circolazione.",
+      "note": "Le rilevazioni Schwab del 20 e 23 novembre mostrano una variazione persistente della lista: EYLD, DBE, DBB e GUNR escono; OILK, SDMF, SYLD, IXG e IXJ entrano. Le quote dei principali titoli continuativi calano quasi uniformemente di circa 2,5%, mentre la liquidità scende dal 7,73% al 2,63% (-5,10 punti). La nuova composizione e le stesse quantità del 23/24/25 novembre confermano persistenza della lista; non consentono però di calcolare flussi netti certi senza NAV completo e quote GMOM in circolazione. La rilevazione di chiusura del 25/11 conferma quantità identiche al 24/11; le differenze di peso sono drift di prezzo, non nuova rotazione.",
       "candidates_removed": [
         "EYLD",
         "DBE",
@@ -133,6 +135,45 @@
             "IXN"
           ],
           "note": "Le stesse quantità detenute del 24/11; variano i pesi per effetto dei prezzi. Conferma che la nuova composizione è persistita almeno fino al 25/11."
+        },
+        {
+          "date": "2026-11-25",
+          "source": "Schwab all holdings, close 25/11/2026",
+          "etfs": [
+            "GVAL",
+            "FYLD",
+            "MYLD",
+            "IXC",
+            "PDBC",
+            "OILK",
+            "LYLD",
+            "SDMF",
+            "SYLD",
+            "MFUT",
+            "IXJ",
+            "SDCI",
+            "IXG",
+            "IXN"
+          ],
+          "share_counts_unchanged_vs_2026_11_24": true,
+          "notable_weights_pct": {
+            "GVAL": 12.17,
+            "FYLD": 12.09,
+            "MYLD": 11.18,
+            "IXC": 6.58,
+            "PDBC": 6.13,
+            "OILK": 6.04,
+            "LYLD": 6,
+            "SDMF": 5.92,
+            "SYLD": 5.77,
+            "MFUT": 5.75,
+            "IXJ": 5.74,
+            "SDCI": 5.73,
+            "IXG": 5.66,
+            "IXN": 4.77
+          },
+          "cash_weight_pct": 0.52,
+          "note": "Rispetto al 24/11 le quantità assolute riportate da Schwab restano identiche; le variazioni percentuali sono quindi compatibili con il movimento relativo dei prezzi e non con nuovi trade in quella seduta."
         }
       ],
       "comparison_2026_11_20_to_2026_11_23": {
@@ -386,7 +427,29 @@
             "sign": "short"
           }
         ],
-        "note": "Schwab pubblica percentuali di portafoglio e valori nozionali che possono superare il NAV; i contratti e le scadenze riportate non sono direttamente confrontabili con il factsheet iMGP del 30/09. Snapshot utile come fotografia, non come prova di trade."
+        "note": "Schwab pubblica percentuali di portafoglio e valori nozionali che possono superare il NAV; i contratti e le scadenze riportate non sono direttamente confrontabili con il factsheet iMGP del 30/09. Snapshot utile come fotografia, non come prova di trade. ATTENZIONE: la pagina Schwab riporta scadenze 'Mar26' per alcuni futures pur essendo datata 25/11/2026; un'altra fonte di holdings al 24/11 riporta invece contratti Dec26/Feb27. Questa discrepanza sulle scadenze rende il dato Schwab inadatto a inferenze temporali/di roll senza verifica sul file ufficiale iMGP.",
+        "source_refs": [
+          "turn386939search3"
+        ],
+        "expiry_data_quality": "conflicting_expiry_labels_across_providers",
+        "cross_source_check": {
+          "date": "2026-11-24",
+          "source": "StockAnalysis holdings (provider-attributed data)",
+          "source_ref": "turn386939search4",
+          "reported_contracts": [
+            "JPN Yen Dec26",
+            "WTI Crude Feb27",
+            "S&P 500 E-mini Dec26",
+            "MSCI Emerging Markets Dec26",
+            "MSCI EAFE Dec26",
+            "Gold Dec26",
+            "US Long Bond Dec26",
+            "US 10-year Note Dec26",
+            "Euro FX Dec26",
+            "US 2-year Note Dec26"
+          ],
+          "note": "Secondaria e non sostitutiva del file emittente; segnala una divergenza di scadenze rispetto alla pagina Schwab."
+        }
       }
     }
   ]
