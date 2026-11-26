@@ -14,15 +14,18 @@
       "status": "first_observed_rotation_candidate",
       "source": "Charles Schwab all-holdings pages",
       "source_urls": [
+        "https://www.schwab.wallst.com/schwab/Prospect/research/etfs/schwabETF/index.asp?symbol=GMOM&type=holdings",
         "https://www.schwab.wallst.com/schwab/Prospect/research/etfs/schwabETF/index.asp?symbol=GMOM&type=holdings"
       ],
       "from_date": "2026-11-20",
       "to_date": "2026-11-24",
       "source_refs": [
-        "turn208536search5",
-        "turn208536search0"
+        "turn246837search7",
+        "turn246837search4",
+        "turn246837search5",
+        "turn246837search0"
       ],
-      "note": "Schwab pages report holdings with shares held and market value. The 11/20 and 11/24 holdings show candidate substitutions. Many continuing positions have share counts down by approximately 2.4–2.6% in near-parallel; this could reflect fund-level flows or scaling and must not be interpreted as individual discretionary sells without normalization by GMOM shares outstanding/AUM.",
+      "note": "La sequenza Schwab 13→20→23→24 novembre circoscrive la candidata rotazione tra il 20 e il 23 novembre: cinque ETF entrano nella lista e quattro escono; le quantità dei principali ETF continuativi sono quasi invariate tra 20 e 23. Tra 13 e 20 le quantità di molti titoli scendono quasi uniformemente di circa 7%, e tra 23 e 24 scendono di circa 2,5%; questi movimenti generalizzati richiedono normalizzazione per AUM/quote GMOM e non sono vendite selettive dimostrate.",
       "candidates_removed": [
         "EYLD",
         "DBE",
@@ -47,7 +50,119 @@
         "SDCI": -2.51,
         "IXN": -2.4
       },
-      "confidence": "medium_for_list_changes_low_for_trade_attribution"
+      "confidence": "medium_high_for_list_rotation_low_for_manager_trade_attribution",
+      "dated_snapshots": [
+        {
+          "date": "2026-11-13",
+          "source": "Schwab all holdings",
+          "etfs": [
+            "GVAL",
+            "FYLD",
+            "EYLD",
+            "MYLD",
+            "IXC",
+            "DBE",
+            "PDBC",
+            "LYLD",
+            "DBB",
+            "GUNR",
+            "SDCI",
+            "MFUT",
+            "IXN"
+          ],
+          "note": "Lista completa disponibile; share counts presenti."
+        },
+        {
+          "date": "2026-11-20",
+          "source": "Schwab all holdings",
+          "etfs": [
+            "GVAL",
+            "FYLD",
+            "EYLD",
+            "MYLD",
+            "IXC",
+            "DBE",
+            "PDBC",
+            "LYLD",
+            "DBB",
+            "MFUT",
+            "SDCI",
+            "GUNR",
+            "IXN"
+          ],
+          "note": "Le quote dei titoli continuativi sono circa il 7% inferiori rispetto al 13/11, con variazione quasi uniforme."
+        },
+        {
+          "date": "2026-11-23",
+          "source": "Schwab all holdings",
+          "etfs": [
+            "GVAL",
+            "FYLD",
+            "MYLD",
+            "IXC",
+            "PDBC",
+            "LYLD",
+            "SDMF",
+            "SYLD",
+            "OILK",
+            "IXG",
+            "MFUT",
+            "IXJ",
+            "SDCI",
+            "IXN"
+          ],
+          "note": "Compaiono cinque ETF non presenti nella lista 20/11; EYLD, DBE, DBB e GUNR non sono più presenti. Le quantità dei titoli continuativi risultano sostanzialmente uguali al 20/11."
+        },
+        {
+          "date": "2026-11-24",
+          "source": "Schwab all holdings",
+          "etfs": [
+            "GVAL",
+            "FYLD",
+            "MYLD",
+            "IXC",
+            "PDBC",
+            "LYLD",
+            "OILK",
+            "SDMF",
+            "SYLD",
+            "MFUT",
+            "IXG",
+            "SDCI",
+            "IXJ",
+            "IXN"
+          ],
+          "note": "La composizione resta coerente con il 23/11; molte quantità scendono in modo quasi uniforme di circa 2,5%."
+        }
+      ],
+      "comparison_2026_11_20_to_2026_11_23": {
+        "candidates_removed": [
+          "EYLD",
+          "DBE",
+          "DBB",
+          "GUNR"
+        ],
+        "candidates_added": [
+          "SDMF",
+          "SYLD",
+          "OILK",
+          "IXG",
+          "IXJ"
+        ],
+        "continuing": [
+          "GVAL",
+          "FYLD",
+          "MYLD",
+          "IXC",
+          "PDBC",
+          "LYLD",
+          "MFUT",
+          "SDCI",
+          "IXN"
+        ],
+        "interpretation": "La variazione della lista è localizzata tra le rilevazioni del 20 e 23 novembre; le quote detenute dei principali ETF continuativi sono sostanzialmente invariate tra queste due date. È una evidenza più forte di una semplice variazione di peso, ma resta una rotazione candidata finché non si verifica l'intero NAV e la fonte primaria del gestore.",
+        "confidence": "medium_high_for_composition_change_low_for_trade_attribution"
+      }
     },
     {
       "ticker": "DWAW",
