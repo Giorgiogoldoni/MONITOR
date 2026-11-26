@@ -1,0 +1,1036 @@
+<!doctype html>
+<html lang="it"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>MONITOR · Look-through azionario</title>
+<style>
+:root{color-scheme:dark;--bg:#080d18;--panel:#101a2b;--line:#26364e;--txt:#e8eef8;--muted:#9aabc2;--accent:#70b7ff;--green:#3bd39b;--amber:#f2bd62}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--txt);font:14px/1.5 Inter,system-ui,sans-serif}header{padding:22px max(18px,calc((100vw - 1250px)/2));border-bottom:1px solid var(--line);background:#0b1322;display:flex;justify-content:space-between;gap:14px;align-items:center;flex-wrap:wrap}h1{font-size:21px;margin:0;letter-spacing:.04em}header p{margin:4px 0 0;color:var(--muted);font-size:12px}.wrap{max-width:1250px;margin:auto;padding:22px 18px}.metrics{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin-bottom:16px}.metric,.panel{background:var(--panel);border:1px solid var(--line);border-radius:12px}.metric{padding:14px}.metric b{font-size:22px;display:block}.metric span{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.06em}.toolbar{display:flex;gap:10px;flex-wrap:wrap;margin:16px 0}.toolbar select{background:#0e1726;border:1px solid var(--line);color:var(--txt);padding:10px 12px;border-radius:8px;font:inherit;min-width:220px}.panel{padding:16px;margin:14px 0}.muted{color:var(--muted)}.warn{border:1px solid #69532c;background:#1d1a12;color:#f0d5a1;border-radius:9px;padding:12px 14px;font-size:12px}.good{color:var(--green)}table{width:100%;border-collapse:collapse;font-size:12px}th{text-align:left;color:var(--muted);font-size:10px;text-transform:uppercase;letter-spacing:.06em;padding:10px;border-bottom:1px solid var(--line)}td{padding:9px 10px;border-bottom:1px solid #1d2b40}td:last-child,th:last-child{text-align:right}.sym{font-weight:800}.weight{font-weight:700;font-variant-numeric:tabular-nums}.bar{height:4px;background:#20344c;border-radius:9px;margin-top:5px;overflow:hidden}.bar i{display:block;height:100%;background:linear-gradient(90deg,#3c85c9,#70b7ff)}.pill{display:inline-block;border:1px solid #42627f;border-radius:99px;padding:3px 8px;font-size:10px;color:var(--accent)}.links a{color:var(--accent)}.small{font-size:11px}.split{display:grid;grid-template-columns:1.2fr .8fr;gap:14px}.sectorrow{display:flex;justify-content:space-between;border-bottom:1px solid #1d2b40;padding:7px 0}.footer{color:var(--muted);font-size:11px;margin:22px 0}.footer a{color:var(--accent)}@media(max-width:700px){.metrics{grid-template-columns:repeat(2,1fr)}.split{grid-template-columns:1fr}.wrap{padding:15px 12px}h1{font-size:18px}}
+</style></head><body>
+<header><div><h1>MONITOR / LOOK-THROUGH AZIONARIO</h1><p>Dagli ETF contenuti nei fondi ai titoli azionari sottostanti · esposizione ponderata</p></div><a href="./holdings.html" style="color:#70b7ff">← Holdings Board</a></header>
+<main class="wrap">
+<div class="metrics"><div class="metric"><b id="funds">6</b><span>Fondi analizzati</span></div><div class="metric"><b id="sleeves">—</b><span>ETF sottostanti mappati</span></div><div class="metric"><b id="securities">—</b><span>Titoli distinti nel database</span></div><div class="metric"><b>Top holdings</b><span>Non portafogli integrali</span></div></div>
+<div class="warn"><b>Importante — prima versione parziale.</b> Il calcolo moltiplica il peso dell'ETF sottostante per il peso del titolo dentro quell'ETF. Sono inclusi solo i titoli pubblicati nelle prime posizioni delle fonti; la parte non mappata resta fuori dal calcolo e non viene redistribuita. Per AOA/AOK/AOR e DWUS anche i pesi dei fondi contenitori sono snapshot provvisori. Le date dei componenti non coincidono perfettamente. Non usare ancora questi numeri come esposizione completa certificata.</div>
+<div class="toolbar"><label class="muted" for="fund">Fondo contenitore</label><select id="fund"></select></div>
+<div id="summary" class="panel"></div>
+<div class="split"><section class="panel"><h3 style="margin:0 0 8px">Titoli sottostanti — peso effettivo nel fondo</h3><p class="muted small">Somma dei contributi dei diversi ETF sottostanti; ticker uguali vengono aggregati.</p><div style="overflow:auto"><table><thead><tr><th>#</th><th>Ticker</th><th>Titolo</th><th>Settore</th><th>Contributo</th></tr></thead><tbody id="stocks"></tbody></table></div></section>
+<section class="panel"><h3 style="margin:0 0 8px">Da quali ETF arriva l'esposizione</h3><div id="sleeveTable"></div><h3 style="margin:18px 0 8px">Lettura</h3><div id="comment" class="muted small"></div></section></div>
+<div class="panel"><h3 style="margin:0 0 8px">Fonti e date dei portafogli sottostanti</h3><div id="sources" class="small links"></div></div>
+<div class="footer">Formula: peso titolo nel fondo = peso ETF sottostante nel fondo × peso titolo nell'ETF sottostante / 100. Dati snapshot al 26 novembre 2026. <a href="./">Dashboard MONITOR</a>.</div>
+</main>
+<script>
+const DATA={
+  "asOf": "2026-11-26",
+  "methodology": "Look-through parziale: peso del singolo titolo nel fondo = peso della quota ETF nel fondo × peso del titolo nell'ETF sottostante. Per ciascun ETF sottostante sono utilizzate le prime posizioni pubblicate, non l'intero portafoglio. Le esposizioni residue non sono redistribuite.",
+  "books": {
+    "IVV": {
+      "name": "iShares Core S&P 500 ETF",
+      "date": "2026-11-23",
+      "source": "ETFIQ / file giornaliero iShares",
+      "url": "https://etfiq.com/funds/ivv/holdings/",
+      "positions": [
+        [
+          "AAPL",
+          "Apple",
+          "Information Technology",
+          8.16
+        ],
+        [
+          "NVDA",
+          "Nvidia",
+          "Information Technology",
+          6.4
+        ],
+        [
+          "MSFT",
+          "Microsoft",
+          "Information Technology",
+          5.86
+        ],
+        [
+          "AMZN",
+          "Amazon",
+          "Consumer Discretionary",
+          4.01
+        ],
+        [
+          "GOOGL",
+          "Alphabet A",
+          "Communication Services",
+          2.65
+        ],
+        [
+          "AVGO",
+          "Broadcom",
+          "Information Technology",
+          2.39
+        ],
+        [
+          "GOOG",
+          "Alphabet C",
+          "Communication Services",
+          2.13
+        ],
+        [
+          "META",
+          "Meta Platforms",
+          "Communication Services",
+          2.11
+        ],
+        [
+          "LLY",
+          "Eli Lilly",
+          "Health Care",
+          1.75
+        ],
+        [
+          "TSLA",
+          "Tesla",
+          "Consumer Discretionary",
+          1.74
+        ],
+        [
+          "BRK.B",
+          "Berkshire Hathaway",
+          "Financials",
+          1.71
+        ],
+        [
+          "JPM",
+          "JPMorgan Chase",
+          "Financials",
+          1.35
+        ],
+        [
+          "MU",
+          "Micron Technology",
+          "Information Technology",
+          1.28
+        ],
+        [
+          "AMD",
+          "AMD",
+          "Information Technology",
+          1.19
+        ],
+        [
+          "V",
+          "Visa",
+          "Financials",
+          1.12
+        ],
+        [
+          "JNJ",
+          "Johnson & Johnson",
+          "Health Care",
+          1.04
+        ],
+        [
+          "XOM",
+          "Exxon Mobil",
+          "Energy",
+          1.03
+        ],
+        [
+          "WMT",
+          "Walmart",
+          "Consumer Staples",
+          0.93
+        ],
+        [
+          "MA",
+          "Mastercard",
+          "Financials",
+          0.82
+        ],
+        [
+          "ABBV",
+          "AbbVie",
+          "Health Care",
+          0.82
+        ],
+        [
+          "COST",
+          "Costco",
+          "Consumer Staples",
+          0.76
+        ],
+        [
+          "CVX",
+          "Chevron",
+          "Energy",
+          0.65
+        ],
+        [
+          "PG",
+          "Procter & Gamble",
+          "Consumer Staples",
+          0.63
+        ],
+        [
+          "CSCO",
+          "Cisco",
+          "Information Technology",
+          0.61
+        ]
+      ]
+    },
+    "IDEV": {
+      "name": "iShares Core MSCI International Developed Markets ETF",
+      "date": "2026-11-25",
+      "source": "Schwab holdings (close 25 Nov 2026)",
+      "url": "https://www.schwab.wallst.com/schwab/Prospect/research/etfs/schwabETF/index.asp?symbol=IDEV&type=holdings",
+      "positions": [
+        [
+          "ASML",
+          "ASML",
+          "Information Technology",
+          1.87
+        ],
+        [
+          "ROG",
+          "Roche",
+          "Health Care",
+          1.24
+        ],
+        [
+          "NOVN",
+          "Novartis",
+          "Health Care",
+          1.04
+        ],
+        [
+          "HSBA",
+          "HSBC",
+          "Financials",
+          1.04
+        ],
+        [
+          "SHEL",
+          "Shell",
+          "Energy",
+          1.01
+        ],
+        [
+          "AZN",
+          "AstraZeneca",
+          "Health Care",
+          0.99
+        ],
+        [
+          "NESN",
+          "Nestlé",
+          "Consumer Staples",
+          0.98
+        ],
+        [
+          "RY",
+          "Royal Bank of Canada",
+          "Financials",
+          0.95
+        ],
+        [
+          "SAP",
+          "SAP",
+          "Information Technology",
+          0.77
+        ],
+        [
+          "8306",
+          "Mitsubishi UFJ",
+          "Financials",
+          0.76
+        ],
+        [
+          "SIE",
+          "Siemens",
+          "Industrials",
+          0.76
+        ],
+        [
+          "7203",
+          "Toyota",
+          "Consumer Discretionary",
+          0.74
+        ],
+        [
+          "CBA",
+          "Commonwealth Bank of Australia",
+          "Financials",
+          0.71
+        ],
+        [
+          "ALV",
+          "Allianz",
+          "Financials",
+          0.7
+        ],
+        [
+          "TD",
+          "Toronto-Dominion Bank",
+          "Financials",
+          0.7
+        ],
+        [
+          "BHP",
+          "BHP",
+          "Materials",
+          0.65
+        ],
+        [
+          "TTE",
+          "TotalEnergies",
+          "Energy",
+          0.62
+        ],
+        [
+          "SAN",
+          "Banco Santander",
+          "Financials",
+          0.61
+        ],
+        [
+          "6758",
+          "Sony",
+          "Consumer Discretionary",
+          0.59
+        ],
+        [
+          "IBE",
+          "Iberdrola",
+          "Utilities",
+          0.58
+        ]
+      ]
+    },
+    "IEMG": {
+      "name": "iShares Core MSCI Emerging Markets ETF",
+      "date": "2026-11-25",
+      "source": "Schwab holdings (close 25 Nov 2026)",
+      "url": "https://www.schwab.wallst.com/schwab/Prospect/research/etfs/schwabETF/index.asp?symbol=IEMG&type=holdings",
+      "positions": [
+        [
+          "TSM",
+          "Taiwan Semiconductor",
+          "Information Technology",
+          13.94
+        ],
+        [
+          "005930",
+          "Samsung Electronics",
+          "Information Technology",
+          6.14
+        ],
+        [
+          "000660",
+          "SK hynix",
+          "Information Technology",
+          4.57
+        ],
+        [
+          "0700",
+          "Tencent",
+          "Communication Services",
+          2.34
+        ],
+        [
+          "BABA",
+          "Alibaba",
+          "Consumer Discretionary",
+          1.61
+        ],
+        [
+          "2454",
+          "MediaTek",
+          "Information Technology",
+          1.35
+        ],
+        [
+          "939",
+          "China Construction Bank",
+          "Financials",
+          0.86
+        ],
+        [
+          "005930P",
+          "Samsung Electronics Pref",
+          "Information Technology",
+          0.81
+        ],
+        [
+          "2317",
+          "Hon Hai Precision",
+          "Information Technology",
+          0.72
+        ],
+        [
+          "HDB",
+          "HDFC Bank",
+          "Financials",
+          0.65
+        ],
+        [
+          "2308",
+          "Delta Electronics",
+          "Information Technology",
+          0.62
+        ],
+        [
+          "ICICIBANK",
+          "ICICI Bank",
+          "Financials",
+          0.61
+        ],
+        [
+          "RELIANCE",
+          "Reliance Industries",
+          "Energy",
+          0.55
+        ],
+        [
+          "3711",
+          "ASE Technology",
+          "Information Technology",
+          0.53
+        ],
+        [
+          "1398",
+          "ICBC",
+          "Financials",
+          0.51
+        ],
+        [
+          "402340",
+          "SK Square",
+          "Financials",
+          0.48
+        ],
+        [
+          "1810",
+          "Xiaomi",
+          "Information Technology",
+          0.45
+        ],
+        [
+          "BHARTIARTL",
+          "Bharti Airtel",
+          "Communication Services",
+          0.45
+        ],
+        [
+          "3988",
+          "Bank of China",
+          "Financials",
+          0.41
+        ],
+        [
+          "009150",
+          "Samsung Electro-Mechanics",
+          "Information Technology",
+          0.39
+        ]
+      ]
+    },
+    "QUAL": {
+      "name": "iShares MSCI USA Quality Factor ETF",
+      "date": "2026-11-23",
+      "source": "ETFIQ / file giornaliero iShares",
+      "url": "https://etfiq.com/funds/qual/holdings/",
+      "positions": [
+        [
+          "MSFT",
+          "Microsoft",
+          "Information Technology",
+          7.77
+        ],
+        [
+          "AAPL",
+          "Apple",
+          "Information Technology",
+          7.69
+        ],
+        [
+          "NVDA",
+          "Nvidia",
+          "Information Technology",
+          4.93
+        ],
+        [
+          "LLY",
+          "Eli Lilly",
+          "Health Care",
+          4.46
+        ],
+        [
+          "META",
+          "Meta Platforms",
+          "Communication Services",
+          4.05
+        ],
+        [
+          "V",
+          "Visa",
+          "Financials",
+          3.63
+        ],
+        [
+          "TJX",
+          "TJX Companies",
+          "Consumer Discretionary",
+          3.6
+        ],
+        [
+          "MA",
+          "Mastercard",
+          "Financials",
+          2.59
+        ],
+        [
+          "LRCX",
+          "Lam Research",
+          "Information Technology",
+          2.56
+        ],
+        [
+          "XOM",
+          "Exxon Mobil",
+          "Energy",
+          2.26
+        ],
+        [
+          "JNJ",
+          "Johnson & Johnson",
+          "Health Care",
+          2.22
+        ],
+        [
+          "AMAT",
+          "Applied Materials",
+          "Information Technology",
+          2.17
+        ],
+        [
+          "BRK.B",
+          "Berkshire Hathaway",
+          "Financials",
+          2.11
+        ],
+        [
+          "KLAC",
+          "KLA",
+          "Information Technology",
+          2.02
+        ],
+        [
+          "GOOGL",
+          "Alphabet A",
+          "Communication Services",
+          1.66
+        ],
+        [
+          "NFLX",
+          "Netflix",
+          "Communication Services",
+          1.42
+        ],
+        [
+          "ANET",
+          "Arista Networks",
+          "Information Technology",
+          1.4
+        ],
+        [
+          "ROST",
+          "Ross Stores",
+          "Consumer Discretionary",
+          1.38
+        ],
+        [
+          "ADP",
+          "Automatic Data Processing",
+          "Industrials",
+          1.37
+        ],
+        [
+          "MRK",
+          "Merck",
+          "Health Care",
+          1.33
+        ]
+      ]
+    },
+    "QQQM": {
+      "name": "Invesco NASDAQ 100 ETF",
+      "date": "2026-11-23",
+      "source": "ETFIQ / file giornaliero Invesco",
+      "url": "https://etfiq.com/funds/qqqm/holdings/",
+      "positions": [
+        [
+          "AAPL",
+          "Apple",
+          "Information Technology",
+          8.78
+        ],
+        [
+          "NVDA",
+          "Nvidia",
+          "Information Technology",
+          6.86
+        ],
+        [
+          "MSFT",
+          "Microsoft",
+          "Information Technology",
+          6.32
+        ],
+        [
+          "AMZN",
+          "Amazon",
+          "Consumer Discretionary",
+          4.75
+        ],
+        [
+          "MU",
+          "Micron Technology",
+          "Information Technology",
+          3.8
+        ],
+        [
+          "AMD",
+          "AMD",
+          "Information Technology",
+          3.52
+        ],
+        [
+          "TSLA",
+          "Tesla",
+          "Consumer Discretionary",
+          3.49
+        ],
+        [
+          "META",
+          "Meta Platforms",
+          "Communication Services",
+          3.06
+        ],
+        [
+          "WMT",
+          "Walmart",
+          "Consumer Staples",
+          3
+        ],
+        [
+          "GOOGL",
+          "Alphabet A",
+          "Communication Services",
+          2.85
+        ],
+        [
+          "SPCX",
+          "Space Exploration Technologies",
+          "Industrials",
+          2.72
+        ],
+        [
+          "GOOG",
+          "Alphabet C",
+          "Communication Services",
+          2.66
+        ],
+        [
+          "AVGO",
+          "Broadcom",
+          "Information Technology",
+          2.57
+        ],
+        [
+          "COST",
+          "Costco",
+          "Consumer Staples",
+          2.32
+        ],
+        [
+          "CSCO",
+          "Cisco",
+          "Information Technology",
+          1.82
+        ],
+        [
+          "PLTR",
+          "Palantir",
+          "Information Technology",
+          1.75
+        ],
+        [
+          "INTC",
+          "Intel",
+          "Information Technology",
+          1.49
+        ],
+        [
+          "PANW",
+          "Palo Alto Networks",
+          "Information Technology",
+          1.37
+        ],
+        [
+          "AMAT",
+          "Applied Materials",
+          "Information Technology",
+          1.31
+        ],
+        [
+          "TXN",
+          "Texas Instruments",
+          "Information Technology",
+          1.27
+        ]
+      ]
+    },
+    "SPY": {
+      "name": "SPDR S&P 500 ETF Trust",
+      "date": "2026-11-18",
+      "source": "State Street official holdings",
+      "url": "https://www.ssga.com/us/en/intermediary/etfs/state-street-spdr-sp-500-etf-trust-spy",
+      "positions": [
+        [
+          "AAPL",
+          "Apple",
+          "Information Technology",
+          8.13
+        ],
+        [
+          "MSFT",
+          "Microsoft",
+          "Information Technology",
+          5.96
+        ],
+        [
+          "NVDA",
+          "Nvidia",
+          "Information Technology",
+          5.78
+        ],
+        [
+          "AMZN",
+          "Amazon",
+          "Consumer Discretionary",
+          4.16
+        ],
+        [
+          "AVGO",
+          "Broadcom",
+          "Information Technology",
+          2.66
+        ],
+        [
+          "GOOGL",
+          "Alphabet A",
+          "Communication Services",
+          2.62
+        ],
+        [
+          "META",
+          "Meta Platforms",
+          "Communication Services",
+          2.15
+        ],
+        [
+          "GOOG",
+          "Alphabet C",
+          "Communication Services",
+          2.1
+        ],
+        [
+          "LLY",
+          "Eli Lilly",
+          "Health Care",
+          1.75
+        ],
+        [
+          "TSLA",
+          "Tesla",
+          "Consumer Discretionary",
+          1.71
+        ]
+      ]
+    },
+    "SPDW": {
+      "name": "SPDR Portfolio Developed World ex-US ETF",
+      "date": "2026-11-20",
+      "source": "ETFIQ / file giornaliero State Street",
+      "url": "https://etfiq.com/funds/spdw/holdings/",
+      "positions": [
+        [
+          "SMSN",
+          "Samsung Electronics GDR",
+          "Information Technology",
+          1.96
+        ],
+        [
+          "ASML",
+          "ASML",
+          "Information Technology",
+          1.62
+        ],
+        [
+          "000660",
+          "SK hynix",
+          "Information Technology",
+          1.59
+        ],
+        [
+          "ROG",
+          "Roche",
+          "Health Care",
+          1.08
+        ],
+        [
+          "NOVN",
+          "Novartis",
+          "Health Care",
+          0.91
+        ],
+        [
+          "HSBA",
+          "HSBC",
+          "Financials",
+          0.91
+        ],
+        [
+          "SHEL",
+          "Shell",
+          "Energy",
+          0.89
+        ],
+        [
+          "AZN",
+          "AstraZeneca",
+          "Health Care",
+          0.89
+        ],
+        [
+          "NESN",
+          "Nestlé",
+          "Consumer Staples",
+          0.86
+        ],
+        [
+          "RY",
+          "Royal Bank of Canada",
+          "Financials",
+          0.84
+        ],
+        [
+          "7203",
+          "Toyota",
+          "Consumer Discretionary",
+          0.83
+        ],
+        [
+          "8306",
+          "Mitsubishi UFJ",
+          "Financials",
+          0.76
+        ],
+        [
+          "SAP",
+          "SAP",
+          "Information Technology",
+          0.67
+        ],
+        [
+          "SIE",
+          "Siemens",
+          "Industrials",
+          0.67
+        ],
+        [
+          "CBA",
+          "Commonwealth Bank of Australia",
+          "Financials",
+          0.62
+        ],
+        [
+          "TD",
+          "Toronto-Dominion Bank",
+          "Financials",
+          0.61
+        ],
+        [
+          "ALV",
+          "Allianz",
+          "Financials",
+          0.61
+        ],
+        [
+          "TTE",
+          "TotalEnergies",
+          "Energy",
+          0.59
+        ],
+        [
+          "BHP",
+          "BHP",
+          "Materials",
+          0.57
+        ],
+        [
+          "6758",
+          "Sony",
+          "Consumer Discretionary",
+          0.56
+        ]
+      ]
+    }
+  },
+  "parents": [
+    {
+      "ticker": "AOA",
+      "name": "iShares Core 80/20 Aggressive Allocation",
+      "date": "2026-11-23",
+      "quality": "Provisional",
+      "source": "Snapshot holdings MONITOR (Investing.com; da ricontrollare sul file iShares)",
+      "url": "https://www.ishares.com/us/products/239729/ishares-core-aggressive-allocation-etf",
+      "sleeves": [
+        [
+          "IVV",
+          46.76
+        ],
+        [
+          "IDEV",
+          22.4
+        ],
+        [
+          "IEMG",
+          8.97
+        ]
+      ],
+      "omitted": "IUSB, IAGG, IJH, IJR: obbligazioni, mid/small cap non incluse nel calcolo"
+    },
+    {
+      "ticker": "AOK",
+      "name": "iShares Core 30/70 Conservative Allocation",
+      "date": "2026-11-23",
+      "quality": "Provisional",
+      "source": "Snapshot holdings MONITOR (Investing.com; da ricontrollare sul file iShares)",
+      "url": "https://www.ishares.com/us/products/239733/AOK",
+      "sleeves": [
+        [
+          "IVV",
+          18.48
+        ],
+        [
+          "IDEV",
+          8.85
+        ],
+        [
+          "IEMG",
+          3.55
+        ]
+      ],
+      "omitted": "IUSB, IAGG, IJH, IJR: obbligazioni, mid/small cap non incluse nel calcolo"
+    },
+    {
+      "ticker": "AOR",
+      "name": "iShares Core 60/40 Balanced Allocation",
+      "date": "2026-11-23",
+      "quality": "Provisional",
+      "source": "Snapshot holdings MONITOR (Investing.com; da ricontrollare sul file iShares)",
+      "url": "https://www.ishares.com/us/products/239756/ishares-core-60/40-balanced-allocation-etf-aor",
+      "sleeves": [
+        [
+          "IVV",
+          35.86
+        ],
+        [
+          "IDEV",
+          17.18
+        ],
+        [
+          "IEMG",
+          6.88
+        ]
+      ],
+      "omitted": "IUSB, IAGG, IJH, IJR: obbligazioni, mid/small cap non incluse nel calcolo"
+    },
+    {
+      "ticker": "DWAW",
+      "name": "AdvisorShares Dorsey Wright FSM All Cap World Equity",
+      "date": "2026-11-10",
+      "quality": "Official holdings snapshot",
+      "source": "AdvisorShares official holdings",
+      "url": "https://advisorshares.com/etfs/dwaw/",
+      "sleeves": [
+        [
+          "QUAL",
+          20.22
+        ],
+        [
+          "QQQM",
+          19.22
+        ]
+      ],
+      "omitted": "IVLU, IWD, VLUE non ancora mappati: circa 60.37% del fondo"
+    },
+    {
+      "ticker": "DWUS",
+      "name": "AdvisorShares Dorsey Wright FSM U.S. Core",
+      "date": "2026-11-23",
+      "quality": "Provisional",
+      "source": "Snapshot holdings MONITOR (Investing.com); da confermare con AdvisorShares",
+      "url": "https://advisorshares.com/etfs/dwus/",
+      "sleeves": [
+        [
+          "QUAL",
+          25.26
+        ],
+        [
+          "IVV",
+          25.21
+        ]
+      ],
+      "omitted": "SHV (Treasury ultrashort) escluso: non è azionario"
+    },
+    {
+      "ticker": "GAL",
+      "name": "State Street Global Allocation ETF",
+      "date": "2026-11-20",
+      "quality": "Good · issuer cross-check",
+      "source": "State Street daily holdings via ETFIQ",
+      "url": "https://www.ssga.com/us/en/individual/etfs/state-street-global-allocation-etf-gal",
+      "sleeves": [
+        [
+          "SPY",
+          18.15
+        ],
+        [
+          "SPDW",
+          18.5
+        ]
+      ],
+      "omitted": "SPEM, GWX, MDY, VPL e altri ETF non mappati; obbligazioni e commodity escluse"
+    }
+  ]
+};
+const fmt=n=>Number(n).toLocaleString('it-IT',{minimumFractionDigits:2,maximumFractionDigits:2})+'%';
+const sum=a=>a.reduce((x,y)=>x+y,0);
+const select=document.getElementById('fund');
+DATA.parents.forEach(p=>{const o=document.createElement('option');o.value=p.ticker;o.textContent=p.ticker+' — '+p.name;select.appendChild(o)});
+document.getElementById('sleeves').textContent=Object.keys(DATA.books).length;
+document.getElementById('securities').textContent=new Set(Object.values(DATA.books).flatMap(b=>b.positions.map(x=>x[0]))).size;
+function render(){
+ const p=DATA.parents.find(x=>x.ticker===select.value)||DATA.parents[0];
+ const all=[];
+ for(const [ticker,weight] of p.sleeves){const book=DATA.books[ticker];if(!book)continue;for(const [sym,name,sector,stockWeight] of book.positions){all.push({ticker:sym,name,sector,contribution:weight*stockWeight/100,from:ticker})}}
+ const agg=new Map();
+ for(const x of all){const k=x.ticker;if(!agg.has(k))agg.set(k,{...x,contribution:0,froms:[]});const a=agg.get(k);a.contribution+=x.contribution;if(!a.froms.includes(x.from))a.froms.push(x.from)}
+ const rows=[...agg.values()].sort((a,b)=>b.contribution-a.contribution);
+ const sleeveCoverage=sum(p.sleeves.map(x=>x[1]));
+ const topMapped=sum(p.sleeves.map(([t,w])=>w*sum(DATA.books[t].positions.map(x=>x[3]))/100));
+ document.getElementById('summary').innerHTML='<div style="display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap"><div><div style="font-size:20px;font-weight:800">'+p.ticker+'</div><div class="muted small">'+p.name+'</div></div><span class="pill">'+p.quality+'</span></div><div class="metrics" style="margin:14px 0 0"><div class="metric"><b>'+fmt(sleeveCoverage)+'</b><span>Peso fondo in ETF azionari mappati</span></div><div class="metric"><b>'+fmt(topMapped)+'</b><span>Peso NAV rappresentato dai titoli censiti</span></div><div class="metric"><b>'+rows.length+'</b><span>Titoli distinti trovati</span></div><div class="metric"><b>'+p.date+'</b><span>Data partecipazioni contenitore</span></div></div><p class="muted small" style="margin-bottom:0">Fonte contenitore: '+p.source+'. <a href="'+p.url+'" target="_blank" rel="noopener" style="color:#70b7ff">Scheda ufficiale ↗</a></p>';
+ document.getElementById('stocks').innerHTML=rows.slice(0,30).map((x,i)=>'<tr><td>'+(i+1)+'</td><td class="sym">'+x.ticker+'</td><td>'+x.name+'</td><td>'+x.sector+'</td><td class="weight">'+fmt(x.contribution)+'<div class="bar"><i style="width:'+Math.min(100,x.contribution/Math.max(...rows.map(r=>r.contribution))*100)+'%"></i></div></td></tr>').join('');
+ document.getElementById('sleeveTable').innerHTML=p.sleeves.map(([t,w])=>'<div class="sectorrow"><span><b>'+t+'</b><br><span class="muted small">'+DATA.books[t].name+'</span></span><span class="weight">'+fmt(w)+'</span></div>').join('')+'<p class="muted small">Esclusi: '+p.omitted+'.</p>';
+ document.getElementById('comment').innerHTML='Le prime posizioni che ricorrono più spesso sono aggregate una sola volta nel totale. Il contributo è la quota del patrimonio del fondo attribuibile a quel titolo attraverso gli ETF mappati, non il peso del titolo nel singolo ETF. Copertura incompleta: non è corretto estrapolare la parte censita al 100%.';
+ document.getElementById('sources').innerHTML=p.sleeves.map(([t])=>'<div style="padding:5px 0;border-bottom:1px solid #1d2b40"><b>'+t+'</b> — '+DATA.books[t].date+' · '+DATA.books[t].source+' · <a href="'+DATA.books[t].url+'" target="_blank" rel="noopener">fonte ↗</a></div>').join('');
+}
+select.addEventListener('change',render);select.value='AOA';render();
+</script></body></html>
