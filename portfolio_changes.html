@@ -86,11 +86,12 @@
 <tr><td>Snapshot ripetuto / fonte discordante</td><td>Dato stale o conflitto</td><td>Viene segnalato e non genera alert operativo</td></tr>
 </tbody></table></div></section>
 <section class="section"><h2>Priorità di bonifica dati</h2><ol>
-<li><b>DWAW:</b> sostituire i file manuali discordanti con gli snapshot ufficiali AdvisorShares e archiviare ogni data di pubblicazione.</li>
+<li><b>DWAW:</b> recuperare quantità assolute comparabili e confermare QQQM → IQLT con una seconda rilevazione ufficiale; il dato 23/11 SHV 99,43% resta escluso come errore di acquisizione.</li>
 <li><b>DWUS:</b> mantenere il Form N-PORT come riferimento primario, acquisire i successivi filing trimestrali e sostituire gli snapshot manuali discordanti con fonti ufficiali.</li>
 <li><b>GMOM:</b> recuperare il portafoglio completo Cambria / N-PORT e normalizzare ticker e nomi dei sottostanti.</li>
-<li><b>GAL:</b> usare il file giornaliero State Street, mantenendo la copertura completa e confronti sulla stessa base.</li>
+<li><b>GAL:</b> acquisire le quantità assolute del file giornaliero State Street per due date comparabili; la composizione 14/14 è stabile.</li>
 <li><b>DBMF:</b> estendere la serie con notional normalizzato, segno long/short, sottostante, scadenza e collaterale; baseline ufficiale 30/09/2026 già inserita.</li>
+<li><b>AOA / AOK / AOR:</b> confronti giornalieri verificati senza ingressi/uscite; servono quantità assolute e quote in circolazione per distinguere i ribilanciamenti dal drift dei prezzi. AOR è ora incluso anche nel JSON strutturato.</li>
 </ol><p class="muted">Gli snapshot grezzi restano disponibili nelle cartelle <code>data/holdings/TICKER/</code>. Le fonti e le date sono conservate per consentire la tracciabilità.</p></section>
 <p><a href="./holdings.html">← Torna a Holdings Board</a> · <a href="./">Dashboard MONITOR</a></p>
 <div class="foot">Audit informativo, non segnale di acquisto o vendita. Nessuna variazione percentuale è classificata come trade senza evidenza sulle quantità.</div>
