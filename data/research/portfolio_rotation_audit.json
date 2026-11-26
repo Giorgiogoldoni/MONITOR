@@ -69,7 +69,7 @@
             "GUNR",
             "IXN"
           ],
-          "note": "Le quote dei titoli continuativi sono circa il 7% inferiori rispetto al 13/11, con variazione quasi uniforme."
+          "note": "Lista completa Schwab del 20/11, base del confronto con la rilevazione del 23/11."
         },
         {
           "date": "2026-11-23",
@@ -90,7 +90,7 @@
             "SDCI",
             "IXN"
           ],
-          "note": "Compaiono cinque ETF non presenti nella lista 20/11; EYLD, DBE, DBB e GUNR non sono più presenti. Le quantità dei titoli continuativi risultano sostanzialmente uguali al 20/11."
+          "note": "Cinque ETF compaiono e quattro non sono più presenti rispetto al 20/11. Le quantità dei titoli continuativi risultano inferiori di circa il 2,5%, non identiche: variazione quasi uniforme da normalizzare per dimensione del fondo."
         },
         {
           "date": "2026-11-24",
@@ -312,9 +312,82 @@
     },
     {
       "ticker": "DBMF",
-      "status": "special_derivatives_method",
-      "note": "Futures, short positions, notional exposures and collateral require a separate exposure-based comparison. Simple ETF holding weights are not comparable.",
-      "confidence": "not_comparable_by_simple_weights"
+      "status": "derivatives_exposure_baseline_added",
+      "note": "DBMF richiede un confronto per esposizione nozionale, segno long/short, mercato sottostante, scadenza e collaterale. Il factsheet iMGP al 30/09/2026 mostra esposizioni nette per asset class anche oltre ±100% del NAV (fixed income -205,4%; valute -75,6%; azionario USA +47,5%; commodity +26,0%). Treasury bills/cash sono collaterale e non vanno sommati come esposizione direzionale. La pagina Schwab al 25/11 è una fotografia successiva con contratti e scadenze diverse: non si può inferire la rotazione dal confronto diretto; serve normalizzare ogni contratto in notional, duration/delta e scadenza.",
+      "confidence": "high_for_methodology_and_official_2026-09-30_baseline_low_for_time_series_trade_attribution",
+      "source": "iMGP official factsheet 2026-09-30; Schwab all-holdings 2026-11-25",
+      "source_urls": [
+        "https://www.imgp.com/uploads/factsheets/DBMF_FACTSHEETS_EN.pdf",
+        "https://www.schwab.wallst.com/schwab/Prospect/research/etfs/schwabETF/index.asp?symbol=DBMF&type=holdings"
+      ],
+      "source_refs": [
+        "turn329014search10",
+        "turn329014search4"
+      ],
+      "as_of_dates": [
+        "2026-09-30",
+        "2026-11-25"
+      ],
+      "exposure_baseline_2026_09_30": {
+        "source": "iMGP official factsheet",
+        "asset_class_exposure_pct_of_nav": {
+          "US Equities": 47.5,
+          "Commodities": 26,
+          "Emerging Market Equities": 13.9,
+          "International Developed Equities": -10.4,
+          "Currencies": -75.6,
+          "Fixed Income": -205.4
+        },
+        "constituents_notional_pct_of_nav": {
+          "Treasury Bill": 75.5,
+          "S&P 500 E-mini Dec26": 47.5,
+          "WTI Crude Dec26": 20.1,
+          "MSCI Emerging Markets Dec26": 13.9,
+          "Gold 100 oz Dec26": 5.9,
+          "Japanese Yen Dec26": -1.8,
+          "MSCI EAFE Dec26": -10.4,
+          "US Long Bond Dec26": -20.3,
+          "Euro FX Dec26": -73.8,
+          "US 10-year Note Dec26": -84.3,
+          "US 2-year Note Dec26": -100.8
+        }
+      },
+      "snapshot_2026_11_25": {
+        "source": "Charles Schwab all-holdings",
+        "notable_positions": [
+          {
+            "instrument": "Euro FX Future Mar26",
+            "weight_pct": 34.94,
+            "sign": "long"
+          },
+          {
+            "instrument": "MSCI EAFE Mar26",
+            "weight_pct": 7.51,
+            "sign": "long"
+          },
+          {
+            "instrument": "US Dollar",
+            "weight_pct": 5.84,
+            "sign": "cash"
+          },
+          {
+            "instrument": "E-mini S&P 500 Future",
+            "weight_pct": 4.86,
+            "sign": "long"
+          },
+          {
+            "instrument": "MSCI Emerging Markets Mar26",
+            "weight_pct": 3.57,
+            "sign": "long"
+          },
+          {
+            "instrument": "Japanese Yen Future Mar26",
+            "weight_pct": -27.77,
+            "sign": "short"
+          }
+        ],
+        "note": "Schwab pubblica percentuali di portafoglio e valori nozionali che possono superare il NAV; i contratti e le scadenze riportate non sono direttamente confrontabili con il factsheet iMGP del 30/09. Snapshot utile come fotografia, non come prova di trade."
+      }
     }
   ]
 }
