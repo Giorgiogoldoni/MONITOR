@@ -270,7 +270,7 @@
       }
     },
     "Xtrackers": {
-      "source_status": "candidate products identified; official source endpoints and holdings parsing not validated",
+      "source_status": "issuer portfolio structure and product list confirmed; official holdings/download endpoints not yet validated",
       "candidates": [
         {
           "ticker": "XQUI",
@@ -279,10 +279,12 @@
           "ter": 0.7,
           "status": "research",
           "audit_category": "strategic_multi_asset",
-          "audit_stage": "candidate_screen",
-          "audit_note": "Not yet independently verified against primary issuer documentation in this audit",
+          "audit_stage": "official_product_and_portfolio_structure_confirmed",
+          "audit_note": "Official DWS product list/factsheet confirmed product details; component holdings data endpoint and parser pending.",
           "screening_status": "standard_due_diligence",
-          "screening_reason": "Requires issuer-document validation before ranking"
+          "screening_reason": "Requires issuer-document validation before ranking",
+          "primary_source_check_date": "2026-11-26",
+          "primary_source_status": "issuer product/factsheet reviewed; detailed holdings feed not yet tested"
         },
         {
           "ticker": "XS7W",
@@ -291,10 +293,12 @@
           "ter": 0.65,
           "status": "research",
           "audit_category": "strategic_multi_asset",
-          "audit_stage": "candidate_screen",
-          "audit_note": "Not yet independently verified against primary issuer documentation in this audit",
+          "audit_stage": "official_product_and_portfolio_structure_confirmed",
+          "audit_note": "Official DWS product list/factsheet confirmed product details; component holdings data endpoint and parser pending.",
           "screening_status": "standard_due_diligence",
-          "screening_reason": "Requires issuer-document validation before ranking"
+          "screening_reason": "Requires issuer-document validation before ranking",
+          "primary_source_check_date": "2026-11-26",
+          "primary_source_status": "issuer product/factsheet reviewed; detailed holdings feed not yet tested"
         },
         {
           "ticker": "XEQ2",
@@ -304,10 +308,12 @@
           "ter": 0.24,
           "status": "research",
           "audit_category": "strategic_multi_asset",
-          "audit_stage": "candidate_screen",
-          "audit_note": "Not yet independently verified against primary issuer documentation in this audit",
+          "audit_stage": "official_product_and_portfolio_structure_confirmed",
+          "audit_note": "Official DWS product list/factsheet confirmed product details; component holdings data endpoint and parser pending.",
           "screening_status": "standard_due_diligence",
-          "screening_reason": "Requires issuer-document validation before ranking"
+          "screening_reason": "Requires issuer-document validation before ranking",
+          "primary_source_check_date": "2026-11-26",
+          "primary_source_status": "issuer product/factsheet reviewed; detailed holdings feed not yet tested"
         },
         {
           "ticker": "XEQ4",
@@ -317,10 +323,12 @@
           "ter": 0.24,
           "status": "research",
           "audit_category": "strategic_multi_asset",
-          "audit_stage": "candidate_screen",
-          "audit_note": "Not yet independently verified against primary issuer documentation in this audit",
+          "audit_stage": "official_product_and_portfolio_structure_confirmed",
+          "audit_note": "Official DWS product list/factsheet confirmed product details; component holdings data endpoint and parser pending.",
           "screening_status": "standard_due_diligence",
-          "screening_reason": "Requires issuer-document validation before ranking"
+          "screening_reason": "Requires issuer-document validation before ranking",
+          "primary_source_check_date": "2026-11-26",
+          "primary_source_status": "issuer product/factsheet reviewed; detailed holdings feed not yet tested"
         },
         {
           "ticker": "XEQ6",
@@ -330,10 +338,12 @@
           "ter": 0.24,
           "status": "research",
           "audit_category": "strategic_multi_asset",
-          "audit_stage": "candidate_screen",
-          "audit_note": "Not yet independently verified against primary issuer documentation in this audit",
+          "audit_stage": "official_product_and_portfolio_structure_confirmed",
+          "audit_note": "Official DWS product list/factsheet confirmed product details; component holdings data endpoint and parser pending.",
           "screening_status": "benchmark_control",
-          "screening_reason": "Use as a passive/strategic allocation benchmark to compare active or alternative products"
+          "screening_reason": "Use as a passive/strategic allocation benchmark to compare active or alternative products",
+          "primary_source_check_date": "2026-11-26",
+          "primary_source_status": "issuer product/factsheet reviewed; detailed holdings feed not yet tested"
         },
         {
           "ticker": "XEQ8",
@@ -343,19 +353,30 @@
           "ter": 0.24,
           "status": "research",
           "audit_category": "strategic_multi_asset",
-          "audit_stage": "candidate_screen",
-          "audit_note": "Not yet independently verified against primary issuer documentation in this audit",
+          "audit_stage": "official_product_and_portfolio_structure_confirmed",
+          "audit_note": "Official DWS product list/factsheet confirmed product details; component holdings data endpoint and parser pending.",
           "screening_status": "standard_due_diligence",
-          "screening_reason": "Requires issuer-document validation before ranking"
+          "screening_reason": "Requires issuer-document validation before ranking",
+          "primary_source_check_date": "2026-11-26",
+          "primary_source_status": "issuer product/factsheet reviewed; detailed holdings feed not yet tested"
         }
       ],
       "sprint_1_audit": {
-        "status": "issuer_factsheet_partial",
-        "note": "Official Xtrackers factsheet for XEQ2 confirms product, 20/75/5 target mix, physical/direct replication and 0.24% fee; issuer product list confirms XEQ2/XEQ4/XEQ6/XEQ8/XQUI/XS7W identities. Full holdings endpoint not tested."
+        "status": "official_portfolio_structure_confirmed_endpoint_pending",
+        "check_date": "2026-11-26",
+        "note": "Official DWS pages confirm all six Sprint 1 products and show Diversified Portfolio ETFs are multi-ETF/ETC portfolios with target equity allocations. Product factsheets exist; component holdings endpoint/download and parser not validated.",
+        "candidates": [
+          "XQUI",
+          "XS7W",
+          "XEQ2",
+          "XEQ4",
+          "XEQ6",
+          "XEQ8"
+        ]
       }
     },
     "iShares/BlackRock": {
-      "source_status": "ISINs and TERs identified; ticker for Conservative/Moderate and official holdings files require verification",
+      "source_status": "official product pages include Holdings section and downloadable latest holdings CSV; direct CSV URL/parser validation pending",
       "candidates": [
         {
           "ticker": null,
@@ -364,10 +385,13 @@
           "ter": 0.25,
           "status": "research",
           "audit_category": "strategic_multi_asset",
-          "audit_stage": "candidate_screen",
-          "audit_note": "Not yet independently verified against primary issuer documentation in this audit",
+          "audit_stage": "official_holdings_csv_available_endpoint_validation_pending",
+          "audit_note": "Official iShares page exposes detailed holdings and CSV download; URL capture and parser validation pending.",
           "screening_status": "hold_pending_identity_or_relevance",
-          "screening_reason": "Insufficient identity/relevance or not a priority for this radar; do not promote without evidence"
+          "screening_reason": "Insufficient identity/relevance or not a priority for this radar; do not promote without evidence",
+          "primary_source_check_date": "2026-11-26",
+          "primary_source_status": "official holdings CSV download control confirmed; automated feed not yet validated",
+          "holdings_source_page": "https://www.ishares.com/"
         },
         {
           "ticker": null,
@@ -376,10 +400,13 @@
           "ter": 0.25,
           "status": "research",
           "audit_category": "strategic_multi_asset",
-          "audit_stage": "candidate_screen",
-          "audit_note": "Not yet independently verified against primary issuer documentation in this audit",
+          "audit_stage": "official_holdings_csv_available_endpoint_validation_pending",
+          "audit_note": "Official iShares page exposes detailed holdings and CSV download; URL capture and parser validation pending.",
           "screening_status": "hold_pending_identity_or_relevance",
-          "screening_reason": "Insufficient identity/relevance or not a priority for this radar; do not promote without evidence"
+          "screening_reason": "Insufficient identity/relevance or not a priority for this radar; do not promote without evidence",
+          "primary_source_check_date": "2026-11-26",
+          "primary_source_status": "official holdings CSV download control confirmed; automated feed not yet validated",
+          "holdings_source_page": "https://www.ishares.com/"
         },
         {
           "ticker": "MAGR",
@@ -388,15 +415,23 @@
           "ter": 0.25,
           "status": "research",
           "audit_category": "strategic_multi_asset",
-          "audit_stage": "candidate_screen",
-          "audit_note": "Not yet independently verified against primary issuer documentation in this audit",
+          "audit_stage": "official_holdings_csv_available_endpoint_validation_pending",
+          "audit_note": "Official iShares page exposes detailed holdings and CSV download; URL capture and parser validation pending.",
           "screening_status": "benchmark_control",
-          "screening_reason": "Use as a passive/strategic allocation benchmark to compare active or alternative products"
+          "screening_reason": "Use as a passive/strategic allocation benchmark to compare active or alternative products",
+          "primary_source_check_date": "2026-11-26",
+          "primary_source_status": "official holdings CSV download control confirmed; automated feed not yet validated",
+          "holdings_source_page": "https://www.ishares.com/"
         }
       ],
       "sprint_1_audit": {
-        "status": "issuer_identity_and_portfolio_data_confirmed",
-        "note": "Official iShares pages confirm MACV/MODR, ISIN, TER, holdings counts and aggregate exposure data. Full detailed holdings download endpoint/parser still not validated."
+        "status": "official_holdings_csv_available_endpoint_validation_pending",
+        "check_date": "2026-11-26",
+        "note": "Official iShares MACV and MODR pages show Holdings tabs and CSV download for detailed holdings. Candidate portfolio holdings are 19–21 entries at Sep/Oct 2026 snapshots. Need capture the CSV endpoint, inspect format, validate mapping and automation.",
+        "candidates": [
+          "MACV",
+          "MODR"
+        ]
       }
     },
     "Amundi": {
