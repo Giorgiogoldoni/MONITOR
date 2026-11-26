@@ -24,7 +24,7 @@
         "turn246837search5",
         "turn246837search0"
       ],
-      "note": "La sequenza Schwab 13→20→23→24 novembre circoscrive la candidata rotazione tra il 20 e il 23 novembre: cinque ETF entrano nella lista e quattro escono; le quantità dei principali ETF continuativi sono quasi invariate tra 20 e 23. Tra 13 e 20 le quantità di molti titoli scendono quasi uniformemente di circa 7%, e tra 23 e 24 scendono di circa 2,5%; questi movimenti generalizzati richiedono normalizzazione per AUM/quote GMOM e non sono vendite selettive dimostrate.",
+      "note": "Le rilevazioni Schwab del 20 e 23 novembre mostrano una variazione persistente della lista: EYLD, DBE, DBB e GUNR escono; OILK, SDMF, SYLD, IXG e IXJ entrano. Le quote dei principali titoli continuativi calano quasi uniformemente di circa 2,5%, mentre la liquidità scende dal 7,73% al 2,63% (-5,10 punti). La nuova composizione e le stesse quantità del 23/24/25 novembre confermano persistenza della lista; non consentono però di calcolare flussi netti certi senza NAV completo e quote GMOM in circolazione.",
       "candidates_removed": [
         "EYLD",
         "DBE",
@@ -49,28 +49,8 @@
         "SDCI": -2.51,
         "IXN": -2.4
       },
-      "confidence": "medium_high_for_list_rotation_low_for_manager_trade_attribution",
+      "confidence": "medium_high_for_persistent_list_change_medium_for_cash_deployment_low_for_exact_trade_attribution",
       "dated_snapshots": [
-        {
-          "date": "2026-11-13",
-          "source": "Schwab all holdings",
-          "etfs": [
-            "GVAL",
-            "FYLD",
-            "EYLD",
-            "MYLD",
-            "IXC",
-            "DBE",
-            "PDBC",
-            "LYLD",
-            "DBB",
-            "GUNR",
-            "SDCI",
-            "MFUT",
-            "IXN"
-          ],
-          "note": "Lista completa disponibile; share counts presenti."
-        },
         {
           "date": "2026-11-20",
           "source": "Schwab all holdings",
@@ -132,6 +112,27 @@
             "IXN"
           ],
           "note": "La composizione resta coerente con il 23/11; molte quantità scendono in modo quasi uniforme di circa 2,5%."
+        },
+        {
+          "date": "2026-11-25",
+          "source": "Schwab all holdings",
+          "etfs": [
+            "GVAL",
+            "FYLD",
+            "MYLD",
+            "IXC",
+            "PDBC",
+            "OILK",
+            "LYLD",
+            "SDMF",
+            "SYLD",
+            "MFUT",
+            "IXJ",
+            "SDCI",
+            "IXG",
+            "IXN"
+          ],
+          "note": "Le stesse quantità detenute del 24/11; variano i pesi per effetto dei prezzi. Conferma che la nuova composizione è persistita almeno fino al 25/11."
         }
       ],
       "comparison_2026_11_20_to_2026_11_23": {
@@ -142,9 +143,9 @@
           "GUNR"
         ],
         "candidates_added": [
+          "OILK",
           "SDMF",
           "SYLD",
-          "OILK",
           "IXG",
           "IXJ"
         ],
@@ -159,8 +160,10 @@
           "SDCI",
           "IXN"
         ],
-        "interpretation": "La variazione della lista è localizzata tra le rilevazioni del 20 e 23 novembre; le quote detenute dei principali ETF continuativi sono sostanzialmente invariate tra queste due date. È una evidenza più forte di una semplice variazione di peso, ma resta una rotazione candidata finché non si verifica l'intero NAV e la fonte primaria del gestore.",
-        "confidence": "medium_high_for_composition_change_low_for_trade_attribution"
+        "cash_weight_change_pct_points": -5.1,
+        "continuing_share_change_pct_approx": -2.5,
+        "interpretation": "Tra 20 e 23 novembre cambia la lista delle partecipazioni: quattro ETF scompaiono e cinque compaiono. Le quote dei principali ETF continuativi calano in modo quasi uniforme di circa 2,5%, mentre la liquidità passa dal 7,73% al 2,63%. Il quadro è compatibile con una rotazione e impiego di liquidità, ma senza NAV completo, quote GMOM in circolazione e quantità assolute complete non si possono quantificare i flussi netti né attribuire con certezza ogni trade.",
+        "confidence": "medium_high_for_composition_change_medium_for_cash_deployment_low_for_exact_trade_amounts"
       }
     },
     {
@@ -227,8 +230,85 @@
     {
       "ticker": "GAL",
       "status": "weight_changes_only",
-      "note": "Issuer daily holdings can support a better comparison, but current displayed deltas are weights only; obtain shares held and total fund assets before attributing trades.",
-      "confidence": "medium_for_weights_low_for_trades"
+      "note": "La fonte primaria è il file giornaliero State Street. Tra 16 e 23 novembre non risultano ETF aggiunti o rimossi (14 posizioni in entrambe le date). SPAB sale di 0,597 punti percentuali, SPDW scende di 0,451 e SPY di 0,174; ETFIQ segnala esplicitamente che non può separare prezzi e operazioni e che book return e fund return non coincidono. Non classificare questi movimenti come acquisti/vendite. Priorità: acquisire quantità assolute del file giornaliero per entrambe le date e normalizzare per AUM/quote GAL.",
+      "confidence": "high_for_no_composition_rotation_medium_for_weight_drift_low_for_trades",
+      "source": "State Street issuer daily holdings via ETFIQ dated books",
+      "source_urls": [
+        "https://www.ssga.com/us/en/individual/etfs/state-street-global-allocation-etf-gal",
+        "https://etfiq.com/funds/gal/holdings/",
+        "https://etfiq.com/funds/gal/holdings/index.json"
+      ],
+      "source_refs": [
+        "turn390625search4",
+        "turn424470search0",
+        "turn977143view0",
+        "turn123833view0"
+      ],
+      "dated_snapshots": [
+        {
+          "date": "2026-11-12",
+          "source": "State Street issuer page",
+          "positions": 14,
+          "shares_held_available": true,
+          "top_weights": {
+            "SPAB": 22.23,
+            "SPDW": 19.18,
+            "SPY": 18.94,
+            "SPEM": 9.24
+          },
+          "note": "Dati ufficiali State Street con quantità assolute per tutte le principali posizioni."
+        },
+        {
+          "date": "2026-11-16",
+          "source": "State Street issuer daily file, parsed by ETFIQ",
+          "positions": 14,
+          "note": "Book di confronto per il 23/11; lista completa senza nuove posizioni o uscite."
+        },
+        {
+          "date": "2026-11-23",
+          "source": "State Street issuer daily file, parsed by ETFIQ",
+          "positions": 14,
+          "top_weights": {
+            "SPAB": 23.121,
+            "SPDW": 18.657,
+            "SPY": 18.596,
+            "SPEM": 9.027,
+            "CERY": 4.759,
+            "TIPX": 4.059,
+            "SPTL": 4.065,
+            "SPLB": 3.034,
+            "EMHC": 3.02,
+            "IBND": 2.977,
+            "GWX": 2.936,
+            "MDY": 2.021,
+            "VPL": 2.004,
+            "EBND": 1.497
+          },
+          "note": "Nessun ETF aggiunto o rimosso rispetto al 16/11. SPAB +0,597 pp; SPDW -0,451 pp; SPY -0,174 pp. ETFIQ non separa variazioni di prezzo e trade e segnala incoerenza tra rendimento del book e rendimento del fondo."
+        }
+      ],
+      "comparison_2026_11_16_to_2026_11_23": {
+        "added": [],
+        "removed": [],
+        "positions_from": 14,
+        "positions_to": 14,
+        "matched": 14,
+        "largest_weight_increases": {
+          "SPAB": 0.597,
+          "TIPX": 0.084,
+          "IBND": 0.037
+        },
+        "largest_weight_decreases": {
+          "SPDW": -0.451,
+          "SPY": -0.174,
+          "CERY": -0.12,
+          "SPEM": -0.087,
+          "GWX": -0.085
+        },
+        "trades_separated": false,
+        "interpretation": "Nessun ingresso/uscita. Le variazioni di peso sono piccole e possono riflettere prezzi relativi; la fonte non riesce a separare i trade. Il dato del 12/11 con share counts permette un futuro confronto quantitativo solo se si recuperano quantità assolute del book del 23/11.",
+        "confidence": "high_for_no_list_change_low_for_trade_attribution"
+      }
     },
     {
       "ticker": "DBMF",
