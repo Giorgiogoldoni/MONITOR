@@ -78,7 +78,11 @@
           "primary_source_check_date": "2026-11-25",
           "primary_source_status": "issuer page checked; factsheet/KID and ticker/exchange liquidity validation still pending"
         }
-      ]
+      ],
+      "sprint_1_audit": {
+        "status": "issuer_source_reviewed_partial",
+        "note": "Official issuer factsheets for NTM and related DTM/TOF products reviewed; factsheet top holdings are partial, official full-holdings endpoint/download still untested."
+      }
     },
     "JPMorgan": {
       "source_status": "official product pages/holdings counts confirmed; full downloadable holdings feed not validated",
@@ -133,7 +137,11 @@
           "screening_reason": "Requires issuer-document validation before ranking"
         }
       ],
-      "official_portal": "https://am.jpmorgan.com/it/en/asset-management/institutional/products/fund-explorer/etf"
+      "official_portal": "https://am.jpmorgan.com/it/en/asset-management/institutional/products/fund-explorer/etf",
+      "sprint_1_audit": {
+        "status": "issuer_identity_and_benchmark_confirmed",
+        "note": "Official JPM ETF product list confirms JMAC/JMAM/JMAG, ISINs, benchmark allocation and TER; JMAM holdings data also surfaced on a secondary provider, but official full holdings feed not validated."
+      }
     },
     "Vanguard": {
       "source_status": "candidate universe identified; official holdings feed/parser validation pending",
@@ -190,7 +198,11 @@
           "screening_status": "standard_due_diligence",
           "screening_reason": "Requires issuer-document validation before ranking"
         }
-      ]
+      ],
+      "sprint_1_audit": {
+        "status": "issuer_portfolio_components_reviewed",
+        "note": "Official Vanguard LifeStrategy product pages/brochure confirm 4 ISINs, TER and portfolio composition; underlying ETF components are available for at least VLS20. Full standardized holdings feed/download parser not validated."
+      }
     },
     "Xtrackers": {
       "source_status": "candidate products identified; official source endpoints and holdings parsing not validated",
@@ -271,7 +283,11 @@
           "screening_status": "standard_due_diligence",
           "screening_reason": "Requires issuer-document validation before ranking"
         }
-      ]
+      ],
+      "sprint_1_audit": {
+        "status": "issuer_factsheet_partial",
+        "note": "Official Xtrackers factsheet for XEQ2 confirms product, 20/75/5 target mix, physical/direct replication and 0.24% fee; issuer product list confirms XEQ2/XEQ4/XEQ6/XEQ8/XQUI/XS7W identities. Full holdings endpoint not tested."
+      }
     },
     "iShares/BlackRock": {
       "source_status": "ISINs and TERs identified; ticker for Conservative/Moderate and official holdings files require verification",
@@ -312,7 +328,11 @@
           "screening_status": "benchmark_control",
           "screening_reason": "Use as a passive/strategic allocation benchmark to compare active or alternative products"
         }
-      ]
+      ],
+      "sprint_1_audit": {
+        "status": "issuer_identity_and_portfolio_data_confirmed",
+        "note": "Official iShares pages confirm MACV/MODR, ISIN, TER, holdings counts and aggregate exposure data. Full detailed holdings download endpoint/parser still not validated."
+      }
     },
     "Amundi": {
       "source_status": "products identified; direct holdings feeds pending verification",
@@ -861,7 +881,9 @@
           "Amundi F701/F702/F703",
           "Xtrackers XQUI/XS7W/XEQ2/XEQ4/XEQ6/XEQ8"
         ],
-        "reason": "High relevance strategic multi-asset; issuer documentation and holding data are priority."
+        "reason": "High relevance strategic multi-asset; issuer documentation and holding data are priority.",
+        "status": "priority_sprint_1_source_review_started",
+        "note": "18 priority candidates in five issuer groups. Source identity and partial portfolio information checked on 2026-11-26; full holdings feed/download and parser validation pending."
       },
       {
         "sprint": 2,
@@ -900,5 +922,20 @@
       "Only then promote research candidate into live MONITOR"
     ],
     "note": "Research universe is not equivalent to live coverage; duplicate share classes and niche ETPs require screening before inclusion. Target 50 is a discovery/candidate ceiling, not automatic inclusion."
+  },
+  "sprint_1_source_audit": {
+    "audit_date": "2026-11-26",
+    "focus": "18 priority candidates across VanEck (3), JPMorgan (3), Vanguard (4), Xtrackers (6), iShares/BlackRock (2)",
+    "reconciliation_note": "The earlier statement that 18 was the full remaining strategic multi-asset gap was incorrect. The 18 here are the defined priority sprint. In the 28 catalog strategic candidates, only ACTEQ, F701, F703 and MAGR overlap the live index; 24 candidate records are not yet in the live index. Six strategic allocation ETFs already in the live index (AOA/AOK/AOR/DWAW/DWUS/RPAR) are outside this 50-record candidate catalog.",
+    "progress": "Source-level identity and partial portfolio information checked for all five groups; full holdings files and automated parser/feed validation remain incomplete.",
+    "sources": [
+      "https://www.vaneck.com/se/en/library/fact-sheets/ntm-fact-sheet.pdf",
+      "https://am.jpmorgan.com/it/en/asset-management/institutional/products/fund-explorer/etf",
+      "https://www.it.vanguard/content/dam/intl/europe/documents/it/lifestrategy-etf-brochure-it.pdf",
+      "https://global.vanguard.com/it-it/investment-products/etf/multi-asset/9490/lifestrategy-20-equity-ucits-etf-eur-accumulating",
+      "https://etf.deutsche-am.com/download/asset/7ed8192c-ac4b-48f9-add0-7ae4cbf1113c",
+      "https://www.ishares.com/it/investitore-privato/it/prodotti/313193/ishares-moderate-portfolio-ucits-etf",
+      "https://www.ishares.com/it/investitore-privato/it/literature/fact-sheet/macv-ishares-conservative-portfolio-ucits-etf-fund-fact-sheet-it-it.pdf"
+    ]
   }
 }
