@@ -43,5 +43,5 @@ jobs:
             gh label create monitor-alert --color FF6600 --description "Heartbeat alerts" 2>/dev/null || true
             gh issue create --title "$TITLE" --body "$BODY" --label monitor-alert
           else
-            gh issue comment "$EXISTING" --body "$BODY — $(date -u +%Y-%m-%dT%H:%MZ)"
+            echo "Alert issue already open: #$EXISTING; no duplicate notification."
           fi
