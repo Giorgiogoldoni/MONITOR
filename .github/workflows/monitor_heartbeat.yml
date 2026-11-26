@@ -45,3 +45,23 @@ jobs:
           else
             echo "Alert issue already open: #$EXISTING; no duplicate notification."
           fi
+
+  heartbeat-failure-alert:
+    if: failure()
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+    steps:
+      - name: Open alert issue if not already open
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          TITLE="MONITOR heartbeat itself failed"
+          EXISTING=$(gh issue list --state open --label monitor-alert --json number --jq '.[0].number // empty')
+          BODY="The scheduled MONITOR heartbeat workflow failed. Inspect the workflow run: $GITHUB_SERVER_URL/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID"
+          if [ -z "$EXISTING" ]; then
+            gh label create monitor-alert --color FF6600 --description "Heartbeat alerts" 2>/dev/null || true
+            gh issue create --title "$TITLE" --body "$BODY" --label monitor-alert
+          else
+            echo "Alert issue already open: #$EXISTING"
+          fi
