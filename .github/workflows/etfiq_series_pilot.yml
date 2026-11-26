@@ -1,0 +1,23 @@
+name: ETFIQ series availability pilot
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "30 2 * * 1-5"
+permissions:
+  contents: read
+jobs:
+  pilot:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Check ETFIQ series endpoints
+        run: python scripts/audit_etfiq_series.py
+      - name: Upload report
+        uses: actions/upload-artifact@v4
+        with:
+          name: etfiq-series-pilot
+          path: data/research/etfiq_series_pilot.json
+          retention-days: 30
