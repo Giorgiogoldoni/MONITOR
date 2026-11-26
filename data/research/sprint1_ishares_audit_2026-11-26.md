@@ -26,8 +26,13 @@
 - ISIN: IE00BLLZQ805; TER 0.25% in current candidate catalog.
 - Candidate identity exists in repository research catalogue, but this audit has NOT independently revalidated current issuer page, CSV endpoint or holdings count. Keep as pending, not counted as verified.
 
+## Direct CSV endpoint captured
+- MACV: https://www.ishares.com/uk/individual/en/products/313196/ishares-conservative-portfolio-ucits-etf/latest-holdings.csv
+- MODR: https://www.ishares.com/uk/individual/en/products/313193/ishares-moderate-portfolio-ucits-etf/latest-holdings.csv
+The issuer page links directly to these endpoints. Retrieval from this environment returned HTTP 400 through the web gateway and a network download attempt failed; the files were therefore not obtained or inspected. Endpoint identity is confirmed, file accessibility/content is not.
+
 ## Technical next gate
-1. Capture actual issuer CSV download URL(s) from product-page HTML/requests.
+1. Fetch the CSVs from the GitHub Actions runner (or a browser/network environment able to access BlackRock) and preserve dated raw samples.
 2. Fetch raw CSV and preserve a dated immutable sample.
 3. Validate encoding, headers, numeric/percentage formats, blank/cash rows, aggregate vs look-through rows.
 4. Normalize holding identifiers and ticker/ISIN; distinguish ETF constituents from look-through securities.
