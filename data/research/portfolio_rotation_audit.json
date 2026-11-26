@@ -772,6 +772,88 @@
       "max_drawdown_pct": -20,
       "source": "https://www.exent.ai/resources/compare-two-portfolios",
       "caveat": "Backtest esterno con date leggermente diverse dai dati GMOM al 30/09/2026; riferimento contestuale, non confronto perfettamente sincronizzato."
+    },
+    "calendar_year_returns": {
+      "period": "2018-2025 full calendar years",
+      "methodology": "Total return including reinvested distributions. GMOM NAV calendar-year returns from AAII; AOA/AOR/AOK total returns from FinanceCharts; SPY/AGG 60/40 monthly rebalanced from MarketHeist. Published series from different providers: diagnostic comparison, not one single-source backtest.",
+      "years": [
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025
+      ],
+      "returns_pct": {
+        "GMOM": [
+          -8.7,
+          8,
+          2.6,
+          18.4,
+          -2.8,
+          0.9,
+          7,
+          20
+        ],
+        "AOA": [
+          -7.87,
+          22.6,
+          12.82,
+          15.42,
+          -16.22,
+          18.26,
+          13.55,
+          19.59
+        ],
+        "AOR": [
+          -5.83,
+          18.92,
+          11.42,
+          11.19,
+          -15.65,
+          15.75,
+          10.68,
+          16.44
+        ],
+        "AOK": [
+          -3.1,
+          13.91,
+          9.32,
+          4.88,
+          -14.16,
+          10.84,
+          6.58,
+          11.26
+        ],
+        "SPY_AGG_60_40": [
+          -2.3,
+          21.9,
+          14.7,
+          15.8,
+          -15.8,
+          17.7,
+          15,
+          13.6
+        ]
+      },
+      "source_urls": {
+        "GMOM": "https://www.aaii.com/fund/ticker/GMOM",
+        "AOA": "https://www.financecharts.com/etfs/AOA/performance/total-return",
+        "AOR": "https://www.financecharts.com/etfs/AOR/performance/total-return",
+        "AOK": "https://www.financecharts.com/etfs/AOK/performance/total-return",
+        "SPY_AGG_60_40": "https://marketheist.io/portfolio/strategies/60-40-portfolio"
+      },
+      "crisis_readout": {
+        "2018": "GMOM -8.7%, peggiore di AOA (-7.87%), AOR (-5.83%), AOK (-3.10%) e 60/40 (-2.3%): nessuna protezione nella correzione di fine anno.",
+        "2020": "GMOM +2.6%, sotto AOA (+12.82%), AOR (+11.42%), AOK (+9.32%) e 60/40 (+14.7%): il rimbalzo rapido dopo il crollo pandemico ha penalizzato la strategia.",
+        "2022": "GMOM -2.8%, molto meglio di AOA (-16.22%), AOR (-15.65%), AOK (-14.16%) e 60/40 (-15.8%): anno di vantaggio difensivo netto.",
+        "2023": "GMOM +0.9%, mentre AOR ha reso +15.75% e AOA +18.26%: costo potenziale di un posizionamento prudente o tardivo dopo il 2022.",
+        "2025": "GMOM +20.0%, sopra AOR (+16.44%), AOK (+11.26%) e 60/40 (+13.6%), leggermente sopra AOA (+19.59%) con le serie NAV AAII arrotondate."
+      },
+      "conclusion": "GMOM non offre protezione costante: soffre nel 2018 e partecipa poco ai rimbalzi 2020 e 2023, ma limita nettamente le perdite nel 2022. Il vantaggio è episodico e dipende dalla persistenza del trend; non dimostra da solo un rendimento superiore nel ciclo completo.",
+      "caveats": "Il rendimento annuale 2020 non misura drawdown intrannuale o velocità di recupero. Il 60/40 MarketHeist è mensilmente ribilanciato; la precedente scheda Exent usa ribilanciamento annuale e diverso intervallo. Non mescolare le due serie. Per un test definitivo servono serie mensili total-return con metodologia unica."
     }
   }
 }
