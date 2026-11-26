@@ -10,7 +10,7 @@
 <div class="callout"><b>Esito dell'audit:</b> le serie storiche attualmente archiviate non consentono ancora di certificare gli acquisti e le vendite dei gestori. Molti snapshot sono etichettati <i>manual/investing.com</i>, contengono solo le prime 10 posizioni, hanno ticker mancanti e in alcuni casi ripetono gli stessi valori per settimane. Perciò i cambiamenti dei pesi NON vanno presentati come flussi o operazioni effettive.</div>
 <div class="grid">
 <article class="card"><div class="kicker">AOA · AOK · AOR</div><h2>Allocazione strategica</h2><span class="status ok">Stabilità elevata</span><div class="big">Nessuna rotazione</div><p class="muted">Nei confronti recenti ETFIQ non risultano ETF inseriti o rimossi. Le variazioni dei pesi sono compatibili con movimenti di mercato e ribilanciamenti; senza quote detenute non si può attribuire un acquisto.</p></article>
-<article class="card"><div class="kicker">GAL</div><h2>Global allocation</h2><span class="status warn">Possibile tilt tattico</span><div class="big">Bond in aumento</div><p class="muted">Tra 16 e 23 novembre non risultano ingressi o uscite. SPAB +0,60 pp e SPDW −0,45 pp: variazioni di peso non separate dai prezzi, quindi non sono trade dimostrati.</p></article>
+<article class="card"><div class="kicker">GAL</div><h2>Global allocation</h2><span class="status ok">Composizione stabile</span><div class="big">14 ETF · nessuna uscita</div><p class="muted">Tra 16 e 23 novembre non risultano ingressi o uscite. SPAB +0,60 pp e SPDW −0,45 pp: variazioni di peso non separate dai prezzi, quindi non sono trade dimostrati.</p></article>
 <article class="card"><div class="kicker">GMOM</div><h2>Momentum globale</h2><span class="status warn">Rotazione da verificare</span><div class="big">Top holdings cambiate</div><p class="muted">Confronto tra liste complete Schwab del 20 e 23/24 novembre. La nuova composizione resta identica per quantità fino al 25/11. La liquidità scende dal 7,73% al 2,63%; flussi netti e singoli trade richiedono ancora normalizzazione per AUM e quote del fondo.</p></article>
 <article class="card"><div class="kicker">DWAW</div><h2>All Cap World Equity</h2><span class="status bad">Serie in conflitto</span><div class="big">Dato 99,43% escluso</div><p class="muted">Lo snapshot MONITOR del 23 novembre assegna il 99,43% a SHV, incompatibile con la composizione ufficiale AdvisorShares del 10 novembre (cinque ETF azionari con pesi vicini al 20%). Non usare lo snapshot del 23/11 per dedurre una liquidazione.</p></article>
 <article class="card"><div class="kicker">DWUS</div><h2>U.S. Core</h2><span class="status ok">Struttura confermata</span><div class="big">SHV · QUAL · SPYM</div><p class="muted">Il Form N-PORT SEC al 30/09 e lo snapshot MONITOR del 23/11 riportano gli stessi tre ETF con pesi simili. Nessuna rotazione dimostrata tra le due date; il dato trimestrale non esclude operazioni infratrimestrali.</p></article>
@@ -55,6 +55,19 @@
 </tbody></table></div>
 <p class="muted">Fonte primaria: <a href="https://www.sec.gov/Archives/edgar/data/1408970/000094040026046242/314483ADVSH093026.htm" target="_blank" rel="noopener">SEC · Schedule of Investments DWUS, 30 settembre 2026</a>. Attenzione: un N-PORT trimestrale non esclude operazioni infratrimestrali.</p>
 </section>
+<section class="section"><h2>Quarto caso: DBMF · esposizioni nozionali e futures</h2>
+<p class="muted">DBMF non va letto come un ETF azionario tradizionale: il peso delle singole righe può rappresentare nozionale, includere posizioni short e superare ampiamente il 100% del NAV. Il factsheet ufficiale iMGP al 30/09/2026 mostra esposizione per asset class pari a: reddito fisso −205,4%, valute −75,6%, azionario USA +47,5%, commodity +26,0%, azionario emergente +13,9% e azionario sviluppati ex-USA −10,4%. Il Treasury Bill al +75,5% è collaterale/liquidità e non una scommessa direzionale equivalente.</p>
+<div class="tablewrap"><table class="tbl"><thead><tr><th>Esposizione / contratto</th><th>% NAV</th><th>Lettura</th></tr></thead><tbody>
+<tr><td>US 2-year Note futures</td><td>−100,8%</td><td>Short tassi / duration, non vendita di un ETF obbligazionario</td></tr>
+<tr><td>US 10-year Note futures</td><td>−84,3%</td><td>Short tassi / duration</td></tr>
+<tr><td>Euro FX futures</td><td>−73,8%</td><td>Short euro secondo il segno del factsheet</td></tr>
+<tr><td>S&amp;P 500 E-mini</td><td>+47,5%</td><td>Long azionario USA</td></tr>
+<tr><td>WTI Crude futures</td><td>+20,1%</td><td>Long petrolio</td></tr>
+<tr><td>Treasury Bills</td><td>+75,5%</td><td>Collaterale; non sommare come esposizione direzionale</td></tr>
+</tbody></table></div>
+<p class="muted">La fotografia Schwab del 25/11/2026 riporta un insieme successivo di contratti (tra cui Euro FX future +34,94% e Yen future −27,77%). Non è corretto dedurre acquisti/vendite confrontandola direttamente con il factsheet del 30/09: cambiano date, contratti e scadenze. Per una vera serie di rotazione servono notional normalizzato per NAV, segno, mercato, moltiplicatore, scadenza e misura di duration/delta per ogni futures.</p>
+<p class="muted">Fonti: <a href="https://www.imgp.com/uploads/factsheets/DBMF_FACTSHEETS_EN.pdf" target="_blank" rel="noopener">iMGP · factsheet DBMF al 30 settembre 2026</a> · <a href="https://www.schwab.wallst.com/Prospect/research/etfs/schwabETF/index.asp?symbol=DBMF&type=holdings" target="_blank" rel="noopener">Schwab · holdings DBMF al 25 novembre 2026</a>.</p>
+</section>
 <section class="section"><h2>Regole che applicherà il monitor</h2>
 <div class="tablewrap"><table class="tbl"><thead><tr><th>Segnale</th><th>Come viene classificato</th><th>Quando è attendibile</th></tr></thead><tbody>
 <tr><td>Nuovo ETF / ETF eliminato</td><td>Ingresso o uscita candidato</td><td>Confronto tra elenchi completi, identificativi normalizzati e fonti omogenee</td></tr>
@@ -68,7 +81,7 @@
 <li><b>DWUS:</b> mantenere il Form N-PORT come riferimento primario, acquisire i successivi filing trimestrali e sostituire gli snapshot manuali discordanti con fonti ufficiali.</li>
 <li><b>GMOM:</b> recuperare il portafoglio completo Cambria / N-PORT e normalizzare ticker e nomi dei sottostanti.</li>
 <li><b>GAL:</b> usare il file giornaliero State Street, mantenendo la copertura completa e confronti sulla stessa base.</li>
-<li><b>DBMF:</b> creare un modulo separato per futures, short, notional e collaterale.</li>
+<li><b>DBMF:</b> estendere la serie con notional normalizzato, segno long/short, sottostante, scadenza e collaterale; baseline ufficiale 30/09/2026 già inserita.</li>
 </ol><p class="muted">Gli snapshot grezzi restano disponibili nelle cartelle <code>data/holdings/TICKER/</code>. Le fonti e le date sono conservate per consentire la tracciabilità.</p></section>
 <p><a href="./holdings.html">← Torna a Holdings Board</a> · <a href="./">Dashboard MONITOR</a></p>
 <div class="foot">Audit informativo, non segnale di acquisto o vendita. Nessuna variazione percentuale è classificata come trade senza evidenza sulle quantità.</div>
