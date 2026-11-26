@@ -1,0 +1,994 @@
+{
+  "asOf": "2026-11-26",
+  "methodology": "Look-through parziale: peso del singolo titolo nel fondo = peso della quota ETF nel fondo × peso del titolo nell'ETF sottostante. Per ciascun ETF sottostante sono utilizzate le prime posizioni pubblicate, non l'intero portafoglio. Le esposizioni residue non sono redistribuite.",
+  "books": {
+    "IVV": {
+      "name": "iShares Core S&P 500 ETF",
+      "date": "2026-11-23",
+      "source": "ETFIQ / file giornaliero iShares",
+      "url": "https://etfiq.com/funds/ivv/holdings/",
+      "positions": [
+        [
+          "AAPL",
+          "Apple",
+          "Information Technology",
+          8.16
+        ],
+        [
+          "NVDA",
+          "Nvidia",
+          "Information Technology",
+          6.4
+        ],
+        [
+          "MSFT",
+          "Microsoft",
+          "Information Technology",
+          5.86
+        ],
+        [
+          "AMZN",
+          "Amazon",
+          "Consumer Discretionary",
+          4.01
+        ],
+        [
+          "GOOGL",
+          "Alphabet A",
+          "Communication Services",
+          2.65
+        ],
+        [
+          "AVGO",
+          "Broadcom",
+          "Information Technology",
+          2.39
+        ],
+        [
+          "GOOG",
+          "Alphabet C",
+          "Communication Services",
+          2.13
+        ],
+        [
+          "META",
+          "Meta Platforms",
+          "Communication Services",
+          2.11
+        ],
+        [
+          "LLY",
+          "Eli Lilly",
+          "Health Care",
+          1.75
+        ],
+        [
+          "TSLA",
+          "Tesla",
+          "Consumer Discretionary",
+          1.74
+        ],
+        [
+          "BRK.B",
+          "Berkshire Hathaway",
+          "Financials",
+          1.71
+        ],
+        [
+          "JPM",
+          "JPMorgan Chase",
+          "Financials",
+          1.35
+        ],
+        [
+          "MU",
+          "Micron Technology",
+          "Information Technology",
+          1.28
+        ],
+        [
+          "AMD",
+          "AMD",
+          "Information Technology",
+          1.19
+        ],
+        [
+          "V",
+          "Visa",
+          "Financials",
+          1.12
+        ],
+        [
+          "JNJ",
+          "Johnson & Johnson",
+          "Health Care",
+          1.04
+        ],
+        [
+          "XOM",
+          "Exxon Mobil",
+          "Energy",
+          1.03
+        ],
+        [
+          "WMT",
+          "Walmart",
+          "Consumer Staples",
+          0.93
+        ],
+        [
+          "MA",
+          "Mastercard",
+          "Financials",
+          0.82
+        ],
+        [
+          "ABBV",
+          "AbbVie",
+          "Health Care",
+          0.82
+        ],
+        [
+          "COST",
+          "Costco",
+          "Consumer Staples",
+          0.76
+        ],
+        [
+          "CVX",
+          "Chevron",
+          "Energy",
+          0.65
+        ],
+        [
+          "PG",
+          "Procter & Gamble",
+          "Consumer Staples",
+          0.63
+        ],
+        [
+          "CSCO",
+          "Cisco",
+          "Information Technology",
+          0.61
+        ]
+      ]
+    },
+    "IDEV": {
+      "name": "iShares Core MSCI International Developed Markets ETF",
+      "date": "2026-11-25",
+      "source": "Schwab holdings (close 25 Nov 2026)",
+      "url": "https://www.schwab.wallst.com/schwab/Prospect/research/etfs/schwabETF/index.asp?symbol=IDEV&type=holdings",
+      "positions": [
+        [
+          "ASML",
+          "ASML",
+          "Information Technology",
+          1.87
+        ],
+        [
+          "ROG",
+          "Roche",
+          "Health Care",
+          1.24
+        ],
+        [
+          "NOVN",
+          "Novartis",
+          "Health Care",
+          1.04
+        ],
+        [
+          "HSBA",
+          "HSBC",
+          "Financials",
+          1.04
+        ],
+        [
+          "SHEL",
+          "Shell",
+          "Energy",
+          1.01
+        ],
+        [
+          "AZN",
+          "AstraZeneca",
+          "Health Care",
+          0.99
+        ],
+        [
+          "NESN",
+          "Nestlé",
+          "Consumer Staples",
+          0.98
+        ],
+        [
+          "RY",
+          "Royal Bank of Canada",
+          "Financials",
+          0.95
+        ],
+        [
+          "SAP",
+          "SAP",
+          "Information Technology",
+          0.77
+        ],
+        [
+          "8306",
+          "Mitsubishi UFJ",
+          "Financials",
+          0.76
+        ],
+        [
+          "SIE",
+          "Siemens",
+          "Industrials",
+          0.76
+        ],
+        [
+          "7203",
+          "Toyota",
+          "Consumer Discretionary",
+          0.74
+        ],
+        [
+          "CBA",
+          "Commonwealth Bank of Australia",
+          "Financials",
+          0.71
+        ],
+        [
+          "ALV",
+          "Allianz",
+          "Financials",
+          0.7
+        ],
+        [
+          "TD",
+          "Toronto-Dominion Bank",
+          "Financials",
+          0.7
+        ],
+        [
+          "BHP",
+          "BHP",
+          "Materials",
+          0.65
+        ],
+        [
+          "TTE",
+          "TotalEnergies",
+          "Energy",
+          0.62
+        ],
+        [
+          "SAN",
+          "Banco Santander",
+          "Financials",
+          0.61
+        ],
+        [
+          "6758",
+          "Sony",
+          "Consumer Discretionary",
+          0.59
+        ],
+        [
+          "IBE",
+          "Iberdrola",
+          "Utilities",
+          0.58
+        ]
+      ]
+    },
+    "IEMG": {
+      "name": "iShares Core MSCI Emerging Markets ETF",
+      "date": "2026-11-25",
+      "source": "Schwab holdings (close 25 Nov 2026)",
+      "url": "https://www.schwab.wallst.com/schwab/Prospect/research/etfs/schwabETF/index.asp?symbol=IEMG&type=holdings",
+      "positions": [
+        [
+          "TSM",
+          "Taiwan Semiconductor",
+          "Information Technology",
+          13.94
+        ],
+        [
+          "005930",
+          "Samsung Electronics",
+          "Information Technology",
+          6.14
+        ],
+        [
+          "000660",
+          "SK hynix",
+          "Information Technology",
+          4.57
+        ],
+        [
+          "0700",
+          "Tencent",
+          "Communication Services",
+          2.34
+        ],
+        [
+          "BABA",
+          "Alibaba",
+          "Consumer Discretionary",
+          1.61
+        ],
+        [
+          "2454",
+          "MediaTek",
+          "Information Technology",
+          1.35
+        ],
+        [
+          "939",
+          "China Construction Bank",
+          "Financials",
+          0.86
+        ],
+        [
+          "005930P",
+          "Samsung Electronics Pref",
+          "Information Technology",
+          0.81
+        ],
+        [
+          "2317",
+          "Hon Hai Precision",
+          "Information Technology",
+          0.72
+        ],
+        [
+          "HDB",
+          "HDFC Bank",
+          "Financials",
+          0.65
+        ],
+        [
+          "2308",
+          "Delta Electronics",
+          "Information Technology",
+          0.62
+        ],
+        [
+          "ICICIBANK",
+          "ICICI Bank",
+          "Financials",
+          0.61
+        ],
+        [
+          "RELIANCE",
+          "Reliance Industries",
+          "Energy",
+          0.55
+        ],
+        [
+          "3711",
+          "ASE Technology",
+          "Information Technology",
+          0.53
+        ],
+        [
+          "1398",
+          "ICBC",
+          "Financials",
+          0.51
+        ],
+        [
+          "402340",
+          "SK Square",
+          "Financials",
+          0.48
+        ],
+        [
+          "1810",
+          "Xiaomi",
+          "Information Technology",
+          0.45
+        ],
+        [
+          "BHARTIARTL",
+          "Bharti Airtel",
+          "Communication Services",
+          0.45
+        ],
+        [
+          "3988",
+          "Bank of China",
+          "Financials",
+          0.41
+        ],
+        [
+          "009150",
+          "Samsung Electro-Mechanics",
+          "Information Technology",
+          0.39
+        ]
+      ]
+    },
+    "QUAL": {
+      "name": "iShares MSCI USA Quality Factor ETF",
+      "date": "2026-11-23",
+      "source": "ETFIQ / file giornaliero iShares",
+      "url": "https://etfiq.com/funds/qual/holdings/",
+      "positions": [
+        [
+          "MSFT",
+          "Microsoft",
+          "Information Technology",
+          7.77
+        ],
+        [
+          "AAPL",
+          "Apple",
+          "Information Technology",
+          7.69
+        ],
+        [
+          "NVDA",
+          "Nvidia",
+          "Information Technology",
+          4.93
+        ],
+        [
+          "LLY",
+          "Eli Lilly",
+          "Health Care",
+          4.46
+        ],
+        [
+          "META",
+          "Meta Platforms",
+          "Communication Services",
+          4.05
+        ],
+        [
+          "V",
+          "Visa",
+          "Financials",
+          3.63
+        ],
+        [
+          "TJX",
+          "TJX Companies",
+          "Consumer Discretionary",
+          3.6
+        ],
+        [
+          "MA",
+          "Mastercard",
+          "Financials",
+          2.59
+        ],
+        [
+          "LRCX",
+          "Lam Research",
+          "Information Technology",
+          2.56
+        ],
+        [
+          "XOM",
+          "Exxon Mobil",
+          "Energy",
+          2.26
+        ],
+        [
+          "JNJ",
+          "Johnson & Johnson",
+          "Health Care",
+          2.22
+        ],
+        [
+          "AMAT",
+          "Applied Materials",
+          "Information Technology",
+          2.17
+        ],
+        [
+          "BRK.B",
+          "Berkshire Hathaway",
+          "Financials",
+          2.11
+        ],
+        [
+          "KLAC",
+          "KLA",
+          "Information Technology",
+          2.02
+        ],
+        [
+          "GOOGL",
+          "Alphabet A",
+          "Communication Services",
+          1.66
+        ],
+        [
+          "NFLX",
+          "Netflix",
+          "Communication Services",
+          1.42
+        ],
+        [
+          "ANET",
+          "Arista Networks",
+          "Information Technology",
+          1.4
+        ],
+        [
+          "ROST",
+          "Ross Stores",
+          "Consumer Discretionary",
+          1.38
+        ],
+        [
+          "ADP",
+          "Automatic Data Processing",
+          "Industrials",
+          1.37
+        ],
+        [
+          "MRK",
+          "Merck",
+          "Health Care",
+          1.33
+        ]
+      ]
+    },
+    "QQQM": {
+      "name": "Invesco NASDAQ 100 ETF",
+      "date": "2026-11-23",
+      "source": "ETFIQ / file giornaliero Invesco",
+      "url": "https://etfiq.com/funds/qqqm/holdings/",
+      "positions": [
+        [
+          "AAPL",
+          "Apple",
+          "Information Technology",
+          8.78
+        ],
+        [
+          "NVDA",
+          "Nvidia",
+          "Information Technology",
+          6.86
+        ],
+        [
+          "MSFT",
+          "Microsoft",
+          "Information Technology",
+          6.32
+        ],
+        [
+          "AMZN",
+          "Amazon",
+          "Consumer Discretionary",
+          4.75
+        ],
+        [
+          "MU",
+          "Micron Technology",
+          "Information Technology",
+          3.8
+        ],
+        [
+          "AMD",
+          "AMD",
+          "Information Technology",
+          3.52
+        ],
+        [
+          "TSLA",
+          "Tesla",
+          "Consumer Discretionary",
+          3.49
+        ],
+        [
+          "META",
+          "Meta Platforms",
+          "Communication Services",
+          3.06
+        ],
+        [
+          "WMT",
+          "Walmart",
+          "Consumer Staples",
+          3
+        ],
+        [
+          "GOOGL",
+          "Alphabet A",
+          "Communication Services",
+          2.85
+        ],
+        [
+          "SPCX",
+          "Space Exploration Technologies",
+          "Industrials",
+          2.72
+        ],
+        [
+          "GOOG",
+          "Alphabet C",
+          "Communication Services",
+          2.66
+        ],
+        [
+          "AVGO",
+          "Broadcom",
+          "Information Technology",
+          2.57
+        ],
+        [
+          "COST",
+          "Costco",
+          "Consumer Staples",
+          2.32
+        ],
+        [
+          "CSCO",
+          "Cisco",
+          "Information Technology",
+          1.82
+        ],
+        [
+          "PLTR",
+          "Palantir",
+          "Information Technology",
+          1.75
+        ],
+        [
+          "INTC",
+          "Intel",
+          "Information Technology",
+          1.49
+        ],
+        [
+          "PANW",
+          "Palo Alto Networks",
+          "Information Technology",
+          1.37
+        ],
+        [
+          "AMAT",
+          "Applied Materials",
+          "Information Technology",
+          1.31
+        ],
+        [
+          "TXN",
+          "Texas Instruments",
+          "Information Technology",
+          1.27
+        ]
+      ]
+    },
+    "SPY": {
+      "name": "SPDR S&P 500 ETF Trust",
+      "date": "2026-11-18",
+      "source": "State Street official holdings",
+      "url": "https://www.ssga.com/us/en/intermediary/etfs/state-street-spdr-sp-500-etf-trust-spy",
+      "positions": [
+        [
+          "AAPL",
+          "Apple",
+          "Information Technology",
+          8.13
+        ],
+        [
+          "MSFT",
+          "Microsoft",
+          "Information Technology",
+          5.96
+        ],
+        [
+          "NVDA",
+          "Nvidia",
+          "Information Technology",
+          5.78
+        ],
+        [
+          "AMZN",
+          "Amazon",
+          "Consumer Discretionary",
+          4.16
+        ],
+        [
+          "AVGO",
+          "Broadcom",
+          "Information Technology",
+          2.66
+        ],
+        [
+          "GOOGL",
+          "Alphabet A",
+          "Communication Services",
+          2.62
+        ],
+        [
+          "META",
+          "Meta Platforms",
+          "Communication Services",
+          2.15
+        ],
+        [
+          "GOOG",
+          "Alphabet C",
+          "Communication Services",
+          2.1
+        ],
+        [
+          "LLY",
+          "Eli Lilly",
+          "Health Care",
+          1.75
+        ],
+        [
+          "TSLA",
+          "Tesla",
+          "Consumer Discretionary",
+          1.71
+        ]
+      ]
+    },
+    "SPDW": {
+      "name": "SPDR Portfolio Developed World ex-US ETF",
+      "date": "2026-11-20",
+      "source": "ETFIQ / file giornaliero State Street",
+      "url": "https://etfiq.com/funds/spdw/holdings/",
+      "positions": [
+        [
+          "SMSN",
+          "Samsung Electronics GDR",
+          "Information Technology",
+          1.96
+        ],
+        [
+          "ASML",
+          "ASML",
+          "Information Technology",
+          1.62
+        ],
+        [
+          "000660",
+          "SK hynix",
+          "Information Technology",
+          1.59
+        ],
+        [
+          "ROG",
+          "Roche",
+          "Health Care",
+          1.08
+        ],
+        [
+          "NOVN",
+          "Novartis",
+          "Health Care",
+          0.91
+        ],
+        [
+          "HSBA",
+          "HSBC",
+          "Financials",
+          0.91
+        ],
+        [
+          "SHEL",
+          "Shell",
+          "Energy",
+          0.89
+        ],
+        [
+          "AZN",
+          "AstraZeneca",
+          "Health Care",
+          0.89
+        ],
+        [
+          "NESN",
+          "Nestlé",
+          "Consumer Staples",
+          0.86
+        ],
+        [
+          "RY",
+          "Royal Bank of Canada",
+          "Financials",
+          0.84
+        ],
+        [
+          "7203",
+          "Toyota",
+          "Consumer Discretionary",
+          0.83
+        ],
+        [
+          "8306",
+          "Mitsubishi UFJ",
+          "Financials",
+          0.76
+        ],
+        [
+          "SAP",
+          "SAP",
+          "Information Technology",
+          0.67
+        ],
+        [
+          "SIE",
+          "Siemens",
+          "Industrials",
+          0.67
+        ],
+        [
+          "CBA",
+          "Commonwealth Bank of Australia",
+          "Financials",
+          0.62
+        ],
+        [
+          "TD",
+          "Toronto-Dominion Bank",
+          "Financials",
+          0.61
+        ],
+        [
+          "ALV",
+          "Allianz",
+          "Financials",
+          0.61
+        ],
+        [
+          "TTE",
+          "TotalEnergies",
+          "Energy",
+          0.59
+        ],
+        [
+          "BHP",
+          "BHP",
+          "Materials",
+          0.57
+        ],
+        [
+          "6758",
+          "Sony",
+          "Consumer Discretionary",
+          0.56
+        ]
+      ]
+    }
+  },
+  "parents": [
+    {
+      "ticker": "AOA",
+      "name": "iShares Core 80/20 Aggressive Allocation",
+      "date": "2026-11-23",
+      "quality": "Provisional",
+      "source": "Snapshot holdings MONITOR (Investing.com; da ricontrollare sul file iShares)",
+      "url": "https://www.ishares.com/us/products/239729/ishares-core-aggressive-allocation-etf",
+      "sleeves": [
+        [
+          "IVV",
+          46.76
+        ],
+        [
+          "IDEV",
+          22.4
+        ],
+        [
+          "IEMG",
+          8.97
+        ]
+      ],
+      "omitted": "IUSB, IAGG, IJH, IJR: obbligazioni, mid/small cap non incluse nel calcolo"
+    },
+    {
+      "ticker": "AOK",
+      "name": "iShares Core 30/70 Conservative Allocation",
+      "date": "2026-11-23",
+      "quality": "Provisional",
+      "source": "Snapshot holdings MONITOR (Investing.com; da ricontrollare sul file iShares)",
+      "url": "https://www.ishares.com/us/products/239733/AOK",
+      "sleeves": [
+        [
+          "IVV",
+          18.48
+        ],
+        [
+          "IDEV",
+          8.85
+        ],
+        [
+          "IEMG",
+          3.55
+        ]
+      ],
+      "omitted": "IUSB, IAGG, IJH, IJR: obbligazioni, mid/small cap non incluse nel calcolo"
+    },
+    {
+      "ticker": "AOR",
+      "name": "iShares Core 60/40 Balanced Allocation",
+      "date": "2026-11-23",
+      "quality": "Provisional",
+      "source": "Snapshot holdings MONITOR (Investing.com; da ricontrollare sul file iShares)",
+      "url": "https://www.ishares.com/us/products/239756/ishares-core-60/40-balanced-allocation-etf-aor",
+      "sleeves": [
+        [
+          "IVV",
+          35.86
+        ],
+        [
+          "IDEV",
+          17.18
+        ],
+        [
+          "IEMG",
+          6.88
+        ]
+      ],
+      "omitted": "IUSB, IAGG, IJH, IJR: obbligazioni, mid/small cap non incluse nel calcolo"
+    },
+    {
+      "ticker": "DWAW",
+      "name": "AdvisorShares Dorsey Wright FSM All Cap World Equity",
+      "date": "2026-11-10",
+      "quality": "Official holdings snapshot",
+      "source": "AdvisorShares official holdings",
+      "url": "https://advisorshares.com/etfs/dwaw/",
+      "sleeves": [
+        [
+          "QUAL",
+          20.22
+        ],
+        [
+          "QQQM",
+          19.22
+        ]
+      ],
+      "omitted": "IVLU, IWD, VLUE non ancora mappati: circa 60.37% del fondo"
+    },
+    {
+      "ticker": "DWUS",
+      "name": "AdvisorShares Dorsey Wright FSM U.S. Core",
+      "date": "2026-11-23",
+      "quality": "Provisional",
+      "source": "Snapshot holdings MONITOR (Investing.com); da confermare con AdvisorShares",
+      "url": "https://advisorshares.com/etfs/dwus/",
+      "sleeves": [
+        [
+          "QUAL",
+          25.26
+        ],
+        [
+          "IVV",
+          25.21
+        ]
+      ],
+      "omitted": "SHV (Treasury ultrashort) escluso: non è azionario"
+    },
+    {
+      "ticker": "GAL",
+      "name": "State Street Global Allocation ETF",
+      "date": "2026-11-20",
+      "quality": "Good · issuer cross-check",
+      "source": "State Street daily holdings via ETFIQ",
+      "url": "https://www.ssga.com/us/en/individual/etfs/state-street-global-allocation-etf-gal",
+      "sleeves": [
+        [
+          "SPY",
+          18.15
+        ],
+        [
+          "SPDW",
+          18.5
+        ]
+      ],
+      "omitted": "SPEM, GWX, MDY, VPL e altri ETF non mappati; obbligazioni e commodity escluse"
+    }
+  ]
+}
