@@ -853,7 +853,8 @@
         "2025": "GMOM +20.0%, sopra AOR (+16.44%), AOK (+11.26%) e 60/40 (+13.6%), leggermente sopra AOA (+19.59%) con le serie NAV AAII arrotondate."
       },
       "conclusion": "GMOM non offre protezione costante: soffre nel 2018 e partecipa poco ai rimbalzi 2020 e 2023, ma limita nettamente le perdite nel 2022. Il vantaggio è episodico e dipende dalla persistenza del trend; non dimostra da solo un rendimento superiore nel ciclo completo.",
-      "caveats": "Il rendimento annuale 2020 non misura drawdown intrannuale o velocità di recupero. Il 60/40 MarketHeist è mensilmente ribilanciato; la precedente scheda Exent usa ribilanciamento annuale e diverso intervallo. Non mescolare le due serie. Per un test definitivo servono serie mensili total-return con metodologia unica."
+      "caveats": "Il rendimento annuale 2020 non misura drawdown intrannuale o velocità di recupero. Il 60/40 MarketHeist è mensilmente ribilanciato; la precedente scheda Exent usa ribilanciamento annuale e diverso intervallo. Non mescolare le due serie. Per un test definitivo servono serie mensili total-return con metodologia unica.",
+      "updated_at": "2026-11-26"
     }
   }
 }
