@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "purpose": "research-only candidates for multi-asset holdings integration; not active MONITOR holdings until source download and parser tests pass",
-  "last_audit": "2026-11-25",
+  "last_audit": "2026-11-26",
   "providers": {
     "VanEck": {
       "source_status": "official full holdings pages exist; download endpoint not yet programmatically validated",
@@ -550,7 +550,7 @@
           "status": "research",
           "classification": "managed futures / trend diversification",
           "holdings_page": "https://www.bnpparibas-am.com/en-gb/portfolio-perspectives/innovating-with-liquid-alternative-and-buffer-etfs/",
-          "audit_category": "other_alternative",
+          "audit_category": "managed_futures_trend",
           "audit_stage": "candidate_screen",
           "audit_note": "Not yet independently verified against primary issuer documentation in this audit",
           "screening_status": "priority_due_diligence",
@@ -662,7 +662,7 @@
           "classification": "leveraged commodity carry; 2.5x index exposure",
           "strategy": "Synthetic swap replication of 2.5 leveraged commodity carry index excluding precious metals",
           "holdings_page": "https://www.ubs.com",
-          "audit_category": "equity_long_short",
+          "audit_category": "commodity_carry",
           "audit_stage": "candidate_screen",
           "audit_note": "Not yet independently verified against primary issuer documentation in this audit",
           "screening_status": "watch_special_risk",
@@ -676,7 +676,7 @@
           "status": "research",
           "classification": "leveraged commodity carry; 2.5x index exposure; EUR hedged",
           "strategy": "Synthetic swap replication of 2.5 leveraged commodity carry index excluding precious metals",
-          "audit_category": "equity_long_short",
+          "audit_category": "commodity_carry",
           "audit_stage": "candidate_screen",
           "audit_note": "Not yet independently verified against primary issuer documentation in this audit",
           "screening_status": "watch_special_risk",
@@ -690,7 +690,7 @@
           "status": "research",
           "classification": "equity options income / put-write; EUR hedged",
           "strategy": "Synthetic put-writing strategy on S&P 500 puts with T-bill cash component; not downside-protected equity",
-          "audit_category": "equity_long_short",
+          "audit_category": "options_income",
           "audit_stage": "candidate_screen",
           "audit_note": "Not yet independently verified against primary issuer documentation in this audit",
           "screening_status": "watch_special_risk",
@@ -704,7 +704,7 @@
           "status": "research",
           "classification": "equity options income / put-write",
           "strategy": "Synthetic put-writing strategy on US equity; option-selling risk; USD share class",
-          "audit_category": "equity_long_short",
+          "audit_category": "options_income",
           "audit_stage": "candidate_screen",
           "audit_note": "Not yet independently verified against primary issuer documentation in this audit",
           "screening_status": "watch_special_risk",
@@ -849,5 +849,56 @@
     "hold_pending_identity_or_relevance": 5,
     "standard_due_diligence": 21
   },
-  "quantitative_score_status": "not_scored_no_comparable_monthly_total_return_dataset"
+  "quantitative_score_status": "not_scored_no_comparable_monthly_total_return_dataset",
+  "work_plan": {
+    "objective": "Expand active MONITOR coverage from 13 tracked ETFs toward a curated universe of 50 candidate products; research catalog already contains 50 candidate records.",
+    "integration_sprints": [
+      {
+        "sprint": 1,
+        "focus": [
+          "VanEck DTM/NTM/TOF",
+          "JPM JMAC/JMAM/JMAG",
+          "Amundi F701/F702/F703",
+          "Xtrackers XQUI/XS7W/XEQ2/XEQ4/XEQ6/XEQ8"
+        ],
+        "reason": "High relevance strategic multi-asset; issuer documentation and holding data are priority."
+      },
+      {
+        "sprint": 2,
+        "focus": [
+          "Fineco ACT60/ACTEQ",
+          "iShares Conservative/Moderate/MAGR",
+          "Vanguard LifeStrategy 20/40/60/80"
+        ],
+        "reason": "Portfolio comparisons and benchmarks; source availability and holding granularity."
+      },
+      {
+        "sprint": 3,
+        "focus": [
+          "WisdomTree GEC/UEC/ZEC",
+          "ODDO BHF OBBA/OBAA",
+          "Goshawk GOSH",
+          "Investlinx INVB"
+        ],
+        "reason": "Efficient-core and flexible allocation strategies."
+      },
+      {
+        "sprint": 4,
+        "focus": [
+          "Managed futures/trend products DBMF/DBMFE/MFEH/MATE/FOLOW/MAAF",
+          "equity long-short SLEEK and BNP",
+          "specialty alternatives and income candidates"
+        ],
+        "reason": "Separate risk taxonomy and feed/source tests; not all should enter holdings monitor."
+      }
+    ],
+    "gates": [
+      "Validate ISIN, listing and share class",
+      "Check official source and full holdings availability",
+      "Confirm holdings weights and as-of date",
+      "Automated parser test and snapshot quality",
+      "Only then promote research candidate into live MONITOR"
+    ],
+    "note": "Research universe is not equivalent to live coverage; duplicate share classes and niche ETPs require screening before inclusion. Target 50 is a discovery/candidate ceiling, not automatic inclusion."
+  }
 }
