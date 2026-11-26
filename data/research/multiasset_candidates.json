@@ -385,12 +385,12 @@
           "ter": 0.25,
           "status": "research",
           "audit_category": "strategic_multi_asset",
-          "audit_stage": "official_csv_control_confirmed_endpoint_parser_pending",
-          "audit_note": "CSV download latest fund holdings visible on issuer product page; ISIN confirmed; moderate-to-conservative allocation. Latest assets EUR 16.53M share class / 20.20M fund.",
+          "audit_stage": "official_csv_endpoint_identified_download_unavailable_in_environment",
+          "audit_note": "CSV download latest fund holdings visible on issuer product page; ISIN confirmed; moderate-to-conservative allocation. Latest assets EUR 16.53M share class / 20.20M fund. Direct endpoint: https://www.ishares.com/uk/individual/en/products/313196/ishares-conservative-portfolio-ucits-etf-macv/latest-holdings.csv. Retrieval failed in this environment, so parser/weights validation remain pending.",
           "screening_status": "standard_due_diligence",
           "screening_reason": "Verified strategic conservative portfolio; analyze composition and holdings before ranking",
           "primary_source_check_date": "2026-11-26",
-          "primary_source_status": "official issuer page verified: ISIN IE00BLP53M98, TER 0.25%, holdings CSV download control; endpoint and parser pending",
+          "primary_source_status": "official issuer page verified: ISIN IE00BLP53M98, TER 0.25%, holdings CSV download control; endpoint and parser pending; exact latest-holdings.csv URL captured; download blocked (web gateway HTTP 400/network unavailable), CSV not inspected",
           "holdings_source_page": "https://www.ishares.com/uk/individual/en/products/313196/ishares-conservative-portfolio-ucits-etf-macv"
         },
         {
@@ -400,12 +400,12 @@
           "ter": 0.25,
           "status": "research",
           "audit_category": "strategic_multi_asset",
-          "audit_stage": "official_csv_control_confirmed_endpoint_parser_pending",
-          "audit_note": "CSV download latest fund holdings visible on issuer product page; ISIN confirmed; moderate allocation. Latest assets reported around EUR 47.68M share class.",
+          "audit_stage": "official_csv_endpoint_identified_download_unavailable_in_environment",
+          "audit_note": "CSV download latest fund holdings visible on issuer product page; ISIN confirmed; moderate allocation. Latest assets reported around EUR 47.68M share class. Direct endpoint: https://www.ishares.com/uk/individual/en/products/313193/ishares-moderate-portfolio-ucits-etf-modr/latest-holdings.csv. Retrieval failed in this environment, so parser/weights validation remain pending.",
           "screening_status": "standard_due_diligence",
           "screening_reason": "Verified strategic moderate portfolio; analyze composition and holdings before ranking",
           "primary_source_check_date": "2026-11-26",
-          "primary_source_status": "official issuer page verified: ISIN IE00BLLZQS08, TER 0.25%, holdings CSV download control; endpoint and parser pending",
+          "primary_source_status": "official issuer page verified: ISIN IE00BLLZQS08, TER 0.25%, holdings CSV download control; endpoint and parser pending; exact latest-holdings.csv URL captured; download blocked (web gateway HTTP 400/network unavailable), CSV not inspected",
           "holdings_source_page": "https://www.ishares.com/uk/individual/en/products/313193/ishares-moderate-portfolio-ucits-etf-modr"
         },
         {
@@ -425,9 +425,9 @@
         }
       ],
       "sprint_1_audit": {
-        "status": "official_pages_and_csv_download_control_confirmed_endpoint_parser_pending",
+        "status": "official_csv_endpoints_captured_download_blocked_parser_pending",
         "check_date": "2026-11-26",
-        "note": "Official BlackRock pages confirm product identity, ISIN, TER 0.25%, EUR accumulating, Ireland UCITS Article 8; MACV/MODR CSV holdings download control is exposed. Candidate portfolios have 20-21 holdings at Nov 2026 snapshots. Direct endpoint capture, parser and full weights reconciliation still pending.",
+        "note": "Official BlackRock pages confirm product identity, ISIN, TER 0.25%, EUR accumulating, Ireland UCITS Article 8; MACV/MODR CSV holdings download control is exposed. Candidate portfolios have 20-21 holdings at Nov 2026 snapshots. Direct endpoint capture, parser and full weights reconciliation still pending. Exact latest-holdings.csv URLs captured for MACV/MODR, but retrieval failed from this environment (web gateway HTTP 400; download attempt unavailable).",
         "candidates": [
           "MACV",
           "MODR",
