@@ -1,7 +1,7 @@
 # MONITOR — heartbeat
 
-- Stato: **IN ATTESA DEL PRIMO CONTROLLO**
-- Frequenza: ogni 20 minuti
-- Avvisi: issue GitHub se un workflow di lavoro è fallito o non risulta attività da oltre 45 minuti.
-- Nota: il heartbeat controlla GitHub Actions e non equivale a un agente AI di ricerca autonomo sempre attivo.
+- Ultimo controllo UTC: 2026-11-26T14:01:14.336991+00:00
+- Stato: **IDLE**
+- Nessun workflow di ricerca recente rilevato; heartbeat attivo.
 
+> Questo controllo verifica le GitHub Actions, non garantisce un agente AI di ricerca continuo.

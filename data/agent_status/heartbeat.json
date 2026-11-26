@@ -1,8 +1,8 @@
 {
-  "checked_at_utc": null,
-  "state": "WAITING_FIRST_SCHEDULED_CHECK",
+  "checked_at_utc": "2026-11-26T14:01:14.336991+00:00",
+  "state": "IDLE",
   "alert": false,
-  "reason": "Heartbeat workflow configurato; attende il primo run schedulato. Il controllo monitora GitHub Actions, non un agente AI continuo.",
+  "reason": "Nessun workflow di ricerca recente rilevato; heartbeat attivo.",
   "last_work_run": null,
   "recent_runs": []
 }
