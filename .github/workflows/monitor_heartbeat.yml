@@ -1,0 +1,47 @@
+name: MONITOR Continuous Heartbeat
+
+on:
+  schedule:
+    - cron: '*/20 * * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  actions: read
+  issues: write
+
+concurrency:
+  group: monitor-heartbeat
+  cancel-in-progress: false
+
+jobs:
+  heartbeat:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check workflow activity and write status
+        id: heartbeat
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python scripts/monitor_heartbeat.py
+      - name: Commit heartbeat status
+        run: |
+          git config user.name "MONITOR Heartbeat"
+          git config user.email "monitor-heartbeat@users.noreply.github.com"
+          git add data/agent_status/
+          git diff --cached --quiet || git commit -m "monitor: heartbeat status $(date -u +%Y-%m-%dT%H:%MZ)"
+          git push
+      - name: Notify with GitHub issue if stale or failed
+        if: steps.heartbeat.outputs.alert == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          TITLE="MONITOR alert: agent stopped or run failed"
+          EXISTING=$(gh issue list --state open --label monitor-alert --json number --jq '.[0].number // empty')
+          BODY="Automated heartbeat detected a stale or failed work run. Check data/agent_status/heartbeat.md and Actions."
+          if [ -z "$EXISTING" ]; then
+            gh label create monitor-alert --color FF6600 --description "Heartbeat alerts" 2>/dev/null || true
+            gh issue create --title "$TITLE" --body "$BODY" --label monitor-alert
+          else
+            gh issue comment "$EXISTING" --body "$BODY — $(date -u +%Y-%m-%dT%H:%MZ)"
+          fi
