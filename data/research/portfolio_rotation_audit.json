@@ -451,6 +451,91 @@
           "note": "Secondaria e non sostitutiva del file emittente; segnala una divergenza di scadenze rispetto alla pagina Schwab."
         }
       }
+    },
+    {
+      "ticker": "AOA",
+      "status": "strategic_allocation_weight_drift_only",
+      "source": "iShares issuer daily holdings via ETFIQ",
+      "source_urls": [
+        "https://etfiq.com/funds/aoa/holdings/",
+        "https://www.ishares.com/us/products/239729/ishares-core-aggressive-allocation-etf"
+      ],
+      "source_refs": [
+        "turn926122search4",
+        "turn926122search7"
+      ],
+      "from_date": "2026-11-16",
+      "to_date": "2026-11-23",
+      "dated_snapshots": [
+        {
+          "date": "2026-11-16",
+          "source": "iShares daily holdings via ETFIQ",
+          "positions": 7
+        },
+        {
+          "date": "2026-11-23",
+          "source": "iShares daily holdings via ETFIQ",
+          "positions": 7
+        }
+      ],
+      "comparison": {
+        "positions_added": [],
+        "positions_removed": [],
+        "weight_changes_pct_points": {
+          "IUSB": 0.54,
+          "IAGG": 0.09,
+          "IEMG": 0.01,
+          "IDEV": -0.46,
+          "IVV": -0.17,
+          "IJH": -0.01
+        },
+        "interpretation": "Nessun ETF aggiunto o rimosso. Le variazioni sono pesi non separati dai prezzi; non dimostrano acquisti/vendite. Le quantità detenute comparabili non sono ancora archiviate.",
+        "confidence": "high_for_no_composition_change_low_for_trade_attribution"
+      },
+      "note": "Portafoglio strategico 80/20: struttura sottostante invariata nelle due date osservate. Variazioni di peso moderate, non prova di rotazione tattica."
+    },
+    {
+      "ticker": "AOK",
+      "status": "strategic_allocation_weight_drift_only",
+      "source": "iShares issuer daily holdings via ETFIQ",
+      "source_urls": [
+        "https://etfiq.com/funds/aok/holdings/",
+        "https://www.ishares.com/us/products/239733/ishares-core-30-70-conservative-allocation-etf"
+      ],
+      "source_refs": [
+        "turn926122search2",
+        "turn926122search9"
+      ],
+      "from_date": "2026-11-13",
+      "to_date": "2026-11-20",
+      "dated_snapshots": [
+        {
+          "date": "2026-11-13",
+          "source": "iShares daily holdings via ETFIQ",
+          "positions": 7
+        },
+        {
+          "date": "2026-11-20",
+          "source": "iShares daily holdings via ETFIQ",
+          "positions": 7
+        }
+      ],
+      "comparison": {
+        "positions_added": [],
+        "positions_removed": [],
+        "weight_changes_pct_points": {
+          "IUSB": 1.76,
+          "IAGG": 0.26,
+          "IVV": -1.13,
+          "IDEV": -0.5,
+          "IEMG": -0.31,
+          "IJH": -0.05,
+          "IJR": -0.03
+        },
+        "interpretation": "Nessun ETF aggiunto o rimosso. IUSB +1,76 pp e IVV −1,13 pp sono variazioni di peso; ETFIQ dichiara che prezzi e operazioni non sono separati e che il rendimento del book non coincide con quello del fondo. Non classificare come acquisti/vendite.",
+        "confidence": "high_for_no_composition_change_low_for_trade_attribution"
+      },
+      "note": "Allocazione strategica 30/70: nessuna rotazione di composizione osservata. La variazione di peso relativamente ampia su IUSB non è prova di ribilanciamento discrezionale."
     }
   ]
 }
