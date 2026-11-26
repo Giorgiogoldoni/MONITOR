@@ -536,6 +536,56 @@
         "confidence": "high_for_no_composition_change_low_for_trade_attribution"
       },
       "note": "Allocazione strategica 30/70: nessuna rotazione di composizione osservata. La variazione di peso relativamente ampia su IUSB non è prova di ribilanciamento discrezionale."
+    },
+    {
+      "ticker": "AOR",
+      "status": "strategic_allocation_weight_drift_only",
+      "source": "iShares issuer daily holdings via ETFIQ",
+      "source_urls": [
+        "https://etfiq.com/funds/aor/holdings/"
+      ],
+      "source_refs": [
+        "turn850685view0"
+      ],
+      "from_date": "2026-11-16",
+      "to_date": "2026-11-23",
+      "dated_snapshots": [
+        {
+          "date": "2026-11-16",
+          "source": "iShares daily holdings via ETFIQ",
+          "positions": 7
+        },
+        {
+          "date": "2026-11-23",
+          "source": "iShares daily holdings via ETFIQ",
+          "positions": 7
+        }
+      ],
+      "comparison": {
+        "positions_added": [],
+        "positions_removed": [],
+        "weight_changes_pct_points": {
+          "IUSB": 0.8,
+          "IAGG": 0.11,
+          "IDEV": -0.47,
+          "IVV": -0.38,
+          "IEMG": -0.04,
+          "IJH": -0.02,
+          "IJR": -0.01
+        },
+        "weights_2026_11_23_pct": {
+          "IUSB": 34.98,
+          "IVV": 33.41,
+          "IDEV": 16.38,
+          "IAGG": 6.22,
+          "IEMG": 6.15,
+          "IJH": 1.77,
+          "IJR": 0.9
+        },
+        "interpretation": "Nessun ETF aggiunto o rimosso. IUSB +0,80 pp, IDEV -0,47 pp e IVV -0,38 pp sono variazioni di peso; ETFIQ specifica che prezzi e trade non sono separati e che il movimento del book non coincide con il close del fondo. Non classificare come acquisti/vendite.",
+        "confidence": "high_for_no_composition_change_low_for_trade_attribution"
+      },
+      "note": "Allocazione strategica 60/40: composizione sottostante invariata tra 16 e 23 novembre. IUSB e IVV restano le due maggiori posizioni; nessuna rotazione tattica dimostrata."
     }
   ]
 }
