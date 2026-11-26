@@ -722,13 +722,56 @@
       "GMOM": 0.95,
       "AOA": 0.15,
       "AOR": 0.15,
-      "AOK": 0.15
+      "AOK": 0.2
     },
     "interpretation": {
-      "conclusion": "GMOM is not consistently superior to strategic buy-and-hold allocation ETFs. It beats AOR and AOK over 5 years, but trails AOA; over 10 years it trails AOA and AOR, and beats AOK.",
+      "conclusion": "GMOM non ha dimostrato superiorità costante rispetto alle allocazioni strategiche: batte AOR su 5 anni ma perde su 10 anni; lo Sharpe a 3 anni è inferiore ad AOR e AOA, con volatilità più alta. Il drawdown quinquennale è stato leggermente meno profondo di AOR ma più profondo di AOK. La strategia attiva non risulta superiore in modo robusto.",
       "risk_comparability": "AOA is an 80/20 aggressive allocation, AOR 60/40 balanced, AOK 30/70 conservative. These are not risk-matched alternatives. Higher returns may reflect higher equity risk, especially AOA.",
       "caveats": "GMOM 5-year return is close to AOA but lower by 0.98 percentage points annualized; GMOM has materially higher expense ratio. This return-only comparison does not establish risk-adjusted superiority. Compare volatility, max drawdown, recovery time, and rolling 3/5-year outcomes before concluding strategy superiority."
     },
-    "notes": "Published source values rounded to two decimals where available. GMOM NAV total return from Cambria Q3 2026 fact sheet; iShares values from BlackRock/AAII as of 2026-09-30."
+    "notes": "Published source values rounded to two decimals where available. GMOM NAV total return from Cambria Q3 2026 fact sheet; iShares values from BlackRock/AAII as of 2026-09-30.",
+    "risk_comparison": {
+      "as_of": "2026-09-30",
+      "period_note": "Le statistiche di rischio disponibili non sono tutte calcolate con identico provider e data di chiusura. I dati a 3 anni sono riferiti a 36 rendimenti mensili fino a settembre 2026; i drawdown a 5 anni sono misurati su finestre quinquennali. Usarli come indicazione, non come backtest perfettamente omogeneo.",
+      "metrics": {
+        "GMOM": {
+          "volatility_3y_pct": 10.8,
+          "sharpe_3y": 0.94,
+          "max_drawdown_5y_pct": -19.2
+        },
+        "AOR": {
+          "volatility_3y_pct": 8.4,
+          "sharpe_3y": 1.13,
+          "max_drawdown_5y_pct": -21.7
+        },
+        "AOK": {
+          "volatility_3y_pct": 6.4,
+          "sharpe_3y": 0.76,
+          "max_drawdown_5y_pct": -18.9
+        },
+        "AOA": {
+          "volatility_3y_pct": 10.2,
+          "sharpe_3y": 1.16,
+          "max_drawdown_5y_pct": -23.6
+        }
+      },
+      "sources": {
+        "GMOM": "https://etf.net/etf/GMOM",
+        "AOR": "https://etf.net/etf/AOR",
+        "AOK": "https://etf.net/etf/AOK",
+        "AOA": "https://etf.net/etf/AOA"
+      },
+      "interpretation": "Nel triennio GMOM mostra volatilità superiore e Sharpe inferiore ad AOR e AOA; nel quinquennio il drawdown massimo GMOM è stato un po' meno profondo di AOR, ma non di AOK. Il vantaggio di protezione non compensa automaticamente il rendimento annualizzato inferiore sul decennio."
+    },
+    "passive_60_40_reference": {
+      "period": "2016-07 to 2026-10",
+      "allocation": "60% SPY / 40% AGG, ribilanciamento annuale",
+      "annualized_return_pct": 9.6,
+      "volatility_pct": 10.1,
+      "sharpe": 0.74,
+      "max_drawdown_pct": -20,
+      "source": "https://www.exent.ai/resources/compare-two-portfolios",
+      "caveat": "Backtest esterno con date leggermente diverse dai dati GMOM al 30/09/2026; riferimento contestuale, non confronto perfettamente sincronizzato."
+    }
   }
 }
