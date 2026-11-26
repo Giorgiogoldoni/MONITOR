@@ -13,7 +13,7 @@ with urllib.request.urlopen(req, timeout=20) as response:
 
 # Exclude this heartbeat run when assessing the monitored work.
 current_id = int(os.environ.get("GITHUB_RUN_ID", "0"))
-other = [r for r in runs if r["id"] != current_id]
+other = [r for r in runs if r["id"] != current_id and r["name"] != "MONITOR Continuous Heartbeat"]
 recent = other[:10]
 last = recent[0] if recent else None
 age_min = None
