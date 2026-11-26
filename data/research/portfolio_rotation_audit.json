@@ -14,7 +14,6 @@
       "status": "first_observed_rotation_candidate",
       "source": "Charles Schwab all-holdings pages",
       "source_urls": [
-        "https://www.schwab.wallst.com/schwab/Prospect/research/etfs/schwabETF/index.asp?symbol=GMOM&type=holdings",
         "https://www.schwab.wallst.com/schwab/Prospect/research/etfs/schwabETF/index.asp?symbol=GMOM&type=holdings"
       ],
       "from_date": "2026-11-20",
