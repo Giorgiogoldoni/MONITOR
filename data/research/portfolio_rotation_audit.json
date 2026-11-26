@@ -1,0 +1,77 @@
+{
+  "as_of": "2026-11-26",
+  "methodology": {
+    "principle": "A change in weight is not proof of a trade. Compare complete holdings lists, shares held, and portfolio weights on matched dates.",
+    "evidence_levels": {
+      "confirmed_quantity_change": "Shares held differ between two dated holdings files; may still reflect portfolio-level creations/redemptions, so normalize by fund AUM or shares outstanding before attributing manager intent.",
+      "composition_rotation": "A holding appears/disappears between complete dated lists; treat as a candidate rotation until full coverage and source cadence are verified.",
+      "weight_drift": "Only percentage weights differ; do not call a buy or sell."
+    }
+  },
+  "funds": [
+    {
+      "ticker": "GMOM",
+      "status": "first_observed_rotation_candidate",
+      "source": "Charles Schwab all-holdings pages",
+      "source_urls": [
+        "https://www.schwab.wallst.com/schwab/Prospect/research/etfs/schwabETF/index.asp?symbol=GMOM&type=holdings"
+      ],
+      "from_date": "2026-11-20",
+      "to_date": "2026-11-24",
+      "source_refs": [
+        "turn208536search5",
+        "turn208536search0"
+      ],
+      "note": "Schwab pages report holdings with shares held and market value. The 11/20 and 11/24 holdings show candidate substitutions. Many continuing positions have share counts down by approximately 2.4–2.6% in near-parallel; this could reflect fund-level flows or scaling and must not be interpreted as individual discretionary sells without normalization by GMOM shares outstanding/AUM.",
+      "candidates_removed": [
+        "EYLD",
+        "DBE",
+        "DBB",
+        "GUNR"
+      ],
+      "candidates_added": [
+        "OILK",
+        "SDMF",
+        "SYLD",
+        "IXG",
+        "IXJ"
+      ],
+      "continuing_positions_share_change_pct_approx": {
+        "GVAL": -2.53,
+        "FYLD": -2.53,
+        "MYLD": -2.51,
+        "IXC": -2.61,
+        "PDBC": -2.53,
+        "LYLD": -2.58,
+        "MFUT": -2.55,
+        "SDCI": -2.51,
+        "IXN": -2.4
+      },
+      "confidence": "medium_for_list_changes_low_for_trade_attribution"
+    },
+    {
+      "ticker": "DWAW",
+      "status": "data_conflict_excluded",
+      "note": "MONITOR snapshot 2026-11-23 reports SHV 99.43%, inconsistent with the issuer's 2026-11-10 five-ETF equity portfolio. Do not infer a wholesale liquidation; repair source ingestion first.",
+      "confidence": "high"
+    },
+    {
+      "ticker": "DWUS",
+      "status": "unverified_manual_series",
+      "note": "The archived manual snapshots show changing ETF names, but lack a consistent issuer-origin complete series and share quantities.",
+      "confidence": "low"
+    },
+    {
+      "ticker": "GAL",
+      "status": "weight_changes_only",
+      "note": "Issuer daily holdings can support a better comparison, but current displayed deltas are weights only; obtain shares held and total fund assets before attributing trades.",
+      "confidence": "medium_for_weights_low_for_trades"
+    },
+    {
+      "ticker": "DBMF",
+      "status": "special_derivatives_method",
+      "note": "Futures, short positions, notional exposures and collateral require a separate exposure-based comparison. Simple ETF holding weights are not comparable.",
+      "confidence": "not_comparable_by_simple_weights"
+    }
+  ]
+}
