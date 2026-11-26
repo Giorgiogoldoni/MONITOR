@@ -15,7 +15,7 @@
 <tr><td>GMOM</td><td>Momentum multi-asset attivo</td><td class="highlight">8,28%</td><td>7,44%</td><td>0,95%</td></tr>
 <tr><td>AOA</td><td>Azionario 80 / obbligaz. 20</td><td>9,26%</td><td class="highlight">10,10%</td><td>0,15%</td></tr>
 <tr><td>AOR</td><td>Azionario 60 / obbligaz. 40</td><td>6,92%</td><td>7,96%</td><td>0,15%</td></tr>
-<tr><td>AOK</td><td>Azionario 30 / obbligaz. 70</td><td>3,40%</td><td>4,70%</td><td>0,15%</td></tr>
+<tr><td>AOK</td><td>Azionario 30 / obbligaz. 70</td><td>3,40%</td><td>4,70%</td><td>0,20%</td></tr>
 </tbody></table></div><p class="muted small">Rendimenti NAV con distribuzioni reinvestite, prima delle imposte personali. I costi correnti del fondo sono già riflessi nel rendimento NAV.</p></section>
 <section class="panel"><div class="tag">Capitale finale teorico</div><h2>Quanto diventano 10.000 USD</h2><p class="muted small">Capitalizzazione dei CAGR pubblicati; valori arrotondati, senza versamenti aggiuntivi.</p>
 <h3>Orizzonte 5 anni</h3>
@@ -31,11 +31,25 @@
 <li><b>Rischio:</b> AOA non è un confronto equivalente a AOK. Per valutare l'efficacia della rotazione servono volatilità, max drawdown, tempo di recupero e rendimenti rolling su finestre di 3 e 5 anni.</li>
 </ul>
 <p>Gli iShares non sono letteralmente “senza gestione”: mantengono un'allocazione strategica e ribilanciano periodicamente i pesi. Sono però molto più vicini a un approccio buy & hold rispetto a GMOM, che cambia gli ETF selezionati in funzione del momentum e del trend.</p></section>
-<section class="panel"><div class="tag">Fonti primarie / dati</div><h2>Documentazione</h2><div class="links">
+<section class="panel"><div class="tag">Rischio corretto per il rendimento</div><h2>Volatilità, Sharpe e drawdown</h2>
+<p class="muted small">Statistiche di rischio disponibili al 30/09/2026. Volatilità e Sharpe su 36 rendimenti mensili fino a settembre 2026; drawdown massimo su finestra quinquennale. Provider e metodi non perfettamente identici: confronto indicativo, non un backtest unico ricalcolato da serie grezze.</p>
+<div class="tablewrap"><table class="tbl"><thead><tr><th>ETF</th><th>Volatilità 3 anni</th><th>Sharpe 3 anni</th><th>Max drawdown 5 anni</th></tr></thead><tbody>
+<tr><td>GMOM</td><td>10,8%</td><td>0,94</td><td>-19,2%</td></tr>
+<tr><td>AOA</td><td>10,2%</td><td>1,16</td><td>-23,6%</td></tr>
+<tr><td>AOR</td><td>8,4%</td><td>1,13</td><td>-21,7%</td></tr>
+<tr><td>AOK</td><td>6,4%</td><td>0,76</td><td>-18,9%</td></tr>
+</tbody></table></div>
+<div class="callout"><b>Lettura:</b> GMOM ha avuto volatilità più alta e Sharpe inferiore ad AOR e AOA. Il drawdown a 5 anni è stato un po' meno profondo di AOR, ma non di AOK. Non emerge quindi una superiorità rischio/rendimento chiara.</div>
+</section>
+<section class="panel"><div class="tag">Benchmark passivo aggiuntivo</div><h2>Portafoglio 60/40 tradizionale</h2>
+<p>Un backtest esterno di un portafoglio 60% SPY / 40% AGG, ribilanciato annualmente, dal luglio 2016 a ottobre 2026 riporta:</p>
+<div class="tablewrap"><table class="tbl"><thead><tr><th>Rendimento annuo</th><th>Volatilità</th><th>Sharpe</th><th>Max drawdown</th></tr></thead><tbody><tr><td>9,6%</td><td>10,1%</td><td>0,74</td><td>-20,0%</td></tr></tbody></table></div>
+<p class="muted small">Fonte: Exent. Periodo e metodologia non sono perfettamente sincronizzati con i dati ufficiali GMOM al 30/09/2026: benchmark contestuale, non prova di sovraperformance diretta.</p>
+</section>\n<section class="panel"><div class="tag">Fonti primarie / dati</div><h2>Documentazione</h2><div class="links">
 <a href="https://www.cambriafunds.com/assets/docs/gmom-factsheet.pdf" target="_blank" rel="noopener">GMOM · factsheet Q3 2026</a>
 <a href="https://www.ishares.com/us/products/239729/ishares-core-aggressive-allocation-etf" target="_blank" rel="noopener">AOA · BlackRock</a>
 <a href="https://www.blackrock.com/us/individual/products/239756/ishares-core-60/40-balanced-allocation-etf-aor" target="_blank" rel="noopener">AOR · BlackRock</a>
-<a href="https://www.aaii.com/etf/ticker/AOK" target="_blank" rel="noopener">AOK · AAII</a>
-</div><p class="muted small">GMOM: NAV 5 anni 8,28%, 10 anni 7,44% (Cambria, 30/09/2026). AOA: 9,26% e 10,10% (BlackRock, 30/09/2026). AOR: 6,92% e 7,96% (BlackRock, 30/09/2026). AOK: 3,4% e 4,7% (AAII, 30/09/2026). I valori sono quelli pubblicati dalle fonti, arrotondati.</p></section>
+<a href="https://www.aaii.com/etf/ticker/AOK" target="_blank" rel="noopener">AOK · AAII</a> <a href="https://etf.net/etf/GMOM" target="_blank" rel="noopener">GMOM · rischio</a> <a href="https://etf.net/etf/AOR" target="_blank" rel="noopener">AOR · rischio</a> <a href="https://www.exent.ai/resources/compare-two-portfolios" target="_blank" rel="noopener">60/40 · backtest</a>
+</div><p class="muted small">GMOM: NAV 5 anni 8,28%, 10 anni 7,44% (Cambria, 30/09/2026). AOA: 9,26% e 10,10% (BlackRock, 30/09/2026). AOR: 6,92% e 7,96% (BlackRock, 30/09/2026). AOK: 3,4% e 4,7% (AAII, 30/09/2026). TER AOK 0,20%. Le statistiche di rischio provengono da ETF.net e sono indicate separatamente per metodologia e finestra temporale. I valori sono quelli pubblicati dalle fonti, arrotondati.</p></section>
 <footer>MONITOR · Analisi storica, non previsione né raccomandazione personalizzata. Il rendimento passato non garantisce risultati futuri. Valuta anche rischio, fiscalità, valuta USD/EUR e costi di negoziazione.</footer>
 </main></body></html>
