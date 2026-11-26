@@ -1,6 +1,10 @@
 name: ETFIQ series availability pilot
 on:
   workflow_dispatch:
+  push:
+    paths:
+      - ".github/workflows/etfiq_series_pilot.yml"
+      - "scripts/audit_etfiq_series.py"
   schedule:
     - cron: "30 2 * * 1-5"
 permissions:
