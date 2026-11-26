@@ -52,8 +52,30 @@
     {
       "ticker": "DWAW",
       "status": "data_conflict_excluded",
-      "note": "MONITOR snapshot 2026-11-23 reports SHV 99.43%, inconsistent with the issuer's 2026-11-10 five-ETF equity portfolio. Do not infer a wholesale liquidation; repair source ingestion first.",
-      "confidence": "high"
+      "note": "MONITOR snapshot 2026-11-23 reports SHV 99.43%, inconsistent with the issuer's 2026-11-10 five-ETF equity portfolio. Do not infer a wholesale liquidation; repair source ingestion first. A better dated Schwab snapshot on 2026-11-18 shows five equity ETFs (IWD, IVLU, IQLT, QUAL, VLUE); compared with issuer snapshot 2026-11-10, QQQM appears replaced by IQLT. Treat the 11/23 SHV 99.43% record as an ingestion error.",
+      "confidence": "high",
+      "comparison": {
+        "from_date": "2026-11-10",
+        "to_date": "2026-11-18",
+        "sources": [
+          "AdvisorShares issuer holdings",
+          "Charles Schwab all-holdings"
+        ],
+        "candidates_removed": [
+          "QQQM"
+        ],
+        "candidates_added": [
+          "IQLT"
+        ],
+        "continuing": [
+          "IWD",
+          "IVLU",
+          "QUAL",
+          "VLUE"
+        ],
+        "note": "The issuer's 11/10 snapshot showed QQQM among five equity ETFs; Schwab's 11/18 all-holdings page shows IQLT instead, with five equity ETFs around 20% each. This is a stronger composition-rotation candidate than the bad MONITOR 11/23 SHV 99.43% snapshot. Cross-source/date confirmation is still recommended.",
+        "confidence": "medium_high_for_composition_change"
+      }
     },
     {
       "ticker": "DWUS",
