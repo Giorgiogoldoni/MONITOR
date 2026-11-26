@@ -24,7 +24,9 @@
         "turn246837search4",
         "turn246837search5",
         "turn246837search0",
-        "turn386939search1"
+        "turn386939search1",
+        "turn187577search0",
+        "turn187577search2"
       ],
       "note": "Le rilevazioni Schwab del 20 e 23 novembre mostrano una variazione persistente della lista: EYLD, DBE, DBB e GUNR escono; OILK, SDMF, SYLD, IXG e IXJ entrano. Le quote dei principali titoli continuativi calano quasi uniformemente di circa 2,5%, mentre la liquidità scende dal 7,73% al 2,63% (-5,10 punti). La nuova composizione e le stesse quantità del 23/24/25 novembre confermano persistenza della lista; non consentono però di calcolare flussi netti certi senza NAV completo e quote GMOM in circolazione. La rilevazione di chiusura del 25/11 conferma quantità identiche al 24/11; le differenze di peso sono drift di prezzo, non nuova rotazione.",
       "candidates_removed": [
@@ -205,6 +207,97 @@
         "continuing_share_change_pct_approx": -2.5,
         "interpretation": "Tra 20 e 23 novembre cambia la lista delle partecipazioni: quattro ETF scompaiono e cinque compaiono. Le quote dei principali ETF continuativi calano in modo quasi uniforme di circa 2,5%, mentre la liquidità passa dal 7,73% al 2,63%. Il quadro è compatibile con una rotazione e impiego di liquidità, ma senza NAV completo, quote GMOM in circolazione e quantità assolute complete non si possono quantificare i flussi netti né attribuire con certezza ogni trade.",
         "confidence": "medium_high_for_composition_change_medium_for_cash_deployment_low_for_exact_trade_amounts"
+      },
+      "share_count_comparison_2026_11_20_to_2026_11_24": {
+        "units": "thousand ETF shares, rounded by Schwab to 0.1K",
+        "source": "Schwab all holdings pages, as of close",
+        "from_date": "2026-11-20",
+        "to_date": "2026-11-24",
+        "shares_held_thousands": {
+          "from": {
+            "GVAL": 244.6,
+            "FYLD": 221.7,
+            "EYLD": 188.8,
+            "MYLD": 242.9,
+            "IXC": 80.6,
+            "DBE": 125.5,
+            "PDBC": 237.5,
+            "LYLD": 123.8,
+            "DBB": 172.4,
+            "MFUT": 215.9,
+            "SDCI": 139.5,
+            "GUNR": 77.9,
+            "IXN": 29.2
+          },
+          "to": {
+            "GVAL": 238.4,
+            "FYLD": 216.1,
+            "MYLD": 236.8,
+            "IXC": 78.5,
+            "PDBC": 231.5,
+            "LYLD": 120.6,
+            "OILK": 80.4,
+            "SDMF": 149.2,
+            "SYLD": 46.9,
+            "MFUT": 210.4,
+            "IXG": 30.3,
+            "SDCI": 136,
+            "IXJ": 35,
+            "IXN": 28.5
+          }
+        },
+        "continuing_position_share_change_pct": {
+          "GVAL": -2.53,
+          "FYLD": -2.53,
+          "MYLD": -2.51,
+          "IXC": -2.61,
+          "PDBC": -2.53,
+          "LYLD": -2.58,
+          "MFUT": -2.55,
+          "SDCI": -2.51,
+          "IXN": -2.4
+        },
+        "exited_positions": {
+          "EYLD": {
+            "from_thousand_shares": 188.8,
+            "to": "not listed"
+          },
+          "DBE": {
+            "from_thousand_shares": 125.5,
+            "to": "not listed"
+          },
+          "DBB": {
+            "from_thousand_shares": 172.4,
+            "to": "not listed"
+          },
+          "GUNR": {
+            "from_thousand_shares": 77.9,
+            "to": "not listed"
+          }
+        },
+        "added_positions": {
+          "OILK": {
+            "from": "not listed",
+            "to_thousand_shares": 80.4
+          },
+          "SDMF": {
+            "from": "not listed",
+            "to_thousand_shares": 149.2
+          },
+          "SYLD": {
+            "from": "not listed",
+            "to_thousand_shares": 46.9
+          },
+          "IXG": {
+            "from": "not listed",
+            "to_thousand_shares": 30.3
+          },
+          "IXJ": {
+            "from": "not listed",
+            "to_thousand_shares": 35
+          }
+        },
+        "note": "Le quantità sono pubblicate da Schwab arrotondate al migliaio (0,1K), non sono numeri esatti. Le riduzioni quasi uniformi delle posizioni continuative (circa -2,4% / -2,7%) sono compatibili con una riduzione proporzionale delle quote del fondo o un adeguamento comune; non possono essere convertite in flussi netti senza shares outstanding e NAV giornalieri. L'elenco di ingressi/uscite è invece una variazione di composizione osservata."
       }
     },
     {
