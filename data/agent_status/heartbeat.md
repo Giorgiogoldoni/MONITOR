@@ -1,6 +1,6 @@
 # MONITOR — heartbeat
 
-- Ultimo controllo UTC: 2026-11-26T23:04:17.300176+00:00
+- Ultimo controllo UTC: 2026-11-27T05:08:06.650979+00:00
 - Stato: **IDLE**
 - Nessun workflow di ricerca recente rilevato; heartbeat attivo.
 
